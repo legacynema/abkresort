@@ -4,7 +4,7 @@
     <header class="main-header">
 
       <!-- Logo -->
-      <a href="index2.html" class="logo">
+      <a href="<?= base_url('Admin') ?>" class="logo">
         <!-- mini logo for sidebar mini 50x50 pixels -->
         <span class="logo-mini"><b>ABK</b></span>
         <!-- logo for regular state and mobile devices -->
@@ -130,7 +130,9 @@
         <!-- sidebar menu: : style can be found in sidebar.less -->
         <ul class="sidebar-menu" data-widget="tree">
           <li class="header">MAIN NAVIGATION</li>
-          <li class="active treeview menu-open">
+
+          <li class="treeview">
+            <!-- <li class="active treeview menu-open"> -->
             <a href="#">
               <i class="fa fa-dashboard"></i> <span>Dashboard</span>
               <span class="pull-right-container">
@@ -139,38 +141,58 @@
             </a>
             <ul class="treeview-menu">
               <li><a href="index.html"><i class="fa fa-circle-o"></i> Dashboard v1</a></li>
-              <li class="active"><a href="index2.html"><i class="fa fa-circle-o"></i> Dashboard v2</a></li>
-            </ul>
-          </li>
-          <li class="treeview">
-            <a href="#">
-              <i class="fa fa-user-plus"></i>
-              <span>Tambah Data</span>
-              <span class="pull-right-container">
-                <i class="fa fa-angle-left pull-right"></i>
-              </span>
-            </a>
-            <ul class="treeview-menu">
-              <li><a href="pages/charts/chartjs.html"><i class="fa fa-circle-o"></i> Data Penginapan</a></li>
-              <li><a href="pages/charts/morris.html"><i class="fa fa-circle-o"></i> Data Transport</a></li>
-              <li><a href="pages/charts/flot.html"><i class="fa fa-circle-o"></i> Data Wisata</a></li>
+              <!-- <li class="active"><a href="index2.html"><i class="fa fa-circle-o"></i> Dashboard v2</a></li> -->
+              <li><a href="index2.html"><i class="fa fa-circle-o"></i> Dashboard v2</a></li>
             </ul>
           </li>
 
-          <li class="treeview">
-            <a href="#">
-              <i class="fa fa-edit"></i> <span>Edit Data</span>
-              <span class="pull-right-container">
-                <i class="fa fa-angle-left pull-right"></i>
-              </span>
-            </a>
-            <ul class="treeview-menu">
-              <li><a href="pages/forms/general.html"><i class="fa fa-circle-o"></i> Data Penginapan</a></li>
-              <li><a href="pages/forms/advanced.html"><i class="fa fa-circle-o"></i> Data Transport</a></li>
-              <li><a href="pages/forms/editors.html"><i class="fa fa-circle-o"></i> Data Transaksi</a></li>
-              <li><a href="pages/forms/editors.html"><i class="fa fa-circle-o"></i> Data Wisata</a></li>
-            </ul>
-          </li>
+          <!-- TAMBAH DATA -->
+          <?php if (($this->uri->segment(2) == "tambah_penginapan") || ($this->uri->segment(2) == "tambah_transport") || ($this->uri->segment(2) == "tambah_wisata")) : ?>
+            <li class="active treeview menu-open">
+              <a href="#">
+                <i class="fa fa-user-plus"></i>
+                <span>Tambah Data</span>
+                <span class="pull-right-container">
+                  <i class="fa fa-angle-left pull-right"></i>
+                </span>
+              </a>
+              <ul class="treeview-menu">
+                <?php if ($this->uri->segment(2) == "tambah_penginapan") : ?>
+                  <li class="active"><a href="<?= base_url('Admin/tambah_penginapan') ?>"><i class="fa fa-circle-o"></i> Data Penginapan</a></li>
+                  <li><a href="<?= base_url('Admin/tambah_transport') ?>"><i class="fa fa-circle-o"></i> Data Transport</a></li>
+                  <li><a href="<?= base_url('Admin/tambah_wisata') ?>"><i class="fa fa-circle-o"></i> Data Wisata</a></li>
+
+                <?php elseif ($this->uri->segment(2) == "tambah_transport") : ?>
+                  <li><a href="<?= base_url('Admin/tambah_penginapan') ?>"><i class="fa fa-circle-o"></i> Data Penginapan</a></li>
+                  <li class="active"><a href="<?= base_url('Admin/tambah_transport') ?>"><i class="fa fa-circle-o"></i> Data Transport</a></li>
+                  <li><a href="<?= base_url('Admin/tambah_wisata') ?>"><i class="fa fa-circle-o"></i> Data Wisata</a></li>
+
+                <?php elseif ($this->uri->segment(2) == "tambah_wisata") : ?>
+                  <li><a href="<?= base_url('Admin/tambah_penginapan') ?>"><i class="fa fa-circle-o"></i> Data Penginapan</a></li>
+                  <li><a href="<?= base_url('Admin/tambah_transport') ?>"><i class="fa fa-circle-o"></i> Data Transport</a></li>
+                  <li class="active"><a href="<?= base_url('Admin/tambah_wisata') ?>"><i class="fa fa-circle-o"></i> Data Wisata</a></li>
+                <?php endif; ?>
+              </ul>
+            </li>
+            </li>
+          <?php else : ?>
+            <li class="treeview ">
+              <a href="#">
+                <i class="fa fa-user-plus"></i>
+                <span>Tambah Data</span>
+                <span class="pull-right-container">
+                  <i class="fa fa-angle-left pull-right"></i>
+                </span>
+              </a>
+              <ul class="treeview-menu">
+                <li><a href="<?= base_url('Admin/tambah_penginapan') ?>"><i class="fa fa-circle-o"></i> Data Penginapan</a></li>
+                <li><a href="<?= base_url('Admin/tambah_transport') ?>"><i class="fa fa-circle-o"></i> Data Transport</a></li>
+                <li><a href="<?= base_url('Admin/tambah_wisata') ?>"><i class="fa fa-circle-o"></i> Data Wisata</a></li>
+              </ul>
+            </li>
+            </li>
+          <?php endif; ?>
+          <!-- LIST USER -->
           <li class="treeview">
             <a href="#">
               <i class="fa fa-list"></i> <span>List User</span>
@@ -190,3 +212,30 @@
       </section>
       <!-- /.sidebar -->
     </aside>
+
+    <!-- Content Wrapper. Contains page content -->
+    <div class="content-wrapper">
+      <!-- Content Header (Page header) -->
+      <section class="content-header">
+        <h1>
+          Dashboard
+        </h1>
+        <ol class="breadcrumb">
+          <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
+          <?php
+          // print_r($this->uri->segment(1));
+          // die;
+          ?>
+          <?php
+          if ($this->uri->segment(2) == "tambah_penginapan") : ?>
+            <li class="active">Tambah Penginapan</li>
+          <?php elseif ($this->uri->segment(2) == "tambah_transport") : ?>
+            <li class="active">Tambah Transport</li>
+          <?php elseif ($this->uri->segment(2) == "tambah_wisata") : ?>
+            <li class="active">Tambah Wisata</li>
+          <?php else : ?>
+            <li class="active">Dashboard</li>
+          <?php endif;
+          ?>
+        </ol>
+      </section>
