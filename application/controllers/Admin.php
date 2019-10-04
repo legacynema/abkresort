@@ -59,4 +59,10 @@ class Admin extends CI_Controller
 	// VIEWS LAPORAN
 	public function laporan()
 	{ }
+
+	// Login admin
+	public function loginadmin()
+	{
+		$this->load->view('auth/login_admin');
+	}
 }
