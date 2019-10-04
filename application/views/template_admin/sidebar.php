@@ -193,7 +193,7 @@
           </li>
           <li><a href="https://adminlte.io/docs"><i class="fa fa-money"></i> <span>Transaksi</span></a></li>
           <li><a href="https://adminlte.io/docs"><i class="fa fa-book"></i> <span>Laporan</span></a></li>
-          <li><a href="https://adminlte.io/docs"><i class="fa fa-sign-out"></i> <span>Logout</span></a></li>
+          <li><a href="<?= base_url('Admin/loginadmin') ?>"><i class="fa fa-sign-out"></i> <span>Logout</span></a></li>
         </ul>
       </section>
       <!-- /.sidebar -->
