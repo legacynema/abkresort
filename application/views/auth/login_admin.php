@@ -12,7 +12,7 @@
     <!-- Font Awesome -->
     <link rel="stylesheet" href="<?= base_url('assets_admin/') ?>bower_components/font-awesome/css/font-awesome.min.css">
     <!-- Ionicons -->
-    <link rel="stylesheet" href="<?= base_url('assets_admin/') ?>bower_components/Ionicons/css/ionicons.min.css">
+    <!-- <link rel="stylesheet" href="<?= base_url('assets_admin/') ?>bower_components/Ionicons/css/ionicons.min.css"> -->
     <!-- Theme style -->
     <link rel="stylesheet" href="<?= base_url('assets_admin/') ?>dist/css/AdminLTE.min.css">
     <!-- iCheck -->
@@ -25,7 +25,7 @@
 <body class="hold-transition login-page">
     <div class="login-box">
         <div class="login-logo">
-            <a href="../../index2.html"><b>Admin</b>LTE</a>
+            <b>Admin</b>Resort
         </div>
         <!-- /.login-logo -->
         <div class="login-box-body">
@@ -56,17 +56,7 @@
                 </div>
             </form>
 
-            <div class="social-auth-links text-center">
-                <p>- OR -</p>
-                <a href="#" class="btn btn-block btn-social btn-facebook btn-flat"><i class="fa fa-facebook"></i> Sign in using
-                    Facebook</a>
-                <a href="#" class="btn btn-block btn-social btn-google btn-flat"><i class="fa fa-google-plus"></i> Sign in using
-                    Google+</a>
-            </div>
-            <!-- /.social-auth-links -->
-
             <a href="#">I forgot my password</a><br>
-            <a href="register.html" class="text-center">Register a new membership</a>
 
         </div>
         <!-- /.login-box-body -->

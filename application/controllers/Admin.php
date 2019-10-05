@@ -12,7 +12,7 @@ class Admin extends CI_Controller
 	{
 		$this->load->view('template_admin/header');
 		$this->load->view('template_admin/sidebar');
-		$this->load->view('admin/content');
+		$this->load->view('admin/index');
 		$this->load->view('template_admin/footer');
 	}
 	public function tambah_penginapan()
@@ -37,16 +37,6 @@ class Admin extends CI_Controller
 		$this->load->view('template_admin/footer');
 	}
 
-	// VIEWS EDIT DATA
-	public function edit_penginapan()
-	{ }
-	public function edit_transport()
-	{ }
-	public function edit_transaksi()
-	{ }
-	public function edit_wisata()
-	{ }
-
 	// VIEWS LIST USER
 	public function user_aktif()
 	{ }
@@ -55,10 +45,20 @@ class Admin extends CI_Controller
 
 	// VIEWS TRANSAKSI
 	public function transaksi()
-	{ }
+	{
+		$this->load->view('template_admin/header');
+		$this->load->view('template_admin/sidebar');
+		$this->load->view('admin/transaksi');
+		$this->load->view('template_admin/footer');
+	}
 	// VIEWS LAPORAN
 	public function laporan()
-	{ }
+	{
+		$this->load->view('template_admin/header');
+		$this->load->view('template_admin/sidebar');
+		$this->load->view('admin/laporan');
+		$this->load->view('template_admin/footer');
+	}
 
 	// Login admin
 	public function loginadmin()
