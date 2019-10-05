@@ -191,8 +191,8 @@
               <li><a href="pages/tables/data.html"><i class="fa fa-circle-o"></i> User NonAktif</a></li>
             </ul>
           </li>
-          <li><a href="https://adminlte.io/docs"><i class="fa fa-money"></i> <span>Transaksi</span></a></li>
-          <li><a href="https://adminlte.io/docs"><i class="fa fa-book"></i> <span>Laporan</span></a></li>
+          <li><a href="<?= base_url('Admin/transaksi') ?>"><i class="fa fa-money"></i> <span>Transaksi</span></a></li>
+          <li><a href="<?= base_url('Admin/laporan') ?>"><i class="fa fa-book"></i> <span>Laporan</span></a></li>
           <li><a href="<?= base_url('Admin/loginadmin') ?>"><i class="fa fa-sign-out"></i> <span>Logout</span></a></li>
         </ul>
       </section>
@@ -219,6 +219,10 @@
             <li class="active">Tambah Transport</li>
           <?php elseif ($this->uri->segment(2) == "tambah_wisata") : ?>
             <li class="active">Tambah Wisata</li>
+          <?php elseif ($this->uri->segment(2) == "transaksi") : ?>
+            <li class="active">Transaksi</li>
+          <?php elseif ($this->uri->segment(2) == "laporan") : ?>
+            <li class="active">Laporan</li>
           <?php else : ?>
             <li class="active">Dashboard</li>
           <?php endif;
