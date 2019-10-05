@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous"> -->
   </head>
   <body>
   
@@ -19,9 +19,6 @@
 
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
-      <li class="nav-item active">
-        <a class="nav-link text-white" href="#">Home<span class="sr-only">(current)</span></a>
-      </li>
       <li>
         <a class="nav-link text-white" href="#">Paket All In One</a>
       </li>
@@ -44,6 +41,12 @@
         <a href="#" class="nav-link text-white">Kereta Api</a>
       </li>
     </ul>
+    <ul class="navbar-nav flex-row ml-md-auto d-none d-md-flex">
+      <a class=" nav-link mr-md-2 text-white" href="#" id="bd-versions" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Login</a>
+      </li>
+      <li>
+      <a class="nav-link mr-md-2 text-white" href="#" id="bd-versions" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Register</a>
+      </li>
   </div>
   </div>
 </nav>  
