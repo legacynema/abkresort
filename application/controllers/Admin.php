@@ -65,4 +65,9 @@ class Admin extends CI_Controller
 	{
 		$this->load->view('auth/login_admin');
 	}
+
+	// ============================= BACK END ==============================
+	
+	
+
 }
