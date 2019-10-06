@@ -9,18 +9,19 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
   </head>
   <body>
-  <img src="<?= base_url('assets/img/banner1.jpg') ?>" alt="" title="#slider-direction-1" />
-  <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+      <div class="gradient-background">
+      </div>
+  <div id="carouselExampleControls" class="carousel slide " data-ride="carousel">
   <div class="carousel-inner">
-    <div class="carousel-item active">
-    <img src="<?= base_url('assets/') ?>img/banner1.jpg" class="d-block w-100">
+    <div class="carousel-item active img-fluid position-relative" >
+    <img src="<?= base_url('assets/') ?>img/banner1.jpg" class="d-block w-100" height="100%">
     </div>
-    <div class="carousel-item">
-      <img src="<?= base_url('assets/') ?>img/banner2.jpg" class="d-block w-100">
+    <div class="carousel-item img-fluid position-relative">
+      <img src="<?= base_url('assets/') ?>img/banner2.jpg" class="d-block w-100" width="100%" height="100%">
     </div>
-    <!-- <div class="carousel-item">
-      <img src="..." class="d-block w-100" alt="...">
-    </div> -->
+    <div class="carousel-item img-fluid position-relative">
+    <img src="<?= base_url('assets/') ?>img/banner3.jpg" class="d-block w-100" width="100%" height="100%">
+    </div>
   </div>
   <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
     <span class="carousel-control-prev-icon" aria-hidden="true"></span>
