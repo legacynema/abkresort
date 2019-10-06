@@ -13,6 +13,8 @@
     <link rel="stylesheet" href="<?= base_url('assets_admin/') ?>bower_components/font-awesome/css/font-awesome.min.css">
     <!-- Ionicons -->
     <link rel="stylesheet" href="<?= base_url('assets_admin/') ?>bower_components/Ionicons/css/ionicons.min.css">
+    <!-- DataTables -->
+    <link rel="stylesheet" href="<?= base_url('assets_admin/') ?>bower_components/datatables.net-bs/css/dataTables.bootstrap.min.css">
     <!-- jvectormap -->
     <link rel="stylesheet" href="<?= base_url('assets_admin/') ?>bower_components/jvectormap/jquery-jvectormap.css">
     <!-- Theme style -->
