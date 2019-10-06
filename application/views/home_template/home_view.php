@@ -32,6 +32,36 @@
     <span class="sr-only">Next</span>
   </a>
 </div>
+<br><br>
+<div class="container">
+  <div class="row">
+    <div class="col-md-3">
+      <div class="card" style="width: 18rem;">
+        <img src="<?= base_url('assets/') ?>img/Malang.jpg" class="d-block w-100" width="100%" height="100%">
+        <a href="#" class="btn btn-primary btn-lg btn-block">Malang</a>
+      </div>
+    </div>
+    <div class="col-md-3">
+      <div class="card" style="width: 18rem;">
+        <img src="<?= base_url('assets/') ?>img/Malang.jpg" class="d-block w-100" width="100%" height="100%">
+        <a href="#" class="btn btn-primary btn-lg btn-block">Malang</a>
+      </div>
+    </div>
+    <div class="col-md-3">
+      <div class="card" style="width: 18rem;">
+        <img src="<?= base_url('assets/') ?>img/Malang.jpg" class="d-block w-100" width="100%" height="100%">
+        <a href="#" class="btn btn-primary btn-lg btn-block">Malang</a>
+      </div>
+    </div>
+    <div class="col-md-3">
+      <div class="card" style="width: 18rem;">
+        <img src="<?= base_url('assets/') ?>img/Malang.jpg" class="d-block w-100" width="100%" height="100%">
+        <a href="#" class="btn btn-primary btn-lg btn-block">Malang</a>
+      </div>
+    </div>
+  </div>
+</div>
+  
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
