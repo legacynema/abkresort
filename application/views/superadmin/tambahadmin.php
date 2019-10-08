@@ -1,7 +1,7 @@
 <section class="content">
     <div class="row">
         <!-- left column -->
-        <div class="col-md-5">
+        <div class="col-md-4">
             <!-- general form elements -->
             <div class="box box-primary">
                 <div class="box-header with-border">
@@ -49,7 +49,7 @@
                 </form>
             </div>
         </div>
-        <div class="col-md-7">
+        <div class="col-md-8">
             <!-- general form elements -->
             <div class="box box-primary">
                 <div class="box-header with-border">
@@ -63,7 +63,6 @@
                             <th style="width: 10px">#</th>
                             <th>Nama</th>
                             <th>Email</th>
-                            <th>Password</th>
                             <th>No telepon</th>
                             <th>Jenis Kelamin
                             <th>Photo Profile</th>
@@ -73,7 +72,6 @@
                             <td>1.</td>
                             <td>Arya</td>
                             <td>aryawiguna00@yahoo.com</td>
-                            <td>332ksasa</td>
                             <td>2121221313</td>
                             <td>Laki-Laki</td>
                             <td>#</td>

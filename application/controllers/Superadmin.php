@@ -10,15 +10,26 @@ class Superadmin extends CI_Controller{
     // View Index
     public function index(){
         $this->load->view('template_admin/header');
-		$this->load->view('template_admin/sidebar');
+		$this->load->view('superadmin/sidebar');
 		$this->load->view('superadmin/index');
 		$this->load->view('template_admin/footer');
     }    
     public function tambah_admin(){
         $this->load->view('template_admin/header');
-		$this->load->view('template_admin/sidebar');
+		$this->load->view('superadmin/sidebar');
 		$this->load->view('superadmin/tambahadmin');
 		$this->load->view('template_admin/footer');
     }
-
+    public function tambah_wisata(){
+        $this->load->view('template_admin/header');
+		$this->load->view('superadmin/sidebar');
+		$this->load->view('superadmin/tambahwisata');
+		$this->load->view('template_admin/footer');
+    }
+    public function tambah_transportasi(){
+        $this->load->view('template_admin/header');
+		$this->load->view('superadmin/sidebar');
+		$this->load->view('superadmin/tambahtransport');
+		$this->load->view('template_admin/footer');
+    }
 }
