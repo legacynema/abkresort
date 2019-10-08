@@ -23,4 +23,11 @@ class Home extends CI_Controller {
         $this->load->view('home_template/home_view');
 		$this->load->view('footer');
 	}
+
+	public function login()
+	{
+		$this->load->view('navbar');
+		$this->load->view('login_register/login');
+		$this->load->view('footer');
+	}
 }

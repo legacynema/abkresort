@@ -6,7 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <!-- Bootstrap CSS -->
-    <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous"> -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="<?= base_url('node_modules/') ?>bootstrap/dist/css/app.css">
   </head>
   <body>
   
@@ -42,10 +43,10 @@
       </li>
     </ul>
     <ul class="navbar-nav flex-row ml-md-auto d-none d-md-flex">
-      <a class=" nav-link mr-md-2 text-white" href="#" id="bd-versions" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Login</a>
+      <a class=" nav-link mr-md-2 text-white" href="<?= base_url('Home/login') ?>" id="bd-versions" aria-haspopup="true" aria-expanded="false">Login</a>
       </li>
       <li>
-      <a class="nav-link mr-md-2 text-white" href="#" id="bd-versions" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Register</a>
+      <a class="nav-link mr-md-2 text-white" href="#" id="bd-versions" aria-haspopup="true" aria-expanded="false">Register</a>
       </li>
   </div>
   </div>
