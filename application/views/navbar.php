@@ -46,7 +46,7 @@
       <a class=" nav-link mr-md-2 text-white" href="<?= base_url('Home/login') ?>" id="bd-versions" aria-haspopup="true" aria-expanded="false">Login</a>
       </li>
       <li>
-      <a class="nav-link mr-md-2 text-white" href="#" id="bd-versions" aria-haspopup="true" aria-expanded="false">Register</a>
+      <a class="nav-link mr-md-2 text-white" href="<?= base_url('Home/register') ?>" id="bd-versions" aria-haspopup="true" aria-expanded="false">Register</a>
       </li>
   </div>
   </div>
