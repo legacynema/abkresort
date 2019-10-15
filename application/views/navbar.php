@@ -24,7 +24,7 @@
         <a class="nav-link text-white" href="#">Paket All In One</a>
       </li>
       <li>
-        <a href="#" class="nav-link text-white">Penerbangan</a>
+        <a href="<?= base_url('Input/flight') ?>" class="nav-link text-white">Penerbangan</a>
       </li>
       <li>
         <a href="#" class="nav-link text-white">Hotel</a>
