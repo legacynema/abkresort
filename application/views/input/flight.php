@@ -49,18 +49,19 @@
 				  </label>
 				</div>
 				<div class="input-group">
-				  <span class="input-group-addon" id="basic-addon1"><span class="lnr lnr-train"></span></span>
+				  <span class="input-group-addon" id="basic-addon1"><i class="fas fa-helicopter"></i></span> 
 				  <input id="origin" name="origin" type="text" class="form-control ui-autocomplete-input" placeholder="From" aria-describedby="basic-addon1" autocomplete="off">
 				</div>
+        <br>
 				<div class="input-group">
 				  <span class="input-group-addon" id="basic-addon1"><span class="lnr lnr-rocket"></span></span>
 				  <input id="destination" name="destination" type="text" class="form-control ui-autocomplete-input" placeholder="To" aria-describedby="basic-addon1" autocomplete="off">
 				</div>
+        <br>
 				<div class="row">
 				  <div class="col-12" id="parent-first-flight">
-					<div class="input-group">
-					  <span class="input-group-addon" id="basic-addon1"><span class="lnr lnr-calendar-full"></span></span>
-					  <input type="text" class="form-control" readonly="" id="first-flight-date" name="first-flight-date" placeholder="Depart" aria-describedby="basic-addon1">
+					<div class="form-group">
+					  <input type="date" class="form-control" id="datetimepicker1" name="first-flight-date" placeholder="Depart" aria-describedby="basic-addon1">
 					</div>
 				  </div>
 				  <div class="col-6 col-md-6 p-l-small" id="parent-second-flight" style="display: none;">
@@ -116,7 +117,6 @@
 </div>
 
 </div>
-
 
 
 </body>
