@@ -1,5 +1,5 @@
 <?php defined('BASEPATH') or exit('No direct script access allowed');
-class Model_jenisTranspotasi extends CI_Model{
+class Model_jenisTransportasi extends CI_Model{
 
 
 private $_table = "jenis_transportasi";

@@ -8,7 +8,7 @@ private $_table = "transportasi";
     public $keberangkatan;
     public $tujuan;
     public $harga;
-    public $foto = "default.jpg";
+    // public $foto = "default.jpg";
 
 
     public function rules()

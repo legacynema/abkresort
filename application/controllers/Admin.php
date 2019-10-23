@@ -13,7 +13,15 @@ class Admin extends CI_Controller
 
 		$this->load->model("Model_penginapan");
 		$this->load->model("Model_jenisPenginapan");
+		$this->load->model("Model_jenisTransportasi");
+		$this->load->model("Model_transportasi");
 		$this->load->model("Model_kota");
+		$this->load->model("Model_wisata");
+
+		$this->load->model("Model_user");
+		$this->load->model("Model_admin");
+		$this->load->model("Model_super_admin");
+		
 		
 
 	}
@@ -36,9 +44,11 @@ class Admin extends CI_Controller
 	}
 	public function tambah_transport()
 	{
+		$data["jenis_transportasi"] = $this->Model_jenisTransportasi->getAll();
+		$data["kota"] = $this->Model_kota->getAll();
 		$this->load->view('template_admin/header');
 		$this->load->view('template_admin/sidebar');
-		$this->load->view('admin/tambahtransport');
+		$this->load->view('admin/tambahtransport', $data);
 		$this->load->view('template_admin/footer');
 	}
 	public function tambah_wisata()
@@ -80,7 +90,7 @@ class Admin extends CI_Controller
 
 	// ============================= BACK END ==============================
 
-	// menampilkan data penginapan dari Database
+	// CRUD PENGINAPAN
 	public function dataPenginapan()
     {
 		$data["penginapan"] = $this->Model_penginapan->getAll();
@@ -90,8 +100,6 @@ class Admin extends CI_Controller
 		$this->load->view('template_admin/footer');
         
     }
-
-
 
     public function penginapanAdd()
     {
@@ -113,29 +121,29 @@ class Admin extends CI_Controller
 		$this->load->view('template_admin/footer');
     }
 
-    public function penginapanEdit($id_penginapan = null)
-    {
-        // var_dump($id);
-        if (!isset($id_penginapan)) redirect('c_siswa');
+    // public function penginapanEdit($id_penginapan = null)
+    // {
+    //     // var_dump($id);
+    //     if (!isset($id_penginapan)) redirect('c_siswa');
 
 
-        $var = $this->model_penginapan;
-        $validation = $this->form_validation;
-        $validation->set_rules($var->rules());
+    //     $var = $this->model_penginapan;
+    //     $validation = $this->form_validation;
+    //     $validation->set_rules($var->rules());
 
-        if ($validation->run()) {
-            $var->update();
-            $this->session->set_flashdata('success', 'Berhasil disimpan');
-        }
-        $data["kelas"] = $this->Model_kelas->getAll();
-        $data["jurusan"] = $this->Model_jurusan->getAll();
-        $data["siswa"] = $var->getById($id_penginapan);
-        if (!$data["siswa"]) show_404();
-        $this->load->view("template_admin/header");
-        $this->load->view("template_admin/sidebar");
-        $this->load->view("admin/editsiswa", $data);
-        $this->load->view("template_admin/footer");
-	}
+    //     if ($validation->run()) {
+    //         $var->update();
+    //         $this->session->set_flashdata('success', 'Berhasil disimpan');
+    //     }
+    //     $data["kelas"] = $this->Model_kelas->getAll();
+    //     $data["jurusan"] = $this->Model_jurusan->getAll();
+    //     $data["siswa"] = $var->getById($id_penginapan);
+    //     if (!$data["siswa"]) show_404();
+    //     $this->load->view("template_admin/header");
+    //     $this->load->view("template_admin/sidebar");
+    //     $this->load->view("admin/editsiswa", $data);
+    //     $this->load->view("template_admin/footer");
+	// }
 	
 	public function penginapanDelete($id_penginapan = null)
     {
@@ -151,7 +159,50 @@ class Admin extends CI_Controller
 			$this->load->view('admin/tambahpenginapan', $data);
 			$this->load->view('template_admin/footer');
         }
-    }
+	}
 	
+
+	//CRUD TRANSPORT
+	public function dataTransportasi()
+    {
+		$data["transportasi"] = $this->Model_transportasi->getAll();
+		$this->load->view('template_admin/header');
+		$this->load->view('template_admin/sidebar');
+		$this->load->view('admin/tambahtransport', $data);
+		$this->load->view('template_admin/footer');
+        
+	}
+	
+	public function transportasiAdd()
+    {
+        $tambah = $this->Model_transportasi;
+        $validation = $this->form_validation;
+        $validation->set_rules($tambah->rules());
+
+        if ($validation->run()) {
+            $tambah->save();
+            $this->session->set_flashdata('success', 'Berhasil disimpan');
+        }
+
+        $data["transportasi"] = $this->Model_transportasi->getAll();
+		$this->load->view('template_admin/header');
+		$this->load->view('template_admin/sidebar');
+		$this->load->view('admin/tambahtransport', $data);
+		$this->load->view('template_admin/footer');
+    }
+
+	public function transportasiDelete($id_transportasi = null)
+    {
+        if (!isset($id_transportasi)) show_404();
+
+		
+        if ($this->Model_transportasi->delete($id_transportasi)) {
+			$data["transportasi"] = $this->Model_transportasi->getAll();
+			$this->load->view('template_admin/header');
+			$this->load->view('template_admin/sidebar');
+			$this->load->view('admin/tambahtransport', $data);
+			$this->load->view('template_admin/footer');
+        }
+	}
 
 }
