@@ -39,10 +39,14 @@
                 <h3 class="bzg_c block--small "style>
                     <a href="#" class="link-black t--larger"style>Paralayang</a>
                 </h3>
-                <div class="bzg_c col-md-4" >
-                    <img src="<?= base_url('assets/') ?>img/paralayangmalang.jpg" alt="">
+                <div class="bzg_c" data-col="m4">
+                    <figure class>
+                    <a class="responsive-media media--3-2 fill--lightgrey">
+                    <img src="<?= base_url('assets/') ?>img/paralayangmalang.jpg" alt="" class="">
+                    </a> 
+                    </figure>
                 </div>
-                <div class="bzg_c col-md-8">
+                <div class="bzg_c" data-col="m8">
                     <div class="block">
                             Salah satu objek wisata yang menyediakan fasilitas kegiatan yang memicu dan memacu adrenalin. Paralayang Batu Malang bisa membuat anda mengucurkan keringat dingin, bersemangat, berteriak sekaligus berdecak kagum.
                             Paralayang adalah nama untuk Puncak Gunung Banyak, Kota Batu yang memiliki ketinggian 1.326 mdpl. Tempat ini pada mulanya merupakan tempat yang dijadikan sebagai landasan take-off atlet paralayang.
