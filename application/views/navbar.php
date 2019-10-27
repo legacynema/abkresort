@@ -27,7 +27,7 @@
         <a href="<?= base_url('Input/flight') ?>" class="nav-link text-white">Penerbangan</a>
       </li>
       <li>
-        <a href="<?= base_url('Input/flight') ?>" class="nav-link text-white">Hotel</a>
+        <a href="<?= base_url('Input/hotel') ?>" class="nav-link text-white">Hotel</a>
       </li>
       <li>
         <a href="#" class="nav-link text-white">Penginapan</a>
