@@ -37,6 +37,11 @@
                         </div>
 
                         <div class="form-group">
+                            <label for="jumlah_tamu">Jumlah Tamu</label>
+                            <input type="text" class="form-control" name="jumlah_tamu" placeholder="Berapa Orang">
+                        </div>
+
+                        <div class="form-group">
                             <label for="harga">Harga *per hari</label>
                             <div class="input-group">
                                 <span class="input-group-addon"><i class="fa fa-money"></i></span>
@@ -105,7 +110,7 @@
 									<p><?= $peng['jumlah_tamu'] ?></p>
 								</td>
 								<td>
-									<p><?= $peng['harga'] ?></p>
+                                <p>Rp. <?= number_format($peng['harga']) ?></p>
 								</td>
 
 								<td>
