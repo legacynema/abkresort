@@ -19,17 +19,6 @@
                 <form action="<?php echo base_url(). 'Admin/penginapanAdd'; ?>" method="post" enctype="multipart/form-data">
                     <div class="box-body">
 
-                        <div class="form-group" >
-                            <label for="id_jenis_penginapan">Pilih Penginapan</label>
-                                <select class="form-control" name="id_jenis_penginapan">
-                                    <option value="" disabled selected>Pilih Penginapan</option>
-
-                                    <?php foreach($jenis_penginapan as $peng):?>
-                                                <option value="<?= $peng->id_peng?>"><?= $peng->nama?></option>
-                                            <?php  endforeach;?>
-                                      
-                                </select>
-                        </div>
 
                         <div class="form-group">
                             <label for="id_kota">Pilih Kota</label>
@@ -83,9 +72,9 @@
                         <tr>
                             <th style="width: 10px">#</th>
                             <th>ID </th>
-                            <th>Jenis Penginapan</th>
                             <th>Kota</th>
                             <th>Nama Penginapan</th>
+                            <th>Jumlah Tamu</th>
                             <th>Harga(Permalam)</th>
                             <th>Foto</th>
                             <th>Menu</th>
@@ -93,10 +82,10 @@
                         <?php  $nomor =1; ?>
 						<?php
 
-                        $this->db->select('id_penginapan,nama,nama_kota,nama_penginapan, harga, foto');
+                        $this->db->select('id_penginapan, nama_kota,nama_penginapan, jumlah_tamu, harga, foto');
                         // SELECT 
-                                  $this->db->join('kota', 'kota.id_kota = penginapan.id_jenis_penginapan');
-                        $query =  $this->db->join('jenis_penginapan', 'jenis_penginapan.id_peng = penginapan.id_jenis_penginapan')->get('penginapan');
+                                //   $this->db->join('kota', 'kota.id_kota = penginapan.id_jenis_penginapan');
+                        $query =  $this->db->join('kota', 'kota.id_kota = penginapan.id_kota')->get('penginapan');
                         $nomor = 1;
 
 						foreach ($query->result_array() as $peng) :
@@ -107,13 +96,13 @@
 									<p><?= $peng['id_penginapan'] ?></p>
 								</td>
 								<td>
-									<p><?= $peng['nama'] ?></p>
-								</td>
-								<td>
 									<p><?= $peng['nama_kota'] ?></p>
 								</td>
 								<td>
 									<p><?= $peng['nama_penginapan'] ?></p>
+								</td>
+								<td>
+									<p><?= $peng['jumlah_tamu'] ?></p>
 								</td>
 								<td>
 									<p><?= $peng['harga'] ?></p>
