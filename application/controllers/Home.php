@@ -37,4 +37,19 @@ class Home extends CI_Controller {
 		$this->load->view('login_register/register');
 		$this->load->view('footer');
 	}
+	public function destination()
+	{
+		$this->load->view('navbar');
+		$this->load->view('destination_template/destination_view');
+		$this->load->view('footer');
+	}
+
+	public function profilUser()
+	{
+		$this->load->view('navbar');
+		$this->load->view('user/profil_user');
+		$this->load->view('footer');
+	}
+	
+	
 }

@@ -40,7 +40,7 @@
 
 	<div class="row no-gutters">
         
-                <a href="#" class="col new-hhd col-high-dest" style="display:block;">
+                <a href="<?= base_url('Home/destination') ?>" class="col new-hhd col-high-dest" style="display:block;">
               		<div class="new-hhd-card" >
                   <img src="<?= base_url('assets/') ?>img/Malang.jpg" class="d-block w-100" width="100%" height="100%">
                   		<div class="new-hhd-body">Malang</div>
