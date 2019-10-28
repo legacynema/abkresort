@@ -114,8 +114,7 @@ class Admin extends CI_Controller
 			$this->session->set_flashdata('success', 'Berhasil disimpan');
 			
 		}
-		// $this->dataPenginapan();
-		base_url(). 'Admin/tambah_penginapan';
+		$this->dataPenginapan();
 		
 		
         
