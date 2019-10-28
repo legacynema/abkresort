@@ -15,53 +15,92 @@
                     <div class="profil-main">
                     <h4 class="no-space title text-up">Profil Saya</h4>
                     <div class="block--inset">
-                        <form action="" method="" >
-                            <div class="form-group row">
-                                <label for="" class="col-md-2 col-form-label"><strong>Nama</strong></label>
-                                <div class="col-md-6">
-                                <input type="text" class="form-control" id="" placeholder="Masukkan Nama">
+                        <table class="table table-responsive">
+                        <tr>
+                            <td rowspan="15" width="250px">
+                                <img src="<?= base_url('assets/') ?>img/user.jpg"  />
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><b>Nama</b></td>
+                            <td>:</td>
+                            <td>Firman</td>
+                        </tr>
+                        <tr>
+                            <td><b>Email</b></td>
+                            <td>:</td>
+                            <td>pyterpolis1@gmail.com</td>
+                        </tr> 
+                        
+                        <tr>
+                            <td><b>Jenis Kelamin</b></td>
+                            <td>:</td>
+                            <td>Laki-Laki</td>
+                        </tr>
+                        
+                        <tr>
+                            <td><b>No Telfon</b></td>
+                            <td>:</td>
+                            <td>0811210210210</td>
+                        </tr>            
+                    </table><br>
+                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">Edit Profile</button>                    </div>
+                </div>
+            </div>
+           </div> 
+        </div>
+        <!-- Modal -->
+            <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Edit Profile</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <form action="">
+                        <div class="form-group row">
+                            <label for="" class="col-sm-2 col-form-label">Nama</label>
+                                <div class="col-sm-10">
+                                    <input type="text" class="form-control" id="" placeholder="input name">
                                 </div>
-                            </div>
-                            <div class="form-group row">
-                                <label for="" class="col-md-2 col-form-label"><strong>Email</strong></label>
-                                <div class="col-md-6">
-                                <input type="email" class="form-control" id="" placeholder="Masukkan Email">
+                        </div>
+                        <div class="form-group row">
+                            <label for="" class="col-sm-2 col-form-label">Email</label>
+                                <div class="col-sm-10">
+                                    <input type="password" class="form-control" id="" placeholder="email@example.com">
                                 </div>
+                        </div>
+                        <div class="form-group row">
+                            <label for="inputPassword" class="col-sm-2">Jenis Kelamin</label>
+                            <div class="col-sm-10">
+                                <input type="radio" name="" value="Laki-laki">Laki-Laki
+                                <input type="radio" name="" value="Perempuan">Perempuann
                             </div>
-                            <div class="form-group row">
-                                <label for="" class="col-md-2 col-form-label"><strong>Jenis Kelamin</strong></label>
-                                <div class="col-md-6">
-                                      <select name="" id="" class="custom-select">
-                                          <option value="">Laki-Laki</option>
-                                          <option value="">Perempuan</option>
-                                      </select>      
+                        </div>
+                        <div class="form-group row">
+                            <label for="" class="col-sm-2 col-form-label">No Handphone</label>
+                                <div class="col-sm-10">
+                                    <input type="number" class="form-control" id="" placeholder="+62****">
                                 </div>
-                            </div>
-                            <div class="form-group row">
-                                <label for="" class="col-md-2 col-form-label"><strong>Homer Hp </strong></label>
-                                <div class="col-md-6">
-                                <input type="number" class="form-control" id="" placeholder="Masukkan Email">
+                        </div>
+                        <div class="form-group row">
+                            <label for="" class="col-sm-2 ">Foto Profil</label>
+                                <div class="col-sm-10">
+                                    <input type="file" id="" placeholder="+62****">
                                 </div>
-                            </div>
-                            <div class="form-group row">
-                                <label for="" class="col-md-2 col-form-label"><strong>Foto Profil </strong></label>
-                                <div class="col-md-6">
-                                <input type="file">
-                                </div>
-                            </div>
-                            <div class="form-group row">
-                            <div class="col-md-2">
-                                <button class="btn btn-success" type="submit">Simpan</button>
-                            </div>
-                            <div class="col-md-2">
-                                <button class="btn btn-danger" type="reset">Reset</button>
-                            </div>
+                        </div>
                         </form>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                        <button type="button" class="btn btn-primary">Save changes</button>
                     </div>
                     </div>
                 </div>
             </div>
-        </div>
     </div>
 </body>
 </html>
