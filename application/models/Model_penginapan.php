@@ -4,11 +4,12 @@ class Model_penginapan extends CI_Model{
 
 private $_table = "penginapan";
     public $id_penginapan;
-    public $nama_penginapan;
-    public $id_jenis_penginapan;
-    public $harga;
     public $id_kota;
+    public $nama_penginapan;
+    public $jumlah_tamu;
+    public $harga;
     public $foto = "default.jpg";
+    // public $id_jenis_penginapan;
 
 
     public function rules()
@@ -35,9 +36,10 @@ private $_table = "penginapan";
     public function save()
     {
         $post = $this->input->post();
-        $this->nama_penginapan = $post["nama_penginapan"];
-        $this->id_jenis_penginapan = $post["id_jenis_penginapan"];
         $this->id_kota = $post["id_kota"];
+        $this->nama_penginapan = $post["nama_penginapan"];
+        // $this->id_jenis_penginapan = $post["id_jenis_penginapan"];
+        $this->jumlah_tamu = $post["jumlah_tamu"];
         $this->harga = $post["harga"];
         $this->foto = $this->_uploadImage();
 
@@ -50,11 +52,12 @@ private $_table = "penginapan";
         $post = $this->input->post();
         // var_dump($post);
         $this->id_penginapan = $post["id_penginapan"];
-        $this->nama_penginapan = $post["nama_penginapan"];
-        $this->id_jenis_penginapan = $post["id_jenis_penginapan"];
         $this->id_kota = $post["id_kota"];
+        $this->nama_penginapan = $post["nama_penginapan"];
+        // $this->id_jenis_penginapan = $post["id_jenis_penginapan"];
+        $this->jumlah_tamu = $post["jumlah_tamu"];
         $this->harga = $post["harga"];
-        // $this->foto = $post["foto"];
+        $this->foto = $post["foto"];
         
 
         
