@@ -35,7 +35,7 @@ class Admin extends CI_Controller
 	public function tambah_penginapan()
 	{
 		$data["kota"] = $this->Model_kota->getAll();
-		$data["jenis_penginapan"] = $this->Model_jenisPenginapan->getAll();
+		// $data["jenis_penginapan"] = $this->Model_jenisPenginapan->getAll();
 		$data["penginapan"] = $this->Model_penginapan->getAll();
 		$this->load->view('template_admin/header');
 		$this->load->view('template_admin/sidebar');
@@ -113,7 +113,7 @@ class Admin extends CI_Controller
         }
 
         $data["kota"] = $this->Model_kota->getAll();
-		$data["jenis_penginapan"] = $this->Model_jenisPenginapan->getAll();
+		// $data["jenis_penginapan"] = $this->Model_jenisPenginapan->getAll();
 		$data["penginapan"] = $this->model_penginapan->getAll();
 		$this->load->view('template_admin/header');
 		$this->load->view('template_admin/sidebar');
@@ -152,7 +152,7 @@ class Admin extends CI_Controller
 		
         if ($this->Model_penginapan->delete($id_penginapan)) {
 		$data["kota"] = $this->Model_kota->getAll();
-		$data["jenis_penginapan"] = $this->Model_jenisPenginapan->getAll();
+		// $data["jenis_penginapan"] = $this->Model_jenisPenginapan->getAll();
 		$data["penginapan"] = $this->model_penginapan->getAll();
 			$this->load->view('template_admin/header');
 			$this->load->view('template_admin/sidebar');
