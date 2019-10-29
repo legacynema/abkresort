@@ -112,9 +112,9 @@ class Admin extends CI_Controller
         if ($validation->run()) {
             $tambah->save();
 			$this->session->set_flashdata('success', 'Berhasil disimpan');
-			
+			redirect('Admin/tambah_penginapan');
 		}
-		$this->dataPenginapan();
+
 		
 		
         
@@ -150,12 +150,7 @@ class Admin extends CI_Controller
 
 		
         if ($this->Model_penginapan->delete($id_penginapan)) {
-		$data["kota"] = $this->Model_kota->getAll();
-		$data["penginapan"] = $this->Model_penginapan->getAll();
-			$this->load->view('template_admin/header');
-			$this->load->view('template_admin/sidebar');
-			$this->load->view('admin/tambahpenginapan', $data);
-			$this->load->view('template_admin/footer');
+			redirect('Admin/tambah_penginapan');
         }
 	}
 	
@@ -181,16 +176,9 @@ class Admin extends CI_Controller
 
         if ($validation->run()) {
             $tambah->save();
-            $this->session->set_flashdata('success', 'Berhasil disimpan');
+			$this->session->set_flashdata('success', 'Berhasil disimpan');
+			redirect('Admin/tambahtransport');
         }
-
-		$data["rute"] = $this->Model_rute->getAll();
-		$data["transport"] = $this->Model_transport->getAll();
-		$data["kota"] = $this->Model_kota->getAll();
-		$this->load->view('template_admin/header');
-		$this->load->view('template_admin/sidebar');
-		$this->load->view('admin/tambahtransport', $data);
-		$this->load->view('template_admin/footer');
     }
 
 	public function transportasiDelete($id_rute = null)
@@ -199,13 +187,7 @@ class Admin extends CI_Controller
 
 		
         if ($this->Model_rute->delete($id_rute)) {
-			$data["rute"] = $this->Model_rute->getAll();
-			$data["transport"] = $this->Model_transport->getAll();
-			$data["kota"] = $this->Model_kota->getAll();
-			$this->load->view('template_admin/header');
-			$this->load->view('template_admin/sidebar');
-			$this->load->view('admin/tambahtransport', $data);
-			$this->load->view('template_admin/footer');
+			redirect('Admin/tambahtransport');
         }
 	}
 
