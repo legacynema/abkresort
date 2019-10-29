@@ -1,18 +1,18 @@
 <?php defined('BASEPATH') or exit('No direct script access allowed');
-class Model_jenisTranspotasi extends CI_Model{
+class Model_transport extends CI_Model{
 
 
-private $_table = "jenis_transportasi";
-    public $id_trans;
-    public $nama;
+private $_table = "transport";
+    public $id_transport;
+    public $nama_transport;
 
 
     public function rules()
     {
         return [
             [
-                'field' => 'nama',
-                'label' => 'nama',
+                'field' => 'nama_transport',
+                'label' => 'nama_transport',
                 'rules' => 'required'
             ]
         ];
@@ -23,15 +23,15 @@ private $_table = "jenis_transportasi";
         return $this->db->get($this->_table)->result();
     }
 
-    public function getById($id_trans)
+    public function getById($id_transport)
     {
-        return $this->db->get_where($this->_table, ["id_trans" => $id_trans])->row();
+        return $this->db->get_where($this->_table, ["id_transport" => $id_transport])->row();
     }
 
     public function save()
     {
         $post = $this->input->post();
-        $this->nama = $post["nama"];
+        $this->nama_transport = $post["nama_transport"];
 
         $this->db->insert($this->_table, $this);
         var_dump($post);
@@ -41,23 +41,23 @@ private $_table = "jenis_transportasi";
     {
         $post = $this->input->post();
         // var_dump($post);
-        $this->id_trans = $post["id_trans"];
-        $this->nama = $post["nama"];
+        $this->id_transport = $post["id_transport"];
+        $this->nama_transport = $post["nama_transport"];
 
-        $this->db->update($this->_table, $this, array("id_trans" => $post["id_trans"]));
+        $this->db->update($this->_table, $this, array("id_transport" => $post["id_transport"]));
     }
 
-    public function delete($id_trans)
+    public function delete($id_transport)
     {
-        // $this->_deleteImage($id_trans);
-        return $this->db->delete($this->_table, array("id_trans" => $id_trans));
+        // $this->_deleteImage($id_transport);
+        return $this->db->delete($this->_table, array("id_transport" => $id_transport));
     }
 
     // private function _uploadImage()
     // {
     //     $config['upload_path']          = './foto/user';
     //     $config['allowed_types']        = 'gif|jpg|png';
-    //     $config['file_name']            = $this->nama;
+    //     $config['file_name']            = $this->nama_transport;
     //     $config['overwrite']            = true;
     //     $config['max_size']             = 1024; // 1MB
     //     // $config['max_width']            = 1024;
@@ -72,9 +72,9 @@ private $_table = "jenis_transportasi";
     //     return "default.jpg";
     // }
 
-    // private function _deleteImage($id_trans)
+    // private function _deleteImage($id_transport)
     // {
-    //     $img = $this->getById($id_trans);
+    //     $img = $this->getById($id_transport);
     //     if ($img->foto != "default.jpg") {
     //         $filename = explode(".", $img->foto)[0];
     //         return array_map('unlink', glob(FCPATH . "foto/user/$filename.*"));
