@@ -114,8 +114,10 @@ class Admin extends CI_Controller
         if ($validation->run()) {
             $tambah->save();
 			$this->session->set_flashdata('success', 'Berhasil disimpan');
-			redirect('Admin/tambah_penginapan');
+			
 		}
+		redirect('Admin/tambah_penginapan');
+		
 
 		
 		
