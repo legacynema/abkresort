@@ -53,9 +53,11 @@ class Admin extends CI_Controller
 	}
 	public function tambah_wisata()
 	{
+		$data["wisata"] = $this->Model_wisata->getAll();
+		$data["kota"] = $this->Model_kota->getAll();
 		$this->load->view('template_admin/header');
 		$this->load->view('template_admin/sidebar');
-		$this->load->view('admin/tambahwisata');
+		$this->load->view('admin/tambahwisata', $data);
 		$this->load->view('template_admin/footer');
 	}
 
@@ -177,7 +179,7 @@ class Admin extends CI_Controller
         if ($validation->run()) {
             $tambah->save();
 			$this->session->set_flashdata('success', 'Berhasil disimpan');
-			redirect('Admin/tambahtransport');
+			redirect('Admin/tambah_transport');
         }
     }
 
@@ -187,7 +189,43 @@ class Admin extends CI_Controller
 
 		
         if ($this->Model_rute->delete($id_rute)) {
-			redirect('Admin/tambahtransport');
+			redirect('Admin/tambah_transport');
+        }
+	}
+
+	//CRUD WISATA
+	public function dataWisata()
+    {
+		$data["rute"] = $this->Model_rute->getAll();
+		$data["transport"] = $this->Model_transport->getAll();
+		$data["kota"] = $this->Model_kota->getAll();
+		$this->load->view('template_admin/header');
+		$this->load->view('template_admin/sidebar');
+		$this->load->view('admin/tambahtransport', $data);
+		$this->load->view('template_admin/footer');
+        
+	}
+	
+	public function wisataAdd()
+    {
+        $tambah = $this->Model_wisata;
+        $validation = $this->form_validation;
+        $validation->set_rules($tambah->rules());
+
+        if ($validation->run()) {
+            $tambah->save();
+			$this->session->set_flashdata('success', 'Berhasil disimpan');
+			redirect('Admin/tambah_wisata');
+        }
+    }
+
+	public function wisataDelete($id_wisata = null)
+    {
+        if (!isset($id_wisata)) show_404();
+
+		
+        if ($this->Model_wisata->delete($id_wisata)) {
+			redirect('Admin/tambah_wisata');
         }
 	}
 
