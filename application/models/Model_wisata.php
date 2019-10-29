@@ -94,7 +94,7 @@ private $_table = "wisata";
         $img = $this->getById($id_wisata);
         if ($img->foto != "default.jpg") {
             $filename = explode(".", $img->foto)[0];
-            return array_map('unlink', glob(FCPATH . "foto/user/$filename.*"));
+            return array_map('unlink', glob(FCPATH . "foto/admin/wisata/$filename.*"));
         }
     }
 }
