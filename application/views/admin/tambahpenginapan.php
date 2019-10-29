@@ -7,28 +7,53 @@
                 <div class="box-header with-border">
                     <h3 class="box-title">Tambah Penginapan</h3>
                 </div>
+                <!-- FLASH DATA PEMBERITAHUAN -->
+                <?php if ($this->session->flashdata('success')): ?>
+                    <div class="alert alert-success" role="alert">
+                        <?php echo $this->session->flashdata('success'); ?>
+                    </div>
+                <?php endif; ?> 
+
                 <!-- /.box-header -->
                 <!-- form start -->
-                <form role="form">
+                <form action="<?php echo base_url(). 'Admin/penginapanAdd'; ?>" method="post" enctype="multipart/form-data">
                     <div class="box-body">
+
+
                         <div class="form-group">
-                            <label>Nama Kota</label>
-                            <select class="form-control">
-                                <option>-- Pilih Kota --</option>
-                                <option>option 2</option>
-                            </select>
+                            <label for="id_kota">Pilih Kota</label>
+                                <select class="form-control" name="id_kota">
+                                    <option value="" disabled selected>Pilih Kota</option>
+
+                                    <?php foreach($kota as $kot):?>
+                                                <option value="<?= $kot->id_kota?>"><?= $kot->nama_kota?></option>
+                                            <?php  endforeach;?>
+                                      
+                                </select>
                         </div>
                         <div class="form-group">
-                            <label for="exampleInputEmail1">Nama Hotel/Villa</label>
-                            <input type="email" class="form-control" id="exampleInputEmail1" placeholder="example : Hotel Batu Paradise">
+                            <label for="nama_penginapan">Nama Hotel/Villa</label>
+                            <input type="text" class="form-control" name="nama_penginapan" placeholder="example : Hotel Batu Paradise">
                         </div>
+
                         <div class="form-group">
-                            <label for="exampleInputEmail1">Harga /orang</label>
+                            <label for="jumlah_tamu">Jumlah Tamu</label>
+                            <input type="text" class="form-control" name="jumlah_tamu" placeholder="Berapa Orang">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="harga">Harga *per hari</label>
                             <div class="input-group">
                                 <span class="input-group-addon"><i class="fa fa-money"></i></span>
-                                <input type="text" class="form-control" placeholder="Rp.">
+                                <input type="text" name="harga" class="form-control" placeholder="Rp.">
                             </div>
                         </div>
+
+                        <div class="form-group">
+                            <label for="foto">Foto</label>
+                            <input type="file" class="form-control" name="foto">
+                        </div>
+                        
                     </div>
                     <!-- /.box-body -->
 
@@ -51,18 +76,52 @@
                     <table class="table table-hover">
                         <tr>
                             <th style="width: 10px">#</th>
+                            <th>ID </th>
                             <th>Kota</th>
-                            <th>Nama Hotel</th>
-                            <th>Harga /malam</th>
-                            <th>Action</th>
+                            <th>Nama Penginapan</th>
+                            <th>Jumlah Tamu</th>
+                            <th>Harga(Permalam)</th>
+                            <th>Foto</th>
+                            <th>Menu</th>
                         </tr>
-                        <tr>
-                            <td>1.</td>
-                            <td>Batu</td>
-                            <td>Batu Hotels Inn</td>
-                            <td>Rp. 50000</td>
-                            <td><span class="badge bg-blue"><i class="fa fa-pencil"></i> Edit</span> <span class="badge bg-red"><i class="fa fa-trash"></i> Hapus</span></td>
-                        </tr>
+                        <?php  $nomor =1; ?>
+						<?php
+
+                        $this->db->select('id_penginapan, nama_kota,nama_penginapan, jumlah_tamu, harga, foto');
+                        // SELECT 
+                                //   $this->db->join('kota', 'kota.id_kota = penginapan.id_jenis_penginapan');
+                        $query =  $this->db->join('kota', 'kota.id_kota = penginapan.id_kota')->get('penginapan');
+                        $nomor = 1;
+
+						foreach ($query->result_array() as $peng) :
+							?>
+							<tr>
+							<td><?php echo $nomor; ?></td>
+								<td>
+									<p><?= $peng['id_penginapan'] ?></p>
+								</td>
+								<td>
+									<p><?= $peng['nama_kota'] ?></p>
+								</td>
+								<td>
+									<p><?= $peng['nama_penginapan'] ?></p>
+								</td>
+								<td>
+									<p><?= $peng['jumlah_tamu'] ?></p>
+								</td>
+								<td>
+                                <p>Rp. <?= number_format($peng['harga']) ?></p>
+								</td>
+
+								<td>
+                                <img src="<?php echo base_url('foto/admin/penginapan/'.$peng['foto']) ?>" width="64" />
+								</td>
+                                <td>
+                                    <?php  echo anchor('Admin/penginapanDelete/'.$peng['id_penginapan'], '<button class="btn btn-danger margin" type="button"><span class="fa fa-trash"></span> </button>'); ?>
+                                </td>
+							</tr>
+							<?php $nomor++; ?>
+						<?php endforeach; ?>
                     </table>
                 </div>
             </div>
