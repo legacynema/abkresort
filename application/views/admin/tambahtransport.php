@@ -87,6 +87,7 @@
                             <th>Harga</th>
                             <th>Menu</th>
                         </tr>
+                        
                         <?php  $nomor =1; ?>
 						<?php
 
