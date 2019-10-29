@@ -36,6 +36,7 @@ private $_table = "penginapan";
     public function save()
     {
         $post = $this->input->post();
+        $this->id_penginapan = $post["id_penginapan"];
         $this->id_kota = $post["id_kota"];
         $this->nama_penginapan = $post["nama_penginapan"];
         // $this->id_jenis_penginapan = $post["id_jenis_penginapan"];
