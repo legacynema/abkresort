@@ -7,6 +7,12 @@
                 <div class="box-header with-border">
                     <h3 class="box-title">Tambah Wisata</h3>
                 </div>
+                <!-- FLASH DATA PEMBERITAHUAN -->
+                <?php if ($this->session->flashdata('success')): ?>
+                    <div class="alert alert-success" role="alert">
+                        <?php echo $this->session->flashdata('success'); ?>
+                    </div>
+                <?php endif; ?> 
                 <!-- /.box-header -->
                 <!-- form start -->
                 <form action="<?php echo base_url(). 'Admin/wisataAdd'; ?>" method="post" enctype="multipart/form-data">
