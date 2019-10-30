@@ -37,18 +37,6 @@
 			  </div>
 			  <div class="card-block indt-book-body">
 				<div class="input-group">
-				  <label class="custom-control custom-radio">
-					<input id="radio1" name="type-flight" checked="" autofocus="" type="radio" class="custom-control-input" value="O">
-					<span class="custom-control-indicator"></span>
-					<span class="custom-control-description">One Way</span>
-				  </label>
-				  <label class="custom-control custom-radio">
-					<input id="radio2" name="type-flight" type="radio" class="custom-control-input" value="R">
-					<span class="custom-control-indicator"></span>
-					<span class="custom-control-description">Round Trip</span>
-				  </label>
-				</div>
-				<div class="input-group">
 				  <span class="input-group-addon" id="basic-addon1"><i class="fas fa-helicopter"></i></span> 
 				  <input id="origin" name="origin" type="text" class="form-control ui-autocomplete-input" placeholder="From" aria-describedby="basic-addon1" autocomplete="off">
 				</div>
@@ -61,7 +49,7 @@
 				<div class="row">
 				  <div class="col-12" id="parent-first-flight">
 					<div class="form-group">
-					  <input type="date" class="form-control" id="datetimepicker1" name="first-flight-date" placeholder="Depart" aria-describedby="basic-addon1">
+					  <input type="text" onfocus="(this.type='date')" class="form-control" id="datetimepicker1" name="first-flight-date" placeholder="Depart" aria-describedby="basic-addon1">
 					</div>
 				  </div>
 				  <div class="col-6 col-md-6 p-l-small" id="parent-second-flight" style="display: none;">
