@@ -27,19 +27,16 @@
         <a href="<?= base_url('Input/flight') ?>" class="nav-link text-white">Penerbangan</a>
       </li>
       <li>
-        <a href="<?= base_url('Input/hotel') ?>" class="nav-link text-white">Hotel</a>
+        <a href="<?= base_url('Input/penginapan') ?>" class="nav-link text-white">Penginapan</a>
       </li>
       <li>
-        <a href="#" class="nav-link text-white">Penginapan</a>
+        <a href="<?= base_url('Input/travel') ?>" class="nav-link text-white">Tempat Wisata</a>
       </li>
       <li>
-        <a href="#" class="nav-link text-white">Tempat Wisata</a>
+        <a href="<?= base_url('Input/car') ?>" class="nav-link text-white">Mobil</a>
       </li>
       <li>
-        <a href="#" class="nav-link text-white">Mobil</a>
-      </li>
-      <li>
-        <a href="#" class="nav-link text-white">Kereta Api</a>
+        <a href="<?= base_url('Input/train') ?>" class="nav-link text-white">Kereta Api</a>
       </li>
     </ul>
     <ul class="navbar-nav flex-row ml-md-auto d-none d-md-flex">
