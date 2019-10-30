@@ -30,7 +30,7 @@ class Input extends CI_Controller {
 		$this->load->view('footer');
     }
 
-    public function hotel()
+    public function penginapan()
 	{	$this->load->view('navbar');
         $this->load->view('input/hotel');
 		$this->load->view('footer');
