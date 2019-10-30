@@ -13,7 +13,7 @@
   
   <nav class="navbar navbar-expand-lg navbar-light bg-info">
   <div class="container">
-  <a class="navbar-brand" href="#">Image</a>
+  <a class="navbar-brand" href="<?= base_url('Home/index') ?>">Image</a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
@@ -24,10 +24,10 @@
         <a class="nav-link text-white" href="#">Paket All In One</a>
       </li>
       <li>
-        <a href="#" class="nav-link text-white">Penerbangan</a>
+        <a href="<?= base_url('Input/flight') ?>" class="nav-link text-white">Penerbangan</a>
       </li>
       <li>
-        <a href="#" class="nav-link text-white">Hotel</a>
+        <a href="<?= base_url('Input/hotel') ?>" class="nav-link text-white">Hotel</a>
       </li>
       <li>
         <a href="#" class="nav-link text-white">Penginapan</a>
