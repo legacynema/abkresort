@@ -33,7 +33,7 @@
         <a href="<?= base_url('Input/travel') ?>" class="nav-link text-white">Tempat Wisata</a>
       </li>
       <li>
-        <a href="#" class="nav-link text-white">Mobil</a>
+        <a href="<?= base_url('Input/car') ?>" class="nav-link text-white">Mobil</a>
       </li>
       <li>
         <a href="#" class="nav-link text-white">Kereta Api</a>
