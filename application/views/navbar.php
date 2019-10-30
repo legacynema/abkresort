@@ -36,7 +36,7 @@
         <a href="<?= base_url('Input/car') ?>" class="nav-link text-white">Mobil</a>
       </li>
       <li>
-        <a href="#" class="nav-link text-white">Kereta Api</a>
+        <a href="<?= base_url('Input/train') ?>" class="nav-link text-white">Kereta Api</a>
       </li>
     </ul>
     <ul class="navbar-nav flex-row ml-md-auto d-none d-md-flex">
