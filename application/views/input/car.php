@@ -40,13 +40,20 @@
 			  <div class="card-block indt-book-body">
 				<div class="input-group">
 				  <span class="input-group-addon" id="basic-addon1"><i class="fas fa-helicopter"></i></span> 
-				  <input id="origin" name="origin" type="text" class="form-control ui-autocomplete-input" placeholder="Kota/Nama Hotel" aria-describedby="basic-addon1" autocomplete="off">
+				  <input id="origin" name="origin" type="text" class="form-control ui-autocomplete-input" placeholder="Pengambilan" aria-describedby="basic-addon1" autocomplete="off">
 				</div>
         <br>
 				<div class="row">
 				  <div class="col-12" id="parent-first-flight">
 					<div class="form-group">
-					  <input type="text" onfocus="(this.type='date')" class="form-control" id="datetimepicker1" name="first-flight-date" placeholder="Check-in" aria-describedby="basic-addon1">
+                      <input type="text" onfocus="(this.type='date')" class="form-control" id="datetimepicker1" name="first-flight-date" placeholder="Tanggal Pengambilan" aria-describedby="basic-addon1">
+                      <div class="input-group">
+                      <select id="timepick" class="form-control valid" aria-invalid="false"><option value="0">00:00</option><option value="19" selected="selected">00:30</option><option value="2">01:00</option><option value="3">01:30</option><option value="4">02:00</option><option value="5">02:30</option><option value="6">03:00</option>
+                      <option value="7">03:30</option><option value="8">04:30</option><option value="9">05:00</option><option value="10">05:30</option><option value="11">06:00</option><option value="12">06:30</option><option value="13">07:00</option><option value="14">07:30</option><option value="15">08:00</option><option value="16">08:30</option>
+                      <option value="17">09:00</option><option value="18">09:30</option><option value="19">10:00</option><option value="20">10:30</option><option value="21">11:00</option><option value="22">11:30</option><option value="23">11:30</option><option value="24">12:00</option><option value="25">12:30</option><option value="26">13:00</option><option value="27">13:30</option>
+                      <option value="28">14:00</option><option value="29">14:30</option><option value="30">15:00</option><option value="31">15:30</option><option value="32">16:00</option><option value="33">16:30</option><option value="34">17:00</option><option value="35">17:30</option><option value="36">18:00</option><option value="37">18:30</option><option value="38">19:00</option>
+                      <option value="39">19:30</option><option value="40">20:00</option><option value="41">20:30</option><option value="42">21:00</option><option value="43">21:30</option><option value="44">22:00</option><option value="45">22:30</option><option value="46">23:00</option><option value="47">23:30</option></select>
+					</div>
 					</div>
 				  </div>
 				</div>
@@ -54,24 +61,19 @@
 				<div class="row">
 				  <div class="col-12" id="parent-first-flight">
 					<div class="form-group">
-					  <input type="text" onfocus="(this.type='date')" class="form-control" id="datetimepicker1" name="first-flight-date" placeholder="Check-out" aria-describedby="basic-addon1">
+                      <input type="text" onfocus="(this.type='date')" class="form-control" id="datetimepicker1" name="first-flight-date" placeholder="Tanggal Pengembalian" aria-describedby="basic-addon1">
+                      <div class="input-group">
+                      <select id="timereturn" class="form-control valid" aria-invalid="false"><option value="0">00:00</option><option value="19" selected="selected">00:30</option><option value="2">01:00</option><option value="3">01:30</option><option value="4">02:00</option><option value="5">02:30</option><option value="6">03:00</option>
+                      <option value="7">03:30</option><option value="8">04:30</option><option value="9">05:00</option><option value="10">05:30</option><option value="11">06:00</option><option value="12">06:30</option><option value="13">07:00</option><option value="14">07:30</option><option value="15">08:00</option><option value="16">08:30</option>
+                      <option value="17">09:00</option><option value="18">09:30</option><option value="19">10:00</option><option value="20">10:30</option><option value="21">11:00</option><option value="22">11:30</option><option value="23">11:30</option><option value="24">12:00</option><option value="25">12:30</option><option value="26">13:00</option><option value="27">13:30</option>
+                      <option value="28">14:00</option><option value="29">14:30</option><option value="30">15:00</option><option value="31">15:30</option><option value="32">16:00</option><option value="33">16:30</option><option value="34">17:00</option><option value="35">17:30</option><option value="36">18:00</option><option value="37">18:30</option><option value="38">19:00</option>
+                      <option value="39">19:30</option><option value="40">20:00</option><option value="41">20:30</option><option value="42">21:00</option><option value="43">21:30</option><option value="44">22:00</option><option value="45">22:30</option><option value="46">23:00</option><option value="47">23:30</option></select>
+					</div>
 					</div>
 				  </div>
 				</div>
 
-				<div class="row">
-
-				  <div class="col-4 col-md-4 p-r-0">
-					<div class="input-group">
-					  <select id="paxAdult" class="form-control valid" aria-invalid="false"><option value="0">0 Adults</option><option value="1" selected="selected">1 Adults</option><option value="2">2 Adults</option><option value="3">3 Adults</option><option value="4">4 Adults</option><option value="5">5 Adults</option><option value="6">6 Adults</option><option value="7">7 Adults</option><option value="8">8 Adults</option><option value="9">9 Adults</option></select>
-					</div>
-				  </div>
-
-                  <div class="col-4 col-md-4 p-r-0 p-l-7">
-					<div class="input-group">
-					  <select id="paxChild" class="form-control" ><option value="0" selected="selected">0 Children</option><option value="1">1 Children</option><option value="2">2 Children</option><option value="3">3 Children</option><option value="4">4 Children</option><option value="5">5 Children</option><option value="6">6 Children</option><option value="7">7 Children</option><option value="8">8 Children</option></select>
-					</div>
-				  </div>
+				
 
 				</div>
 			  </div>
