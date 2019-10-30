@@ -30,7 +30,7 @@
         <a href="<?= base_url('Input/penginapan') ?>" class="nav-link text-white">Penginapan</a>
       </li>
       <li>
-        <a href="#" class="nav-link text-white">Tempat Wisata</a>
+        <a href="<?= base_url('Input/travel') ?>" class="nav-link text-white">Tempat Wisata</a>
       </li>
       <li>
         <a href="#" class="nav-link text-white">Mobil</a>

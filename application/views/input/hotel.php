@@ -76,7 +76,7 @@
 				</div>
 			  </div>
 			  <div class="card-footer text-muted" style="padding: 0;">
-				<button id="searchFlight" type="submit" class="btn btn-primary btn-book-flight">SEARCH HOTEL</button>
+				<button id="searchHotel" type="submit" class="btn btn-primary btn-book-flight">SEARCH HOTEL</button>
 			  </div>
 			</form>
         </div>
