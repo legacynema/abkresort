@@ -37,12 +37,12 @@
 			  </div>
 			  <div class="card-block indt-book-body">
 				<div class="input-group">
-				  <span class="input-group-addon" id="basic-addon1"><i class="fas fa-helicopter"></i></span> 
+				  <span class="input-group-addon" id="basic-addon1"><i class="fas fa-train"></i></span> 
 				  <input id="origin" name="origin" type="text" class="form-control ui-autocomplete-input" placeholder="From" aria-describedby="basic-addon1" autocomplete="off">
 				</div>
         <br>
 				<div class="input-group">
-				  <span class="input-group-addon" id="basic-addon1"><span class="lnr lnr-rocket"></span></span>
+				  <span class="input-group-addon" id="basic-addon1"><i class="fas fa-warehouse"></i></span>
 				  <input id="destination" name="destination" type="text" class="form-control ui-autocomplete-input" placeholder="To" aria-describedby="basic-addon1" autocomplete="off">
 				</div>
         <br>
