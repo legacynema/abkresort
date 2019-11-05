@@ -38,7 +38,7 @@
 
                         <div class="form-group">
                             <label for="jumlah_tamu">Jumlah Tamu</label>
-                            <input type="text" class="form-control" name="jumlah_tamu" placeholder="Berapa Orang">
+                            <input type="number" class="form-control" name="jumlah_tamu" placeholder="Berapa Orang">
                         </div>
 
                         <div class="form-group">
@@ -50,7 +50,7 @@
                         </div>
 
                         <div class="form-group">
-                            <label for="foto">Foto</label>
+                            <label for="foto">Foto *max size 1MB</label>
                             <input type="file" class="form-control" name="foto">
                         </div>
 
@@ -65,11 +65,11 @@
                                         alert("Data Penginapan Harus di Isi");
                                         return false;
                                     }
-                                    else if (kota == "") {
+                                    if (kota == "") {
                                         alert("Kota Harus di Isi");
                                         return false;
                                     }else if (namaPeng == ""){
-                                        alert("Nama Penginapan Harus di Isi");
+                                        alert("Nama Harus di Isi");
                                         return false;
                                     }else if (tamu == ""){
                                         alert("Jumlah Tamu Harus di Isi");

@@ -15,7 +15,7 @@
                 <?php endif; ?> 
                 <!-- /.box-header -->
                 <!-- form start -->
-                <form action="<?php echo base_url(). 'Admin/wisataAdd'; ?>" method="post" enctype="multipart/form-data">
+                <form action="<?php echo base_url(). 'Admin/wisataAdd'; ?>" name="form"  onsubmit="return validateForm()" method="post" enctype="multipart/form-data">
                 <div class="form-group">
                             <label for="id_kota">Pilih Kota</label>
                                 <select class="form-control" name="id_kota">
@@ -42,6 +42,30 @@
                             <label for="foto">Foto</label>
                             <input type="file" class="form-control" name="foto">
                         </div>
+
+                        <script>
+                                function validateForm() {
+                                var kota = document.forms["form"]["id_kota"].value;
+                                var nama = document.forms["form"]["nama_wisata"].value;
+                                var harga = document.forms["form"]["harga_tiket"].value;
+
+                                    if(nama == "" && kota == "" && harga == "" ){
+                                        alert("Data Wisata Harus di Isi");
+                                        return false;
+                                    }
+                                    if (nama == "") {
+                                        alert("Nama wisata di Isi");
+                                        return false;
+                                    }else if (kota == ""){
+                                        alert("Kota harus di Isi");
+                                        return false;
+                                    }else if (harga == ""){
+                                        alert("Harga harus di Isi");
+                                        return false;
+                                    }
+                                }
+                        </script>
+
                     
                     <!-- /.box-body -->
 
