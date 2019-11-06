@@ -253,13 +253,13 @@ class Admin extends CI_Controller
         
     }
 
-	public function transaksiDelete($id_wisata = null)
+	public function transaksiDelete($id_penginapan = null)
     {
-        if (!isset($id_wisata)) show_404();
+        if (!isset($id_penginapan)) show_404();
 
 		
-        if ($this->Model_wisata->delete($id_wisata)) {
-			redirect('Admin/tambah_wisata');
+        if ($this->Model_transaksi->delete($id_penginapan)) {
+			redirect('Admin/transaksi');
         }
 	}
 
