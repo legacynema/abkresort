@@ -63,20 +63,20 @@
 
 				  <div class="col-4 col-md-4 p-r-0">
 					<div class="input-group">
-					  <select id="paxAdult" class="form-control valid" aria-invalid="false"><option value="0">0 Adults</option><option value="1" selected="selected">1 Adults</option><option value="2">2 Adults</option><option value="3">3 Adults</option><option value="4">4 Adults</option><option value="5">5 Adults</option><option value="6">6 Adults</option><option value="7">7 Adults</option><option value="8">8 Adults</option><option value="9">9 Adults</option></select>
+					  <select id="paxAdult" class="form-control valid" aria-invalid="false"><option value="0">0 Dewasa</option><option value="1" selected="selected">1 Dewasa</option><option value="2">2 Dewasa</option><option value="3">3 Dewasa</option><option value="4">4 Dewasa</option><option value="5">5 Dewasa</option><option value="6">6 Dewasa</option><option value="7">7 Dewasa</option><option value="8">8 Dewasa</option><option value="9">9 Dewasa</option></select>
 					</div>
 				  </div>
 
                   <div class="col-4 col-md-4 p-r-0 p-l-7">
 					<div class="input-group">
-					  <select id="paxChild" class="form-control" ><option value="0" selected="selected">0 Children</option><option value="1">1 Children</option><option value="2">2 Children</option><option value="3">3 Children</option><option value="4">4 Children</option><option value="5">5 Children</option><option value="6">6 Children</option><option value="7">7 Children</option><option value="8">8 Children</option></select>
+					  <select id="paxChild" class="form-control" ><option value="0" selected="selected">0 Anak-Anak</option><option value="1">1 Anak-Anak</option><option value="2">2 Anak-Anak</option><option value="3">3 Anak-Anak</option><option value="4">4 Anak-Anak</option><option value="5">5 Anak-Anak</option><option value="6">6 Anak-Anak</option><option value="7">7 Anak-Anak</option><option value="8">8 Anak-Anak</option></select>
 					</div>
 				  </div>
 
 				</div>
 			  </div>
 			  <div class="card-footer text-muted" style="padding: 0;">
-				<button id="searchHotel" type="submit" class="btn btn-primary btn-book-flight">SEARCH HOTEL</button>
+				<button id="searchHotel" type="submit" class="btn btn-primary btn-book-flight">CARI HOTEL</button>
 			  </div>
 			</form>
         </div>
