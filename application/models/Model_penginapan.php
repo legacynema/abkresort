@@ -36,7 +36,7 @@ private $_table = "penginapan";
     public function save()
     {
         $post = $this->input->post();
-        $this->id_penginapan = $post["id_penginapan"];
+        // $this->id_penginapan = $post["id_penginapan"];
         $this->id_kota = $post["id_kota"];
         $this->nama_penginapan = $post["nama_penginapan"];
         // $this->id_jenis_penginapan = $post["id_jenis_penginapan"];
@@ -80,8 +80,9 @@ private $_table = "penginapan";
 
     private function _uploadImage()
     {
+        
         $config['upload_path']          = './foto/admin/penginapan';
-        $config['allowed_types']        = 'gif|jpg|png';
+        $config['allowed_types']        = 'jpg|png';
         $config['file_name']            = $this->nama_penginapan;
         $config['overwrite']            = true;
         $config['max_size']             = 1024; // 1MB
@@ -91,7 +92,7 @@ private $_table = "penginapan";
         $this->load->library('upload', $config);
 
         if ($this->upload->do_upload('foto')) {
-            return $this->upload->data("file_name");
+            return $this->upload->data("file_name".date());
         }
 
         return "default.jpg";
