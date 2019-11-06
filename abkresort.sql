@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Oct 28, 2019 at 05:38 PM
+-- Generation Time: Nov 06, 2019 at 02:34 PM
 -- Server version: 10.1.38-MariaDB
 -- PHP Version: 7.3.2
 
@@ -75,8 +75,7 @@ CREATE TABLE `penginapan` (
 --
 
 INSERT INTO `penginapan` (`id_penginapan`, `id_kota`, `nama_penginapan`, `jumlah_tamu`, `harga`, `foto`) VALUES
-(1, 1, 'Swiss Bellin Hotel', 0, 1000000, 'default.jpg'),
-(12, 1, 'asas', 3, 2, 'default.jpg');
+(1, 1, 'Swiss Bellin Hotel', 0, 1000000, 'default.jpg');
 
 -- --------------------------------------------------------
 
@@ -97,7 +96,9 @@ CREATE TABLE `rute` (
 --
 
 INSERT INTO `rute` (`id_rute`, `id_transport`, `rute_asal`, `rute_tujuan`, `harga`) VALUES
-(2, 1, 1, 2, 1000000);
+(3, 3, 1, 2, 1000000),
+(5, 4, 1, 2, 1000000),
+(6, 1, 2, 1, 2147483647);
 
 -- --------------------------------------------------------
 
@@ -113,9 +114,15 @@ CREATE TABLE `transaksi` (
   `hari` int(11) DEFAULT NULL,
   `id_rute` int(11) DEFAULT NULL,
   `id_wisata` int(11) DEFAULT NULL,
-  `harga` int(11) NOT NULL,
-  `id_admin` int(11) NOT NULL
+  `total_harga` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `transaksi`
+--
+
+INSERT INTO `transaksi` (`id_transaksi`, `id_user`, `id_paket`, `id_penginapan`, `hari`, `id_rute`, `id_wisata`, `total_harga`) VALUES
+(4, 3, NULL, 1, 1, 3, 1, 2500000);
 
 -- --------------------------------------------------------
 
@@ -147,36 +154,21 @@ INSERT INTO `transport` (`id_transport`, `nama_transport`) VALUES
 
 CREATE TABLE `user` (
   `id_user` int(11) NOT NULL,
-  `id_role` int(11) NOT NULL,
-  `username` varchar(10) NOT NULL,
-  `nama_lengkap` varchar(70) NOT NULL,
-  `password` varchar(10) NOT NULL,
-  `email` varchar(25) NOT NULL,
+  `nama_lengkap` varchar(50) NOT NULL,
+  `password` varchar(50) NOT NULL,
+  `email` varchar(50) NOT NULL,
   `jenis_kelamin` enum('Laki-laki','Perempuan') NOT NULL,
-  `nomor_hp` varchar(13) NOT NULL,
-  `foto` blob NOT NULL,
-  `status` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
--- --------------------------------------------------------
-
---
--- Table structure for table `user_role`
---
-
-CREATE TABLE `user_role` (
-  `id_role` int(11) NOT NULL,
-  `name_role` varchar(10) NOT NULL
+  `nomor_hp` varchar(50) NOT NULL,
+  `foto` varchar(255) NOT NULL DEFAULT 'default.jpg'
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `user_role`
+-- Dumping data for table `user`
 --
 
-INSERT INTO `user_role` (`id_role`, `name_role`) VALUES
-(1, 'superadmin'),
-(2, 'admin'),
-(3, 'user');
+INSERT INTO `user` (`id_user`, `nama_lengkap`, `password`, `email`, `jenis_kelamin`, `nomor_hp`, `foto`) VALUES
+(3, 'Khosy Akmal Romadlan', 'khosy', 'khosy@gmail.com', 'Laki-laki', '085287736229', 'default.jpg'),
+(4, 'Khosy Akmal Romadlan', 'khosy', 'khosy@gmail.com', 'Laki-laki', '085287736229', 'default.jpg');
 
 -- --------------------------------------------------------
 
@@ -197,7 +189,7 @@ CREATE TABLE `wisata` (
 --
 
 INSERT INTO `wisata` (`id_wisata`, `id_kota`, `nama_wisata`, `harga_tiket`, `foto`) VALUES
-(1, 1, 'Kebun Teh Wonosari', 10000, '');
+(1, 1, 'Kebun Teh Wonosari', 10000, 'default.jpg');
 
 --
 -- Indexes for dumped tables
@@ -238,12 +230,12 @@ ALTER TABLE `rute`
 -- Indexes for table `transaksi`
 --
 ALTER TABLE `transaksi`
-  ADD KEY `FK_TRANS_ADMIN` (`id_admin`),
+  ADD PRIMARY KEY (`id_transaksi`),
   ADD KEY `FK_TRANS_PAKET` (`id_paket`),
   ADD KEY `FK_TRANS_PENGINAPAN` (`id_penginapan`),
   ADD KEY `FK_TRANS_RUTE` (`id_rute`),
-  ADD KEY `FK_TRANS_USER` (`id_user`),
-  ADD KEY `FK_TRANS_WISATA` (`id_wisata`);
+  ADD KEY `FK_TRANS_WISATA` (`id_wisata`),
+  ADD KEY `FK_TRANS_USER` (`id_user`);
 
 --
 -- Indexes for table `transport`
@@ -256,12 +248,6 @@ ALTER TABLE `transport`
 --
 ALTER TABLE `user`
   ADD PRIMARY KEY (`id_user`);
-
---
--- Indexes for table `user_role`
---
-ALTER TABLE `user_role`
-  ADD PRIMARY KEY (`id_role`);
 
 --
 -- Indexes for table `wisata`
@@ -290,13 +276,19 @@ ALTER TABLE `paket`
 -- AUTO_INCREMENT for table `penginapan`
 --
 ALTER TABLE `penginapan`
-  MODIFY `id_penginapan` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+  MODIFY `id_penginapan` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `rute`
 --
 ALTER TABLE `rute`
-  MODIFY `id_rute` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id_rute` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+
+--
+-- AUTO_INCREMENT for table `transaksi`
+--
+ALTER TABLE `transaksi`
+  MODIFY `id_transaksi` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `transport`
@@ -308,13 +300,7 @@ ALTER TABLE `transport`
 -- AUTO_INCREMENT for table `user`
 --
 ALTER TABLE `user`
-  MODIFY `id_user` int(11) NOT NULL AUTO_INCREMENT;
-
---
--- AUTO_INCREMENT for table `user_role`
---
-ALTER TABLE `user_role`
-  MODIFY `id_role` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id_user` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `wisata`
@@ -352,11 +338,10 @@ ALTER TABLE `rute`
 -- Constraints for table `transaksi`
 --
 ALTER TABLE `transaksi`
-  ADD CONSTRAINT `FK_TRANS_ADMIN` FOREIGN KEY (`id_admin`) REFERENCES `user_role` (`id_role`) ON DELETE CASCADE ON UPDATE CASCADE,
   ADD CONSTRAINT `FK_TRANS_PAKET` FOREIGN KEY (`id_paket`) REFERENCES `paket` (`id_paket`) ON DELETE CASCADE ON UPDATE CASCADE,
   ADD CONSTRAINT `FK_TRANS_PENGINAPAN` FOREIGN KEY (`id_penginapan`) REFERENCES `penginapan` (`id_penginapan`) ON DELETE CASCADE ON UPDATE CASCADE,
   ADD CONSTRAINT `FK_TRANS_RUTE` FOREIGN KEY (`id_rute`) REFERENCES `rute` (`id_rute`) ON DELETE CASCADE ON UPDATE CASCADE,
-  ADD CONSTRAINT `FK_TRANS_USER` FOREIGN KEY (`id_user`) REFERENCES `user` (`id_user`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `FK_TRANS_USER` FOREIGN KEY (`id_user`) REFERENCES `user` (`id_user`),
   ADD CONSTRAINT `FK_TRANS_WISATA` FOREIGN KEY (`id_wisata`) REFERENCES `wisata` (`id_wisata`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
