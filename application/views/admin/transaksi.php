@@ -20,7 +20,7 @@
                   <th>TRANSPORTASI</th>
                   <th>WISATA</th>
                   <th>HARGA</th>
-                  <th>ADMIN</th>
+                  <th>MENU</th>
                 </tr>
                 </thead>
 
@@ -29,21 +29,11 @@
 						<?php
 
                         $this->db->select
-                        (
-                          'id_transaksi,
-                           nama_lengkap,
-                           id_paket,
-                           nama_penginapan,
-                           hari,
-                           id_rute,
-                           nama_wisata,
-                           harga,
-                           id_admin'
-                        );
+                        ('id_transaksi, nama_lengkap, id_paket, nama_penginapan, hari, id_rute, total_harga, nama_wisata');
                         // SELECT 
-                                  $this->db->join('user', 'user.nama_lengkap = transaksi.id_user');
-                                  $this->db->join('penginapan', 'penginapan.nama_penginapan = transaksi.id_penginapan');
-                        $query =  $this->db->join('wisata', 'wisata.nama_wisata = transaksi.id_wisata')->get('transaksi');
+                                  $this->db->join('user', 'user.id_user = transaksi.id_user');
+                                  $this->db->join('penginapan', 'penginapan.id_penginapan = transaksi.id_penginapan');
+                        $query =  $this->db->join('wisata', 'wisata.id_wisata = transaksi.id_wisata')->get('transaksi');
                         $nomor = 1;
 
 						foreach ($query->result_array() as $trans) :
@@ -70,18 +60,17 @@
                 <td>
 									<p><?= $trans['nama_wisata'] ?></p>
 								</td>
-                <td>
-									<p><?= $trans['id_admin'] ?></p>
-								</td>
 								<td>
-                  <p>Rp. <?= number_format($trans['harga']) ?></p>
+                  <p>Rp. <?= number_format($trans['total_harga']) ?></p>
 								</td>
                                 <td>
-                                    <?php  echo anchor('Admin/transaksiDelete/'.$trans['id_penginapan'], '<button class="btn btn-danger margin" type="button"><span class="fa fa-trash"></span> </button>'); ?>
+                                    <?php  echo anchor('Admin/transaksiDelete/'.$trans['id_transaksi'], '<button class="btn btn-danger margin" type="button"><span class="fa fa-trash"></span> </button>'); ?>
                                 </td>
 							</tr>
 							<?php $nomor++; ?>
 						<?php endforeach; ?>
+
+
                 </tbody>
                 
                 <tfoot>
@@ -94,7 +83,7 @@
                   <th>TRANSPORTASI</th>
                   <th>WISATA</th>
                   <th>HARGA</th>
-                  <th>ADMIN</th>
+                  <th>MENU</th>
                 </tr>
                 </tfoot>
               </table>
