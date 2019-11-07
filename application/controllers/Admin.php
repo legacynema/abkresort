@@ -18,6 +18,10 @@ class Admin extends CI_Controller
 		$this->load->model("Model_kota");
 		$this->load->model("Model_wisata");
 
+		$this->load->model("Model_transaksi");
+		$this->load->model("Model_paket");
+
+
 		$this->load->model("Model_user");
 		$this->load->model("Model_admin");
 		$this->load->model("Model_super_admin");
@@ -70,6 +74,11 @@ class Admin extends CI_Controller
 	// VIEWS TRANSAKSI
 	public function transaksi()
 	{
+		// $data["user"] = $this->Model_user->getAll();
+		// $data["paket"] = $this->Model_paket->getAll();
+		// $data["penginapan"] = $this->Model_penginapan->getAll();
+		// $data["rute"] = $this->Model_rute->getAll();
+		// $data["wisata"] = $this->Model_wisata->getAll();
 		$this->load->view('template_admin/header');
 		$this->load->view('template_admin/sidebar');
 		$this->load->view('admin/transaksi');
@@ -108,14 +117,10 @@ class Admin extends CI_Controller
     public function penginapanAdd()
     {
         $tambah = $this->Model_penginapan;
-        $validation = $this->form_validation;
-        $validation->set_rules($tambah->rules());
-
-        if ($validation->run()) {
             $tambah->save();
 			$this->session->set_flashdata('success', 'Berhasil disimpan');
 			redirect('Admin/tambah_penginapan');
-		}
+		
 
 		
 		
@@ -173,14 +178,11 @@ class Admin extends CI_Controller
 	public function transportasiAdd()
     {
         $tambah = $this->Model_rute;
-        $validation = $this->form_validation;
-        $validation->set_rules($tambah->rules());
-
-        if ($validation->run()) {
+        
             $tambah->save();
 			$this->session->set_flashdata('success', 'Berhasil disimpan');
 			redirect('Admin/tambah_transport');
-        }
+        
     }
 
 	public function transportasiDelete($id_rute = null)
@@ -208,15 +210,12 @@ class Admin extends CI_Controller
 	
 	public function wisataAdd()
     {
-        $tambah = $this->Model_wisata;
-        $validation = $this->form_validation;
-        $validation->set_rules($tambah->rules());
-
-        if ($validation->run()) {
+		$tambah = $this->Model_wisata;
+		
             $tambah->save();
 			$this->session->set_flashdata('success', 'Berhasil disimpan');
 			redirect('Admin/tambah_wisata');
-        }
+        
     }
 
 	public function wisataDelete($id_wisata = null)
@@ -228,5 +227,41 @@ class Admin extends CI_Controller
 			redirect('Admin/tambah_wisata');
         }
 	}
+
+	//CRUD TRANSAKSI
+	public function dataTransaksi()
+    {
+		$data["user"] = $this->Model_user->getAll();
+		$data["paket"] = $this->Model_paket->getAll();
+		$data["penginapan"] = $this->Model_penginapan->getAll();
+		$data["rute"] = $this->Model_rute->getAll();
+		$data["wisata"] = $this->Model_wisata->getAll();
+		$this->load->view('template_admin/header');
+		$this->load->view('template_admin/sidebar');
+		$this->load->view('admin/transaksi');
+		$this->load->view('template_admin/footer');
+        
+	}
+	
+	public function transaksiAdd()
+    {
+		$tambah = $this->Model_transaksi;
+		
+            $tambah->save();
+			$this->session->set_flashdata('success', 'Berhasil disimpan');
+			redirect('Admin/transaksi');
+        
+    }
+
+	public function transaksiDelete($id_penginapan = null)
+    {
+        if (!isset($id_penginapan)) show_404();
+
+		
+        if ($this->Model_transaksi->delete($id_penginapan)) {
+			redirect('Admin/transaksi');
+        }
+	}
+
 
 }

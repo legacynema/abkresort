@@ -6,6 +6,13 @@
     <meta name="generator" content="Jekyll v3.8.5">
     <title>Login</title>
 
+     <!-- FLASH DATA PEMBERITAHUAN -->
+ <?php if ($this->session->flashdata('success')): ?>
+                    <div class="alert alert-success" role="alert">
+                        <?php echo $this->session->flashdata('success'); ?>
+                    </div>
+<?php endif; ?>
+
     <link rel="canonical" href="https://getbootstrap.com/docs/4.3/examples/floating-labels/">
     <link href="floating-labels.css" rel="stylesheet">
   </head>
