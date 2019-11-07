@@ -20,6 +20,13 @@ class Superadmin extends CI_Controller{
 		$this->load->view('superadmin/tambahadmin');
 		$this->load->view('template_admin/footer');
     }
+
+    public function tambah_user(){
+        $this->load->view('template_admin/header');
+		$this->load->view('superadmin/sidebar');
+		$this->load->view('superadmin/tambahuser');
+		$this->load->view('template_admin/footer');
+    }
     public function tambah_wisata(){
         $this->load->view('template_admin/header');
 		$this->load->view('superadmin/sidebar');
