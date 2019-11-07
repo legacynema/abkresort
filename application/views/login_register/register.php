@@ -24,22 +24,14 @@
             
             <label for="password">Password:</label>
             <input type="password" class="form-control" name="password" placeholder="Masukkan Password">
-            
+            <br>
             <div class="form-group">
                         <label for="jenis_kelamin">Jenis Kelamin : </label>
                         <input type="radio" name="jenis_kelamin" value="Laki-laki">Laki-Laki
                         <input type="radio" name="jenis_kelamin" value="Perempuan">Perempuann
             </div>
 
-            <!-- <label for="foto">Foto Profil:</label>
-            <div class="custom-file">
-            <input type="file" class="custom-file-input" nama="foto"  aria-describedby="inputGroupFileAddon01">
-            <label class="custom-file-label" for="inputGroupFile01">Choose file</label>
-            </div> -->
 
-                        
-
-            <br><br>
             <button type="submit" class="btn btn-block btn-info">Daftar</button>
         </div>
     </div>
