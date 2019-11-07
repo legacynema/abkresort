@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="<?= base_url('node_modules/') ?>bootstrap/dist/css/bootstrap.css">
-    <title>Hotels</title>
+    <title>All In One</title>
 </head>
 <body>
 
@@ -29,30 +29,47 @@
     <!-- End of Slideshow -->
 
     
-        <div class="form-signin">
+        <div class="container">
+        <br>
             <h1 class="text-center">Choose your Want</h1>
-            <label for="nama">Nama:</label>
-            <input type="text" class="form-control" placeholder="Masukkan Nama Depan">
-            <label for="email">Email:</label>
-            <input type="text" class="form-control" placeholder="Masukkan Email Anda">
-            <label for="nohp">No HP:</label>
-            <input type="text" class="form-control" placeholder="Masukkan No HP Anda">
-            <label for="password">Password:</label>
-            <input type="password" class="form-control" placeholder="Masukkan Password">
-            <label for="gender">Jenis Kelamin:</label>
-            <select class="custom-select" id="inputGroupSelect04" aria-label="Example select with button addon">
-                <option value="2">Laki-Laki</option>
-                <option value="3">Perempuan</option>
-            </select>
-            <label for="foto">Foto Profil:</label>
-            <div class="custom-file">
-            <input type="file" class="custom-file-input" id="inputGroupFile01" aria-describedby="inputGroupFileAddon01">
-            <label class="custom-file-label" for="inputGroupFile01">Choose file</label>
-            </div>
-
             <br><br>
-            <button class="btn btn-block btn-info">Daftar</button>
+            <h3>Choose Detail</h3>
+            <div class="row">
+                <div class="col-md-5">
+                <div class="custom-control custom-checkbox">
+                <input type="checkbox" class="custom-control-input" id="train">
+                <label class="custom-control-label" for="train">Kereta Api</label>
+            </div>
+            <div class="custom-control custom-checkbox">
+                <input type="checkbox" class="custom-control-input" id="plane">
+                <label class="custom-control-label" for="plane">Pesawat</label>
+            </div>
+            <div class="custom-control custom-checkbox">
+                <input type="checkbox" class="custom-control-input" id="car">
+                <label class="custom-control-label" for="car">Mobil</label>
+            </div>
+                </div>
+
+                <div class="col-md-5">
+                <div class="custom-control custom-checkbox">
+                <input type="checkbox" class="custom-control-input" id="hotel">
+                <label class="custom-control-label" for="hotel">Hotel</label>
+            </div>
+            <div class="custom-control custom-checkbox">
+                <input type="checkbox" class="custom-control-input" id="wisata">
+                <label class="custom-control-label" for="wisata">Tujuan Wisata</label>
+            </div>
+            <div class="custom-control custom-checkbox">
+                <input type="checkbox" class="custom-control-input" id="other">
+                <label class="custom-control-label" for="other">Lain-Lain</label>
+            </div>
+                </div>
+            </div>
+            
+            
+            
         </div>
+
     
 
 </body>
