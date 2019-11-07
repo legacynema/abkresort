@@ -18,6 +18,18 @@ class Home extends CI_Controller {
 	 * map to /index.php/welcome/<method_name>
 	 * @see https://codeigniter.com/user_guide/general/urls.html
 	 */
+
+	 function __construct()
+    {
+        parent::__construct();
+        $this->load->helper(array('form', 'url'));
+        $this->load->library('form_validation');
+
+        //CRUD SISWA
+        $this->load->model("Model_user");
+	}
+	
+
 	public function index()
 	{	$this->load->view('navbar');
         $this->load->view('home_template/home_view');
@@ -33,6 +45,7 @@ class Home extends CI_Controller {
 
 	public function register()
 	{
+
 		$this->load->view('navbar');
 		$this->load->view('login_register/register');
 		$this->load->view('footer');
@@ -50,6 +63,18 @@ class Home extends CI_Controller {
 		$this->load->view('user/profil_user');
 		$this->load->view('footer');
 	}
+
+	// ==============================================
+	// ======== BACK END ============================
+	// ==============================================
+
+	public function userAdd()
+    {
+        $tambah = $this->Model_user;
+            $tambah->save();
+			$this->session->set_flashdata('success', 'Berhasil Daftar, Silahkan Login');
+        	redirect('Home/login');
+    }
 	
 	
 }

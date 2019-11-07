@@ -133,7 +133,11 @@
           <li><a href="<?= base_url('Superadmin') ?>"><i class="fa fa-dashboard"></i> <span>Dashboard</span></a></li>
 
           <!-- TAMBAH DATA -->
-          <?php if (($this->uri->segment(2) == "tambah_admin") ||($this->uri->segment(2) == "tambah_penginapan") || ($this->uri->segment(2) == "tambah_transportasi") || ($this->uri->segment(2) == "tambah_wisata")) : ?>
+          <?php if (($this->uri->segment(2) == "tambah_admin") ||
+                    ($this->uri->segment(2) == "tambah_user") ||
+                    ($this->uri->segment(2) == "tambah_penginapan") ||
+                    ($this->uri->segment(2) == "tambah_transportasi") ||
+                    ($this->uri->segment(2) == "tambah_wisata")) : ?>
             <li class="active treeview menu-open">
               <a href="#">
                 <i class="fa fa-user-plus"></i>
@@ -145,24 +149,35 @@
               <ul class="treeview-menu">
                 <?php if ($this->uri->segment(2) == "tambah_admin") : ?>
                   <li class="active"><a href="<?= base_url('Superadmin/tambah_admin') ?>"><i class="fa fa-circle-o"></i> Data Admin</a></li>
+                  <li ><a href="<?= base_url('Superadmin/tambah_user') ?>"><i class="fa fa-circle-o"></i> Data User</a></li>
+                  <li ><a href="<?= base_url('Admin/tambah_penginapan') ?>"><i class="fa fa-circle-o"></i> Data Penginapan</a></li>
+                  <li ><a href="<?= base_url('Superadmin/tambah_transportasi') ?>"><i class="fa fa-circle-o"></i> Data Transport</a></li>
+                  <li ><a href="<?= base_url('Superadmin/tambah_wisata') ?>"><i class="fa fa-circle-o"></i> Data Wisata</a></li>
+
+                  <?php elseif ($this->uri->segment(2) == "tambah_user") : ?>
+                  <li><a href="<?= base_url('Superadmin/tambah_admin') ?>"><i class="fa fa-circle-o"></i> Data Admin</a></li>
+                  <li class="active"><a href="<?= base_url('Superadmin/tambah_user') ?>"><i class="fa fa-circle-o"></i> Data User</a></li>
                   <li><a href="<?= base_url('Admin/tambah_penginapan') ?>"><i class="fa fa-circle-o"></i> Data Penginapan</a></li>
                   <li><a href="<?= base_url('Superadmin/tambah_transportasi') ?>"><i class="fa fa-circle-o"></i> Data Transport</a></li>
                   <li><a href="<?= base_url('Superadmin/tambah_wisata') ?>"><i class="fa fa-circle-o"></i> Data Wisata</a></li>
 
                 <?php elseif ($this->uri->segment(2) == "tambah_penginapan") : ?>
                   <li><a href="<?= base_url('Superadmin/tambah_admin') ?>"><i class="fa fa-circle-o"></i> Data Admin</a></li>
+                  <li><a href="<?= base_url('Superadmin/tambah_user') ?>"><i class="fa fa-circle-o"></i> Data User</a></li>
                   <li class="active"><a href="<?= base_url('Admin/tambah_penginapan') ?>"><i class="fa fa-circle-o"></i> Data Penginapan</a></li>
                   <li><a href="<?= base_url('Superadmin/tambah_transportasi') ?>"><i class="fa fa-circle-o"></i> Data Transport</a></li>
                   <li><a href="<?= base_url('Superadmin/tambah_wisata') ?>"><i class="fa fa-circle-o"></i> Data Wisata</a></li>
 
-                <?php elseif ($this->uri->segment(2) == "tambah_transport") : ?>
+                <?php elseif ($this->uri->segment(2) == "tambah_transportasi") : ?>
                   <li><a href="<?= base_url('Superadmin/tambah_admin') ?>"><i class="fa fa-circle-o"></i> Data Admin</a></li>
+                  <li><a href="<?= base_url('Superadmin/tambah_user') ?>"><i class="fa fa-circle-o"></i> Data User</a></li>
                   <li><a href="<?= base_url('Admin/tambah_penginapan') ?>"><i class="fa fa-circle-o"></i> Data Penginapan</a></li>
                   <li class="active"><a href="<?= base_url('Superadmin/tambah_transportasi') ?>"><i class="fa fa-circle-o"></i> Data Transport</a></li>
                   <li><a href="<?= base_url('Superadmin/tambah_wisata') ?>"><i class="fa fa-circle-o"></i> Data Wisata</a></li>
 
                 <?php elseif ($this->uri->segment(2) == "tambah_wisata") : ?>
                   <li><a href="<?= base_url('Superadmin/tambah_admin') ?>"><i class="fa fa-circle-o"></i> Data Admin</a></li>
+                  <li><a href="<?= base_url('Superadmin/tambah_user') ?>"><i class="fa fa-circle-o"></i> Data User</a></li>
                   <li><a href="<?= base_url('Admin/tambah_penginapan') ?>"><i class="fa fa-circle-o"></i> Data Penginapan</a></li>
                   <li><a href="<?= base_url('Superadmin/tambah_transportasi') ?>"><i class="fa fa-circle-o"></i> Data Transport</a></li>
                   <li class="active"><a href="<?= base_url('Superadmin/tambah_wisata') ?>"><i class="fa fa-circle-o"></i> Data Wisata</a></li>
@@ -180,7 +195,8 @@
                 </span>
               </a>
               <ul class="treeview-menu">
-                <li><a href="<?= base_url('Superadmin/tambah_admin') ?>"><i class="fa fa-circle-o"></i> Data Admin</a></li>  
+                <li><a href="<?= base_url('Superadmin/tambah_admin') ?>"><i class="fa fa-circle-o"></i> Data Admin</a></li>
+                <li ><a href="<?= base_url('Superadmin/tambah_user') ?>"><i class="fa fa-circle-o"></i> Data User</a></li> 
                 <li><a href="<?= base_url('Admin/tambah_penginapan') ?>"><i class="fa fa-circle-o"></i> Data Penginapan</a></li>
                 <li><a href="<?= base_url('Superadmin/tambah_transportasi') ?>"><i class="fa fa-circle-o"></i> Data Transport</a></li>
                 <li><a href="<?= base_url('Superadmin/tambah_wisata') ?>"><i class="fa fa-circle-o"></i> Data Wisata</a></li>
