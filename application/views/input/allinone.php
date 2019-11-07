@@ -36,33 +36,33 @@
             <h3>Choose Detail</h3>
             <div class="row">
                 <div class="col-md-5">
-                <div class="custom-control custom-checkbox">
-                <input type="checkbox" class="custom-control-input" id="train">
-                <label class="custom-control-label" for="train">Kereta Api</label>
-            </div>
-            <div class="custom-control custom-checkbox">
-                <input type="checkbox" class="custom-control-input" id="plane">
-                <label class="custom-control-label" for="plane">Pesawat</label>
-            </div>
-            <div class="custom-control custom-checkbox">
-                <input type="checkbox" class="custom-control-input" id="car">
-                <label class="custom-control-label" for="car">Mobil</label>
-            </div>
+                    <div class="custom-control custom-checkbox">
+                        <input type="checkbox" class="custom-control-input" id="train">
+                        <label class="custom-control-label" for="train">Kereta Api</label>
+                    </div>
+                    <div class="custom-control custom-checkbox">
+                        <input type="checkbox" class="custom-control-input" id="plane">
+                        <label class="custom-control-label" for="plane">Pesawat</label>
+                    </div>
+                    <div class="custom-control custom-checkbox">
+                        <input type="checkbox" class="custom-control-input" id="car">
+                        <label class="custom-control-label" for="car">Mobil</label>
+                    </div>
                 </div>
 
                 <div class="col-md-5">
-                <div class="custom-control custom-checkbox">
-                <input type="checkbox" class="custom-control-input" id="hotel">
-                <label class="custom-control-label" for="hotel">Hotel</label>
-            </div>
-            <div class="custom-control custom-checkbox">
-                <input type="checkbox" class="custom-control-input" id="wisata">
-                <label class="custom-control-label" for="wisata">Tujuan Wisata</label>
-            </div>
-            <div class="custom-control custom-checkbox">
-                <input type="checkbox" class="custom-control-input" id="other">
-                <label class="custom-control-label" for="other">Lain-Lain</label>
-            </div>
+                    <div class="custom-control custom-checkbox">
+                        <input type="checkbox" class="custom-control-input" id="hotel">
+                        <label class="custom-control-label" for="hotel">Hotel</label>
+                    </div>
+                    <div class="custom-control custom-checkbox">
+                        <input type="checkbox" class="custom-control-input" id="wisata">
+                        <label class="custom-control-label" for="wisata">Tujuan Wisata</label>
+                    </div>
+                    <div class="custom-control custom-checkbox">
+                        <input type="checkbox" class="custom-control-input" id="other">
+                        <label class="custom-control-label" for="other">Lain-Lain</label>
+                    </div>
                 </div>
             </div>
             
