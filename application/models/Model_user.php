@@ -4,24 +4,12 @@ class Model_user extends CI_Model{
 
 private $_table = "user";
     public $id_user;
-    public $nama_user;
+    public $nama_lengkap;
     public $email;
     public $password;
     public $nomor_hp;
     public $jenis_kelamin;
     public $foto = "default.jpg";
-
-
-    public function rules()
-    {
-        return [
-            [
-                'field' => 'nama_user',
-                'label' => 'nama_user',
-                'rules' => 'required'
-            ]
-        ];
-    }
 
     public function getAll()
     {
@@ -36,13 +24,13 @@ private $_table = "user";
     public function save()
     {
         $post = $this->input->post();
-        $this->nama_user = $post["nama_user"];
+        $this->nama_lengkap = $post["nama_lengkap"];
         $this->email = $post["email"];
         $this->nomor_hp = $post["nomor_hp"];
         $this->jenis_kelamin = $post["jenis_kelamin"];
         
         if (empty($post["password"])){
-            $this->password =md5($post["nama_user"]);
+            $this->password =md5($post["nama_lengkap"]);
         } else {
             $this->password=md5($post["password"]) ;
         }
@@ -59,7 +47,7 @@ private $_table = "user";
         $post = $this->input->post();
         // var_dump($post);
         $this->id_user = $post["id_user"];
-        $this->nama_user = $post["nama_user"];
+        $this->nama_lengkap = $post["nama_lengkap"];
         $this->email = $post["email"];
         $this->nomor_hp = $post["nomor_hp"];
         $this->jenis_kelamin = $post["jenis_kelamin"];
@@ -67,7 +55,7 @@ private $_table = "user";
         
 
         if (empty($post["password"])){
-            $this->password =md5($post["nama_user"]);
+            $this->password =md5($post["nama_lengkap"]);
         } else {
             $this->password=md5($post["password"]) ;
         }
@@ -91,7 +79,7 @@ private $_table = "user";
     {
         $config['upload_path']          = './foto/user';
         $config['allowed_types']        = 'gif|jpg|png';
-        $config['file_name']            = $this->nama_user;
+        $config['file_name']            = $this->nama_lengkap;
         $config['overwrite']            = true;
         $config['max_size']             = 1024; // 1MB
         // $config['max_width']            = 1024;
