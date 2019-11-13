@@ -7,11 +7,12 @@ private $_table = "transaksi";
     public $id_user;
     public $id_paket;
     public $id_penginapan;
+    // public $id_transport;
     public $hari;
     public $id_rute;
     public $id_wisata;
+    // public $tamu;
     public $harga;
-    public $id_admin;
     // public $foto = "default.jpg";
 
 

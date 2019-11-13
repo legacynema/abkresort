@@ -1,86 +1,61 @@
 <section class="content">
-    <div class="row">
-        <!-- left column -->
-        <div class="col-md-4">
-            <!-- general form elements -->
-            <div class="box box-primary">
-                <div class="box-header with-border">
-                    <h3 class="box-title">Tambah Admin</h3>
-                </div>
-                <!-- /.box-header -->
-                <!-- form start -->
-                <form role="form">
-                    <div class="box-body">
-                        <div class="form-group">
-                            <label>Nama </label>
-                             <input type="text" class="form-control" id="" placeholder="example : Firman Citra">   
-                        </div>
-                        <div class="form-group">
-                            <label for="exampleInputEmail1">Email</label>
-                            <input type="email" class="form-control" id="exampleInputEmail1" placeholder="example : abkresort@gmail.com">
-                        </div>
-                        <div class="form-group">
-                            <label for="exampleInputPassword1">Password</label>
-                            <input type="password" class="form-control" id="exampleInputEmail1" placeholder="Input Password">
-                        </div>
-                        <div class="form-group">
-                            <label for="exampleInputPassword1">No Telepon</label>
-                            <input type="number" class="form-control" id="exampleInputEmail1" placeholder="Input Password">
-                        </div>
-                        <div class="form-group">
-                            <label>Jenis Kelamin</label>
-                            <select class="form-control">
-                                <option>-- Pilih Kelamin --</option>
-                                <option>option 1</option>
-                                <option>option 2</option>
-                            </select>
-                        </div>
-                        <div class="form-group">
-                            <label for="exampleInputFile">Upload Photos</label>
-                            <input type="file" id="exampleInputFile">
-                        </div>
-                    </div>
-                    <!-- /.box-body -->
+      <div class="row">
+        <div class="col-xs-12">
+          <!-- /.box -->
 
-                    <div class="box-footer">
-                        <button type="submit" class="btn btn-success"><i class="fa fa-send"></i> Simpan</button>
-                        <button type="reset" class="btn btn-danger"><i class="fa fa-refresh"></i> Reset</button>
-                    </div>
-                </form>
+          <div class="box">
+            <div class="box-header">
+              <h3 class="box-title">Data Table With Full Features</h3>
             </div>
-        </div>
-        <div class="col-md-8">
-            <!-- general form elements -->
-            <div class="box box-primary">
-                <div class="box-header with-border">
-                    <h3 class="box-title">List Admin</h3>
-                </div>
-                <!-- /.box-header -->
-                <!-- form start -->
-                <div class="box-body">
-                    <table class="table table-hover">
-                        <tr>
-                            <th style="width: 10px">#</th>
-                            <th>Nama</th>
-                            <th>Email</th>
-                            <th>No telepon</th>
-                            <th>Jenis Kelamin
-                            <th>Photo Profile</th>
-                            <th>Action</th>
-                        </tr>
-                        <tr>
-                            <td>1.</td>
-                            <td>Arya</td>
-                            <td>aryawiguna00@yahoo.com</td>
-                            <td>2121221313</td>
-                            <td>Laki-Laki</td>
-                            <td>#</td>
-                            <td><span class="badge bg-blue"><i class="fa fa-pencil"></i> Edit</span> <span class="badge bg-red"><i class="fa fa-trash"></i> Hapus</span></td>
-                        </tr>
-                    </table>
-                </div>
+            <!-- /.box-header -->
+            <div class="box-body">
+              <table id="example1" class="table table-hover table-bordered table-striped">
+                <thead>
+                <tr>
+                  <th>ID</th>
+                  <th>NAMA</th>
+                  <th>EMAIL</th>
+                  <th>JENIS KELAMIN</th>
+                  <th>NOMOR HP</th>
+                  <th>FOTO</th>
+                  <th>MENU</th>
+                </tr>
+                </thead>
+                    <?php foreach ($user as $usr):?>
+                <tbody>
+                    <td><p><?=  $usr->id_user?></p></td>
+                    <td><p><?=  $usr->nama_lengkap?></p></td>
+                    <td><p><?=  $usr->email?></p></td>
+                    <td><p><?=  $usr->jenis_kelamin?></p></td>
+                    <td><p><?=  $usr->nomor_hp?></p></td>
+                    <td><p><?=  $usr->foto?></p></td>
+                    <td>
+                        <?php  echo anchor('Superadmin/userDelete/'.$usr->id_user, '<button class="btn btn-danger margin" type="button"><span class="fa fa-trash"></span> </button>'); ?>
+                    </td>
+
+
+                </tbody>
+                <?php endforeach ?>
+                <tfoot>
+                <tr>
+                  <th>ID</th>
+                  <th>NAMA</th>
+                  <th>EMAIL</th>
+                  <th>JENIS KELAMIN</th>
+                  <th>NOMOR HP</th>
+                  <th>FOTO</th>
+                  <th>MENU</th>
+                </tr>
+                </tfoot>
+              </table>
             </div>
+            <!-- /.box-body -->
+          </div>
+          <!-- /.box -->
         </div>
-    </div>
-</section>
+        <!-- /.col -->
+      </div>
+      <!-- /.row -->
+    </section>
 </div>
+               
