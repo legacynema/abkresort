@@ -22,23 +22,15 @@
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
       <li>
+        <a class="nav-link text-white" href="<?= base_url('Input/package') ?>">Home</a>
+      </li>
+      <li>
         <a class="nav-link text-white" href="<?= base_url('Input/package') ?>">Paket All In One</a>
       </li>
       <li>
-        <a href="<?= base_url('Input/flight') ?>" class="nav-link text-white">Penerbangan</a>
+        <a class="nav-link text-white" href="<?= base_url('Input/package') ?>">Transaksi</a>
       </li>
-      <li>
-        <a href="<?= base_url('Input/penginapan') ?>" class="nav-link text-white">Penginapan</a>
-      </li>
-      <li>
-        <a href="<?= base_url('Input/travel') ?>" class="nav-link text-white">Tempat Wisata</a>
-      </li>
-      <li>
-        <a href="<?= base_url('Input/car') ?>" class="nav-link text-white">Mobil</a>
-      </li>
-      <li>
-        <a href="<?= base_url('Input/train') ?>" class="nav-link text-white">Kereta Api</a>
-      </li>
+      
     </ul>
     <ul class="navbar-nav flex-row ml-md-auto d-none d-md-flex">
       <a class=" nav-link mr-md-2 text-white" href="<?= base_url('Home/login') ?>" id="bd-versions" aria-haspopup="true" aria-expanded="false">Login</a>
