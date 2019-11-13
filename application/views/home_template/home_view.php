@@ -12,8 +12,8 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
   </head>
   <body>
-      <div class="gradient-background">
-      </div>
+      <!-- <div class="gradient-background">
+      </div> -->
   <div id="carouselExampleControls" class="carousel slide " data-ride="carousel">
   <div class="carousel-inner">
     <div class="carousel-item active img-fluid position-relative" >
@@ -36,6 +36,66 @@
   </a>
 </div>
 <br><br>
+
+
+
+<section id="features" class="features text-center">
+		<div class="container">
+			<div class="row">
+				
+				<div class="col-md-12"></div>
+				<div class="col-sm-6 col-md-3">
+					<a href="#"><i class="fa fa-laptop"></i></a>
+						<h3>Pesawat</h3>
+				</div>
+				<div class="col-sm-6 col-md-3">
+					<a href="#"><i class="fa fa-cog"></i></a>
+						<h3>Wisata</h3>
+				</div>
+				<div class="col-sm-6 col-md-3">
+					<a href="#"><i class="fa fa-font"></i></a>
+						<h3>Hotel</h3>
+				</div>
+				<div class="col-sm-6 col-md-3">
+					<a href="#"><i class="fa fa-user"></i></a>
+						<h3>Kereta Api</h3>
+				</div>
+			</div>
+		</div>
+    <br>
+    <div class="container">
+			<div class="row">
+				<div class="col-md-12"></div>
+				<div class="col-sm-6 col-md-3">
+					<a href="#"><i class="fa fa-laptop"></i></a>
+						<h3>Mobil</h3>
+				</div>
+				<div class="col-sm-6 col-md-3">
+					<a href="#"><i class="fa fa-cog"></i></a>
+						<h3>Bis</h3>
+				</div>
+				<div class="col-sm-6 col-md-3">
+					<a href="#"><i class="fa fa-font"></i></a>
+						<h3>Pilih Maumu</h3>
+				</div>
+			</div>
+		</div>
+	</section>
+
+
+<!-- <div class="container">
+  <div class="row">
+    <div class="col-md-2"></div>
+      <div class="col-md-8">
+        <span class="dot"></span>
+        <span class="dot"></span>
+        <span class="dot"></span>
+      </div>
+  </div>
+</div> -->
+
+
+<div class="col-md-2"></div>
 <div class="container indt-container new-hhd-container pb-5 pt-5">
     <h3 class="mb-3">Destination Highlights</h3>
 
