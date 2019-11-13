@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="<?= base_url('node_modules/') ?>bootstrap/dist/css/bootstrap.css">
-    <title>Wisata</title>
+    <title>Bis</title>
 </head>
 <body>
 
@@ -20,7 +20,7 @@
             
             
                 <div style="position:relative">
-                    <img src="<?= base_url('assets/') ?>img/bannerwisata.jpg" class="d-block w-100" height="100%" alt="Slideshow">
+                    <img src="<?= base_url('assets/') ?>img/bannerbus.jpg" class="d-block w-100" height="100%" alt="Slideshow">
                 </div>
             
         
@@ -35,7 +35,7 @@
         <div class="card" style="border: 0;border-radius: 0 !important;border-top: 3px solid #6553a2;box-shadow: 0px 0px 2px #6553a2;">
 			<form id="book-flight-form" novalidate="novalidate">
 			  <div class="card-header indt-book-header">
-                  PILIH DESTINASI WISATA
+                  PESAN TIKET BIS
 			  </div>
 			  <div class="card-block indt-book-body">
 				<div class="input-group">
