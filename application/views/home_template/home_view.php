@@ -68,7 +68,7 @@
 						<h3>Mobil</h3>
 				</div>
 				<div class="col-sm-6 col-md-3">
-					<a href="#"><i class="fas fa-bus"></i></a>
+					<a href="<?= base_url('Input/bus') ?>"><i class="fas fa-bus"></i></a>
 						<h3>Bis</h3>
 				</div>
 				<div class="col-sm-6 col-md-3">
