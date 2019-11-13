@@ -35,9 +35,6 @@
     <span class="sr-only">Next</span>
   </a>
 </div>
-<br><br>
-
-
 
 <section id="features" class="features text-center">
 		<div class="container">
@@ -45,19 +42,19 @@
 				
 				<div class="col-md-12"></div>
 				<div class="col-sm-6 col-md-3">
-					<a href="#"><i class="fa fa-laptop"></i></a>
+					<a href="#"><i class="fas fa-paper-plane"></i></a>
 						<h3>Pesawat</h3>
 				</div>
 				<div class="col-sm-6 col-md-3">
-					<a href="#"><i class="fa fa-cog"></i></a>
+					<a href="#"><i class="fas fa-luggage-cart"></i></a>
 						<h3>Wisata</h3>
 				</div>
 				<div class="col-sm-6 col-md-3">
-					<a href="#"><i class="fa fa-font"></i></a>
+					<a href="#"><i class="fas fa-hotel"></i></a>
 						<h3>Hotel</h3>
 				</div>
 				<div class="col-sm-6 col-md-3">
-					<a href="#"><i class="fa fa-user"></i></a>
+					<a href="#"><i class="fas fa-train"></i></a>
 						<h3>Kereta Api</h3>
 				</div>
 			</div>
@@ -67,15 +64,15 @@
 			<div class="row">
 				<div class="col-md-12"></div>
 				<div class="col-sm-6 col-md-3">
-					<a href="#"><i class="fa fa-laptop"></i></a>
+					<a href="#"><i class="fas fa-car"></i></a>
 						<h3>Mobil</h3>
 				</div>
 				<div class="col-sm-6 col-md-3">
-					<a href="#"><i class="fa fa-cog"></i></a>
+					<a href="#"><i class="fas fa-bus"></i></a>
 						<h3>Bis</h3>
 				</div>
 				<div class="col-sm-6 col-md-3">
-					<a href="#"><i class="fa fa-font"></i></a>
+					<a href="#"><i class="fas fa-hand-pointer"></i></a>
 						<h3>Pilih Maumu</h3>
 				</div>
 			</div>
