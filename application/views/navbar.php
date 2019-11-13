@@ -7,7 +7,8 @@
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="<?= base_url('node_modules/') ?>bootstrap/dist/css/bootstrap.css">
-    <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="<?= base_url('node_modules/') ?>fontawesome/css/all.css">
   </head>
   <body>
   
@@ -21,25 +22,22 @@
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
       <li>
-        <a class="nav-link text-white" href="#">Paket All In One</a>
+        <a class="nav-link text-white" href="<?= base_url('Input/package') ?>">Paket All In One</a>
       </li>
       <li>
         <a href="<?= base_url('Input/flight') ?>" class="nav-link text-white">Penerbangan</a>
       </li>
       <li>
-        <a href="<?= base_url('Input/hotel') ?>" class="nav-link text-white">Hotel</a>
+        <a href="<?= base_url('Input/penginapan') ?>" class="nav-link text-white">Penginapan</a>
       </li>
       <li>
-        <a href="#" class="nav-link text-white">Penginapan</a>
+        <a href="<?= base_url('Input/travel') ?>" class="nav-link text-white">Tempat Wisata</a>
       </li>
       <li>
-        <a href="#" class="nav-link text-white">Tempat Wisata</a>
+        <a href="<?= base_url('Input/car') ?>" class="nav-link text-white">Mobil</a>
       </li>
       <li>
-        <a href="#" class="nav-link text-white">Mobil</a>
-      </li>
-      <li>
-        <a href="#" class="nav-link text-white">Kereta Api</a>
+        <a href="<?= base_url('Input/train') ?>" class="nav-link text-white">Kereta Api</a>
       </li>
     </ul>
     <ul class="navbar-nav flex-row ml-md-auto d-none d-md-flex">

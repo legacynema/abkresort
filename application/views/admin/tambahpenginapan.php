@@ -16,7 +16,7 @@
 
                 <!-- /.box-header -->
                 <!-- form start -->
-                <form action="<?php echo base_url(). 'Admin/penginapanAdd'; ?>" method="post" enctype="multipart/form-data">
+                <form action="<?php echo base_url(). 'Admin/penginapanAdd'; ?>" name="form"  onsubmit="return validateForm()" method="post" enctype="multipart/form-data">
                     <div class="box-body">
 
 
@@ -33,12 +33,12 @@
                         </div>
                         <div class="form-group">
                             <label for="nama_penginapan">Nama Hotel/Villa</label>
-                            <input type="text" class="form-control" name="nama_penginapan" placeholder="example : Hotel Batu Paradise">
+                            <input class="form-control" type="text"  name="nama_penginapan" placeholder="example : Hotel Batu Paradise">   
                         </div>
 
                         <div class="form-group">
                             <label for="jumlah_tamu">Jumlah Tamu</label>
-                            <input type="text" class="form-control" name="jumlah_tamu" placeholder="Berapa Orang">
+                            <input type="number" class="form-control" name="jumlah_tamu" placeholder="Berapa Orang">
                         </div>
 
                         <div class="form-group">
@@ -50,9 +50,36 @@
                         </div>
 
                         <div class="form-group">
-                            <label for="foto">Foto</label>
+                            <label for="foto">Foto *max size 1MB</label>
                             <input type="file" class="form-control" name="foto">
                         </div>
+
+                        <script>
+                                function validateForm() {
+                                var namaPeng = document.forms["form"]["nama_penginapan"].value;
+                                var kota = document.forms["form"]["id_kota"].value;
+                                var Harga = document.forms["form"]["harga"].value;
+                                var tamu = document.forms["form"]["jumlah_tamu"].value;
+
+                                    if(kota == "" && namaPeng == "" && tamu == "" && Harga == ""){
+                                        alert("Data Penginapan Harus di Isi");
+                                        return false;
+                                    }
+                                    if (kota == "") {
+                                        alert("Kota Harus di Isi");
+                                        return false;
+                                    }else if (namaPeng == ""){
+                                        alert("Nama Harus di Isi");
+                                        return false;
+                                    }else if (tamu == ""){
+                                        alert("Jumlah Tamu Harus di Isi");
+                                        return false;
+                                    }else if (Harga == ""){
+                                        alert("Harga Harus di Isi");
+                                        return false;
+                                    }
+                                }
+                        </script>
                         
                     </div>
                     <!-- /.box-body -->
@@ -128,4 +155,7 @@
         </div>
     </div>
 </section>
+
 </div>
+
+

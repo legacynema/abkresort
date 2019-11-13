@@ -7,9 +7,15 @@
                     <div class="box-header with-border">
                         <h3 class="box-title">Tambah Transportasi</h3>
                     </div>
+                    <!-- FLASH DATA PEMBERITAHUAN -->
+                <?php if ($this->session->flashdata('success')): ?>
+                    <div class="alert alert-success" role="alert">
+                        <?php echo $this->session->flashdata('success'); ?>
+                    </div>
+                <?php endif; ?> 
                     <!-- /.box-header -->
                     <!-- form start -->
-                    <form action="<?php echo base_url(). 'Admin/transportasiAdd'; ?>" method="post" enctype="multipart/form-data">
+                    <form action="<?php echo base_url(). 'Admin/transportasiAdd'; ?>" name="form"  onsubmit="return validateForm()" method="post" enctype="multipart/form-data">
                         <div class="box-body">
                             <div class="form-group">
                                 <label for="id_kota">Jenis Transportasi</label>
@@ -59,6 +65,35 @@
                                 <input type="text" name="harga" class="form-control" placeholder="Rp.">
                             </div>
                         </div>
+
+                        <script>
+                                function validateForm() {
+                                var trans = document.forms["form"]["id_transport"].value;
+                                var asal = document.forms["form"]["rute_asal"].value;
+                                var tujuan = document.forms["form"]["rute_tujuan"].value;
+                                var Harga = document.forms["form"]["harga"].value;
+
+                                    if(asal == "" && trans == "" && tujuan == "" && Harga == ""){
+                                        alert("Data Transportasi Harus di Isi");
+                                        return false;
+                                    }
+                                    if (asal == "") {
+                                        alert("Keberangkatan di Isi");
+                                        return false;
+                                    }else if (trans == ""){
+                                        alert("Jenis Transportasi di Isi");
+                                        return false;
+                                    }else if (tujuan == ""){
+                                        alert("Tujuan Harus di Isi");
+                                        return false;
+                                    }else if (Harga == ""){
+                                        alert("Harga Harus di Isi");
+                                        return false;
+                                    }
+                                }
+                        </script>
+
+
                         <!-- /.box-body -->
 
                         <div class="box-footer">
@@ -91,28 +126,26 @@
                         <?php  $nomor =1; ?>
 						<?php
 
-                        // $this->db->select('t.id_transportasi,jt.nama,k.nama_kota, k2.nama_kota, t.harga');
-                        // // SELECT 
-                        //           $this->db->join('kota as k', 'k.id_kota = t.tujuan');
-                        //           $this->db->join('kota as k2', 'k2.id_kota = t.tujuan');
-                        // $query =  $this->db->join('jenis_transportasi as jt', 'jt.id_trans = t.id_jenis_transportasi')
-                        // ->get('transportasi as t');
-                        // $nomor = 1;
+                        
 
-                        $this->db->select('id_rute, nama_transport,rute_asal,rute_tujuan, harga');
+                        $this->db->select('nama_transport, nama_kota, nama_kota, harga,id_rute');
                         // SELECT 
-                                //   $this->db->join('kota', 'kota.id_kota = rute.rute_asal');
+                                  $this->db->join('kota', 'kota.id_kota = rute.rute_asal');
+                                //   $this->db->join('kota', 'kota.id_kota = rute.rute_tujuan');
                         $query =  $this->db->join('transport', 'transport.id_transport = rute.id_transport')->get('rute');
                         $nomor = 1;
                         
-                        // SELECT t.id_transportasi,jt.nama,k.nama_kota,k2.nama_kota ,t.harga
-                        // FROM transportasi as t 
-                        // INNER JOIN jenis_transportasi as jt 
-                        // ON jt.id_trans = t.id_transportasi
-                        // INNER JOIN kota as k 
-                        // ON k.id_kota = t.keberangkatan
-                        // INNER JOIN kota as k2
-                        // ON k2.id_kota = t.tujuan
+                        // SELECT t.nama_transport	 , k.nama_kota, k2.nama_kota , r.harga
+                        // FROM rute as r 
+                        
+                        //  JOIN transport as t 
+                        // ON t.id_transport = r.id_transport
+                        
+                        //  JOIN kota as k 
+                        // ON k.id_kota = r.rute_asal
+                        
+                        //  JOIN kota as k2
+                        // ON k2.id_kota = r.rute_tujuan
 						foreach ($query->result_array() as $peng) :
 							?>
 							<tr>
@@ -121,10 +154,10 @@
 									<p><?= $peng['nama_transport'] ?></p>
 								</td>
 								<td>
-									<p><?= $peng['rute_asal'] ?></p>
+									<p><?= $peng['nama_kota'] ?></p>
 								</td>
 								<td>
-									<p><?= $peng['rute_tujuan'] ?></p>
+									<p><?= $peng['nama_kota'] ?></p>
 								</td>
 								<td>
 									<p>Rp. <?= number_format($peng['harga']) ?></p>

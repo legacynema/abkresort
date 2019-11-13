@@ -1,13 +1,26 @@
 <?php defined('BASEPATH') or exit('No direct script access allowed');
+// class Model_rute extends CI_Model
 class Model_rute extends CI_Model{
 
 
 private $_table = "rute";
+
     public $id_rute;
     public $id_transport;
     public $rute_asal;
     public $rute_tujuan;
     public $harga;
+
+// private $_table = "transaksi";
+    // public $id_transport;
+    // public $jenis_transport;
+    // public $nama_transport;
+    // public $asal;
+    // public $tujuan;
+    // public $kisaran;
+    // public $harga;
+
+
     // public $foto = "default.jpg";
 
 
