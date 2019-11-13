@@ -33,7 +33,7 @@
         <div class="card" style="border: 0;border-radius: 0 !important;border-top: 3px solid #6553a2;box-shadow: 0px 0px 2px #6553a2;">
 			<form id="book-flight-form" novalidate="novalidate">
 			  <div class="card-header indt-book-header">
-                  PURCHASE TICKET
+                  BELI TIKET
 			  </div>
 			  <div class="card-block indt-book-body">
 				<div class="input-group">
@@ -42,14 +42,14 @@
 				</div>
         <br>
 				<div class="input-group">
-				  <span class="input-group-addon" id="basic-addon1"><span class="lnr lnr-rocket"></span></span>
+				  <span class="input-group-addon" id="basic-addon1"><i class="fas fa-fighter-jet"></i></span>
 				  <input id="destination" name="destination" type="text" class="form-control ui-autocomplete-input" placeholder="To" aria-describedby="basic-addon1" autocomplete="off">
 				</div>
         <br>
 				<div class="row">
 				  <div class="col-12" id="parent-first-flight">
 					<div class="form-group">
-					  <input type="text" onfocus="(this.type='date')" class="form-control" id="datetimepicker1" name="first-flight-date" placeholder="Depart" aria-describedby="basic-addon1">
+					  <input type="text" onfocus="(this.type='date')" class="form-control" id="datetimepicker1" name="first-flight-date" placeholder="Keberangkatan" aria-describedby="basic-addon1">
 					</div>
 				  </div>
 				  <div class="col-6 col-md-6 p-l-small" id="parent-second-flight" style="display: none;">
@@ -63,19 +63,19 @@
 
 				  <div class="col-4 col-md-4 p-r-0">
 					<div class="input-group">
-					  <select id="paxAdult" class="form-control valid" aria-invalid="false"><option value="0">0 Adults</option><option value="1" selected="selected">1 Adults</option><option value="2">2 Adults</option><option value="3">3 Adults</option><option value="4">4 Adults</option><option value="5">5 Adults</option><option value="6">6 Adults</option><option value="7">7 Adults</option><option value="8">8 Adults</option><option value="9">9 Adults</option></select>
+					  <select id="paxAdult" class="form-control valid" aria-invalid="false"><option value="0">0 Dewasa</option><option value="1" selected="selected">1 Dewasa</option><option value="2">2 Dewasa</option><option value="3">3 Dewasa</option><option value="4">4 Dewasa</option><option value="5">5 Dewasa</option><option value="6">6 Dewasa</option><option value="7">7 Dewasa</option><option value="8">8 Dewasa</option><option value="9">9 Dewasa</option></select>
 					</div>
 				  </div>
 
                   <div class="col-4 col-md-4 p-r-0 p-l-7">
 					<div class="input-group">
-					  <select id="paxChild" class="form-control" ><option value="0" selected="selected">0 Children</option><option value="1">1 Children</option><option value="2">2 Children</option><option value="3">3 Children</option><option value="4">4 Children</option><option value="5">5 Children</option><option value="6">6 Children</option><option value="7">7 Children</option><option value="8">8 Children</option></select>
+					  <select id="paxChild" class="form-control" ><option value="0" selected="selected">0 Anak-Anak</option><option value="1">1 Anak-Anak</option><option value="2">2 Anak-Anak</option><option value="3">3 Anak-Anak</option><option value="4">4 Anak-Anak</option><option value="5">5 Anak-Anak</option><option value="6">6 Anak-Anak</option><option value="7">7 Anak-Anak</option><option value="8">8 Anak-Anak</option></select>
 					</div>
 				  </div>
 
                   <div class="col-4 col-md-4 p-l-7">
 					<div class="input-group">
-					  <select id="paxInfant" class="form-control"><option value="0" selected="selected">0 Infants</option><option value="1">1 Infants</option></select>
+					  <select id="paxInfant" class="form-control"><option value="0" selected="selected">0 Bayi</option><option value="1">1 Bayi</option></select>
 					</div>
 				  </div>
 
@@ -91,7 +91,7 @@
 				</div>
 			  </div>
 			  <div class="card-footer text-muted" style="padding: 0;">
-				<button id="searchFlight" type="submit" class="btn btn-primary btn-book-flight">SEARCH FLIGHT</button>
+				<button id="searchFlight" type="submit" class="btn btn-primary btn-book-flight">CARI PENERBANGAN</button>
 			  </div>
 			</form>
         </div>

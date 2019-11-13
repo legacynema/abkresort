@@ -7,7 +7,8 @@
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="<?= base_url('node_modules/') ?>bootstrap/dist/css/bootstrap.css">
-    <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="<?= base_url('node_modules/') ?>fontawesome/css/all.css">
   </head>
   <body>
   
@@ -21,7 +22,7 @@
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
       <li>
-        <a class="nav-link text-white" href="#">Paket All In One</a>
+        <a class="nav-link text-white" href="<?= base_url('Input/package') ?>">Paket All In One</a>
       </li>
       <li>
         <a href="<?= base_url('Input/flight') ?>" class="nav-link text-white">Penerbangan</a>

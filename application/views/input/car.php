@@ -39,7 +39,7 @@
 			  </div>
 			  <div class="card-block indt-book-body">
 				<div class="input-group">
-				  <span class="input-group-addon" id="basic-addon1"><i class="fas fa-helicopter"></i></span> 
+				  <span class="input-group-addon" id="basic-addon1"><i class="fas fa-car"></i></span> 
 				  <input id="origin" name="origin" type="text" class="form-control ui-autocomplete-input" placeholder="Pengambilan" aria-describedby="basic-addon1" autocomplete="off">
 				</div>
         <br>
