@@ -52,6 +52,15 @@ class Input extends CI_Controller {
 	{	$this->load->view('navbar');
         $this->load->view('input/train');
 		$this->load->view('footer');
-    }
+	}
+	
+	public function sflight(){
+		$this->load->view('navbar');
+		$this->load->view('searching/search_flight');
+
+		$this->load->view('footer');
+
+	}
+
 
 }
