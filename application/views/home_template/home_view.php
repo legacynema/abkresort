@@ -41,38 +41,38 @@
 
 	<div class="row no-gutters">
         
-                <a href="<?= base_url('Home/destination') ?>" class="col new-hhd col-high-dest" style="display:block;">
+                <a href="<?= base_url('Destination/malang') ?>" class="col new-hhd col-high-dest" style="display:block;">
               		<div class="new-hhd-card" >
                   <img src="<?= base_url('assets/') ?>img/Malang.jpg" class="d-block w-100" width="100%" height="100%">
                   		<div class="new-hhd-body">Malang</div>
                		</div>
            		</a>
               
-                <a href="#" class="col new-hhd col-high-dest" style="display:block;">
+                <a href="<?= base_url('Destination/surabaya') ?>" class="col new-hhd col-high-dest" style="display:block;">
               		<div class="new-hhd-card">
                   <img src="<?= base_url('assets/') ?>img/Surabaya.jpg" class="d-block w-100" width="100%" height="100%">
                   		<div class="new-hhd-body">Surabaya</div>
                		</div>
            		</a>
               
-                <a href="#" class="col new-hhd col-high-dest" style="display:block;">
+                <a href="<?= base_url('Destination/yogyakarta') ?>" class="col new-hhd col-high-dest" style="display:block;">
               		<div class="new-hhd-card" >
                   <img src="<?= base_url('assets/') ?>img/Jogja.jpg" class="d-block w-100" width="100%" height="100%">
                   		<div class="new-hhd-body">Yogyakarta</div>
                		</div>
            		</a>
               
-                <a href="#" class="col new-hhd col-high-dest" style="display:block;">
+                <a href="<?= base_url('Destination/manado') ?>" class="col new-hhd col-high-dest" style="display:block;">
               		<div class="new-hhd-card" >
                   <img src="<?= base_url('assets/') ?>img/Manado.jpg" class="d-block w-100" width="100%" height="100%">
                   		<div class="new-hhd-body">Manado</div>
                		</div>
            		</a>
                 
-                <a href="#" class="col new-hhd col-high-dest">
+                <a href="<?= base_url('Destination/ambon') ?>" class="col new-hhd col-high-dest">
               		<div class="new-hhd-card" >
-                  <img src="<?= base_url('assets/') ?>img/Jombang.jpg" class="d-block w-100" width="100%" height="100%">
-                  		<div class="new-hhd-body">Jombang</div>
+                  <img src="<?= base_url('assets/') ?>img/ambon.jpg" class="d-block w-100" width="100%" height="100%">
+                  		<div class="new-hhd-body">Ambon</div>
                		</div>
            		</a>
                 
