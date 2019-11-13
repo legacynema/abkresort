@@ -28,13 +28,13 @@
 
     <!-- End of Slideshow -->
 
-    
-        <div class="container">
         <br>
-            <h1 class="text-center">Choose your Want</h1>
+        <div class="container bg-info">
+            <h1 class="text-center" style="font-family:Helvetica Neue">Choose your Want</h1>
+            
             <br><br>
-            <h3>Choose Detail</h3>
-            <div class="row">
+            <!-- <h3 style="font-family:Helvetica Neue">Choose Detail</h3> -->
+            <div class="row container">
                 <div class="col-md-5">
                     <div class="custom-control custom-checkbox">
                         <input type="checkbox" class="custom-control-input" id="train">
