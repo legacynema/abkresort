@@ -42,19 +42,19 @@
 				
 				<div class="col-md-12"></div>
 				<div class="col-sm-6 col-md-3">
-					<a href="#"><i class="fas fa-paper-plane"></i></a>
+					<a href="<?= base_url('Input/flight') ?>"><i class="fas fa-paper-plane"></i></a>
 						<h3>Pesawat</h3>
 				</div>
 				<div class="col-sm-6 col-md-3">
-					<a href="#"><i class="fas fa-luggage-cart"></i></a>
+					<a href="<?= base_url('Input/travel') ?>"><i class="fas fa-luggage-cart"></i></a>
 						<h3>Wisata</h3>
 				</div>
 				<div class="col-sm-6 col-md-3">
-					<a href="#"><i class="fas fa-hotel"></i></a>
+					<a href="<?= base_url('Input/penginapan') ?>"><i class="fas fa-hotel"></i></a>
 						<h3>Hotel</h3>
 				</div>
 				<div class="col-sm-6 col-md-3">
-					<a href="#"><i class="fas fa-train"></i></a>
+					<a href="<?= base_url('Input/train') ?>"><i class="fas fa-train"></i></a>
 						<h3>Kereta Api</h3>
 				</div>
 			</div>
@@ -64,7 +64,7 @@
 			<div class="row">
 				<div class="col-md-12"></div>
 				<div class="col-sm-6 col-md-3">
-					<a href="#"><i class="fas fa-car"></i></a>
+					<a href="<?= base_url('Input/car') ?>"><i class="fas fa-car"></i></a>
 						<h3>Mobil</h3>
 				</div>
 				<div class="col-sm-6 col-md-3">
@@ -72,7 +72,7 @@
 						<h3>Bis</h3>
 				</div>
 				<div class="col-sm-6 col-md-3">
-					<a href="#"><i class="fas fa-hand-pointer"></i></a>
+					<a href="<?= base_url('Input/package') ?>"><i class="fas fa-hand-pointer"></i></a>
 						<h3>Pilih Maumu</h3>
 				</div>
 			</div>
