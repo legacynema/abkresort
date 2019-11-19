@@ -32,6 +32,20 @@
 
                         <div class="box-body">
                             <div class="form-group">
+                                <label for="id_kota">Class </label>
+                                <select class="form-control" name="class">
+                                    <option value="" disabled selected>Pilih Class</option>
+
+                                    <?php foreach ($class as $trans) : ?>
+                                        <option value="<?= $trans->id_class ?>"><?= $trans->nama_class ?></option>
+                                    <?php endforeach; ?>
+
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="box-body">
+                            <div class="form-group">
                                 <label for="nama_penginapan">Nama Transportasi</label>
                                 <input class="form-control" type="text" name="nama_transp" placeholder="example : Lion Air">
                             </div>
@@ -106,23 +120,47 @@
 
                         <script>
                             function validateForm() {
-                                var trans = document.forms["form"]["id_transport"].value;
-                                var asal = document.forms["form"]["rute_asal"].value;
-                                var tujuan = document.forms["form"]["rute_tujuan"].value;
+                                var jenis = document.forms["form"]["jenis_transport"].value;
+                                var class_ = document.forms["form"]["class"].value;
+                                var nama = document.forms["form"]["nama_transp"].value;
+                                var tanggal = document.forms["form"]["tanggal"].value;
+                                var berangkat = document.forms["form"]["tempat_asal"].value;
+                                var tujuan = document.forms["form"]["tempat_tujuan"].value;
+                                var jam_berangkat = document.forms["form"]["jam_berangkat"].value;
+                                var jam_tiba = document.forms["form"]["jam_tiba"].value;
+                                var kisaran = document.forms["form"]["kisaran"].value;
                                 var Harga = document.forms["form"]["harga"].value;
 
-                                if (asal == "" && trans == "" && tujuan == "" && Harga == "") {
+                                if (jenis == "" && class_ == "" && nama == "" && tanggal == "" && berangkat == "" && tujuan == ""
+                                    && jam_berangkat == "" && jam_tiba == "" && kisaran == "" && Harga == "") {
                                     alert("Data Transportasi Harus di Isi");
                                     return false;
-                                }
-                                if (asal == "") {
-                                    alert("Keberangkatan di Isi");
+                                }else if (jenis == "") {
+                                    alert("Jenis Transportasi Harusdi Isi");
                                     return false;
-                                } else if (trans == "") {
-                                    alert("Jenis Transportasi di Isi");
+                                }else if (class_ == "") {
+                                    alert("Class Harus di Isi");
                                     return false;
-                                } else if (tujuan == "") {
+                                }else if (nama == "") {
+                                    alert("Nama Transportasi Harus di Isi");
+                                    return false;
+                                }else if (tanggal == "") {
+                                    alert("Tanggal di Harus Isi");
+                                    return false;
+                                }else if (berangkat == "") {
+                                    alert("Keberangkatan Harus di Isi");
+                                    return false;
+                                }  else if (tujuan == "") {
                                     alert("Tujuan Harus di Isi");
+                                    return false;
+                                }else if (jam_berangkat == "") {
+                                    alert("Jam Keberangkatan Harus di Isi");
+                                    return false;
+                                }else if (jam_tiba == "") {
+                                    alert("Jam Kedatangan Harus di Isi");
+                                    return false;
+                                }else if (kisaran == "") {
+                                    alert("Kisaran Harga Harus di Isi");
                                     return false;
                                 } else if (Harga == "") {
                                     alert("Harga Harus di Isi");
