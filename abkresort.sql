@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 06, 2019 at 02:34 PM
+-- Generation Time: Nov 19, 2019 at 10:33 AM
 -- Server version: 10.1.38-MariaDB
 -- PHP Version: 7.3.2
 
@@ -21,6 +21,65 @@ SET time_zone = "+00:00";
 --
 -- Database: `abkresort`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `class`
+--
+
+CREATE TABLE `class` (
+  `id_class` int(11) NOT NULL,
+  `nama_class` varchar(50) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `class`
+--
+
+INSERT INTO `class` (`id_class`, `nama_class`) VALUES
+(1, 'Ekonomi'),
+(2, 'Bisnis');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `jenis_tempat`
+--
+
+CREATE TABLE `jenis_tempat` (
+  `id_jenis` int(11) NOT NULL,
+  `nama` varchar(50) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `jenis_tempat`
+--
+
+INSERT INTO `jenis_tempat` (`id_jenis`, `nama`) VALUES
+(1, 'Bandara'),
+(2, 'Terminal');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `jenis_transport`
+--
+
+CREATE TABLE `jenis_transport` (
+  `id_transport` int(11) NOT NULL,
+  `nama_transport` varchar(50) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `jenis_transport`
+--
+
+INSERT INTO `jenis_transport` (`id_transport`, `nama_transport`) VALUES
+(1, 'Pesawat'),
+(2, 'Bis'),
+(3, 'Mobil'),
+(4, 'Kapal');
 
 -- --------------------------------------------------------
 
@@ -49,8 +108,8 @@ INSERT INTO `kota` (`id_kota`, `nama_kota`) VALUES
 
 CREATE TABLE `paket` (
   `id_paket` int(11) NOT NULL,
-  `id_rute` int(11) NOT NULL,
   `id_penginapan` int(11) NOT NULL,
+  `id_transport` int(11) NOT NULL,
   `id_wisata` int(11) NOT NULL,
   `harga` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
@@ -80,25 +139,25 @@ INSERT INTO `penginapan` (`id_penginapan`, `id_kota`, `nama_penginapan`, `jumlah
 -- --------------------------------------------------------
 
 --
--- Table structure for table `rute`
+-- Table structure for table `tempat_transport`
 --
 
-CREATE TABLE `rute` (
-  `id_rute` int(11) NOT NULL,
-  `id_transport` int(11) NOT NULL,
-  `rute_asal` int(11) NOT NULL,
-  `rute_tujuan` int(11) NOT NULL,
-  `harga` int(11) NOT NULL
+CREATE TABLE `tempat_transport` (
+  `id_tempat` int(11) NOT NULL,
+  `nama_tempat` varchar(50) NOT NULL,
+  `jenis_tempat` int(11) NOT NULL,
+  `id_kota` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `rute`
+-- Dumping data for table `tempat_transport`
 --
 
-INSERT INTO `rute` (`id_rute`, `id_transport`, `rute_asal`, `rute_tujuan`, `harga`) VALUES
-(3, 3, 1, 2, 1000000),
-(5, 4, 1, 2, 1000000),
-(6, 1, 2, 1, 2147483647);
+INSERT INTO `tempat_transport` (`id_tempat`, `nama_tempat`, `jenis_tempat`, `id_kota`) VALUES
+(1, 'Bandara Abdurahman Saleh', 1, 1),
+(2, 'Terminal Arjosari', 2, 1),
+(5, 'Bandara Juanda', 1, 2),
+(6, 'Terminal Bungur Asih', 2, 2);
 
 -- --------------------------------------------------------
 
@@ -111,9 +170,10 @@ CREATE TABLE `transaksi` (
   `id_user` int(11) NOT NULL,
   `id_paket` int(11) DEFAULT NULL,
   `id_penginapan` int(11) DEFAULT NULL,
+  `id_transport` int(11) DEFAULT NULL,
   `hari` int(11) DEFAULT NULL,
-  `id_rute` int(11) DEFAULT NULL,
   `id_wisata` int(11) DEFAULT NULL,
+  `tamu` int(11) NOT NULL,
   `total_harga` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
@@ -121,8 +181,9 @@ CREATE TABLE `transaksi` (
 -- Dumping data for table `transaksi`
 --
 
-INSERT INTO `transaksi` (`id_transaksi`, `id_user`, `id_paket`, `id_penginapan`, `hari`, `id_rute`, `id_wisata`, `total_harga`) VALUES
-(4, 3, NULL, 1, 1, 3, 1, 2500000);
+INSERT INTO `transaksi` (`id_transaksi`, `id_user`, `id_paket`, `id_penginapan`, `id_transport`, `hari`, `id_wisata`, `tamu`, `total_harga`) VALUES
+(3, 3, NULL, NULL, 1, NULL, NULL, 1, 2500000),
+(4, 3, NULL, 1, NULL, 5, 1, 1, 1500000);
 
 -- --------------------------------------------------------
 
@@ -132,19 +193,24 @@ INSERT INTO `transaksi` (`id_transaksi`, `id_user`, `id_paket`, `id_penginapan`,
 
 CREATE TABLE `transport` (
   `id_transport` int(11) NOT NULL,
-  `nama_transport` varchar(10) NOT NULL
+  `class` int(11) NOT NULL,
+  `jenis_transport` int(11) NOT NULL,
+  `nama_transp` varchar(50) NOT NULL,
+  `tanggal` date NOT NULL,
+  `tempat_asal` int(11) NOT NULL,
+  `tempat_tujuan` int(11) NOT NULL,
+  `jam_berangkat` time NOT NULL,
+  `jam_tiba` time NOT NULL,
+  `kisaran` varchar(50) NOT NULL,
+  `harga` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `transport`
 --
 
-INSERT INTO `transport` (`id_transport`, `nama_transport`) VALUES
-(1, 'Pesawat'),
-(2, 'Kapal'),
-(3, 'Bis'),
-(4, 'Minibus'),
-(5, 'Mobil');
+INSERT INTO `transport` (`id_transport`, `class`, `jenis_transport`, `nama_transp`, `tanggal`, `tempat_asal`, `tempat_tujuan`, `jam_berangkat`, `jam_tiba`, `kisaran`, `harga`) VALUES
+(1, 1, 2, 'Bagong', '2019-11-04', 1, 5, '17:00:00', '18:00:00', '5000-70000', 50000);
 
 -- --------------------------------------------------------
 
@@ -196,6 +262,24 @@ INSERT INTO `wisata` (`id_wisata`, `id_kota`, `nama_wisata`, `harga_tiket`, `fot
 --
 
 --
+-- Indexes for table `class`
+--
+ALTER TABLE `class`
+  ADD PRIMARY KEY (`id_class`);
+
+--
+-- Indexes for table `jenis_tempat`
+--
+ALTER TABLE `jenis_tempat`
+  ADD PRIMARY KEY (`id_jenis`);
+
+--
+-- Indexes for table `jenis_transport`
+--
+ALTER TABLE `jenis_transport`
+  ADD PRIMARY KEY (`id_transport`);
+
+--
 -- Indexes for table `kota`
 --
 ALTER TABLE `kota`
@@ -207,8 +291,7 @@ ALTER TABLE `kota`
 ALTER TABLE `paket`
   ADD PRIMARY KEY (`id_paket`),
   ADD KEY `FK_PAKET_PENGINAPAN` (`id_penginapan`),
-  ADD KEY `FK_PAKET_WISATA` (`id_wisata`),
-  ADD KEY `FK_PAKET_RUTE` (`id_rute`);
+  ADD KEY `FK_PAKET_WISATA` (`id_wisata`);
 
 --
 -- Indexes for table `penginapan`
@@ -218,13 +301,12 @@ ALTER TABLE `penginapan`
   ADD KEY `FK_KOTA_PENGINAPAN` (`id_kota`);
 
 --
--- Indexes for table `rute`
+-- Indexes for table `tempat_transport`
 --
-ALTER TABLE `rute`
-  ADD PRIMARY KEY (`id_rute`),
-  ADD KEY `FK_RUTE_TRANSPORT` (`id_transport`),
-  ADD KEY `FK_RUTE_KOTAASAL` (`rute_asal`),
-  ADD KEY `FK_RUTE_KOTATUJ` (`rute_tujuan`);
+ALTER TABLE `tempat_transport`
+  ADD PRIMARY KEY (`id_tempat`),
+  ADD KEY `FK_TEMPAT_KOTA` (`id_kota`),
+  ADD KEY `FK_TEMPAT_JENIS` (`jenis_tempat`);
 
 --
 -- Indexes for table `transaksi`
@@ -233,15 +315,19 @@ ALTER TABLE `transaksi`
   ADD PRIMARY KEY (`id_transaksi`),
   ADD KEY `FK_TRANS_PAKET` (`id_paket`),
   ADD KEY `FK_TRANS_PENGINAPAN` (`id_penginapan`),
-  ADD KEY `FK_TRANS_RUTE` (`id_rute`),
   ADD KEY `FK_TRANS_WISATA` (`id_wisata`),
-  ADD KEY `FK_TRANS_USER` (`id_user`);
+  ADD KEY `FK_TRANS_USER` (`id_user`),
+  ADD KEY `FK_TRANS_TRANSP` (`id_transport`);
 
 --
 -- Indexes for table `transport`
 --
 ALTER TABLE `transport`
-  ADD PRIMARY KEY (`id_transport`);
+  ADD PRIMARY KEY (`id_transport`),
+  ADD KEY `FK_TRANSP_JENIS` (`jenis_transport`),
+  ADD KEY `FK_TRANSP_TEMPAT_ASL` (`tempat_asal`),
+  ADD KEY `FK_TRANSP_TEMPAT_TUJ` (`tempat_tujuan`),
+  ADD KEY `FK_TRANSP_CLASS` (`class`);
 
 --
 -- Indexes for table `user`
@@ -259,6 +345,24 @@ ALTER TABLE `wisata`
 --
 -- AUTO_INCREMENT for dumped tables
 --
+
+--
+-- AUTO_INCREMENT for table `class`
+--
+ALTER TABLE `class`
+  MODIFY `id_class` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
+-- AUTO_INCREMENT for table `jenis_tempat`
+--
+ALTER TABLE `jenis_tempat`
+  MODIFY `id_jenis` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
+-- AUTO_INCREMENT for table `jenis_transport`
+--
+ALTER TABLE `jenis_transport`
+  MODIFY `id_transport` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `kota`
@@ -279,22 +383,22 @@ ALTER TABLE `penginapan`
   MODIFY `id_penginapan` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
--- AUTO_INCREMENT for table `rute`
+-- AUTO_INCREMENT for table `tempat_transport`
 --
-ALTER TABLE `rute`
-  MODIFY `id_rute` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+ALTER TABLE `tempat_transport`
+  MODIFY `id_tempat` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT for table `transaksi`
 --
 ALTER TABLE `transaksi`
-  MODIFY `id_transaksi` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id_transaksi` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `transport`
 --
 ALTER TABLE `transport`
-  MODIFY `id_transport` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id_transport` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `user`
@@ -317,7 +421,6 @@ ALTER TABLE `wisata`
 --
 ALTER TABLE `paket`
   ADD CONSTRAINT `FK_PAKET_PENGINAPAN` FOREIGN KEY (`id_penginapan`) REFERENCES `penginapan` (`id_penginapan`) ON DELETE CASCADE ON UPDATE CASCADE,
-  ADD CONSTRAINT `FK_PAKET_RUTE` FOREIGN KEY (`id_rute`) REFERENCES `rute` (`id_rute`) ON DELETE CASCADE ON UPDATE CASCADE,
   ADD CONSTRAINT `FK_PAKET_WISATA` FOREIGN KEY (`id_wisata`) REFERENCES `wisata` (`id_wisata`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
@@ -327,12 +430,11 @@ ALTER TABLE `penginapan`
   ADD CONSTRAINT `FK_KOTA_PENGINAPAN` FOREIGN KEY (`id_kota`) REFERENCES `kota` (`id_kota`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
--- Constraints for table `rute`
+-- Constraints for table `tempat_transport`
 --
-ALTER TABLE `rute`
-  ADD CONSTRAINT `FK_RUTE_KOTAASAL` FOREIGN KEY (`rute_asal`) REFERENCES `kota` (`id_kota`) ON DELETE CASCADE ON UPDATE CASCADE,
-  ADD CONSTRAINT `FK_RUTE_KOTATUJ` FOREIGN KEY (`rute_tujuan`) REFERENCES `kota` (`id_kota`) ON DELETE CASCADE ON UPDATE CASCADE,
-  ADD CONSTRAINT `FK_RUTE_TRANSPORT` FOREIGN KEY (`id_transport`) REFERENCES `transport` (`id_transport`) ON DELETE CASCADE ON UPDATE CASCADE;
+ALTER TABLE `tempat_transport`
+  ADD CONSTRAINT `FK_TEMPAT_JENIS` FOREIGN KEY (`jenis_tempat`) REFERENCES `jenis_tempat` (`id_jenis`),
+  ADD CONSTRAINT `FK_TEMPAT_KOTA` FOREIGN KEY (`id_kota`) REFERENCES `kota` (`id_kota`);
 
 --
 -- Constraints for table `transaksi`
@@ -340,9 +442,18 @@ ALTER TABLE `rute`
 ALTER TABLE `transaksi`
   ADD CONSTRAINT `FK_TRANS_PAKET` FOREIGN KEY (`id_paket`) REFERENCES `paket` (`id_paket`) ON DELETE CASCADE ON UPDATE CASCADE,
   ADD CONSTRAINT `FK_TRANS_PENGINAPAN` FOREIGN KEY (`id_penginapan`) REFERENCES `penginapan` (`id_penginapan`) ON DELETE CASCADE ON UPDATE CASCADE,
-  ADD CONSTRAINT `FK_TRANS_RUTE` FOREIGN KEY (`id_rute`) REFERENCES `rute` (`id_rute`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `FK_TRANS_TRANSP` FOREIGN KEY (`id_transport`) REFERENCES `transport` (`id_transport`),
   ADD CONSTRAINT `FK_TRANS_USER` FOREIGN KEY (`id_user`) REFERENCES `user` (`id_user`),
   ADD CONSTRAINT `FK_TRANS_WISATA` FOREIGN KEY (`id_wisata`) REFERENCES `wisata` (`id_wisata`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
+-- Constraints for table `transport`
+--
+ALTER TABLE `transport`
+  ADD CONSTRAINT `FK_TRANSP_CLASS` FOREIGN KEY (`class`) REFERENCES `class` (`id_class`),
+  ADD CONSTRAINT `FK_TRANSP_JENIS` FOREIGN KEY (`jenis_transport`) REFERENCES `jenis_transport` (`id_transport`),
+  ADD CONSTRAINT `FK_TRANSP_TEMPAT_ASL` FOREIGN KEY (`tempat_asal`) REFERENCES `tempat_transport` (`id_tempat`),
+  ADD CONSTRAINT `FK_TRANSP_TEMPAT_TUJ` FOREIGN KEY (`tempat_tujuan`) REFERENCES `tempat_transport` (`id_tempat`);
 
 --
 -- Constraints for table `wisata`
