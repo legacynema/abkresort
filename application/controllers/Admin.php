@@ -16,6 +16,7 @@ class Admin extends CI_Controller
 		$this->load->model("Model_transport");
 		$this->load->model("Model_tempatTransport");
 		$this->load->model("Model_jenisTransport");
+		$this->load->model("Model_class");
 		$this->load->model("Model_kota");
 		$this->load->model("Model_wisata");
 
@@ -51,7 +52,7 @@ class Admin extends CI_Controller
 	{
 		$data["transport"] = $this->Model_transport->getAll();
 		$data["jenis_transport"] = $this->Model_jenisTransport->getAll();
-		// $data["kota"] = $this->Model_kota->getAll();
+		$data["class"] = $this->Model_class->getAll();
 		$data["tempat_transport"] = $this->Model_tempatTransport->getAll();
 		$this->load->view('template_admin/header');
 		$this->load->view('template_admin/sidebar');
