@@ -16,9 +16,10 @@
                   <th>USER</th>
                   <th>PAKET</th>
                   <th>PENGINAPAN</th>
-                  <th>HARI</th>
                   <th>TRANSPORTASI</th>
+                  <th>HARI</th>
                   <th>WISATA</th>
+                  <th>TAMU</th>
                   <th>HARGA</th>
                   <th>MENU</th>
                 </tr>
@@ -28,19 +29,44 @@
                 <?php  $nomor =1; ?>
 						<?php
 
+              // SELECT 
+              // t.id_transaksi, u.nama_lengkap, t.id_paket, p.nama_penginapan, tr.nama_transp, t.hari, w.nama_wisata, t.tamu, t.total_harga
+              // FROM transaksi as t
+              // LEFT JOIN user as u
+              // ON u.id_user = t.id_user
+              // LEFT JOIN penginapan as p 
+              // ON p.id_penginapan = t.id_penginapan
+              // LEFT JOIN transport as tr
+              // ON tr.id_transport = t.id_transport
+              // LEFT JOIN wisata as w
+              // ON w.id_wisata = t.id_wisata
+
                         $this->db->select
-                        ('id_transaksi, nama_lengkap, id_paket, nama_penginapan, hari, id_rute, total_harga, nama_wisata');
+                        (
+                          '
+                          t.id_transaksi as id,
+                          u.nama_lengkap,
+                          t.id_paket,
+                          p.nama_penginapan,
+                          tr.nama_transp,
+                          t.hari,
+                          w.nama_wisata,
+                          t.tamu,
+                          t.total_harga
+                          '
+                        );
                         // SELECT 
-                                  $this->db->join('user', 'user.id_user = transaksi.id_user');
-                                  $this->db->join('penginapan', 'penginapan.id_penginapan = transaksi.id_penginapan');
-                        $query =  $this->db->join('wisata', 'wisata.id_wisata = transaksi.id_wisata')->get('transaksi');
+                                  $this->db->join('user as u', 'u.id_user = t.id_user', 'left');
+                                  $this->db->join('penginapan as p', 'p.id_penginapan = t.id_penginapan', 'left');
+                                  $this->db->join('transport as tr', 'tr.id_transport = t.id_transport', 'left');
+                        $query =  $this->db->join('wisata as w', 'w.id_wisata = t.id_wisata', 'left')->get('transaksi as t');
                         $nomor = 1;
 
 						foreach ($query->result_array() as $trans) :
 							?>
 							<tr>
 							  <td>
-									<p><?= $trans['id_transaksi'] ?></p>
+									<p><?= $trans['id'] ?></p>
 								</td>
 								<td>
 									<p><?= $trans['nama_lengkap'] ?></p>
@@ -52,19 +78,22 @@
 									<p><?= $trans['nama_penginapan'] ?></p>
 								</td>
                 <td>
+									<p><?= $trans['nama_transp'] ?></p>
+								</td>
+                <td>
 									<p><?= $trans['hari'] ?></p>
 								</td>
                 <td>
-									<p><?= $trans['id_rute'] ?></p>
+									<p><?= $trans['nama_wisata'] ?></p>
 								</td>
                 <td>
-									<p><?= $trans['nama_wisata'] ?></p>
+									<p><?= $trans['tamu'] ?></p>
 								</td>
 								<td>
                   <p>Rp. <?= number_format($trans['total_harga']) ?></p>
 								</td>
                                 <td>
-                                    <?php  echo anchor('Admin/transaksiDelete/'.$trans['id_transaksi'], '<button class="btn btn-danger margin" type="button"><span class="fa fa-trash"></span> </button>'); ?>
+                                    <?php  echo anchor('Admin/transaksiDelete/'.$trans['id'], '<button class="btn btn-danger margin" type="button"><span class="fa fa-trash"></span> </button>'); ?>
                                 </td>
 							</tr>
 							<?php $nomor++; ?>
