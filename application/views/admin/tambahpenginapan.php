@@ -61,11 +61,11 @@
                                 var Harga = document.forms["form"]["harga"].value;
                                 var tamu = document.forms["form"]["jumlah_tamu"].value;
 
-                                    if(kota == "" && namaPeng == "" && tamu == "" && Harga == ""){
-                                        alert("Data Penginapan Harus di Isi");
+                                    if(kota == "" & namaPeng == "" && tamu == "" && Harga == ""){
+                                        alert("Semua Data Harus di Isi");
                                         return false;
                                     }
-                                    if (kota == "") {
+                                    else if (kota == "" ) {
                                         alert("Kota Harus di Isi");
                                         return false;
                                     }else if (namaPeng == ""){
