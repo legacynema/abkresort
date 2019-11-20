@@ -14,7 +14,8 @@ class Admin extends CI_Controller
 		$this->load->model("Model_penginapan");
 		$this->load->model("Model_jenisPenginapan");
 		$this->load->model("Model_transport");
-		$this->load->model("Model_rute");
+		$this->load->model("Model_tempatTransport");
+		$this->load->model("Model_jenisTransport");
 		$this->load->model("Model_kota");
 		$this->load->model("Model_wisata");
 
@@ -49,7 +50,9 @@ class Admin extends CI_Controller
 	public function tambah_transport()
 	{
 		$data["transport"] = $this->Model_transport->getAll();
-		$data["kota"] = $this->Model_kota->getAll();
+		$data["jenis_transport"] = $this->Model_jenisTransport->getAll();
+		// $data["kota"] = $this->Model_kota->getAll();
+		$data["tempat_transport"] = $this->Model_tempatTransport->getAll();
 		$this->load->view('template_admin/header');
 		$this->load->view('template_admin/sidebar');
 		$this->load->view('admin/tambahtransport', $data);
@@ -163,21 +166,10 @@ class Admin extends CI_Controller
 	
 
 	//CRUD TRANSPORT
-	public function dataTransportasi()
-    {
-		$data["rute"] = $this->Model_rute->getAll();
-		$data["transport"] = $this->Model_transport->getAll();
-		$data["kota"] = $this->Model_kota->getAll();
-		$this->load->view('template_admin/header');
-		$this->load->view('template_admin/sidebar');
-		$this->load->view('admin/tambahtransport', $data);
-		$this->load->view('template_admin/footer');
-        
-	}
 	
 	public function transportasiAdd()
     {
-        $tambah = $this->Model_rute;
+        $tambah = $this->Model_transport;
         
             $tambah->save();
 			$this->session->set_flashdata('success', 'Berhasil disimpan');
@@ -185,12 +177,12 @@ class Admin extends CI_Controller
         
     }
 
-	public function transportasiDelete($id_rute = null)
+	public function transportasiDelete($id_transport = null)
     {
-        if (!isset($id_rute)) show_404();
+        if (!isset($id_transport)) show_404();
 
 		
-        if ($this->Model_rute->delete($id_rute)) {
+        if ($this->Model_transport->delete($id_transport)) {
 			redirect('Admin/tambah_transport');
         }
 	}
@@ -198,7 +190,7 @@ class Admin extends CI_Controller
 	//CRUD WISATA
 	public function dataWisata()
     {
-		$data["rute"] = $this->Model_rute->getAll();
+		$data["jenis_transport"] = $this->Model_jenisTransport->getAll();
 		$data["transport"] = $this->Model_transport->getAll();
 		$data["kota"] = $this->Model_kota->getAll();
 		$this->load->view('template_admin/header');
@@ -234,7 +226,7 @@ class Admin extends CI_Controller
 		$data["user"] = $this->Model_user->getAll();
 		$data["paket"] = $this->Model_paket->getAll();
 		$data["penginapan"] = $this->Model_penginapan->getAll();
-		$data["rute"] = $this->Model_rute->getAll();
+		$data["transport"] = $this->Model_transport->getAll();
 		$data["wisata"] = $this->Model_wisata->getAll();
 		$this->load->view('template_admin/header');
 		$this->load->view('template_admin/sidebar');
