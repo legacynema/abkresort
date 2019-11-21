@@ -18,12 +18,24 @@
   <div class="carousel-inner">
     <div class="carousel-item active img-fluid position-relative" >
     <img src="<?= base_url('assets/') ?>img/banner1.jpg" class="d-block w-100" height="100%">
+		<div class="carousel-caption d-none d-md-block">
+          <h2>First slide label</h2>
+          <h4>Nulla vitae elit libero, a pharetra augue mollis interdum.</h4>
+        </div>
     </div>
     <div class="carousel-item img-fluid position-relative">
       <img src="<?= base_url('assets/') ?>img/banner2.jpg" class="d-block w-100" width="100%" height="100%">
+	  	<div class="carousel-caption d-none d-md-block">
+          <h2>Second slide label</h2>
+          <h4>Nulla vitae elit libero, a pharetra augue mollis interdum.</h4>
+        </div>
     </div>
     <div class="carousel-item img-fluid position-relative">
     <img src="<?= base_url('assets/') ?>img/banner3.jpg" class="d-block w-100" width="100%" height="100%">
+		<div class="carousel-caption d-none d-md-block">
+          <h2>Third slide label</h2>
+          <h4>Nulla vitae elit libero, a pharetra augue mollis interdum.</h4>
+        </div>
     </div>
   </div>
   <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
