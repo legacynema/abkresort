@@ -21,14 +21,14 @@
         <div class="row">
             <div class="col-md-2"></div>
             <div class="col-md-8">
-                <img src="<?= base_url('assets/') ?>img/lautmanado.jpg"  class="d-block w-100" height="100%"  alt="">
+                <img src="<?= base_url('assets/') ?>img/ambon.jpg"  class="d-block w-100" height="100%"  alt="">
             </div>
             <div class="col-md-2"></div>
     </div>
     <div class="text-center">
-        <h3>Manado</h3>
+        <h3>Ambon</h3>
         <p class="t--larger"></p>
-        <p>Manado adalah ibu kota dari provinsi Sulawesi Utara. Manado seringkali disebut sebagai Menado. Manado terletak di Teluk Manado, dan dikelilingi oleh daerah pegunungan.  Nikmati pilihan paket menarik hanya di AbkResort Travel </p>
+        <p>Ambon merupakan pusat pelabuhan, pariwisata, dan pendidikan bagi wilayah Kepulauan Maluku.Ambon disebut sebagai pusat pariwisata karena menawarkan beragam jenis wisata, mulai dari alam, budaya, bahari, hingga kuliner. Nikmati pilihan paket menarik hanya di AbkResort Travel </p>
     </div><hr>
     <section class="section-block">
         <div class="block section-head clearfix" style>
@@ -37,20 +37,21 @@
         <div class="block post inset-on-m">
             <div class="block post__item bzg" style>
                 <h3 class="bzg_c block--small "style>
-                    <a href="#" class="link-black t--larger"style>Air Terjun Kali</a>
+                    <a href="#" class="link-black t--larger"style>Pulau Pombo</a>
                 </h3>
                 <div class="bzg_c" data-col="m4">
                     <figure class>
-                    <a class="responsive-media media--3-2 fill--lightgrey">
-                    <img src="<?= base_url('assets/') ?>img/airkali.jpg" alt="" class="">
+                    <!-- <a class="responsive-media media--3-2 fill--lightgrey"> -->
+                    <img src="<?= base_url('assets/') ?>img/pomboisland.jpg" alt="" class="">
                     </a> 
                     </figure>
                 </div>
                 <div class="bzg_c" data-col="m8">
                     <div class="block">
-                            Air terjun kali merupakan air terjun sangat fenomenal yang dijadikan sebagai objek wisata dan menarik wisatawan asing. 
-                            Air Terjun Kali terletak di Desa Kali, Kecamatan Pineleng, Minahasa, Sulut. Air terjun yang memiliki ketinggian sekitar 
-                            60 meter ini hanya berjarak sekitar 15 kilometer dari Manado, atau dengan waktu tempuh 50 menit menggunakan kendaraan bermotor.
+                    Pulau Pombo terletak di Kecamatan Salahhutu, Kabupaten Maluku Tengah atau secara geografis berada di antara Pulau Haruku dan Pulau Ambon. 
+                    Diperlukan waktu sekitar 20 menit dari kota Ambon untuk mencapai surga tersembunyi ini. 
+                    Untuk bisa sampai ke Pulau Pombo, kalian juga bisa menyewa speedboat dari Tulehu . 
+                    Hamparan pasir putih yang mengelilinginya benar-benar menyejukan mata. Apalagi di sekitarnya terlihat gradasi warna hijau kebiruan yang membuat pulau ini makin terlihat eksotis.
                    </div>
                    <div class="block text-right">
                        <a href="#" class="btn btn--round btn--ghost-red text-up"style >Selengkapnya</a>
@@ -59,15 +60,15 @@
             </div>
             <div class="block post__item bzg" style>
                 <h3 class="bzg_c block--small "style>
-                    <a href="#" class="link-black t--larger"style>Pantai Malayang </a>
+                    <a href="#" class="link-black t--larger"style>Pantai Liang</a>
                 </h3>
                 <div class="bzg_c col-md-4" >
-                    <img src="<?= base_url('assets/') ?>img/malayangbeach.jpg" alt="">
+                    <img src="<?= base_url('assets/') ?>img/pantailiang.jpg" alt="">
                 </div>
                 <div class="bzg_c col-md-8">
                     <div class="block">
-                    Pantai Malalayang yang terletak di ujung selatan kota Manado Sulawesi Utara, memiliki banyak hal yang menarik untuk di nikmati. Diantaranya taman laut yang masih alami dengan berbagai jenis koral warna warni dan spesies ikan berbagai jenis. Untuk sampai di pantai ini, dibutuhkan waktu sekitar 10 menit dari pusat kota Manado dengan menggunakan angkutan umum. Jaraknya sekitar 4 kilometer saja. 
-                    Pantai ini menjadi satu-satunya tempat wisata rakyat yang murah meriah, karena aksesnya dekat dan mudah ditempuh.
+                    Pantai Liang. Terletak 40 km dari pusat Kota Ambon, Pantai Liang memiliki pemandangan yang tak hanya menyegarkan mata, juga jiwa. 
+                    Pasir putih yang alami, air laut biru jernih, serta ombak yang tenang membuatnya dipilih menjadi pantai terindah di Indonesia oleh (UNDP) PBB pada tahun 1990. Pantai Liang tepat untuk Anda yang ingin terlepas dari hingar bingar suasana kota.
                    </div>
                    <div class="block text-right">
                        <a href="#" class="btn btn--round btn--ghost-red text-up"style >Selengkapnya</a>
