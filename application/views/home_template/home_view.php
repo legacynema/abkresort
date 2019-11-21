@@ -76,7 +76,7 @@
                		</div>
            		</a>
                 
-                <a href="#" class="col new-hhd col-high-dest">
+                <a href="<?= base_url('Destination/medan') ?>" class="col new-hhd col-high-dest">
               		<div class="new-hhd-card" >
                   <img src="<?= base_url('assets/') ?>img/Medan.jpg" class="d-block w-100" width="100%" height="100%">
                   		<div class="new-hhd-body">Medan</div>
