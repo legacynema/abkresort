@@ -23,12 +23,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
 | a PHP script and you can easily do that on your own.
 |
 */
-<<<<<<< HEAD
 $config['base_url'] = 'http://localhost:8080/abkresort';
-=======
-
-$config['base_url'] = 'http://localhost/abkresort';
->>>>>>> 0bf516131b7f47c727969f7a10e66084738f98a6
 
 /*
 |--------------------------------------------------------------------------
