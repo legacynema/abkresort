@@ -140,28 +140,28 @@
                		</div>
            		</a>
                 
-                <a href="#" class="col new-hhd col-high-dest">
+                <a href="<?= base_url('Destination/bandung') ?>" class="col new-hhd col-high-dest">
               		<div class="new-hhd-card" >
                   <img src="<?= base_url('assets/') ?>img/Bandung.jpg" class="d-block w-100" width="100%" height="100%">
                   		<div class="new-hhd-body">Bandung</div>
                		</div>
            		</a>
                 
-                <a href="#" class="col new-hhd col-high-dest">
+                <a href="<?= base_url('Destination/jakarta') ?>" class="col new-hhd col-high-dest">
               		<div class="new-hhd-card" >
                   <img src="<?= base_url('assets/') ?>img/Jakarta.jpg" class="d-block w-100" width="100%" height="100%">
                   		<div class="new-hhd-body">Jakarta</div>
                		</div>
            		</a>
                 
-                <a href="#" class="col new-hhd col-high-dest">
+                <a href="<?= base_url('Destination/lombok') ?>" class="col new-hhd col-high-dest">
               		<div class="new-hhd-card" >
                   <img src="<?= base_url('assets/') ?>img/Lombok.jpg" class="d-block w-100" width="100%" height="100%">
                   		<div class="new-hhd-body">Lombok</div>
                		</div>
            		</a>
                 
-                <a href="#" class="col new-hhd col-high-dest">
+                <a href="<?= base_url('Destination/bali') ?>" class="col new-hhd col-high-dest">
               		<div class="new-hhd-card" >
                   <img src="<?= base_url('assets/') ?>img/Bali.jpg" class="d-block w-100" width="100%" height="100%">
                   		<div class="new-hhd-body">Bali</div>
