@@ -28,7 +28,7 @@
     <div class="text-center">
         <h3>Medan</h3>
         <p class="t--larger"></p>
-        <p>Ambon merupakan pusat pelabuhan, pariwisata, dan pendidikan bagi wilayah Kepulauan Maluku.Ambon disebut sebagai pusat pariwisata karena menawarkan beragam jenis wisata, mulai dari alam, budaya, bahari, hingga kuliner. Nikmati pilihan paket menarik hanya di AbkResort Travel </p>
+        <p>Kota Medan adalah ibu kota provinsi Sumatra Utara, Indonesia. Kota ini merupakan kota terbesar ketiga di Indonesia setelah Jakarta dan Surabaya, serta kota terbesar di luar Pulau Jawa. Kota Medan merupakan pintu gerbang wilayah Indonesia bagian barat dengan keberadaan Pelabuhan Belawan dan Bandar Udara Internasional Kuala Namu yang merupakan bandara terbesar kedua di Indonesia. Nikmati pilihan paket menarik hanya di AbkResort Travel </p>
     </div><hr>
     <section class="section-block">
         <div class="block section-head clearfix" style>
