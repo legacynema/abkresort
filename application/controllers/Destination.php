@@ -56,4 +56,9 @@ class Destination extends CI_Controller {
 		$this->load->view('destination_template/destination_view_medan');
 		$this->load->view('footer');
 	 }
+	 public function bandung(){
+		$this->load->view('navbar');
+		$this->load->view('destination_template/destination_view_bandung');
+		$this->load->view('footer');
+	 }
 }
