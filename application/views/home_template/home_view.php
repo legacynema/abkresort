@@ -12,8 +12,8 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
   </head>
   <body>
-      <div class="gradient-background">
-      </div>
+      <!-- <div class="gradient-background">
+      </div> -->
   <div id="carouselExampleControls" class="carousel slide " data-ride="carousel">
   <div class="carousel-inner">
     <div class="carousel-item active img-fluid position-relative" >
@@ -35,7 +35,64 @@
     <span class="sr-only">Next</span>
   </a>
 </div>
-<br><br>
+
+<section id="features" class="features text-center">
+		<div class="container">
+			<div class="row">
+				
+				<div class="col-md-12"></div>
+				<div class="col-sm-6 col-md-3">
+					<a href="<?= base_url('Input/flight') ?>"><i class="fas fa-paper-plane"></i></a>
+						<h3>Pesawat</h3>
+				</div>
+				<div class="col-sm-6 col-md-3">
+					<a href="<?= base_url('Input/travel') ?>"><i class="fas fa-luggage-cart"></i></a>
+						<h3>Wisata</h3>
+				</div>
+				<div class="col-sm-6 col-md-3">
+					<a href="<?= base_url('Input/penginapan') ?>"><i class="fas fa-hotel"></i></a>
+						<h3>Hotel</h3>
+				</div>
+				<div class="col-sm-6 col-md-3">
+					<a href="<?= base_url('Input/train') ?>"><i class="fas fa-train"></i></a>
+						<h3>Kereta Api</h3>
+				</div>
+			</div>
+		</div>
+    <br>
+    <div class="container">
+			<div class="row">
+				<div class="col-md-12"></div>
+				<div class="col-sm-6 col-md-3">
+					<a href="<?= base_url('Input/car') ?>"><i class="fas fa-car"></i></a>
+						<h3>Mobil</h3>
+				</div>
+				<div class="col-sm-6 col-md-3">
+					<a href="<?= base_url('Input/bus') ?>"><i class="fas fa-bus"></i></a>
+						<h3>Bis</h3>
+				</div>
+				<div class="col-sm-6 col-md-3">
+					<a href="<?= base_url('Input/package') ?>"><i class="fas fa-hand-pointer"></i></a>
+						<h3>Pilih Maumu</h3>
+				</div>
+			</div>
+		</div>
+	</section>
+
+
+<!-- <div class="container">
+  <div class="row">
+    <div class="col-md-2"></div>
+      <div class="col-md-8">
+        <span class="dot"></span>
+        <span class="dot"></span>
+        <span class="dot"></span>
+      </div>
+  </div>
+</div> -->
+
+
+<div class="col-md-2"></div>
 <div class="container indt-container new-hhd-container pb-5 pt-5">
     <h3 class="mb-3">Destination Highlights</h3>
 
