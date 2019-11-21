@@ -72,4 +72,9 @@ class Destination extends CI_Controller {
 		$this->load->view('destination_template/destination_view_lombok');
 		$this->load->view('footer');
 	 }
+	 public function bali(){
+		$this->load->view('navbar');
+		$this->load->view('destination_template/destination_view_bali');
+		$this->load->view('footer');
+	 }
 }
