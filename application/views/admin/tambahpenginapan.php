@@ -116,7 +116,6 @@
 
                         $this->db->select('id_penginapan, nama_kota,nama_penginapan, jumlah_tamu, harga, foto');
                         // SELECT 
-                                //   $this->db->join('kota', 'kota.id_kota = penginapan.id_jenis_penginapan');
                         $query =  $this->db->join('kota', 'kota.id_kota = penginapan.id_kota')->get('penginapan');
                         $nomor = 1;
 

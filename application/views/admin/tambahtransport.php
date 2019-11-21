@@ -8,58 +8,96 @@
                         <h3 class="box-title">Tambah Transportasi</h3>
                     </div>
                     <!-- FLASH DATA PEMBERITAHUAN -->
-                <?php if ($this->session->flashdata('success')): ?>
-                    <div class="alert alert-success" role="alert">
-                        <?php echo $this->session->flashdata('success'); ?>
-                    </div>
-                <?php endif; ?> 
+                    <?php if ($this->session->flashdata('success')) : ?>
+                        <div class="alert alert-success" role="alert">
+                            <?php echo $this->session->flashdata('success'); ?>
+                        </div>
+                    <?php endif; ?>
                     <!-- /.box-header -->
                     <!-- form start -->
-                    <form action="<?php echo base_url(). 'Admin/transportasiAdd'; ?>" name="form"  onsubmit="return validateForm()" method="post" enctype="multipart/form-data">
+                    <form action="<?php echo base_url() . 'Admin/transportasiAdd'; ?>" name="form" onsubmit="return validateForm()" method="post" enctype="multipart/form-data">
                         <div class="box-body">
                             <div class="form-group">
                                 <label for="id_kota">Jenis Transportasi</label>
-                                    <select class="form-control" name="id_transport">
-                                        <option value="" disabled selected>Pilih Transportasi</option>
+                                <select class="form-control" name="jenis_transport">
+                                    <option value="" disabled selected>Pilih Transportasi</option>
 
-                                        <?php foreach($transport as $trans):?>
-                                                    <option value="<?= $trans->id_transport?>"><?= $trans->nama_transport?></option>
-                                                <?php  endforeach;?>
-                                        
-                                    </select>
+                                    <?php foreach ($jenis_transport as $trans) : ?>
+                                        <option value="<?= $trans->id_transport ?>"><?= $trans->nama_transport ?></option>
+                                    <?php endforeach; ?>
+
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="box-body">
+                            <div class="form-group">
+                                <label for="nama_penginapan">Nama Transportasi</label>
+                                <input class="form-control" type="text" name="nama_transp" placeholder="example : Lion Air">
+                            </div>
+                        </div>
+
+                        <div class="box-body">
+                            <div class="col-12" id="parent-first-flight">
+                                <div class="form-group">
+                                    <label for="tanggal">Tanggal</label>
+                                    <input type="text" onfocus="(this.type='date')" class="form-control" id="datetimepicker1" name="tanggal" placeholder="Keberangkatan" aria-describedby="basic-addon1">
+                                </div>
                             </div>
                         </div>
 
                         <div class="box-body">
                             <div class="form-group">
                                 <label for="rute_asal">Keberangkatan</label>
-                                    <select class="form-control" name="rute_asal">
-                                        <option value="" disabled selected>Pilih Kota</option>
+                                <select class="form-control" name="tempat_asal">
+                                    <option value="" disabled selected>Pilih Keberangkatan</option>
 
-                                        <?php foreach($kota as $kot):?>
-                                                    <option value="<?= $kot->id_kota?>"><?= $kot->nama_kota?></option>
-                                                <?php  endforeach;?>
-                                        
-                                    </select>
+                                    <?php foreach ($tempat_transport as $tt) : ?>
+                                        <option value="<?= $tt->id_tempat ?>"><?= $tt->nama_tempat ?></option>
+                                    <?php endforeach; ?>
+
+                                </select>
                             </div>
                         </div>
 
                         <div class="box-body">
                             <div class="form-group">
-                                <label for="rute_tujuan">Tujuan</label>
-                                    <select class="form-control" name="rute_tujuan">
-                                        <option value="" disabled selected>Pilih Kota</option>
+                                <label for="rute_asal">Tujuan</label>
+                                <select class="form-control" name="tempat_tujuan">
+                                    <option value="" disabled selected>Pilih Tujuan</option>
 
-                                        <?php foreach($kota as $kot):?>
-                                                    <option value="<?= $kot->id_kota?>"><?= $kot->nama_kota?></option>
-                                                <?php  endforeach;?>
-                                        
-                                    </select>
+                                    <?php foreach ($tempat_transport as $tt) : ?>
+                                        <option value="<?= $tt->id_tempat ?>"><?= $tt->nama_tempat ?></option>
+                                    <?php endforeach; ?>
+
+                                </select>
                             </div>
                         </div>
 
                         <div class="box-body">
-                            <label for="harga">Harga *per hari</label>
+                            <label for="jam_berangkat">Jam Keberangkatan</label>
+                            <div class="input-group">
+                                <input type="time" name="jam_berangkat" class="form-control" placeholder="Rp.">
+                            </div>
+                        </div>
+
+                        <div class="box-body">
+                            <label for="jam_tiba">Jam Kedatangan</label>
+                            <div class="input-group">
+                                <input type="time" name="jam_tiba" class="form-control" placeholder="Rp.">
+                            </div>
+                        </div>
+
+                        <div class="box-body">
+                            <label for="kisaran">Kisaran Harga </label>
+                            <div class="input-group">
+                                <span class="input-group-addon"><i class="fa fa-money"></i></span>
+                                <input type="text" name="kisaran" class="form-control" placeholder="Rp.">
+                            </div>
+                        </div>
+
+                        <div class="box-body">
+                            <label for="harga">Harga</label>
                             <div class="input-group">
                                 <span class="input-group-addon"><i class="fa fa-money"></i></span>
                                 <input type="text" name="harga" class="form-control" placeholder="Rp.">
@@ -67,30 +105,30 @@
                         </div>
 
                         <script>
-                                function validateForm() {
+                            function validateForm() {
                                 var trans = document.forms["form"]["id_transport"].value;
                                 var asal = document.forms["form"]["rute_asal"].value;
                                 var tujuan = document.forms["form"]["rute_tujuan"].value;
                                 var Harga = document.forms["form"]["harga"].value;
 
-                                    if(asal == "" && trans == "" && tujuan == "" && Harga == ""){
-                                        alert("Data Transportasi Harus di Isi");
-                                        return false;
-                                    }
-                                    if (asal == "") {
-                                        alert("Keberangkatan di Isi");
-                                        return false;
-                                    }else if (trans == ""){
-                                        alert("Jenis Transportasi di Isi");
-                                        return false;
-                                    }else if (tujuan == ""){
-                                        alert("Tujuan Harus di Isi");
-                                        return false;
-                                    }else if (Harga == ""){
-                                        alert("Harga Harus di Isi");
-                                        return false;
-                                    }
+                                if (asal == "" && trans == "" && tujuan == "" && Harga == "") {
+                                    alert("Data Transportasi Harus di Isi");
+                                    return false;
                                 }
+                                if (asal == "") {
+                                    alert("Keberangkatan di Isi");
+                                    return false;
+                                } else if (trans == "") {
+                                    alert("Jenis Transportasi di Isi");
+                                    return false;
+                                } else if (tujuan == "") {
+                                    alert("Tujuan Harus di Isi");
+                                    return false;
+                                } else if (Harga == "") {
+                                    alert("Harga Harus di Isi");
+                                    return false;
+                                }
+                            }
                         </script>
 
 
@@ -112,66 +150,108 @@
                     <!-- /.box-header -->
                     <!-- form start -->
                     <div class="box-body">
-                    <table class="table table-hover">
-                        <tr>
-                            <th style="width: 10px">#</th>
-                            <!-- <th>ID </th> -->
-                            <th>Jenis Transportasi</th>
-                            <th>Keberangkatan</th>
-                            <th>Tujuan</th>
-                            <th>Harga</th>
-                            <th>Menu</th>
-                        </tr>
-                        
-                        <?php  $nomor =1; ?>
-						<?php
+                        <table class="table table-hover">
+                            <tr>
+                                <th style="width: 10px">#</th>
+                                <!-- <th>ID </th> -->
+                                <th>ID</th>
+                                <th>Class</th>
+                                <th>Jenis Transport</th>
+                                <th>Nama</th>
+                                <th>Tanggal</th>
+                                <th>Keberangkatan</th>
+                                <th>Tujuan</th>
+                                <th>Jam Keberangkatan</th>
+                                <th>Jam Tiba</th>
+                                <th>Kisaran</th>
+                                <th>Harga</th>
+                                <th>Menu</th>
+                            </tr>
 
-                        
+                            <?php $nomor = 1; ?>
+                            <?php
 
-                        $this->db->select('nama_transport, nama_kota, nama_kota, harga,id_rute');
-                        // SELECT 
-                                  $this->db->join('kota', 'kota.id_kota = rute.rute_asal');
-                                //   $this->db->join('kota', 'kota.id_kota = rute.rute_tujuan');
-                        $query =  $this->db->join('transport', 'transport.id_transport = rute.id_transport')->get('rute');
-                        $nomor = 1;
-                        
-                        // SELECT t.nama_transport	 , k.nama_kota, k2.nama_kota , r.harga
-                        // FROM rute as r 
-                        
-                        //  JOIN transport as t 
-                        // ON t.id_transport = r.id_transport
-                        
-                        //  JOIN kota as k 
-                        // ON k.id_kota = r.rute_asal
-                        
-                        //  JOIN kota as k2
-                        // ON k2.id_kota = r.rute_tujuan
-						foreach ($query->result_array() as $peng) :
-							?>
-							<tr>
-							<td><?php echo $nomor; ?></td>
-								<td>
-									<p><?= $peng['nama_transport'] ?></p>
-								</td>
-								<td>
-									<p><?= $peng['nama_kota'] ?></p>
-								</td>
-								<td>
-									<p><?= $peng['nama_kota'] ?></p>
-								</td>
-								<td>
-									<p>Rp. <?= number_format($peng['harga']) ?></p>
-                                    
-								</td>
+                            //    $query = "SELECT
+                            //    jt.nama_transport, t.nama_transp, tt.nama_tempat as berangkat, tb.nama_tempat as tiba
+                            //    FROM transport as t
+                            //    JOIN jenis_transport as jt
+                            //    on jt.id_transport = t.jenis_transport
+                            //    JOIN tempat_transport as tt
+                            //    on tt.id_tempat = t.tempat_asal
+                            //    JOIN tempat_transport as tb
+                            //    on tb.id_tempat = t.tempat_tujuan";
 
-                                <td>
-                                    <?php  echo anchor('Admin/transportasiDelete/'.$peng['id_rute'], '<button class="btn btn-danger margin" type="button"><span class="fa fa-trash"></span> </button>'); ?>
-                                </td>
-							</tr>
-							<?php $nomor++; ?>
-						<?php endforeach; ?>
-                    </table>
-                </div>
+                            //    $data=$this->db->query($query)->result_array();
+
+                            $this->db->select(
+                            't.id_transport as id,
+                             c.nama_class,
+                             jt.nama_transport,
+                             t.nama_transp,
+                             t.tanggal,
+                             tt.nama_tempat as berangkat,
+                             tb.nama_tempat as tiba,
+                             t.jam_berangkat,
+                             t.jam_tiba,
+                             t.kisaran,
+                             t.harga
+                             '
+                                );
+
+                            $this->db->join('class as c', 'c.id_class = t.class');
+                            $this->db->join('jenis_transport as jt', 'jt.id_transport = t.jenis_transport');
+                            $this->db->join('tempat_transport as tb', 'tb.id_tempat = t.tempat_tujuan');
+                            $query =  $this->db->join('tempat_transport as tt', 'tt.id_tempat = t.tempat_asal')->get('transport as t');
+                            $nomor = 1;
+
+                            foreach ($query->result_array() as $peng) :
+                                // var_dump($peng);
+                                ?>
+
+                                <tr>
+                                    <td><?php echo $nomor; ?></td>
+                                    <td>
+                                        <p><?= $peng['id'] ?></p>
+                                    </td>
+                                    <td>
+                                        <p><?= $peng['nama_class'] ?></p>
+                                    </td>
+                                    <td>
+                                        <p><?= $peng['nama_transport'] ?></p>
+                                    </td>
+                                    <td>
+                                        <p><?= $peng['nama_transp'] ?></p>
+                                    </td>
+                                    <td>
+                                        <p><?= $peng['tanggal'] ?></p>
+                                    </td>
+                                    <td>
+                                        <p><?= $peng['berangkat'] ?></p>
+                                    </td>
+                                    <td>
+                                        <p><?= $peng['tiba'] ?></p>
+                                    </td>
+                                    <td>
+                                        <p><?= $peng['jam_berangkat'] ?></p>
+                                    </td>
+                                    <td>
+                                        <p><?= $peng['jam_tiba'] ?></p>
+                                    </td>
+                                    <td>
+                                        <p>Rp. <?= $peng['kisaran'] ?></p>
+                                    </td>
+                                    <td>
+                                        <p>Rp. <?= number_format($peng['harga']) ?></p>
+
+                                    </td>
+                                    <td>
+                                        <?php echo anchor('Admin/transportasiDelete/' . $peng['id'], '<button class="btn btn-danger margin" type="button"><span class="fa fa-trash"></span> </button>'); ?>
+                                    </td>
+                                </tr>
+                                <?php $nomor++; ?>
+                            <?php endforeach; ?>
+                        </table>
+                    </div>
                 </div>
             </div>
         </div>
