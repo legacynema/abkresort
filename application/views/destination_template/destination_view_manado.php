@@ -41,7 +41,7 @@
                 </h3>
                 <div class="bzg_c" data-col="m4">
                     <figure class>
-                    <a class="responsive-media media--3-2 fill--lightgrey">
+                    <!-- <a class="responsive-media media--3-2 fill--lightgrey"> -->
                     <img src="<?= base_url('assets/') ?>img/airkali.jpg" alt="" class="">
                     </a> 
                     </figure>
