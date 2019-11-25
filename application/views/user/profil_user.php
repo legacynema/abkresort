@@ -8,7 +8,7 @@
 </head>
 <body>
     <div class="container">
-        <h1 class="block-half">Profil Traveler</h1>
+        <h1 class="block-half">Profil Traveler</h1><br>
         <div class="block block--insert-small border">
             <div class="bzg bzg--no--gutter">
                 <div class="bzg_c" data-col="m12, 20">
