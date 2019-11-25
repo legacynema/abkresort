@@ -52,9 +52,7 @@
                     Tugu ini dimahkotai lidah api yang dilapisi lembaran emas yang melambangkan semangat perjuangan yang menyala-nyala. 
                     Monumen Nasional terletak tepat di tengah Lapangan Medan Merdeka, Jakarta Pusat.
                    </div>
-                   <div class="block text-right">
-                       <a href="#" class="btn btn--round btn--ghost-red text-up"style >Selengkapnya</a>
-                   </div>
+                   
                 </div>
             </div>
             <div class="block post__item bzg" style>
@@ -72,9 +70,7 @@
                     Di samping itu, di tengah-tengah TMII terdapat sebuah danau yang menggambarkan miniatur kepulauan Indonesia di tengahnya, kereta gantung, berbagai museum, dan Teater IMAX Keong Mas dan Teater Tanah Airku, 
                     berbagai sarana rekreasi ini menjadikan TMIII sebagai salah satu kawasan wisata terkemuka di ibu kota.
                    </div>
-                   <div class="block text-right">
-                       <a href="#" class="btn btn--round btn--ghost-red text-up"style >Selengkapnya</a>
-                   </div>
+                   
                 </div>
             </div>
         </div>

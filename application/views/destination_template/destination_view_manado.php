@@ -52,9 +52,7 @@
                             Air Terjun Kali terletak di Desa Kali, Kecamatan Pineleng, Minahasa, Sulut. Air terjun yang memiliki ketinggian sekitar 
                             60 meter ini hanya berjarak sekitar 15 kilometer dari Manado, atau dengan waktu tempuh 50 menit menggunakan kendaraan bermotor.
                    </div>
-                   <div class="block text-right">
-                       <a href="#" class="btn btn--round btn--ghost-red text-up"style >Selengkapnya</a>
-                   </div>
+                   
                 </div>
             </div>
             <div class="block post__item bzg" style>
@@ -69,9 +67,7 @@
                     Pantai Malalayang yang terletak di ujung selatan kota Manado Sulawesi Utara, memiliki banyak hal yang menarik untuk di nikmati. Diantaranya taman laut yang masih alami dengan berbagai jenis koral warna warni dan spesies ikan berbagai jenis. Untuk sampai di pantai ini, dibutuhkan waktu sekitar 10 menit dari pusat kota Manado dengan menggunakan angkutan umum. Jaraknya sekitar 4 kilometer saja. 
                     Pantai ini menjadi satu-satunya tempat wisata rakyat yang murah meriah, karena aksesnya dekat dan mudah ditempuh.
                    </div>
-                   <div class="block text-right">
-                       <a href="#" class="btn btn--round btn--ghost-red text-up"style >Selengkapnya</a>
-                   </div>
+                   
                 </div>
             </div>
         </div>

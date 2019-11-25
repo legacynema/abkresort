@@ -53,9 +53,7 @@
                             Lokasi ini dijadikan pusat latihan dan event paralayang se-Malang Raya. Diresmikan pada tahun 2000, bersamaan dengan diadakannya event PON VI Jatim yang ditandai dengan penandatanganan prasasti oleh Ketua Umum Federasi Aero Sport Indonesia Marsekal TNI Hanafi Asnan.
                             Di Paralayang, para atlet dapat melayang sambil menikmati keindahan alam dari udara. Pesona pemandangan yang dapat dinikmati para olahragawan menjadi sajian yang menakjubkan, sehingga makin banyak para atlet yang menjajal area ini.    
                    </div>
-                   <div class="block text-right">
-                       <a href="#" class="btn btn--round btn--ghost-red text-up"style >Selengkapnya</a>
-                   </div>
+                   
                 </div>
             </div>
             <div class="block post__item bzg" style>
@@ -72,9 +70,7 @@
                             Lokasi ini dijadikan pusat latihan dan event paralayang se-Malang Raya. Diresmikan pada tahun 2000, bersamaan dengan diadakannya event PON VI Jatim yang ditandai dengan penandatanganan prasasti oleh Ketua Umum Federasi Aero Sport Indonesia Marsekal TNI Hanafi Asnan.
                             Di Paralayang, para atlet dapat melayang sambil menikmati keindahan alam dari udara. Pesona pemandangan yang dapat dinikmati para olahragawan menjadi sajian yang menakjubkan, sehingga makin banyak para atlet yang menjajal area ini.    
                    </div>
-                   <div class="block text-right">
-                       <a href="#" class="btn btn--round btn--ghost-red text-up"style >Selengkapnya</a>
-                   </div>
+                   
                 </div>
             </div>
         </div>
