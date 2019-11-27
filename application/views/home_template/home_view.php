@@ -56,32 +56,32 @@
                                 <div class="col-xs-6 col-sm-3 col-md-3 col-lg-3 margin-bottom-20">
                                     <a href="#products" class="change-section">
                                         <div class="black-bg btn-menu">
-                                            <i class="fa fa-cubes"></i>
-                                            <h2>Products</h2>
+										<i class="fas fa-fighter-jet"></i>
+                                            <h2>Pesawat</h2>
                                         </div>
                                     </a>
                                 </div>
                                 <div class="col-xs-6 col-sm-3 col-md-3 col-lg-3 margin-bottom-20">
                                     <a href="#services" class="change-section">
                                         <div class="black-bg btn-menu">
-                                            <i class="fa fa-laptop"></i>
-                                            <h2>Services</h2>
+										<i class="fas fa-hotel"></i>
+                                            <h2>Hotel</h2>
                                         </div>
                                     </a>
                                 </div>
                                 <div class="col-xs-6 col-sm-3 col-md-3 col-lg-3 margin-bottom-20">
                                     <a href="#about" class="change-section">
                                         <div class="black-bg btn-menu">
-                                            <i class="fa fa-users"></i>
-                                            <h2>About</h2>
+										<i class="fas fa-train"></i>
+                                            <h2>Kereta Api</h2>
                                         </div>
                                     </a>
                                 </div>
                                 <div class="col-xs-6 col-sm-3 col-md-3 col-lg-3 margin-bottom-20">
                                     <a href="#contact" class="change-section">
                                         <div class="black-bg btn-menu">
-                                            <i class="fa fa-envelope"></i>
-                                            <h2>Contact</h2>
+										<i class="fas fa-dolly-flatbed"></i>
+                                            <h2>Pilih Wisata</h2>
                                         </div>
                                     </a>
 								</div>
@@ -89,40 +89,25 @@
                             </div>
 						</section><!-- /.menu-section --> 
 						
-						<section id="menu-section" class="active" style="display: block;">
+						<section id="menu-section" style="display: block;">
                             <div class="row">
                                 <div class="col-xs-6 col-sm-3 col-md-3 col-lg-3 margin-bottom-20">
                                     <a href="#products" class="change-section">
                                         <div class="black-bg btn-menu">
-                                            <i class="fa fa-cubes"></i>
-                                            <h2>Products</h2>
+										<i class="fas fa-car"></i>
+                                            <h2>Mobil</h2>
                                         </div>
                                     </a>
                                 </div>
                                 <div class="col-xs-6 col-sm-3 col-md-3 col-lg-3 margin-bottom-20">
                                     <a href="#services" class="change-section">
                                         <div class="black-bg btn-menu">
-                                            <i class="fa fa-laptop"></i>
-                                            <h2>Services</h2>
+										<i class="fas fa-list"></i>
+                                            <h2>All in One</h2>
                                         </div>
                                     </a>
                                 </div>
-                                <div class="col-xs-6 col-sm-3 col-md-3 col-lg-3 margin-bottom-20">
-                                    <a href="#about" class="change-section">
-                                        <div class="black-bg btn-menu">
-                                            <i class="fa fa-users"></i>
-                                            <h2>About</h2>
-                                        </div>
-                                    </a>
-                                </div>
-                                <div class="col-xs-6 col-sm-3 col-md-3 col-lg-3 margin-bottom-20">
-                                    <a href="#contact" class="change-section">
-                                        <div class="black-bg btn-menu">
-                                            <i class="fa fa-envelope"></i>
-                                            <h2>Contact</h2>
-                                        </div>
-                                    </a>
-								</div>
+                                
                                 
                             </div>
                         </section><!-- /.menu-section -->    
