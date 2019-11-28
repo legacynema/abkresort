@@ -56,7 +56,7 @@
                                 <div class="col-xs-6 col-sm-3 col-md-3 col-lg-3 margin-bottom-20">
                                     <a href="<?= base_url('Input/flight') ?>" class="change-section">
                                         <div class="black-bg btn-menu">
-										<i class="fas fa-fighter-jet"></i>
+										<i class="fash fa-fighter-jet"></i>
                                             <h2>Pesawat</h2>
                                         </div>
                                     </a>
@@ -64,7 +64,7 @@
                                 <div class="col-xs-6 col-sm-3 col-md-3 col-lg-3 margin-bottom-20">
                                     <a href="<?= base_url('Input/penginapan') ?>" class="change-section">
                                         <div class="black-bg btn-menu">
-										<i class="fas fa-hotel"></i>
+										<i class="fash fa-hotel"></i>
                                             <h2>Hotel</h2>
                                         </div>
                                     </a>
@@ -72,38 +72,28 @@
                                 <div class="col-xs-6 col-sm-3 col-md-3 col-lg-3 margin-bottom-20">
                                     <a href="<?= base_url('Input/train') ?>" class="change-section">
                                         <div class="black-bg btn-menu">
-										<i class="fas fa-train"></i>
+										<i class="fash fa-train"></i>
                                             <h2>Kereta Api</h2>
                                         </div>
                                     </a>
                                 </div>
                                 <div class="col-xs-6 col-sm-3 col-md-3 col-lg-3 margin-bottom-20">
-                                    <a href="<?= base_url('Input/travel') ?>" class="change-section">
+                                    <a href="<?= base_url('Input/car') ?>" class="change-section">
                                         <div class="black-bg btn-menu">
-										<i class="fas fa-dolly-flatbed"></i>
-                                            <h2>Pilih Wisata</h2>
+										<i class="fash fa-car"></i>
+                                            <h2>Mobil</h2>
                                         </div>
                                     </a>
-								</div>
                                 
                             </div>
 						</section><!-- /.menu-section --> 
 						
 						<section id="menu-section" style="display: block;">
                             <div class="row">
-                                <div class="col-xs-6 col-sm-3 col-md-3 col-lg-3 margin-bottom-20">
-                                    <a href="<?= base_url('Input/car') ?>" class="change-section">
-                                        <div class="black-bg btn-menu">
-										<i class="fas fa-car"></i>
-                                            <h2>Mobil</h2>
-                                        </div>
-                                    </a>
-								</div>
-								
 								<div class="col-xs-6 col-sm-3 col-md-3 col-lg-3 margin-bottom-20">
                                     <a href="<?= base_url('Input/bus') ?>" class="change-section">
                                         <div class="black-bg btn-menu">
-										<i class="fas fa-bus"></i>
+										<i class="fash fa-bus"></i>
                                             <h2>Bus</h2>
                                         </div>
                                     </a>
@@ -112,7 +102,7 @@
                                 <div class="col-xs-6 col-sm-3 col-md-3 col-lg-3 margin-bottom-20">
                                     <a href="<?= base_url('Input/package') ?>" class="change-section">
                                         <div class="black-bg btn-menu">
-										<i class="fas fa-list"></i>
+										<i class="fash fa-list"></i>
                                             <h2>All in One</h2>
                                         </div>
                                     </a>
