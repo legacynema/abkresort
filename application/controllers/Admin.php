@@ -7,28 +7,20 @@ class Admin extends CI_Controller
 	public function __construct()
 	{
 		parent::__construct();
-		// $this->load->database();
-		$this->load->helper(array('form', 'url'));
+		$this->load->model(array(
+			"Model_penginapan",
+			"Model_jenisPenginapan",
+			"Model_transport",
+			"Model_tempatTransport",
+			"Model_jenisTransport",
+			"Model_kota",
+			"Model_wisata",
+			"Model_transaksi",
+			"Model_paket",
+			"Model_user",
+			"Model_admin",
+			"Model_super_admin"));
 		$this->load->library('form_validation');
-
-		$this->load->model("Model_penginapan");
-		$this->load->model("Model_jenisPenginapan");
-		$this->load->model("Model_transport");
-		$this->load->model("Model_tempatTransport");
-		$this->load->model("Model_jenisTransport");
-		$this->load->model("Model_kota");
-		$this->load->model("Model_wisata");
-
-		$this->load->model("Model_transaksi");
-		$this->load->model("Model_paket");
-
-
-		$this->load->model("Model_user");
-		$this->load->model("Model_admin");
-		$this->load->model("Model_super_admin");
-		
-		
-
 	}
 	public function index()
 	{
