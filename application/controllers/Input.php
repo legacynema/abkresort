@@ -18,55 +18,62 @@ class Input extends CI_Controller {
 	 * map to /index.php/welcome/<method_name>
 	 * @see https://codeigniter.com/user_guide/general/urls.html
 	 */
+
 	public function package()
-	{	$this->load->view('navbar');
+	{	
+		$this->load->view('navbar');
         $this->load->view('input/allinone');
 		$this->load->view('footer');
     }
     
     public function flight()
-	{	$this->load->view('navbar');
+	{	
+		$this->load->view('navbar');
 		$this->load->view('input/flight');
 		$this->load->view('footer');
     }
 
     public function penginapan()
-	{	$this->load->view('navbar');
+	{	
+		$this->load->view('navbar');
         $this->load->view('input/hotel');
 		$this->load->view('footer');
     }
 
     public function travel()
-	{	$this->load->view('navbar');
+	{	
+		$this->load->view('navbar');
         $this->load->view('input/travel');
 		$this->load->view('footer');
     }
 
     public function car()
-	{	$this->load->view('navbar');
+	{	
+		$this->load->view('navbar');
         $this->load->view('input/car');
 		$this->load->view('footer');
     }
 
     public function train()
-	{	$this->load->view('navbar');
+	{	
+		
+		$this->load->view('navbar');
         $this->load->view('input/train');
 		$this->load->view('footer');
 	}
 
 	public function bus()
-	{	$this->load->view('navbar');
-        $this->load->view('input/bus');
+	{	
+		$this->load->view('navbar');
+		this->load->view('input/bus');
 		$this->load->view('footer');
 	}	
 	
-	public function sflight(){
+	public function sflight()
+	{
 		$this->load->view('navbar');
 		$this->load->view('searching/search_flight');
-
 		$this->load->view('footer');
-
 	}
-
 
 }
