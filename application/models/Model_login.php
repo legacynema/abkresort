@@ -2,12 +2,12 @@
 
 class Model_login extends CI_Model {
 
-    function cek_login($tabel,$where,$user,$pass)
+    function cek_login($tabel,$where,$email,$pass)
     {
-        $user = htmlspecialchars($user);
+        $email = htmlspecialchars($email);
         $pass = md5($pass);
         $query= $this->db->select('*')
-                ->from($tabel)->where($where,$user)
+                ->from($tabel)->where($where,$email)
                 ->where('password', $pass)
                 ->get();
         if ($query->num_rows() > 0) {
