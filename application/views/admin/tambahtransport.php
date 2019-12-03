@@ -7,7 +7,7 @@
                     <div class="box-header with-border">
                         <h3 class="box-title">Tambah Transportasi</h3>
                     </div>
-                    <!-- FLASH DATA PEMBERITAHUAN -->
+                    <!-- FLASH DATA PEMBERITAHUAN -->zz
                     <?php if ($this->session->flashdata('success')) : ?>
                         <div class="alert alert-success" role="alert">
                             <?php echo $this->session->flashdata('success'); ?>
@@ -141,7 +141,8 @@
                     </form>
                 </div>
             </div>
-            <div class="col-md-6">
+            <div class="row">
+            <div class="col-md-12">
                 <!-- general form elements -->
                 <div class="box box-primary">
                     <div class="box-header with-border">
@@ -150,7 +151,7 @@
                     <!-- /.box-header -->
                     <!-- form start -->
                     <div class="box-body">
-                        <table class="table table-hover">
+                    <table class="table table-hover">
                             <tr>
                                 <th style="width: 10px">#</th>
                                 <!-- <th>ID </th> -->
@@ -254,6 +255,7 @@
                     </div>
                 </div>
             </div>
+        </div>
         </div>
     </section>
     </div>
