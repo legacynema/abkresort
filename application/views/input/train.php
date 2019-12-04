@@ -92,6 +92,52 @@
 
 </div>
 
+<!-- Result -->
+
+<br><br><br><br><br><br><br>
+<div class="container">
+<div class="card-deck mb-3 text-center">
+    <div class="card mb-4 shadow-sm">
+      <div class="card-header">
+        <h4 class="my-0 font-weight-normal">Dhoho</h4>
+      </div>
+      <div class="card-body">
+        <h1 class="card-title pricing-card-title">07:00</h1>
+        <h4>Jombang - Yogyakarta</h4>
+        <h5>Economy Class</h5>
+        <h5>Rp.2.000.000</h5>
+      </div>
+      <button type="button" class="btn btn-lg btn-block btn-primary">Pesan</button>
+    </div>
+    <div class="card mb-4 shadow-sm">
+      <div class="card-header">
+        <h4 class="my-0 font-weight-normal">Gaya Baru Malam</h4>
+      </div>
+      <div class="card-body">
+        <h1 class="card-title pricing-card-title">07:00</h1>
+        <h4>Jombang - Probolinggo</h4>
+        <h5>Economy Class</h5>
+        <h5>Rp.2.000.000</h5>
+      </div>
+      <button type="button" class="btn btn-lg btn-block btn-primary">Pesan</button>
+    </div>
+    <div class="card mb-4 shadow-sm">
+      <div class="card-header">
+        <h4 class="my-0 font-weight-normal">Bangunkarta</h4>
+      </div>
+      <div class="card-body">
+        <h1 class="card-title pricing-card-title">07:00</h1>
+        <h4>Jombang - Probolinggo</h4>
+        <h5>Economy Class</h5>
+        <h5>Rp.2.000.000</h5>
+      </div>
+      <button type="button" class="btn btn-lg btn-block btn-primary">Pesan</button>
+    </div>
+  </div>
+
+  
+</div>
+
 
 </body>
 </html>
