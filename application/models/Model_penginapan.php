@@ -83,7 +83,7 @@ private $_table = "penginapan";
         
         $config['upload_path']          = './foto/admin/penginapan';
         $config['allowed_types']        = 'jpg|png';
-        $config['file_name']            = $this->nama_penginapan;
+        $config['file_name']            = $this->nama_penginapan.date("_Y_m_d");
         $config['overwrite']            = true;
         $config['max_size']             = 1024; // 1MB
         // $config['max_width']            = 1024;
