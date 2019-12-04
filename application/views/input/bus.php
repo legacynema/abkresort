@@ -38,26 +38,25 @@
                   PESAN TIKET BIS
 			  </div>
 			  <div class="card-block indt-book-body">
+			  <div class="input-group">
+				  <span class="input-group-addon" id="basic-addon1"><i class="fas fa-map-marker-alt"></i></span> 
+				  <input id="origin" name="origin" type="text" class="form-control ui-autocomplete-input" placeholder="Kota Keberangkatan" aria-describedby="basic-addon1" autocomplete="off">
+				</div>
+				<br>
 				<div class="input-group">
 				  <span class="input-group-addon" id="basic-addon1"><i class="fas fa-map-marker-alt"></i></span> 
-				  <input id="origin" name="origin" type="text" class="form-control ui-autocomplete-input" placeholder="Tujuan" aria-describedby="basic-addon1" autocomplete="off">
+				  <input id="origin" name="origin" type="text" class="form-control ui-autocomplete-input" placeholder="Kota Tujuan" aria-describedby="basic-addon1" autocomplete="off">
 				</div>
         <br>
 				<div class="row">
 				  <div class="col-12" id="parent-first-flight">
 					<div class="form-group">
-					  <input type="text" onfocus="(this.type='date')" class="form-control" id="datetimepicker1" name="first-flight-date" placeholder="Dari" aria-describedby="basic-addon1">
+					  <input type="text" onfocus="(this.type='date')" class="form-control" id="datetimepicker1" name="first-flight-date" placeholder="Pilih Tanggal" aria-describedby="basic-addon1">
 					</div>
 				  </div>
 				</div>
 
-				<div class="row">
-				  <div class="col-12" id="parent-first-flight">
-					<div class="form-group">
-					  <input type="text" onfocus="(this.type='date')" class="form-control" id="datetimepicker1" name="first-flight-date" placeholder="Hingga" aria-describedby="basic-addon1">
-					</div>
-				  </div>
-				</div>
+				
 			  </div>
 			  <div class="card-footer text-muted" style="padding: 0;">
 				<button id="searchTravel" type="submit" class="btn btn-primary btn-book-flight">CARI WISATA</button>
@@ -74,6 +73,53 @@
 </div>
 
 </div>
+
+<!-- Result -->
+
+<br><br><br><br><br><br><br>
+<div class="container">
+<div class="card-deck mb-3 text-center">
+    <div class="card mb-4 shadow-sm">
+      <div class="card-header">
+        <h4 class="my-0 font-weight-normal">Rosalia Indah</h4>
+      </div>
+      <div class="card-body">
+        <h1 class="card-title pricing-card-title">07:00</h1>
+        <h4>Jombang - Yogyakarta</h4>
+		<h5>7 April 2020</h5>
+        <h5>Rp.2.000.000</h5>
+      </div>
+      <button type="button" class="btn btn-lg btn-block btn-primary">Pesan</button>
+    </div>
+    <div class="card mb-4 shadow-sm">
+      <div class="card-header">
+        <h4 class="my-0 font-weight-normal">Rosalia Indah</h4>
+      </div>
+      <div class="card-body">
+        <h1 class="card-title pricing-card-title">07:00</h1>
+        <h4>Jombang - Probolinggo</h4>
+		<h5>7 April 2020</h5>
+        <h5>Rp.2.000.000</h5>
+      </div>
+      <button type="button" class="btn btn-lg btn-block btn-primary">Pesan</button>
+    </div>
+    <div class="card mb-4 shadow-sm">
+      <div class="card-header">
+        <h4 class="my-0 font-weight-normal">Rosalia Indah</h4>
+      </div>
+      <div class="card-body">
+        <h1 class="card-title pricing-card-title">07:00</h1>
+        <h4>Jombang - Probolinggo</h4>
+		<h5>7 April 2020</h5>
+        <h5>Rp.2.000.000</h5>
+      </div>
+      <button type="button" class="btn btn-lg btn-block btn-primary">Pesan</button>
+    </div>
+  </div>
+
+  
+</div>
+
 
 
 </body>
