@@ -38,26 +38,25 @@
                   PESAN TIKET BIS
 			  </div>
 			  <div class="card-block indt-book-body">
+			  <div class="input-group">
+				  <span class="input-group-addon" id="basic-addon1"><i class="fas fa-map-marker-alt"></i></span> 
+				  <input id="origin" name="origin" type="text" class="form-control ui-autocomplete-input" placeholder="Kota Keberangkatan" aria-describedby="basic-addon1" autocomplete="off">
+				</div>
+				<br>
 				<div class="input-group">
 				  <span class="input-group-addon" id="basic-addon1"><i class="fas fa-map-marker-alt"></i></span> 
-				  <input id="origin" name="origin" type="text" class="form-control ui-autocomplete-input" placeholder="Tujuan" aria-describedby="basic-addon1" autocomplete="off">
+				  <input id="origin" name="origin" type="text" class="form-control ui-autocomplete-input" placeholder="Kota Tujuan" aria-describedby="basic-addon1" autocomplete="off">
 				</div>
         <br>
 				<div class="row">
 				  <div class="col-12" id="parent-first-flight">
 					<div class="form-group">
-					  <input type="text" onfocus="(this.type='date')" class="form-control" id="datetimepicker1" name="first-flight-date" placeholder="Dari" aria-describedby="basic-addon1">
+					  <input type="text" onfocus="(this.type='date')" class="form-control" id="datetimepicker1" name="first-flight-date" placeholder="Pilih Tanggal" aria-describedby="basic-addon1">
 					</div>
 				  </div>
 				</div>
 
-				<div class="row">
-				  <div class="col-12" id="parent-first-flight">
-					<div class="form-group">
-					  <input type="text" onfocus="(this.type='date')" class="form-control" id="datetimepicker1" name="first-flight-date" placeholder="Hingga" aria-describedby="basic-addon1">
-					</div>
-				  </div>
-				</div>
+				
 			  </div>
 			  <div class="card-footer text-muted" style="padding: 0;">
 				<button id="searchTravel" type="submit" class="btn btn-primary btn-book-flight">CARI WISATA</button>
