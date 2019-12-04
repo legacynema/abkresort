@@ -73,6 +73,16 @@
 					</div>
 				  </div>
 
+				  <div class="col-12 col-md-12">
+					<div class="input-group">
+					  <select id="cabin" class="form-control">
+						<option value="E">Economy Class</option>
+						<option value="B">Business Class</option>
+						<option value="F">Eksekutif Class</option>
+					  </select>
+					</div>
+				  </div>
+
 				  
 				</div>
 			  </div>
