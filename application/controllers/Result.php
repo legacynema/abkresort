@@ -22,6 +22,12 @@ class Result extends CI_Controller {
 	{	$this->load->view('navbar');
         $this->load->view('searching/search_flight');
 		$this->load->view('footer');
+	}
+	
+	public function hotel()
+	{	$this->load->view('navbar');
+        $this->load->view('searching/hotel');
+		$this->load->view('footer');
     }
     
     
