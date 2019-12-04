@@ -55,9 +55,7 @@
                     Terumbu karangnya menjulang ketengah menyebabkan ombak besarnya pecah di tengah. 
                     Tersedia juga hotel-hotel dengan harga yang bervariasi, dari yang mahal sampai hotel yang berharga ekonomis.
                    </div>
-                   <div class="block text-right">
-                       <a href="#" class="btn btn--round btn--ghost-red text-up"style >Selengkapnya</a>
-                   </div>
+                   
                 </div>
             </div>
             <div class="block post__item bzg" style>
@@ -73,9 +71,7 @@
                     Lebih tepatnya berada di kawasan desa Senaru, 2 kilometer dari desa Bayan.Objek wisata ini masih berada dalam kawasan Taman Nasional Gunung Rinjani.[1] Ini disebabkan karena air terjun ini merupakan pintu masuk pendakian menuju gunung Rinjani.[2] Selain itu, ternyata air di Sendang Gile berasal dari mata air di Gunung Rinjani yang sangat sejuk dan alami.[2]
                     Untuk menuju ke tempat ini, para pengunjung harus melalui dua ratusan anak tangga yang mencapai ketinggian 40 meter, dan jembatan berlubang melalui sebuah lembah yang membutuhkan waktu penjelajahan sekitar 15 menit.[1] Perjalanan alternatif juga bisa dilakukan dengan cara menyelusuri pinggir lembah yang agak curam dan mengikuti saluran irigasi serta menyeberangi jembatan yang terbuat dari rotan.[3]
                    </div>
-                   <div class="block text-right">
-                       <a href="#" class="btn btn--round btn--ghost-red text-up"style >Selengkapnya</a>
-                   </div>
+                  
                 </div>
             </div>
         </div>

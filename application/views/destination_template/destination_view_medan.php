@@ -52,9 +52,7 @@
                     Didesain oleh arsitek Italia dan dibangun oleh Sultan Deli, Sultan Mahmud Al Rasyid. Pembangunan istana ini dimulai dari 26 Agustus 1888 dan selesai pada 18 Mei 1891. Istana Maimun memiliki luas sebesar 2.772 m2 dan 30 ruangan. Istana Maimun terdiri dari 2 lantai dan memiliki 3 bagian yaitu bangunan induk, bangunan sayap kiri dan bangunan sayap kanan. 
                     Bangunan istana ini menghadap ke utara dan pada sisi depan terdapat bangunan Masjid Al-Mashun atau yang lebih dikenal dengan sebutan Masjid Raya Medan.
                    </div>
-                   <div class="block text-right">
-                       <a href="#" class="btn btn--round btn--ghost-red text-up"style >Selengkapnya</a>
-                   </div>
+                  
                 </div>
             </div>
             <div class="block post__item bzg" style>
@@ -70,9 +68,7 @@
                         Di tempat ini disediakan fasilitas outbound yang cukup lengkap seperti Flying Fox dan ATV.  Ada juga camping ground dan cafe dengan harga yang cukup terjangkau.
                         Lokasi: Jl Deli Tua – Pancur Batu atau sekitar 10 menit perjalanan dari Kebun Binatang Medan
                    </div>
-                   <div class="block text-right">
-                       <a href="#" class="btn btn--round btn--ghost-red text-up"style >Selengkapnya</a>
-                   </div>
+                   
                 </div>
             </div>
         </div>

@@ -53,9 +53,7 @@
                     Untuk bisa sampai ke Pulau Pombo, kalian juga bisa menyewa speedboat dari Tulehu . 
                     Hamparan pasir putih yang mengelilinginya benar-benar menyejukan mata. Apalagi di sekitarnya terlihat gradasi warna hijau kebiruan yang membuat pulau ini makin terlihat eksotis.
                    </div>
-                   <div class="block text-right">
-                       <a href="#" class="btn btn--round btn--ghost-red text-up"style >Selengkapnya</a>
-                   </div>
+                   
                 </div>
             </div>
             <div class="block post__item bzg" style>
@@ -70,9 +68,7 @@
                     Pantai Liang. Terletak 40 km dari pusat Kota Ambon, Pantai Liang memiliki pemandangan yang tak hanya menyegarkan mata, juga jiwa. 
                     Pasir putih yang alami, air laut biru jernih, serta ombak yang tenang membuatnya dipilih menjadi pantai terindah di Indonesia oleh (UNDP) PBB pada tahun 1990. Pantai Liang tepat untuk Anda yang ingin terlepas dari hingar bingar suasana kota.
                    </div>
-                   <div class="block text-right">
-                       <a href="#" class="btn btn--round btn--ghost-red text-up"style >Selengkapnya</a>
-                   </div>
+                   
                 </div>
             </div>
         </div>

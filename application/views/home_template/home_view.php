@@ -18,12 +18,24 @@
   <div class="carousel-inner">
     <div class="carousel-item active img-fluid position-relative" >
     <img src="<?= base_url('assets/') ?>img/banner1.jpg" class="d-block w-100" height="100%">
+		<div class="carousel-caption d-none d-md-block">
+          <h2>First slide label</h2>
+          <h4>Nulla vitae elit libero, a pharetra augue mollis interdum.</h4>
+        </div>
     </div>
     <div class="carousel-item img-fluid position-relative">
       <img src="<?= base_url('assets/') ?>img/banner2.jpg" class="d-block w-100" width="100%" height="100%">
+	  	<div class="carousel-caption d-none d-md-block">
+          <h2>Second slide label</h2>
+          <h4>Nulla vitae elit libero, a pharetra augue mollis interdum.</h4>
+        </div>
     </div>
     <div class="carousel-item img-fluid position-relative">
     <img src="<?= base_url('assets/') ?>img/banner3.jpg" class="d-block w-100" width="100%" height="100%">
+		<div class="carousel-caption d-none d-md-block">
+          <h2>Third slide label</h2>
+          <h4>Nulla vitae elit libero, a pharetra augue mollis interdum.</h4>
+        </div>
     </div>
   </div>
   <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
@@ -36,7 +48,77 @@
   </a>
 </div>
 
-<section id="features" class="features text-center">
+<div class="container">
+<div class="templatemo-content-wrapper">
+                    <div class="templatemo-content">  
+                        <section id="menu-section" class="active" style="display: block;">
+                            <div class="row">
+                                <div class="col-xs-6 col-sm-3 col-md-3 col-lg-3 margin-bottom-20">
+                                    <a href="<?= base_url('Input/flight') ?>" class="change-section">
+                                        <div class="black-bg btn-menu">
+										<i class="fash fa-fighter-jet"></i>
+                                            <h2>Pesawat</h2>
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="col-xs-6 col-sm-3 col-md-3 col-lg-3 margin-bottom-20">
+                                    <a href="<?= base_url('Input/penginapan') ?>" class="change-section">
+                                        <div class="black-bg btn-menu">
+										<i class="fash fa-hotel"></i>
+                                            <h2>Hotel</h2>
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="col-xs-6 col-sm-3 col-md-3 col-lg-3 margin-bottom-20">
+                                    <a href="<?= base_url('Input/train') ?>" class="change-section">
+                                        <div class="black-bg btn-menu">
+										<i class="fash fa-train"></i>
+                                            <h2>Kereta Api</h2>
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="col-xs-6 col-sm-3 col-md-3 col-lg-3 margin-bottom-20">
+                                    <a href="<?= base_url('Input/car') ?>" class="change-section">
+                                        <div class="black-bg btn-menu">
+										<i class="fash fa-car"></i>
+                                            <h2>Mobil</h2>
+                                        </div>
+                                    </a>
+                                
+                            </div>
+						</section><!-- /.menu-section --> 
+						
+						<section id="menu-section" style="display: block;">
+                            <div class="row">
+								<div class="col-xs-6 col-sm-3 col-md-3 col-lg-3 margin-bottom-20">
+                                    <a href="<?= base_url('Input/bus') ?>" class="change-section">
+                                        <div class="black-bg btn-menu">
+										<i class="fash fa-bus"></i>
+                                            <h2>Bus</h2>
+                                        </div>
+                                    </a>
+								</div>
+
+                                <div class="col-xs-6 col-sm-3 col-md-3 col-lg-3 margin-bottom-20">
+                                    <a href="<?= base_url('Input/package') ?>" class="change-section">
+                                        <div class="black-bg btn-menu">
+										<i class="fash fa-list"></i>
+                                            <h2>All in One</h2>
+                                        </div>
+                                    </a>
+                                </div>
+                                
+                                
+                            </div>
+                        </section><!-- /.menu-section -->    
+                         
+
+                        
+                    </div><!-- /.templatemo-content -->  
+                </div>
+</div>
+
+<!-- <section id="features" class="features text-center">
 		<div class="container">
 			<div class="row">
 				
@@ -77,7 +159,7 @@
 				</div>
 			</div>
 		</div>
-	</section>
+	</section> -->
 
 
 <!-- <div class="container">

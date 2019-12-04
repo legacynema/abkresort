@@ -52,9 +52,7 @@
                             Monumen Kapal Selam (Monkasel) adalah sebuah monumen Kapal Selam terbesar di kawasan Asia, yang dibangun di sisi sungai Kalimas, Surabaya. 
                             Monkasel resmi dibuka pada 15 Juli 1998 dan telah beroperasi sebagai salah satu objek wisata di Surabaya. Monkasel buka dari Senin-Minggu pukul 08.00-21.00 wib.
                    </div>
-                   <div class="block text-right">
-                       <a href="#" class="btn btn--round btn--ghost-red text-up"style >Selengkapnya</a>
-                   </div>
+                   
                 </div>
             </div>
             <div class="block post__item bzg" style>
@@ -69,9 +67,7 @@
                     Jembatan Merah merupakan salah satu monumen sejarah di Surabaya. Pada masa kolonial, jembatan ini merupakan pengubung vital melewati Kalimas menuju Gedung Karesidenan Surabaya. Kawasan sekitar jembatan merah pun menjadi pusat pemerintahan, perkantoran serta perdagangan kala itu.
                     Jembatan Merah juga menjadi saksi dari pertempuran 10 November 1945. Yaitu pertempuran antara rakyat Surabaya-Indonesia dengan Sekutu dan Belanda yang hampir menguasai lagi wilayah Surabaya. Kini kawasan Jembatan Merah tetap berdiri kokoh dan menjadi salah satu warisan bersejarah.    
                    </div>
-                   <div class="block text-right">
-                       <a href="#" class="btn btn--round btn--ghost-red text-up"style >Selengkapnya</a>
-                   </div>
+                   
                 </div>
             </div>
         </div>
