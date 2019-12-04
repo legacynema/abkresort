@@ -179,7 +179,10 @@
                     </form>
                 </div>
             </div>
-            <div class="col-md-6">
+            
+        </div>
+        <div class="row">
+        <div class="col-md-12">
                 <!-- general form elements -->
                 <div class="box box-primary">
                     <div class="box-header with-border">
@@ -188,107 +191,109 @@
                     <!-- /.box-header -->
                     <!-- form start -->
                     <div class="box-body">
-                        <table class="table table-hover">
-                            <tr>
-                                <th style="width: 10px">#</th>
-                                <!-- <th>ID </th> -->
-                                <th>ID</th>
-                                <th>Class</th>
-                                <th>Jenis Transport</th>
-                                <th>Nama</th>
-                                <th>Tanggal</th>
-                                <th>Keberangkatan</th>
-                                <th>Tujuan</th>
-                                <th>Jam Keberangkatan</th>
-                                <th>Jam Tiba</th>
-                                <th>Kisaran</th>
-                                <th>Harga</th>
-                                <th>Menu</th>
-                            </tr>
-
-                            <?php $nomor = 1; ?>
-                            <?php
-
-                            //    $query = "SELECT
-                            //    jt.nama_transport, t.nama_transp, tt.nama_tempat as berangkat, tb.nama_tempat as tiba
-                            //    FROM transport as t
-                            //    JOIN jenis_transport as jt
-                            //    on jt.id_transport = t.jenis_transport
-                            //    JOIN tempat_transport as tt
-                            //    on tt.id_tempat = t.tempat_asal
-                            //    JOIN tempat_transport as tb
-                            //    on tb.id_tempat = t.tempat_tujuan";
-
-                            //    $data=$this->db->query($query)->result_array();
-
-                            $this->db->select(
-                            't.id_transport as id,
-                             c.nama_class,
-                             jt.nama_transport,
-                             t.nama_transp,
-                             t.tanggal,
-                             tt.nama_tempat as berangkat,
-                             tb.nama_tempat as tiba,
-                             t.jam_berangkat,
-                             t.jam_tiba,
-                             t.kisaran,
-                             t.harga
-                             '
-                                );
-
-                            $this->db->join('class as c', 'c.id_class = t.class');
-                            $this->db->join('jenis_transport as jt', 'jt.id_transport = t.jenis_transport');
-                            $this->db->join('tempat_transport as tb', 'tb.id_tempat = t.tempat_tujuan');
-                            $query =  $this->db->join('tempat_transport as tt', 'tt.id_tempat = t.tempat_asal')->get('transport as t');
-                            $nomor = 1;
-
-                            foreach ($query->result_array() as $peng) :
-                                // var_dump($peng);
-                                ?>
-
+                        <div class="table-responsive">
+                            <table class="table table-hover">
                                 <tr>
-                                    <td><?php echo $nomor; ?></td>
-                                    <td>
-                                        <p><?= $peng['id'] ?></p>
-                                    </td>
-                                    <td>
-                                        <p><?= $peng['nama_class'] ?></p>
-                                    </td>
-                                    <td>
-                                        <p><?= $peng['nama_transport'] ?></p>
-                                    </td>
-                                    <td>
-                                        <p><?= $peng['nama_transp'] ?></p>
-                                    </td>
-                                    <td>
-                                        <p><?= $peng['tanggal'] ?></p>
-                                    </td>
-                                    <td>
-                                        <p><?= $peng['berangkat'] ?></p>
-                                    </td>
-                                    <td>
-                                        <p><?= $peng['tiba'] ?></p>
-                                    </td>
-                                    <td>
-                                        <p><?= $peng['jam_berangkat'] ?></p>
-                                    </td>
-                                    <td>
-                                        <p><?= $peng['jam_tiba'] ?></p>
-                                    </td>
-                                    <td>
-                                        <p>Rp. <?= $peng['kisaran'] ?></p>
-                                    </td>
-                                    <td>
-                                        <p>Rp. <?= number_format($peng['harga']) ?></p>
-
-                                    </td>
-                                    <td>
-                                        <?php echo anchor('Admin/transportasiDelete/' . $peng['id'], '<button class="btn btn-danger margin" type="button"><span class="fa fa-trash"></span> </button>'); ?>
-                                    </td>
+                                    <th style="width: 10px">#</th>
+                                    <!-- <th>ID </th> -->
+                                    <th>ID</th>
+                                    <th>Class</th>
+                                    <th>Jenis Transport</th>
+                                    <th>Nama</th>
+                                    <th>Tanggal</th>
+                                    <th>Keberangkatan</th>
+                                    <th>Tujuan</th>
+                                    <th>Jam Keberangkatan</th>
+                                    <th>Jam Tiba</th>
+                                    <th>Kisaran</th>
+                                    <th>Harga</th>
+                                    <th>Menu</th>
                                 </tr>
-                                <?php $nomor++; ?>
-                            <?php endforeach; ?>
-                        </table>
+    
+                                <?php $nomor = 1; ?>
+                                <?php
+    
+                                //    $query = "SELECT
+                                //    jt.nama_transport, t.nama_transp, tt.nama_tempat as berangkat, tb.nama_tempat as tiba
+                                //    FROM transport as t
+                                //    JOIN jenis_transport as jt
+                                //    on jt.id_transport = t.jenis_transport
+                                //    JOIN tempat_transport as tt
+                                //    on tt.id_tempat = t.tempat_asal
+                                //    JOIN tempat_transport as tb
+                                //    on tb.id_tempat = t.tempat_tujuan";
+    
+                                //    $data=$this->db->query($query)->result_array();
+    
+                                $this->db->select(
+                                't.id_transport as id,
+                                 c.nama_class,
+                                 jt.nama_transport,
+                                 t.nama_transp,
+                                 t.tanggal,
+                                 tt.nama_tempat as berangkat,
+                                 tb.nama_tempat as tiba,
+                                 t.jam_berangkat,
+                                 t.jam_tiba,
+                                 t.kisaran,
+                                 t.harga
+                                 '
+                                    );
+    
+                                $this->db->join('class as c', 'c.id_class = t.class');
+                                $this->db->join('jenis_transport as jt', 'jt.id_transport = t.jenis_transport');
+                                $this->db->join('tempat_transport as tb', 'tb.id_tempat = t.tempat_tujuan');
+                                $query =  $this->db->join('tempat_transport as tt', 'tt.id_tempat = t.tempat_asal')->get('transport as t');
+                                $nomor = 1;
+    
+                                foreach ($query->result_array() as $peng) :
+                                    // var_dump($peng);
+                                    ?>
+    
+                                    <tr>
+                                        <td><?php echo $nomor; ?></td>
+                                        <td>
+                                            <p><?= $peng['id'] ?></p>
+                                        </td>
+                                        <td>
+                                            <p><?= $peng['nama_class'] ?></p>
+                                        </td>
+                                        <td>
+                                            <p><?= $peng['nama_transport'] ?></p>
+                                        </td>
+                                        <td>
+                                            <p><?= $peng['nama_transp'] ?></p>
+                                        </td>
+                                        <td>
+                                            <p><?= $peng['tanggal'] ?></p>
+                                        </td>
+                                        <td>
+                                            <p><?= $peng['berangkat'] ?></p>
+                                        </td>
+                                        <td>
+                                            <p><?= $peng['tiba'] ?></p>
+                                        </td>
+                                        <td>
+                                            <p><?= $peng['jam_berangkat'] ?></p>
+                                        </td>
+                                        <td>
+                                            <p><?= $peng['jam_tiba'] ?></p>
+                                        </td>
+                                        <td>
+                                            <p>Rp. <?= $peng['kisaran'] ?></p>
+                                        </td>
+                                        <td>
+                                            <p>Rp. <?= number_format($peng['harga']) ?></p>
+    
+                                        </td>
+                                        <td>
+                                            <?php echo anchor('Admin/transportasiDelete/' . $peng['id'], '<button class="btn btn-danger margin" type="button"><span class="fa fa-trash"></span> </button>'); ?>
+                                        </td>
+                                    </tr>
+                                    <?php $nomor++; ?>
+                                <?php endforeach; ?>
+                            </table>
+                            </div>
                     </div>
                 </div>
             </div>
