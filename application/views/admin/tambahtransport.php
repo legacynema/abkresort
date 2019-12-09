@@ -1,4 +1,4 @@
-    <section class="content">
+<section class="content">
         <div class="row">
             <!-- left column -->
             <div class="col-md-6">
@@ -130,7 +130,6 @@
                                 var jam_tiba = document.forms["form"]["jam_tiba"].value;
                                 var kisaran = document.forms["form"]["kisaran"].value;
                                 var Harga = document.forms["form"]["harga"].value;
-
                                 if (jenis == "" && class_ == "" && nama == "" && tanggal == "" && berangkat == "" && tujuan == ""
                                     && jam_berangkat == "" && jam_tiba == "" && kisaran == "" && Harga == "") {
                                     alert("Data Transportasi Harus di Isi");
@@ -215,7 +214,6 @@
 
                             <?php $nomor = 1; ?>
                             <?php
-
                             //    $query = "SELECT
                             //    jt.nama_transport, t.nama_transp, tt.nama_tempat as berangkat, tb.nama_tempat as tiba
                             //    FROM transport as t
@@ -225,9 +223,7 @@
                             //    on tt.id_tempat = t.tempat_asal
                             //    JOIN tempat_transport as tb
                             //    on tb.id_tempat = t.tempat_tujuan";
-
                             //    $data=$this->db->query($query)->result_array();
-
                             $this->db->select(
                             't.id_transport as id,
                              c.nama_class,
@@ -242,13 +238,11 @@
                              t.harga
                              '
                                 );
-
                             $this->db->join('class as c', 'c.id_class = t.class');
                             $this->db->join('jenis_transport as jt', 'jt.id_transport = t.jenis_transport');
                             $this->db->join('tempat_transport as tb', 'tb.id_tempat = t.tempat_tujuan');
                             $query =  $this->db->join('tempat_transport as tt', 'tt.id_tempat = t.tempat_asal')->get('transport as t');
                             $nomor = 1;
-
                             foreach ($query->result_array() as $peng) :
                                 // var_dump($peng);
                                 ?>
