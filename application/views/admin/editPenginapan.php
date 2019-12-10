@@ -18,10 +18,9 @@
                 <?php endif; ?> 
                 <!-- /.box-header -->
                 <!-- form start -->
-                <form action="<?php echo base_url(). 'Admin/penginapanAdd'; ?>" name="form"  onsubmit="return validateForm()" method="post" enctype="multipart/form-data">
+                <form action="<?php echo base_url("Admin/penginapanEdit/$penginapan->id_penginapan")?>"name="form"  onsubmit="return validateForm()" method="post" enctype="multipart/form-data">
+                <input type="hidden" name="id_penginapan" value="<?php echo $penginapan->id_penginapan?>" />    
                     <div class="box-body">
-
-
                         <div class="form-group">
                             <label for="id_kota">Pilih Kota</label>
                                 <select class="form-control" name="id_kota">
@@ -30,9 +29,9 @@
                                     <?php foreach($kota as $kot):?>
                                                 <option value="<?= $kot->id_kota?>"><?= $kot->nama_kota?></option>
                                             <?php  endforeach;?>
-                                      
                                 </select>
                         </div>
+                        
                         <div class="form-group">
                             <label for="nama_penginapan">Nama Hotel/Villa</label>
                             <input class="form-control" type="text"  name="nama_penginapan" placeholder="example : Hotel Batu Paradise">   
@@ -92,71 +91,7 @@
                     </div>
                 </form>
             </div>
-        </div>
-        <div class="col-md-6">
-            <!-- general form elements -->
-            <div class="box box-primary">
-                <div class="box-header with-border">
-                    <h3 class="box-title">List Penginapan</h3>
-                </div>
-                <!-- /.box-header -->
-                <!-- form start -->
-                <div class="box-body">
-                    <table class="table table-hover">
-                        <tr>
-                            <th style="width: 10px">#</th>
-                            <th>ID </th>
-                            <th>Kota</th>
-                            <th>Nama Penginapan</th>
-                            <th>Jumlah Tamu</th>
-                            <th>Harga(Permalam)</th>
-                            <th>Foto</th>
-                            <th>Menu</th>
-                        </tr>
-                        <?php  $nomor =1; ?>
-						<?php
-
-                        $this->db->select('id_penginapan, nama_kota,nama_penginapan, jumlah_tamu, harga, foto');
-                        // SELECT 
-                        $query =  $this->db->join('kota', 'kota.id_kota = penginapan.id_kota')->get('penginapan');
-                        $nomor = 1;
-
-						foreach ($query->result_array() as $peng) :
-							?>
-							<tr>
-							<td><?php echo $nomor; ?></td>
-								<td>
-									<p><?= $peng['id_penginapan'] ?></p>
-								</td>
-								<td>
-									<p><?= $peng['nama_kota'] ?></p>
-								</td>
-								<td>
-									<p><?= $peng['nama_penginapan'] ?></p>
-								</td>
-								<td>
-									<p><?= $peng['jumlah_tamu'] ?></p>
-								</td>
-								<td>
-                                <p>Rp. <?= number_format($peng['harga']) ?></p>
-								</td>
-
-								<td>
-                                <img src="<?php echo base_url('foto/admin/penginapan/'.$peng['foto']) ?>" width="64" />
-								</td>
-                                <td>
-                                    <?php  echo anchor('Admin/penginapanEdit/'.$peng['id_penginapan'],'<button class="btn btn-danger margin" type="button"><span class="fa fa-pencil"></span> </button>'); ?>
-                                </td>
-                                <td>
-                                    <?php echo anchor('Admin/penginapanDelete/'.$peng['id_penginapan'],'<button class="btn btn-danger margin" type="button"><span class="fa fa-trash"></span> </button>'); ?> 
-                                </td>
-							</tr>
-							<?php $nomor++; ?>
-						<?php endforeach; ?>
-                    </table>
-                </div>
-            </div>
-        </div>
+        
     </div>
 </section>
 

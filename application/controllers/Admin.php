@@ -14,6 +14,7 @@ class Admin extends CI_Controller
 			"Model_tempatTransport",
 			"Model_jenisTransport",
 			"Model_kota",
+			"Model_class",
 			"Model_wisata",
 			"Model_transaksi",
 			"Model_paket",
@@ -22,24 +23,25 @@ class Admin extends CI_Controller
 			"Model_super_admin",
 			/*MODEL UNTUK LOGIN */
 			"Model_login"));
+		
 		$this->load->library('form_validation');
 
-		$this->load->model("Model_penginapan");
-		$this->load->model("Model_jenisPenginapan");
-		$this->load->model("Model_transport");
-		$this->load->model("Model_tempatTransport");
-		$this->load->model("Model_jenisTransport");
-		$this->load->model("Model_class");
-		$this->load->model("Model_kota");
-		$this->load->model("Model_wisata");
+		// $this->load->model("Model_penginapan");
+		// $this->load->model("Model_jenisPenginapan");
+		// $this->load->model("Model_transport");
+		// $this->load->model("Model_tempatTransport");
+		// $this->load->model("Model_jenisTransport");
+		// $this->load->model("Model_class");
+		// $this->load->model("Model_kota");
+		// $this->load->model("Model_wisata");
 
-		$this->load->model("Model_transaksi");
-		$this->load->model("Model_paket");
+		// $this->load->model("Model_transaksi");
+		// $this->load->model("Model_paket");
 
 
-		$this->load->model("Model_user");
-		$this->load->model("Model_admin");
-		$this->load->model("Model_super_admin");
+		// $this->load->model("Model_user");
+		// $this->load->model("Model_admin");
+		// $this->load->model("Model_super_admin");
 		
 		
 
@@ -63,6 +65,15 @@ class Admin extends CI_Controller
 		$this->load->view('template_admin/header');
 		$this->load->view('template_admin/sidebar');
 		$this->load->view('admin/tambahpenginapan', $data);
+		$this->load->view('template_admin/footer');
+	}
+	public function edit_penginapan()
+	{
+		$data["kota"] = $this->Model_kota->getAll();
+		$data["penginapan"] = $this->Model_penginapan->getAll();
+		$this->load->view('template_admin/header');
+		$this->load->view('template_admin/sidebar');
+		$this->load->view('admin/editPenginapan', $data);
 		$this->load->view('template_admin/footer');
 	}
 	public function tambah_transport()
@@ -95,11 +106,6 @@ class Admin extends CI_Controller
 	// VIEWS TRANSAKSI
 	public function transaksi()
 	{
-		// $data["user"] = $this->Model_user->getAll();
-		// $data["paket"] = $this->Model_paket->getAll();
-		// $data["penginapan"] = $this->Model_penginapan->getAll();
-		// $data["rute"] = $this->Model_rute->getAll();
-		// $data["wisata"] = $this->Model_wisata->getAll();
 		$this->load->view('template_admin/header');
 		$this->load->view('template_admin/sidebar');
 		$this->load->view('admin/transaksi');
@@ -142,36 +148,20 @@ class Admin extends CI_Controller
         $tambah->save();
 			$this->session->set_flashdata('success', 'Berhasil disimpan');
 			redirect('Admin/tambah_penginapan');
-		
-
-		
-		
-        
     }
 
-    // public function penginapanEdit($id_penginapan = null)
-    // {
-    //     // var_dump($id);
-    //     if (!isset($id_penginapan)) redirect('c_siswa');
+    public function penginapanEdit($id_penginapan = null)
+    {
+		var_dump($id_penginapan);
+        if (!isset($id_penginapan)) redirect('Admin/tambah_penginapan');
 
 
-    //     $var = $this->model_penginapan;
-    //     $validation = $this->form_validation;
-    //     $validation->set_rules($var->rules());
-
-    //     if ($validation->run()) {
-    //         $var->update();
-    //         $this->session->set_flashdata('success', 'Berhasil disimpan');
-    //     }
-    //     $data["kelas"] = $this->Model_kelas->getAll();
-    //     $data["jurusan"] = $this->Model_jurusan->getAll();
-    //     $data["siswa"] = $var->getById($id_penginapan);
-    //     if (!$data["siswa"]) show_404();
-    //     $this->load->view("template_admin/header");
-    //     $this->load->view("template_admin/sidebar");
-    //     $this->load->view("admin/editsiswa", $data);
-    //     $this->load->view("template_admin/footer");
-	// }
+        $var = $this->Model_penginapan;
+		$var->update();
+            // $this->session->set_flashdata('success', 'Berhasil disimpan');
+			// redirect('Admin/editPenginapan');
+       
+	}
 	
 	public function penginapanDelete($id_penginapan = null)
     {
