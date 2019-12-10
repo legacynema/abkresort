@@ -65,15 +65,9 @@ class Input extends CI_Controller {
 	public function bus()
 	{	
 		$this->load->view('navbar');
-		this->load->view('input/bus');
+		$this->load->view('input/bus');
 		$this->load->view('footer');
 	}	
 	
-	public function sflight()
-	{
-		$this->load->view('navbar');
-		$this->load->view('searching/search_flight');
-		$this->load->view('footer');
-	}
 
 }
