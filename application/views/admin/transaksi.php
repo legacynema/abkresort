@@ -43,7 +43,6 @@
                       t.total_harga
                       '
                     );
-                    
                               $this->db->join('user as u', 'u.id_user = t.id_user', 'left');
                               $this->db->join('wisata as w', 'w.id_wisata = t.id_wisata', 'left');
                               $this->db->join('transport as tr', 'tr.id_transport = t.id_transport', 'left');
