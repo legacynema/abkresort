@@ -95,6 +95,7 @@
 <!-- Result -->
 <br><br> <br><br><br><br><br>
 <div class="container">
+<h1>Hasil Pencarian</h1>
         <div class="row">
             <div class="col-md-4">
             <div class="card" style="width: 18rem;">
