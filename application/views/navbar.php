@@ -15,12 +15,18 @@
   <div class="d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3 bg-white border-bottom shadow-sm">
   <h5 class="my-0 mr-md-auto font-weight-normal" href="<?= base_url('Home/index') ?>">Company name</h5>
   <nav class="my-2 my-md-0 mr-md-3">
+  <?php if($this->session->userdata("email")) : ?>
   <a class="p-2 text-dark" href="<?= base_url('Home/index') ?>">Home</a>
+    <a class="p-2 text-dark" href="<?= base_url('Input/package') ?>">All in One</a>
+    <a class="p-2 text-dark" href="#">Transaksi</a>
+    <a class="p-2 text-dark" href="<?= base_url('Home/login') ?>">Lihat akun</a>
+  <?php else : ?>
+    <a class="p-2 text-dark" href="<?= base_url('Home/index') ?>">Home</a>
     <a class="p-2 text-dark" href="<?= base_url('Input/package') ?>">All in One</a>
     <a class="p-2 text-dark" href="#">Transaksi</a>
     <a class="p-2 text-dark" href="<?= base_url('Home/login') ?>">Login</a>
     <a class="p-2 text-dark" href="<?= base_url('Home/register') ?>">Register</a>
-  
+  <?php endif;?>
   </nav>
 </div>
 

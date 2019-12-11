@@ -44,7 +44,7 @@ class Admin extends CI_Controller
 		
 
 		if (!($this->session->userdata('email'))) {
-            redirect(base_url('Auth/login_admin'));
+            redirect(base_url('Auth/admin'));
             // redirect($this->index());
         }
 	}
