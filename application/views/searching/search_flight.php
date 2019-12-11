@@ -80,7 +80,7 @@
         <div class="detailOrder">
           <div class="detailOrderHeader">
             <div class="firstMaskapai">Maskapai</div>
-            
+                
           </div>
         </div>
     </div>
