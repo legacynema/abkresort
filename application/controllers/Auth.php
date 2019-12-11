@@ -11,11 +11,16 @@ class Auth extends CI_Controller
 		parent::__construct();
 		$this->load->library("form_validation");
 		$this->load->model("Model_login");
+		if ($this->session->userdata('email')) {
+			echo "ada sesi";
+		}else{
+			echo "tidak";
+		}
 	}
 
     public function index()// default login ke user
     {
-        $this->load->view('auth/login_admin');
+        // $this->load->view('auth/login_user');
 	}
 	
 	public function admin() // VIEW LOGIN ADMIN
@@ -34,9 +39,17 @@ class Auth extends CI_Controller
 		}
 	}
 
+	public function user() // VIEW LOGIN USER
+	{
+		$this->load->view("auth/login_user");
+	}
+
 	public function login_admin() // VALIDASI FORM ADMIN
 	{
-		$this->form_validation->set_rules('email', 'Email Admin', 'required');
+		if ($this->session->userdata('email')) {
+			redirect(base_url("Admin"));
+		} else {
+			$this->form_validation->set_rules('email', 'Email Admin', 'required');
 		$this->form_validation->set_rules('password', 'Password', 'required');
 
 		if ($this->form_validation->run() == FALSE) {
@@ -60,11 +73,18 @@ class Auth extends CI_Controller
 				$this->admin();
 			}
 		}
+		}
+		
+		
 	}
 
 	public function logout()
 	{
-		$this->session->sess_destroy();
-		redirect(base_url());
+		if ($this->session->userdata('email')) {
+			$this->session->sess_destroy();
+			redirect(base_url("admin"));
+		}
+		// $this->session->sess_destroy();
+		// redirect(base_url());
 	}
 }
