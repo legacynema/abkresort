@@ -1,4 +1,4 @@
-    <section class="content">
+<section class="content">
         <div class="row">
             <!-- left column -->
             <div class="col-md-6">
@@ -130,7 +130,6 @@
                                 var jam_tiba = document.forms["form"]["jam_tiba"].value;
                                 var kisaran = document.forms["form"]["kisaran"].value;
                                 var Harga = document.forms["form"]["harga"].value;
-
                                 if (jenis == "" && class_ == "" && nama == "" && tanggal == "" && berangkat == "" && tujuan == ""
                                     && jam_berangkat == "" && jam_tiba == "" && kisaran == "" && Harga == "") {
                                     alert("Data Transportasi Harus di Isi");
@@ -196,63 +195,6 @@
                         <div class="table-responsive">
                             <table class="table table-hover">
                     <table class="table table-hover">
-                            <tr>
-                                <th style="width: 10px">#</th>
-                                <!-- <th>ID </th> -->
-                                <th>ID</th>
-                                <th>Class</th>
-                                <th>Jenis Transport</th>
-                                <th>Nama</th>
-                                <th>Tanggal</th>
-                                <th>Keberangkatan</th>
-                                <th>Tujuan</th>
-                                <th>Jam Keberangkatan</th>
-                                <th>Jam Tiba</th>
-                                <th>Kisaran</th>
-                                <th>Harga</th>
-                                <th>Menu</th>
-                            </tr>
-
-                            <?php $nomor = 1; ?>
-                            <?php
-
-                            //    $query = "SELECT
-                            //    jt.nama_transport, t.nama_transp, tt.nama_tempat as berangkat, tb.nama_tempat as tiba
-                            //    FROM transport as t
-                            //    JOIN jenis_transport as jt
-                            //    on jt.id_transport = t.jenis_transport
-                            //    JOIN tempat_transport as tt
-                            //    on tt.id_tempat = t.tempat_asal
-                            //    JOIN tempat_transport as tb
-                            //    on tb.id_tempat = t.tempat_tujuan";
-
-                            //    $data=$this->db->query($query)->result_array();
-
-                            $this->db->select(
-                            't.id_transport as id,
-                             c.nama_class,
-                             jt.nama_transport,
-                             t.nama_transp,
-                             t.tanggal,
-                             tt.nama_tempat as berangkat,
-                             tb.nama_tempat as tiba,
-                             t.jam_berangkat,
-                             t.jam_tiba,
-                             t.kisaran,
-                             t.harga
-                             '
-                                );
-
-                            $this->db->join('class as c', 'c.id_class = t.class');
-                            $this->db->join('jenis_transport as jt', 'jt.id_transport = t.jenis_transport');
-                            $this->db->join('tempat_transport as tb', 'tb.id_tempat = t.tempat_tujuan');
-                            $query =  $this->db->join('tempat_transport as tt', 'tt.id_tempat = t.tempat_asal')->get('transport as t');
-                            $nomor = 1;
-
-                            foreach ($query->result_array() as $peng) :
-                                // var_dump($peng);
-                                ?>
-
                                 <tr>
                                     <th style="width: 10px">#</th>
                                     <!-- <th>ID </th> -->
