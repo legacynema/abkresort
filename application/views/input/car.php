@@ -40,7 +40,7 @@
 			  <div class="card-block indt-book-body">
 				<div class="input-group">
 				  <span class="input-group-addon" id="basic-addon1"><i class="fas fa-car"></i></span> 
-				  <input id="origin" name="origin" type="text" class="form-control ui-autocomplete-input" placeholder="Pengambilan" aria-describedby="basic-addon1" autocomplete="off">
+				  <input id="origin" name="origin" type="text" class="form-control ui-autocomplete-input" placeholder="Kota" aria-describedby="basic-addon1" autocomplete="off">
 				</div>
         <br>
 				<div class="row">
@@ -92,6 +92,67 @@
 </div>
 
 </div>
+
+<!-- Result -->
+
+<br><br><br><br><br><br><br>
+
+    <div class="container">
+      <div class="row">
+        <div class="col-md-4">
+        <div class="card" style="width: 18rem;">
+        <br>
+          <img class="card-img-top" src="<?= base_url('assets/') ?>img/Terios.png" alt="Card image cap">
+          <div class="card-body">
+            <h5 class="card-title">Terios</h5>
+            <p class="card-text">Mulai Rp.450.000</p>
+          </div>
+          <ul class="list-group list-group-flush">
+            <li class="list-group-item">4 Pintu 7 Kursi</li>
+            <li class="list-group-item">Transisi Manual</li>
+            <li class="list-group-item">Seluruh mobil rental kami selalu dalam keadaan bersih.</li>
+          </ul>
+          <button type="button" class="btn btn-primary">Pesan</button>
+        </div>
+        </div>
+
+        <div class="col-md-4">
+        <div class="card" style="width: 18rem;">
+        <br>
+          <img class="card-img-top" src="<?= base_url('assets/') ?>img/Avanza.png" alt="Card image cap">
+          <div class="card-body">
+            <h5 class="card-title">Avanza</h5>
+            <p class="card-text">Mulai Rp.450.000</p>
+          </div>
+          <ul class="list-group list-group-flush">
+            <li class="list-group-item">4 Pintu 7 Kursi</li>
+            <li class="list-group-item">Transisi Manual</li>
+            <li class="list-group-item">Seluruh mobil rental kami selalu dalam keadaan bersih.</li>
+          </ul>
+          <button type="button" class="btn btn-primary">Pesan</button>
+        </div>
+        </div>
+
+        <div class="col-md-4">
+        <div class="card" style="width: 18rem;">
+        <br>
+          <img class="card-img-top" src="<?= base_url('assets/') ?>img/Brio.png" alt="Card image cap">
+          <div class="card-body">
+            <h5 class="card-title">Brio</h5>
+            <p class="card-text">Mulai Rp.450.000</p>
+          </div>
+          <ul class="list-group list-group-flush">
+            <li class="list-group-item">4 Pintu 4 Kursi</li>
+            <li class="list-group-item">Transisi Otomatis</li>
+            <li class="list-group-item">Seluruh mobil rental kami selalu dalam keadaan bersih.</li>
+          </ul>
+          <button type="button" class="btn btn-primary">Pesan</button>
+        </div>
+        </div>
+        
+      </div>
+    </div>
+
 
 
 </body>

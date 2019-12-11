@@ -7,8 +7,21 @@ class Admin extends CI_Controller
 	public function __construct()
 	{
 		parent::__construct();
-		// $this->load->database();
-		$this->load->helper(array('form', 'url'));
+		$this->load->model(array(
+			"Model_penginapan",
+			"Model_jenisPenginapan",
+			"Model_transport",
+			"Model_tempatTransport",
+			"Model_jenisTransport",
+			"Model_kota",
+			"Model_wisata",
+			"Model_transaksi",
+			"Model_paket",
+			"Model_user",
+			"Model_admin",
+			"Model_super_admin",
+			/*MODEL UNTUK LOGIN */
+			"Model_login"));
 		$this->load->library('form_validation');
 
 		$this->load->model("Model_penginapan");
@@ -16,6 +29,7 @@ class Admin extends CI_Controller
 		$this->load->model("Model_transport");
 		$this->load->model("Model_tempatTransport");
 		$this->load->model("Model_jenisTransport");
+		$this->load->model("Model_class");
 		$this->load->model("Model_kota");
 		$this->load->model("Model_wisata");
 
@@ -29,6 +43,10 @@ class Admin extends CI_Controller
 		
 		
 
+		if (!($this->session->userdata('email'))) {
+            redirect(base_url('Auth/login_admin'));
+            // redirect($this->index());
+        }
 	}
 	public function index()
 	{
@@ -51,7 +69,7 @@ class Admin extends CI_Controller
 	{
 		$data["transport"] = $this->Model_transport->getAll();
 		$data["jenis_transport"] = $this->Model_jenisTransport->getAll();
-		// $data["kota"] = $this->Model_kota->getAll();
+		$data["class"] = $this->Model_class->getAll();
 		$data["tempat_transport"] = $this->Model_tempatTransport->getAll();
 		$this->load->view('template_admin/header');
 		$this->load->view('template_admin/sidebar');
@@ -119,8 +137,9 @@ class Admin extends CI_Controller
 
     public function penginapanAdd()
     {
-        $tambah = $this->Model_penginapan;
-            $tambah->save();
+		$tambah = $this->Model_penginapan;
+		
+        $tambah->save();
 			$this->session->set_flashdata('success', 'Berhasil disimpan');
 			redirect('Admin/tambah_penginapan');
 		
