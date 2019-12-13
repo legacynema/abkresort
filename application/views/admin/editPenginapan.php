@@ -28,6 +28,7 @@
 
                                     <?php foreach($kota as $kot):?>
                                                 <option value="<?= $kot->id_kota?>"><?= $kot->nama_kota?></option>
+                                                <option value="<?= $jur->id_jurusan?>" <?php if($jur->id_jurusan == $siswa->id_jurusan ){ echo 'selected'; } ?> > <?= $jur->nama_jurusan?> </option>
                                             <?php  endforeach;?>
                                 </select>
                         </div>

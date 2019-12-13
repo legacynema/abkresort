@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 19, 2019 at 10:33 AM
+-- Generation Time: Dec 11, 2019 at 05:06 AM
 -- Server version: 10.1.38-MariaDB
 -- PHP Version: 7.3.2
 
@@ -21,6 +21,29 @@ SET time_zone = "+00:00";
 --
 -- Database: `abkresort`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `admin`
+--
+
+CREATE TABLE `admin` (
+  `id_user` int(11) NOT NULL,
+  `nama_lengkap` varchar(50) NOT NULL,
+  `password` varchar(50) NOT NULL,
+  `email` varchar(50) NOT NULL,
+  `jenis_kelamin` enum('Laki-laki','Perempuan') NOT NULL,
+  `nomor_hp` varchar(50) NOT NULL,
+  `foto` varchar(255) NOT NULL DEFAULT 'default.jpg'
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `admin`
+--
+
+INSERT INTO `admin` (`id_user`, `nama_lengkap`, `password`, `email`, `jenis_kelamin`, `nomor_hp`, `foto`) VALUES
+(1, 'khosyakmal', 'e10adc3949ba59abbe56e057f20f883e', 'akmal@gmail.com', 'Laki-laki', '085250036553', 'default.jpg');
 
 -- --------------------------------------------------------
 
@@ -108,11 +131,19 @@ INSERT INTO `kota` (`id_kota`, `nama_kota`) VALUES
 
 CREATE TABLE `paket` (
   `id_paket` int(11) NOT NULL,
-  `id_penginapan` int(11) NOT NULL,
-  `id_transport` int(11) NOT NULL,
-  `id_wisata` int(11) NOT NULL,
+  `nama_paket` varchar(50) NOT NULL,
+  `id_penginapan` int(11) DEFAULT NULL,
+  `id_transport` int(11) DEFAULT NULL,
+  `id_wisata` int(11) DEFAULT NULL,
   `harga` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `paket`
+--
+
+INSERT INTO `paket` (`id_paket`, `nama_paket`, `id_penginapan`, `id_transport`, `id_wisata`, `harga`) VALUES
+(1, 'Liburan di Batu', 1, 5, 1, 80000);
 
 -- --------------------------------------------------------
 
@@ -134,7 +165,24 @@ CREATE TABLE `penginapan` (
 --
 
 INSERT INTO `penginapan` (`id_penginapan`, `id_kota`, `nama_penginapan`, `jumlah_tamu`, `harga`, `foto`) VALUES
-(1, 1, 'Swiss Bellin Hotel', 0, 1000000, 'default.jpg');
+(1, 1, 'Swiss Bellin Hotel', 0, 1000000, 'default.jpg'),
+(4, 2, 'asdsadadsadsad', 12, 1000000, 'asdsadadsadsad.jpg');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `super_admin`
+--
+
+CREATE TABLE `super_admin` (
+  `id_user` int(11) NOT NULL,
+  `nama_lengkap` varchar(50) NOT NULL,
+  `password` varchar(50) NOT NULL,
+  `email` varchar(50) NOT NULL,
+  `jenis_kelamin` enum('Laki-laki','Perempuan') NOT NULL,
+  `nomor_hp` varchar(50) NOT NULL,
+  `foto` varchar(255) NOT NULL DEFAULT 'default.jpg'
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
@@ -171,9 +219,9 @@ CREATE TABLE `transaksi` (
   `id_paket` int(11) DEFAULT NULL,
   `id_penginapan` int(11) DEFAULT NULL,
   `id_transport` int(11) DEFAULT NULL,
-  `hari` int(11) DEFAULT NULL,
+  `hari` int(11) DEFAULT '1',
   `id_wisata` int(11) DEFAULT NULL,
-  `tamu` int(11) NOT NULL,
+  `tamu` int(11) NOT NULL DEFAULT '1',
   `total_harga` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
@@ -182,8 +230,9 @@ CREATE TABLE `transaksi` (
 --
 
 INSERT INTO `transaksi` (`id_transaksi`, `id_user`, `id_paket`, `id_penginapan`, `id_transport`, `hari`, `id_wisata`, `tamu`, `total_harga`) VALUES
-(3, 3, NULL, NULL, 1, NULL, NULL, 1, 2500000),
-(4, 3, NULL, 1, NULL, 5, 1, 1, 1500000);
+(4, 3, NULL, 1, NULL, 5, 1, 1, 1500000),
+(5, 5, NULL, NULL, 5, NULL, 2, 5, 2500000),
+(7, 5, 1, NULL, NULL, NULL, NULL, 1, 2500000);
 
 -- --------------------------------------------------------
 
@@ -210,7 +259,7 @@ CREATE TABLE `transport` (
 --
 
 INSERT INTO `transport` (`id_transport`, `class`, `jenis_transport`, `nama_transp`, `tanggal`, `tempat_asal`, `tempat_tujuan`, `jam_berangkat`, `jam_tiba`, `kisaran`, `harga`) VALUES
-(1, 1, 2, 'Bagong', '2019-11-04', 1, 5, '17:00:00', '18:00:00', '5000-70000', 50000);
+(5, 2, 2, 'Bagong', '2019-11-12', 1, 5, '17:00:00', '18:00:00', '5000-70000', 150000);
 
 -- --------------------------------------------------------
 
@@ -234,7 +283,8 @@ CREATE TABLE `user` (
 
 INSERT INTO `user` (`id_user`, `nama_lengkap`, `password`, `email`, `jenis_kelamin`, `nomor_hp`, `foto`) VALUES
 (3, 'Khosy Akmal Romadlan', 'khosy', 'khosy@gmail.com', 'Laki-laki', '085287736229', 'default.jpg'),
-(4, 'Khosy Akmal Romadlan', 'khosy', 'khosy@gmail.com', 'Laki-laki', '085287736229', 'default.jpg');
+(4, 'Khosy Akmal Romadlan', 'khosy', 'khosy@gmail.com', 'Laki-laki', '085287736229', 'default.jpg'),
+(5, 'Akmal', '272874d450b7f8381b1174133ac62b40', 'akmalkhosy@gmail.com', 'Laki-laki', '085250036553', 'default.jpg');
 
 -- --------------------------------------------------------
 
@@ -255,11 +305,19 @@ CREATE TABLE `wisata` (
 --
 
 INSERT INTO `wisata` (`id_wisata`, `id_kota`, `nama_wisata`, `harga_tiket`, `foto`) VALUES
-(1, 1, 'Kebun Teh Wonosari', 10000, 'default.jpg');
+(1, 1, 'Kebun Teh Wonosari', 10000, 'default.jpg'),
+(2, 2, 'Kebun Binatang', 20000, 'Kebun_Binatang.jpg'),
+(6, 1, 'Paralayang111', 34242, 'Paralayang111.jpg');
 
 --
 -- Indexes for dumped tables
 --
+
+--
+-- Indexes for table `admin`
+--
+ALTER TABLE `admin`
+  ADD PRIMARY KEY (`id_user`);
 
 --
 -- Indexes for table `class`
@@ -291,7 +349,8 @@ ALTER TABLE `kota`
 ALTER TABLE `paket`
   ADD PRIMARY KEY (`id_paket`),
   ADD KEY `FK_PAKET_PENGINAPAN` (`id_penginapan`),
-  ADD KEY `FK_PAKET_WISATA` (`id_wisata`);
+  ADD KEY `FK_PAKET_WISATA` (`id_wisata`),
+  ADD KEY `FK_PAKT_TRANSP` (`id_transport`);
 
 --
 -- Indexes for table `penginapan`
@@ -299,6 +358,12 @@ ALTER TABLE `paket`
 ALTER TABLE `penginapan`
   ADD PRIMARY KEY (`id_penginapan`),
   ADD KEY `FK_KOTA_PENGINAPAN` (`id_kota`);
+
+--
+-- Indexes for table `super_admin`
+--
+ALTER TABLE `super_admin`
+  ADD PRIMARY KEY (`id_user`);
 
 --
 -- Indexes for table `tempat_transport`
@@ -347,6 +412,12 @@ ALTER TABLE `wisata`
 --
 
 --
+-- AUTO_INCREMENT for table `admin`
+--
+ALTER TABLE `admin`
+  MODIFY `id_user` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
 -- AUTO_INCREMENT for table `class`
 --
 ALTER TABLE `class`
@@ -374,13 +445,19 @@ ALTER TABLE `kota`
 -- AUTO_INCREMENT for table `paket`
 --
 ALTER TABLE `paket`
-  MODIFY `id_paket` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_paket` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `penginapan`
 --
 ALTER TABLE `penginapan`
-  MODIFY `id_penginapan` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id_penginapan` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+
+--
+-- AUTO_INCREMENT for table `super_admin`
+--
+ALTER TABLE `super_admin`
+  MODIFY `id_user` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `tempat_transport`
@@ -392,25 +469,25 @@ ALTER TABLE `tempat_transport`
 -- AUTO_INCREMENT for table `transaksi`
 --
 ALTER TABLE `transaksi`
-  MODIFY `id_transaksi` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id_transaksi` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT for table `transport`
 --
 ALTER TABLE `transport`
-  MODIFY `id_transport` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id_transport` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `user`
 --
 ALTER TABLE `user`
-  MODIFY `id_user` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id_user` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `wisata`
 --
 ALTER TABLE `wisata`
-  MODIFY `id_wisata` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id_wisata` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- Constraints for dumped tables
@@ -421,7 +498,8 @@ ALTER TABLE `wisata`
 --
 ALTER TABLE `paket`
   ADD CONSTRAINT `FK_PAKET_PENGINAPAN` FOREIGN KEY (`id_penginapan`) REFERENCES `penginapan` (`id_penginapan`) ON DELETE CASCADE ON UPDATE CASCADE,
-  ADD CONSTRAINT `FK_PAKET_WISATA` FOREIGN KEY (`id_wisata`) REFERENCES `wisata` (`id_wisata`) ON DELETE CASCADE ON UPDATE CASCADE;
+  ADD CONSTRAINT `FK_PAKET_WISATA` FOREIGN KEY (`id_wisata`) REFERENCES `wisata` (`id_wisata`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `FK_PAKT_TRANSP` FOREIGN KEY (`id_transport`) REFERENCES `transport` (`id_transport`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
 -- Constraints for table `penginapan`
@@ -442,18 +520,18 @@ ALTER TABLE `tempat_transport`
 ALTER TABLE `transaksi`
   ADD CONSTRAINT `FK_TRANS_PAKET` FOREIGN KEY (`id_paket`) REFERENCES `paket` (`id_paket`) ON DELETE CASCADE ON UPDATE CASCADE,
   ADD CONSTRAINT `FK_TRANS_PENGINAPAN` FOREIGN KEY (`id_penginapan`) REFERENCES `penginapan` (`id_penginapan`) ON DELETE CASCADE ON UPDATE CASCADE,
-  ADD CONSTRAINT `FK_TRANS_TRANSP` FOREIGN KEY (`id_transport`) REFERENCES `transport` (`id_transport`),
-  ADD CONSTRAINT `FK_TRANS_USER` FOREIGN KEY (`id_user`) REFERENCES `user` (`id_user`),
+  ADD CONSTRAINT `FK_TRANS_TRANSP` FOREIGN KEY (`id_transport`) REFERENCES `transport` (`id_transport`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `FK_TRANS_USER` FOREIGN KEY (`id_user`) REFERENCES `user` (`id_user`) ON DELETE CASCADE ON UPDATE CASCADE,
   ADD CONSTRAINT `FK_TRANS_WISATA` FOREIGN KEY (`id_wisata`) REFERENCES `wisata` (`id_wisata`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
 -- Constraints for table `transport`
 --
 ALTER TABLE `transport`
-  ADD CONSTRAINT `FK_TRANSP_CLASS` FOREIGN KEY (`class`) REFERENCES `class` (`id_class`),
-  ADD CONSTRAINT `FK_TRANSP_JENIS` FOREIGN KEY (`jenis_transport`) REFERENCES `jenis_transport` (`id_transport`),
-  ADD CONSTRAINT `FK_TRANSP_TEMPAT_ASL` FOREIGN KEY (`tempat_asal`) REFERENCES `tempat_transport` (`id_tempat`),
-  ADD CONSTRAINT `FK_TRANSP_TEMPAT_TUJ` FOREIGN KEY (`tempat_tujuan`) REFERENCES `tempat_transport` (`id_tempat`);
+  ADD CONSTRAINT `FK_TRANSP_CLASS` FOREIGN KEY (`class`) REFERENCES `class` (`id_class`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `FK_TRANSP_JENIS` FOREIGN KEY (`jenis_transport`) REFERENCES `jenis_transport` (`id_transport`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `FK_TRANSP_TEMPAT_ASL` FOREIGN KEY (`tempat_asal`) REFERENCES `tempat_transport` (`id_tempat`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `FK_TRANSP_TEMPAT_TUJ` FOREIGN KEY (`tempat_tujuan`) REFERENCES `tempat_transport` (`id_tempat`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
 -- Constraints for table `wisata`

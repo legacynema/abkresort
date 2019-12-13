@@ -153,7 +153,7 @@ class Admin extends CI_Controller
     public function penginapanEdit($id_penginapan = null)
     {
 		var_dump($id_penginapan);
-        if (!isset($id_penginapan)) redirect('Admin/tambah_penginapan');
+        if (!isset($id_penginapan)) redirect('Admin');
 
 
         $var = $this->Model_penginapan;
