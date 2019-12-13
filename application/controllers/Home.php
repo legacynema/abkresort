@@ -20,6 +20,13 @@ class Home extends CI_Controller {
 		$this->load->view('footer');
 	}
 
+	public function myaccount()
+	{
+		$this->load->view('navbar');
+		$this->load->view('users/myprofile');
+		// $this->load->view('footer');
+	}
+
 	public function login()
 	{
 		$this->load->view('navbar');
