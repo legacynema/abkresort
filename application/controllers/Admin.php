@@ -26,25 +26,6 @@ class Admin extends CI_Controller
 		
 		$this->load->library('form_validation');
 
-		// $this->load->model("Model_penginapan");
-		// $this->load->model("Model_jenisPenginapan");
-		// $this->load->model("Model_transport");
-		// $this->load->model("Model_tempatTransport");
-		// $this->load->model("Model_jenisTransport");
-		// $this->load->model("Model_class");
-		// $this->load->model("Model_kota");
-		// $this->load->model("Model_wisata");
-
-		// $this->load->model("Model_transaksi");
-		// $this->load->model("Model_paket");
-
-
-		// $this->load->model("Model_user");
-		// $this->load->model("Model_admin");
-		// $this->load->model("Model_super_admin");
-		
-		
-
 		if (!($this->session->userdata('email'))) {
             redirect(base_url('Auth/admin'));
             // redirect($this->index());
@@ -57,6 +38,8 @@ class Admin extends CI_Controller
 		$this->load->view('admin/index');
 		$this->load->view('template_admin/footer');
 	}
+	
+	// MENU SIDEBAR ADMIN
 	public function tambah_penginapan()
 	{
 		$data["kota"] = $this->Model_kota->getAll();
@@ -88,6 +71,29 @@ class Admin extends CI_Controller
 		$this->load->view('admin/tambahwisata', $data);
 		$this->load->view('template_admin/footer');
 	}
+
+	// START KHOSY
+	public function tambah_paket()
+	{
+		$this->load->view('template_admin/header');
+		$this->load->view('template_admin/sidebar');
+		$this->load->view('admin/tambahpaket');
+		$this->load->view('template_admin/footer');
+	}
+	public function tambah_user()
+	{
+		$this->load->view('template_admin/header');
+		$this->load->view('template_admin/sidebar');
+		$this->load->view('admin/tambahuser');
+		$this->load->view('template_admin/footer');
+	}
+	public function tambah_admin()
+	{
+		$this->load->view('template_admin/header');
+		$this->load->view('template_admin/sidebar');
+		$this->load->view('admin/tambahadmin');
+		$this->load->view('template_admin/footer');
+	} // END KHOSY
 
 	// VIEWS LIST USER
 	public function user_aktif()

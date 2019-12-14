@@ -4,7 +4,7 @@
     <header class="main-header">
 
       <!-- Logo -->
-      <a href="<?= base_url('Admin') ?>" class="logo">
+      <a href="<?= base_url() ?>" class="logo">
         <!-- mini logo for sidebar mini 50x50 pixels -->
         <span class="logo-mini"><b>ABK</b></span>
         <!-- logo for regular state and mobile devices -->
@@ -134,7 +134,7 @@
           <li><a href="<?= base_url('Admin') ?>"><i class="fa fa-dashboard"></i> <span>Dashboard</span></a></li>
 
           <!-- TAMBAH DATA -->
-          <?php if (($this->uri->segment(2) == "tambah_penginapan") || ($this->uri->segment(2) == "tambah_transport") || ($this->uri->segment(2) == "tambah_wisata")) : ?>
+          <?php if (($this->uri->segment(2) == "tambah_penginapan") || ($this->uri->segment(2) == "tambah_transport") || ($this->uri->segment(2) == "tambah_wisata") || ($this->uri->segment(2) == "tambah_paket") || ($this->uri->segment(2) == "tambah_user") || ($this->uri->segment(2) == "tambah_admin"))  : ?>
             <li class="active treeview menu-open">
               <a href="#">
                 <i class="fa fa-user-plus"></i>
@@ -183,6 +183,7 @@
                   <li><a href="<?= base_url('Admin/tambah_paket') ?>"><i class="fa fa-circle-o"></i> Data Paket</a></li>
                   <li class="active"><a href="<?= base_url('Admin/tambah_user') ?>"><i class="fa fa-circle-o"></i> Data User</a></li>
                   <li><a href="<?= base_url('Admin/tambah_admin') ?>"><i class="fa fa-circle-o"></i> Data Admin</a></li>
+                
                 <?php elseif ($this->uri->segment(2) == "tambah_admin") : ?>
                   <li><a href="<?= base_url('Admin/tambah_penginapan') ?>"><i class="fa fa-circle-o"></i> Data Penginapan</a></li>
                   <li><a href="<?= base_url('Admin/tambah_transport') ?>"><i class="fa fa-circle-o"></i> Data Transport</a></li>
