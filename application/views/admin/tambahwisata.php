@@ -126,6 +126,9 @@
                                 <td>
                                     <?php  echo anchor('Admin/wisataDelete/'.$wis['id_wisata'], '<button class="btn btn-danger margin" type="button"><span class="fa fa-trash"></span> </button>'); ?>
                                 </td>
+                                <td>
+                                    <?php  echo anchor('Admin/penginapanEdit/'.$wis['id_wisata'],'<button class="btn btn-danger margin" type="button"><span class="fa fa-pencil"></span> </button>'); ?>
+                                </td>
 							</tr>
 							<?php $nomor++; ?>
 						<?php endforeach; ?>

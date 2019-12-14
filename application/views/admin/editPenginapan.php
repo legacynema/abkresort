@@ -8,17 +8,9 @@
                     <h3 class="box-title">Tambah Penginapan</h3>
                 </div>
                 
-                <!-- FLASH DATA PEMBERITAHUAN -->
-                <?php if ($this->session->flashdata('success')): ?>
-                    <div class="alert alert-success alert-dismissible">
-                        <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
-                        <h4><i class="icon fa fa-check"></i> Alert!</h4>
-                    <?php echo $this->session->flashdata('success'); ?>
-                    </div>
-                <?php endif; ?> 
                 <!-- /.box-header -->
                 <!-- form start -->
-                <form action="<?php echo base_url("Admin/penginapanEdit/$penginapan->id_penginapan")?>"name="form"  onsubmit="return validateForm()" method="post" enctype="multipart/form-data">
+                <form action="<?php echo base_url("Admin/penginapanEdit/$penginapan->id_penginapan")?>"  name="form"  onsubmit="return validateForm()" method="post" enctype="multipart/form-data">
                 <input type="hidden" name="id_penginapan" value="<?php echo $penginapan->id_penginapan?>" />    
                     <div class="box-body">
                         <div class="form-group">
@@ -27,33 +19,34 @@
                                     <option value="" disabled selected>Pilih Kota</option>
 
                                     <?php foreach($kota as $kot):?>
-                                                <option value="<?= $kot->id_kota?>"><?= $kot->nama_kota?></option>
-                                                <option value="<?= $jur->id_jurusan?>" <?php if($jur->id_jurusan == $siswa->id_jurusan ){ echo 'selected'; } ?> > <?= $jur->nama_jurusan?> </option>
+                                                <option value="<?= $kot->id_kota?>" <?php if($penginapan->id_kota == $kot->id_kota ){ echo 'selected'; } ?> > <?= $kot->nama_kota?> </option>
                                             <?php  endforeach;?>
                                 </select>
                         </div>
                         
                         <div class="form-group">
                             <label for="nama_penginapan">Nama Hotel/Villa</label>
-                            <input class="form-control" type="text"  name="nama_penginapan" placeholder="example : Hotel Batu Paradise">   
+                            <input class="form-control" type="text"  name="nama_penginapan" value="<?php echo $penginapan->nama_penginapan?>">   
                         </div>
 
                         <div class="form-group">
                             <label for="jumlah_tamu">Jumlah Tamu</label>
-                            <input type="number" class="form-control" name="jumlah_tamu" placeholder="Berapa Orang">
+                            <input type="number" class="form-control" name="jumlah_tamu" value="<?php echo $penginapan->jumlah_tamu?>">
                         </div>
 
                         <div class="form-group">
                             <label for="harga">Harga *per hari</label>
                             <div class="input-group">
                                 <span class="input-group-addon"><i class="fa fa-money"></i></span>
-                                <input type="text" name="harga" class="form-control" placeholder="Rp.">
+                                <input type="text" name="harga" class="form-control" value="<?php echo $penginapan->harga?>">
                             </div>
                         </div>
 
                         <div class="form-group">
                             <label for="foto">Foto *max size 1MB</label>
                             <input type="file" class="form-control" name="foto">
+                            <input class="form-control-file" type="hidden" name="old_image" value="<?php echo $penginapan->foto ?>" />
+                            <img src="<?php echo base_url('foto/admin/penginapan/'.$penginapan->foto) ?>" width="64" />
                         </div>
 
                         <script>
