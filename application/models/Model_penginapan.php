@@ -14,8 +14,8 @@ private $_table = "penginapan";
     {
         return [
             [
-                'field' => 'nama_siswa',
-                'label' => 'nama_siswa',
+                'field' => 'nama_penginapan',
+                'label' => 'nama_penginapan',
                 'rules' => 'required'
             ]
         ];
@@ -47,7 +47,7 @@ private $_table = "penginapan";
     public function update()
     {
         $post = $this->input->post();
-        var_dump($post);
+        
         $this->id_penginapan = $post["id_penginapan"];
         $this->id_kota = $post["id_kota"];
         $this->nama_penginapan = $post["nama_penginapan"];
@@ -60,7 +60,8 @@ private $_table = "penginapan";
             $this->foto = $post["old_image"];
         }
 
-        $this->db->update($this->_table, $this, array("id_penginapan" => $post["id_penginapan"]));
+        $this->db->update($this->_table, $this, array("id_penginapan"=>$post["id_penginapan"]));
+        var_dump($post);
     }
 
     public function delete($id_penginapan)
