@@ -188,7 +188,7 @@ class Admin extends CI_Controller
         if (!isset($id)) redirect('Admin/tambah_penginapan');
 
 		$var = $this->Model_transport;
-		$data["transport"] = $this->Model_penginapan->getById($id);
+		$data["transport"] = $this->Model_transport->getById($id);
 		$data["jenis_transport"] = $this->Model_jenisTransport->getAll();
 		$data["class"] = $this->Model_class->getAll();
 		$data["tempat_transport"] = $this->Model_tempatTransport->getAll();
@@ -204,7 +204,7 @@ class Admin extends CI_Controller
         if ($validation->run()) {
             $var->update();
 			$this->session->set_flashdata('success', 'Berhasil di Edit');
-			redirect('Admin/tambah_penginapan');
+			redirect('Admin/tambah_transport');
 		}
 	}
 
@@ -218,19 +218,7 @@ class Admin extends CI_Controller
         }
 	}
 
-	//CRUD WISATA
-	public function dataWisata()
-    {
-		$data["jenis_transport"] = $this->Model_jenisTransport->getAll();
-		$data["transport"] = $this->Model_transport->getAll();
-		$data["kota"] = $this->Model_kota->getAll();
-		$this->load->view('template_admin/header');
-		$this->load->view('template_admin/sidebar');
-		$this->load->view('admin/tambahtransport', $data);
-		$this->load->view('template_admin/footer');
-        
-	}
-	
+	//CRUD WISATA	
 	public function wisataAdd()
     {
 		$tambah = $this->Model_wisata;
@@ -239,7 +227,31 @@ class Admin extends CI_Controller
 			$this->session->set_flashdata('success', 'Berhasil disimpan');
 			redirect('Admin/tambah_wisata');
         
-    }
+	}
+	
+	public function wisataEdit($id = null)
+    {
+		var_dump($id);
+        if (!isset($id)) redirect('Admin/tambah_wisata');
+
+		$var = $this->Model_wisata;
+		$data["wisata"] = $this->Model_wisata->getById($id);
+		$data["kota"] = $this->Model_kota->getAll();
+		if (!$data["wisata"]) show_404();
+		$this->load->view('template_admin/header');
+		$this->load->view('template_admin/sidebar');
+		$this->load->view('admin/editWisata', $data);
+		$this->load->view('template_admin/footer');
+		
+		$validation = $this->form_validation;
+        $validation->set_rules($var->rules());
+
+        if ($validation->run()) {
+            $var->update();
+			$this->session->set_flashdata('success', 'Berhasil di Edit');
+			redirect('Admin/tambah_wisata');
+		}
+	}
 
 	public function wisataDelete($id_wisata = null)
     {
