@@ -8,7 +8,7 @@ class Home extends CI_Controller {
         parent::__construct();
         $this->load->library('form_validation');
         //CRUD SISWA
-        // $this->load->model("Model_user");
+        $this->load->model("Model_user");
         $this->load->model("Model_admin");
 		$this->load->model("Model_login");
 		

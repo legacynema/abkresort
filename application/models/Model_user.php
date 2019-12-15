@@ -11,6 +11,17 @@ private $_table = "user";
     public $jenis_kelamin;
     public $foto = "default.jpg";
 
+    public function rules()
+    {
+        return [
+            [
+                'field' => 'id_user',
+                'label' => 'id_user',
+                'rules' => 'required'
+            ]
+        ];
+    }
+
     public function getAll()
     {
         return $this->db->get($this->_table)->result();
@@ -52,10 +63,9 @@ private $_table = "user";
         $this->nomor_hp = $post["nomor_hp"];
         $this->jenis_kelamin = $post["jenis_kelamin"];
         $this->foto = $post["foto"];
-        
 
         if (empty($post["password"])){
-            $this->password =md5($post["nama_lengkap"]);
+            $this->password=md5($post["nama_lengkap"]);
         } else {
             $this->password=md5($post["password"]) ;
         }
@@ -68,6 +78,28 @@ private $_table = "user";
 
         $this->db->update($this->_table, $this, array("id_user" => $post["id_user"]));
     }
+
+    public function updatePass()
+    {
+        $post = $this->input->post();
+        // var_dump($post);
+        $this->id_user = $post["id_user"];
+        $this->nama_lengkap = $post["nama_lengkap"];
+        $this->email = $post["email"];
+        $this->nomor_hp = $post["nomor_hp"];
+        $this->jenis_kelamin = $post["jenis_kelamin"];
+        $this->foto = $post["foto"];
+        $this->password = md5($post["nama_lengkap"]);
+
+        if (!empty($_FILES["foto"]["name"])) {
+            $this->foto = $this->_uploadImage();
+        } else {
+            $this->foto = $post["old_image"];
+        }
+
+        $this->db->update($this->_table, $this, array("id_user" => $post["id_user"]));
+    }    
+
 
     public function delete($id_user)
     {

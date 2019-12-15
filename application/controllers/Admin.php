@@ -43,7 +43,6 @@ class Admin extends CI_Controller
 	public function tambah_penginapan()
 	{
 		$data["kota"] = $this->Model_kota->getAll();
-		// $data["jenis_penginapan"] = $this->Model_jenisPenginapan->getAll();
 		$data["penginapan"] = $this->Model_penginapan->getAll();
 		$this->load->view('template_admin/header');
 		$this->load->view('template_admin/sidebar');
@@ -84,20 +83,7 @@ class Admin extends CI_Controller
 		$this->load->view('admin/tambahpaket', $data);
 		$this->load->view('template_admin/footer');
 	}
-	public function tambah_user()
-	{
-		$this->load->view('template_admin/header');
-		$this->load->view('template_admin/sidebar');
-		$this->load->view('admin/tambahuser');
-		$this->load->view('template_admin/footer');
-	}
-	public function tambah_admin()
-	{
-		$this->load->view('template_admin/header');
-		$this->load->view('template_admin/sidebar');
-		$this->load->view('admin/tambahadmin');
-		$this->load->view('template_admin/footer');
-	} // END KHOSY
+	 // END KHOSY
 
 	// VIEWS LIST USER
 	public function user_aktif()
@@ -288,7 +274,7 @@ class Admin extends CI_Controller
         }
 	}
 
-	//CRUD WISATA	
+	//CRUD PAKET	
 	public function paketAdd()
     {
 		$tambah = $this->Model_paket;
@@ -320,7 +306,7 @@ class Admin extends CI_Controller
         $validation->set_rules($var->rules());
 
         if ($validation->run()) {
-            $var->update();
+            $var->updatePass();
 			$this->session->set_flashdata('success', 'Berhasil di Edit');
 			redirect('Admin/tambah_paket');
 		}
@@ -333,6 +319,92 @@ class Admin extends CI_Controller
 		
         if ($this->Model_paket->delete($id_paket)) {
 			redirect('Admin/tambah_paket');
+        }
+	}
+
+	//CRUD USER	
+	public function tambah_user()
+	{
+		$data["user"] = $this->Model_user->getAll();
+		$this->load->view('template_admin/header');
+		$this->load->view('template_admin/sidebar');
+		$this->load->view('admin/tambahuser', $data);
+		$this->load->view('template_admin/footer');
+	}
+	
+	public function userEdit($id = null)
+    {
+		var_dump($id);
+        if (!isset($id)) redirect('Admin/tambah_user');
+
+		$var = $this->Model_user;
+		$data["user"] = $this->Model_user->getById($id);
+		if (!$data["user"]) show_404();
+		$this->load->view('template_admin/header');
+		$this->load->view('template_admin/sidebar');
+		$this->load->view('admin/editPassUser', $data);
+		$this->load->view('template_admin/footer');
+		
+		$validation = $this->form_validation;
+		$validation->set_rules($var->rules());
+		
+        if ($validation->run()) {
+            $var->updatePass();
+			$this->session->set_flashdata('success', 'Berhasil Reset Password');
+			redirect('Admin/tambah_user');
+		}
+	}
+
+	public function userDelete($id_user = null)
+    {
+        if (!isset($id_user)) show_404();
+
+		
+        if ($this->Model_user->delete($id_user)) {
+			redirect('Admin/tambah_user');
+        }
+	}
+
+	//CRUD ADMIN	
+	public function tambah_admin()
+	{
+		$data["admin"] = $this->Model_admin->getAll();
+		$this->load->view('template_admin/header');
+		$this->load->view('template_admin/sidebar');
+		$this->load->view('admin/tambahadmin', $data);
+		$this->load->view('template_admin/footer');
+	}
+	
+	public function adminEdit($id = null)
+    {
+		var_dump($id);
+        if (!isset($id)) redirect('Admin/tambah_admin');
+
+		$var = $this->Model_admin;
+		$data["admin"] = $this->Model_admin->getById($id);
+		if (!$data["admin"]) show_404();
+		$this->load->view('template_admin/header');
+		$this->load->view('template_admin/sidebar');
+		$this->load->view('admin/editPassadmin', $data);
+		$this->load->view('template_admin/footer');
+		
+		$validation = $this->form_validation;
+		$validation->set_rules($var->rules());
+		
+        if ($validation->run()) {
+            $var->updatePass();
+			$this->session->set_flashdata('success', 'Berhasil Reset Password');
+			redirect('Admin/tambah_admin');
+		}
+	}
+
+	public function adminDelete($id_admin = null)
+    {
+        if (!isset($id_admin)) show_404();
+
+		
+        if ($this->Model_admin->delete($id_admin)) {
+			redirect('Admin/tambah_admin');
         }
 	}
 
