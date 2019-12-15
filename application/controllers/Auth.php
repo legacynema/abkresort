@@ -55,7 +55,7 @@ class Auth extends CI_Controller
 
 	public function login_admin() // VALIDASI LOGIN ADMIN
 	{
-		if ($this->session->userdata('email')) {
+		if ($this->session->userdata('email_admin')) {
 			redirect(base_url("Admin"));
 		} else {
 			$this->form_validation->set_rules('email', 'Email Admin', 'required');
@@ -92,7 +92,7 @@ class Auth extends CI_Controller
 	}
 	public function login_user() // VALIDASI LOGIN ADMIN
 	{
-		if ($this->session->userdata('email')) {
+		if ($this->session->userdata('email_user')) {
 			redirect(base_url());
 		} else {
 			$this->form_validation->set_rules('email', 'Email User', 'required');
