@@ -7,12 +7,7 @@
                 <div class="box-header with-border">
                     <h3 class="box-title">Tambah Transportasi</h3>
                 </div>
-                <!-- FLASH DATA PEMBERITAHUAN -->zz
-                <?php if ($this->session->flashdata('success')) : ?>
-                    <div class="alert alert-success" role="alert">
-                        <?php echo $this->session->flashdata('success'); ?>
-                    </div>
-                <?php endif; ?>
+
                 <!-- /.box-header -->
                 <!-- form start -->
                 <form action="<?php echo base_url() . 'Admin/transportasiAdd'; ?>" name="form" onsubmit="return validateForm()" method="post" enctype="multipart/form-data">
@@ -189,6 +184,12 @@
                         <div class="box-header with-border">
                             <h3 class="box-title">List Transportasi</h3>
                         </div>
+                        <!-- FLASH DATA PEMBERITAHUAN -->
+                        <?php if ($this->session->flashdata('success')) : ?>
+                            <div class="alert alert-success" role="alert">
+                                <?php echo $this->session->flashdata('success'); ?>
+                            </div>
+                        <?php endif; ?>
                         <!-- /.box-header -->
                         <!-- form start -->
                         <div class="box-body">

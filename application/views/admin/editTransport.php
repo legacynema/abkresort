@@ -7,7 +7,7 @@
                 <div class="box-header with-border">
                     <h3 class="box-title">Tambah Transportasi</h3>
                 </div>
-                <!-- FLASH DATA PEMBERITAHUAN -->zz
+                <!-- FLASH DATA PEMBERITAHUAN -->
                 <?php if ($this->session->flashdata('success')) : ?>
                     <div class="alert alert-success" role="alert">
                         <?php echo $this->session->flashdata('success'); ?>
@@ -15,7 +15,11 @@
                 <?php endif; ?>
                 <!-- /.box-header -->
                 <!-- form start -->
-                <form action="<?php echo base_url() . 'Admin/transportasiAdd'; ?>" name="form" onsubmit="return validateForm()" method="post" enctype="multipart/form-data">
+                <form action="<?php echo base_url("Admin/transportEdit/$transport->id_transport") ?>" name="form" onsubmit="return validateForm()" method="post" enctype="multipart/form-data">
+
+
+                <input type="hidden" name="id_transport" value="<?php echo $transport->id_transport ?>" />
+
                     <div class="box-body">
                         <div class="form-group">
                             <label for="id_kota">Jenis Transportasi</label>
@@ -23,7 +27,7 @@
                                 <option value="" disabled selected>Pilih Transportasi</option>
 
                                 <?php foreach ($jenis_transport as $trans) : ?>
-                                    <option value="<?= $trans->id_transport ?>"><?= $trans->nama_transport ?></option>
+                                    <option value="<?= $trans->id_transport ?>" <?php if ($transport->jenis_transport == $trans->id_transport){echo 'selected';} ?>> <?= $trans->nama_transport ?> </option>
                                 <?php endforeach; ?>
 
                             </select>
@@ -36,8 +40,8 @@
                             <select class="form-control" name="class">
                                 <option value="" disabled selected>Pilih Class</option>
 
-                                <?php foreach ($class as $trans) : ?>
-                                    <option value="<?= $trans->id_class ?>"><?= $trans->nama_class ?></option>
+                                <?php foreach ($class as $cls) : ?>
+                                    <option value="<?= $cls->id_class ?>" <?php if ($transport->class == $cls->id_class){echo 'selected';} ?>> <?= $cls->nama_class ?> </option>
                                 <?php endforeach; ?>
 
                             </select>
@@ -47,7 +51,7 @@
                     <div class="box-body">
                         <div class="form-group">
                             <label for="nama_penginapan">Nama Transportasi</label>
-                            <input class="form-control" type="text" name="nama_transp" placeholder="example : Lion Air">
+                            <input class="form-control" type="text" name="nama_transp" value="<?php echo $transport->nama_transp ?>">
                         </div>
                     </div>
 
@@ -55,7 +59,7 @@
                         <div class="col-12" id="parent-first-flight">
                             <div class="form-group">
                                 <label for="tanggal">Tanggal</label>
-                                <input type="text" onfocus="(this.type='date')" class="form-control" id="datetimepicker1" name="tanggal" placeholder="Keberangkatan" aria-describedby="basic-addon1">
+                                <input type="text" onfocus="(this.type='date')" class="form-control" id="datetimepicker1" name="tanggal" value="<?php echo $transport->tanggal ?>" aria-describedby="basic-addon1">
                             </div>
                         </div>
                     </div>
@@ -67,7 +71,7 @@
                                 <option value="" disabled selected>Pilih Keberangkatan</option>
 
                                 <?php foreach ($tempat_transport as $tt) : ?>
-                                    <option value="<?= $tt->id_tempat ?>"><?= $tt->nama_tempat ?></option>
+                                    <option value="<?= $tt->id_tempat ?>" <?php if ($transport->tempat_asal == $tt->id_tempat){echo 'selected';} ?>> <?= $tt->nama_tempat ?> </option>
                                 <?php endforeach; ?>
 
                             </select>
@@ -81,7 +85,7 @@
                                 <option value="" disabled selected>Pilih Tujuan</option>
 
                                 <?php foreach ($tempat_transport as $tt) : ?>
-                                    <option value="<?= $tt->id_tempat ?>"><?= $tt->nama_tempat ?></option>
+                                    <option value="<?= $tt->id_tempat ?>" <?php if ($transport->tempat_tujuan == $tt->id_tempat){echo 'selected';} ?>> <?= $tt->nama_tempat ?> </option>
                                 <?php endforeach; ?>
 
                             </select>
@@ -91,14 +95,14 @@
                     <div class="box-body">
                         <label for="jam_berangkat">Jam Keberangkatan</label>
                         <div class="input-group">
-                            <input type="time" name="jam_berangkat" class="form-control" placeholder="Rp.">
+                            <input type="time" name="jam_berangkat" class="form-control" value="<?php echo $transport->jam_berangkat?>">
                         </div>
                     </div>
 
                     <div class="box-body">
                         <label for="jam_tiba">Jam Kedatangan</label>
                         <div class="input-group">
-                            <input type="time" name="jam_tiba" class="form-control" placeholder="Rp.">
+                            <input type="time" name="jam_tiba" class="form-control" value="<?php echo $transport->jam_tiba?>">
                         </div>
                     </div>
 
@@ -106,7 +110,7 @@
                         <label for="kisaran">Kisaran Harga </label>
                         <div class="input-group">
                             <span class="input-group-addon"><i class="fa fa-money"></i></span>
-                            <input type="text" name="kisaran" class="form-control" placeholder="Rp.">
+                            <input type="text" name="kisaran" class="form-control" value="<?php echo $transport->kisaran?>">
                         </div>
                     </div>
 
@@ -114,7 +118,7 @@
                         <label for="harga">Harga</label>
                         <div class="input-group">
                             <span class="input-group-addon"><i class="fa fa-money"></i></span>
-                            <input type="text" name="harga" class="form-control" placeholder="Rp.">
+                            <input type="text" name="harga" class="form-control" value="<?php echo $transport->harga ?>">
                         </div>
                     </div>
 
@@ -178,3 +182,6 @@
                 </form>
             </div>
         </div>
+</section>
+
+</div>
