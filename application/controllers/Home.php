@@ -6,11 +6,10 @@ class Home extends CI_Controller {
 	public function __construct()
     {
         parent::__construct();
-        $this->load->helper(array('form', 'url'));
         $this->load->library('form_validation');
-
         //CRUD SISWA
         $this->load->model("Model_user");
+        $this->load->model("Model_login");
 	}
 	
 	
@@ -19,6 +18,13 @@ class Home extends CI_Controller {
 		$this->load->view('navbar');
         $this->load->view('home_template/home_view');
 		$this->load->view('footer');
+	}
+
+	public function myaccount()
+	{
+		$this->load->view('navbar');
+		$this->load->view('users/myprofile');
+		// $this->load->view('footer');
 	}
 
 	public function login()

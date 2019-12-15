@@ -5,7 +5,7 @@
             <!-- general form elements -->
             <div class="box box-primary">
                 <div class="box-header with-border">
-                    <h3 class="box-title">Tambah Penginapan</h3>
+                    <h3 class="box-title">Tambah Admin</h3>
                 </div>
                 
                 <!-- FLASH DATA PEMBERITAHUAN -->
@@ -20,42 +20,41 @@
                 <!-- form start -->
                 <form action="<?php echo base_url(). 'Admin/penginapanAdd'; ?>" name="form"  onsubmit="return validateForm()" method="post" enctype="multipart/form-data">
                     <div class="box-body">
-
-
                         <div class="form-group">
-                            <label for="id_kota">Pilih Kota</label>
-                                <select class="form-control" name="id_kota">
-                                    <option value="" disabled selected>Pilih Kota</option>
-
-                                    <?php foreach($kota as $kot):?>
-                                                <option value="<?= $kot->id_kota?>"><?= $kot->nama_kota?></option>
-                                            <?php  endforeach;?>
-                                      
-                                </select>
+                            <label for="nama_lengkap">Nama Lengkap</label>
+                            <input class="form-control" type="text"  name="nama_lengkap" placeholder="example : Paket Hemat">   
                         </div>
                         <div class="form-group">
-                            <label for="nama_penginapan">Nama Hotel/Villa</label>
-                            <input class="form-control" type="text"  name="nama_penginapan" placeholder="example : Hotel Batu Paradise">   
+                            <label for="password">Password</label>
+                            <input class="form-control" type="password"  name="password" >   
                         </div>
-
                         <div class="form-group">
-                            <label for="jumlah_tamu">Jumlah Tamu</label>
-                            <input type="number" class="form-control" name="jumlah_tamu" placeholder="Berapa Orang">
+                            <label for="email">Email</label>
+                            <input class="form-control" type="text"  name="email" placeholder="your@email.com">   
                         </div>
-
                         <div class="form-group">
-                            <label for="harga">Harga *per hari</label>
-                            <div class="input-group">
-                                <span class="input-group-addon"><i class="fa fa-money"></i></span>
-                                <input type="text" name="harga" class="form-control" placeholder="Rp.">
+                            <div class="radio">
+                                <label>
+                                <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1" checked="">
+                                Laki
+                                </label>
+                                <label>
+                                <input type="radio" name="optionsRadios" id="optionsRadios2" value="option2">
+                                Perempuan
+                                </label>
                             </div>
                         </div>
-
+                        <div class="form-group">
+                            <label for="nomorhp">Nomor Hp</label>
+                            <div class="input-group">
+                                <span class="input-group-addon">+62</span>
+                                <input type="text" name="nomorhp" class="form-control" placeholder="8xxx">
+                            </div>
+                        </div>
                         <div class="form-group">
                             <label for="foto">Foto *max size 1MB</label>
                             <input type="file" class="form-control" name="foto">
                         </div>
-
                         <script>
                                 function validateForm() {
                                 var namaPeng = document.forms["form"]["nama_penginapan"].value;

@@ -4,7 +4,7 @@
     <header class="main-header">
 
       <!-- Logo -->
-      <a href="<?= base_url('Admin') ?>" class="logo">
+      <a href="<?= base_url() ?>" class="logo">
         <!-- mini logo for sidebar mini 50x50 pixels -->
         <span class="logo-mini"><b>ABK</b></span>
         <!-- logo for regular state and mobile devices -->
@@ -134,7 +134,7 @@
           <li><a href="<?= base_url('Admin') ?>"><i class="fa fa-dashboard"></i> <span>Dashboard</span></a></li>
 
           <!-- TAMBAH DATA -->
-          <?php if (($this->uri->segment(2) == "tambah_penginapan") || ($this->uri->segment(2) == "tambah_transport") || ($this->uri->segment(2) == "tambah_wisata")) : ?>
+          <?php if (($this->uri->segment(2) == "tambah_penginapan") || ($this->uri->segment(2) == "tambah_transport") || ($this->uri->segment(2) == "tambah_wisata") || ($this->uri->segment(2) == "tambah_paket") || ($this->uri->segment(2) == "tambah_user") || ($this->uri->segment(2) == "tambah_admin"))  : ?>
             <li class="active treeview menu-open">
               <a href="#">
                 <i class="fa fa-user-plus"></i>
@@ -148,16 +148,50 @@
                   <li class="active"><a href="<?= base_url('Admin/tambah_penginapan') ?>"><i class="fa fa-circle-o"></i> Data Penginapan</a></li>
                   <li><a href="<?= base_url('Admin/tambah_transport') ?>"><i class="fa fa-circle-o"></i> Data Transport</a></li>
                   <li><a href="<?= base_url('Admin/tambah_wisata') ?>"><i class="fa fa-circle-o"></i> Data Wisata</a></li>
+                  <li><a href="<?= base_url('Admin/tambah_paket') ?>"><i class="fa fa-circle-o"></i> Data Paket</a></li>
+                  <li><a href="<?= base_url('Admin/tambah_user') ?>"><i class="fa fa-circle-o"></i> Data User</a></li>
+                  <li><a href="<?= base_url('Admin/tambah_admin') ?>"><i class="fa fa-circle-o"></i> Data Admin</a></li>
 
                 <?php elseif ($this->uri->segment(2) == "tambah_transport") : ?>
                   <li><a href="<?= base_url('Admin/tambah_penginapan') ?>"><i class="fa fa-circle-o"></i> Data Penginapan</a></li>
                   <li class="active"><a href="<?= base_url('Admin/tambah_transport') ?>"><i class="fa fa-circle-o"></i> Data Transport</a></li>
                   <li><a href="<?= base_url('Admin/tambah_wisata') ?>"><i class="fa fa-circle-o"></i> Data Wisata</a></li>
+                  <li><a href="<?= base_url('Admin/tambah_paket') ?>"><i class="fa fa-circle-o"></i> Data Paket</a></li>
+                  <li><a href="<?= base_url('Admin/tambah_user') ?>"><i class="fa fa-circle-o"></i> Data User</a></li>
+                  <li><a href="<?= base_url('Admin/tambah_admin') ?>"><i class="fa fa-circle-o"></i> Data Admin</a></li>
 
                 <?php elseif ($this->uri->segment(2) == "tambah_wisata") : ?>
                   <li><a href="<?= base_url('Admin/tambah_penginapan') ?>"><i class="fa fa-circle-o"></i> Data Penginapan</a></li>
                   <li><a href="<?= base_url('Admin/tambah_transport') ?>"><i class="fa fa-circle-o"></i> Data Transport</a></li>
                   <li class="active"><a href="<?= base_url('Admin/tambah_wisata') ?>"><i class="fa fa-circle-o"></i> Data Wisata</a></li>
+                  <li><a href="<?= base_url('Admin/tambah_paket') ?>"><i class="fa fa-circle-o"></i> Data Paket</a></li>
+                  <li><a href="<?= base_url('Admin/tambah_user') ?>"><i class="fa fa-circle-o"></i> Data User</a></li>
+                  <li><a href="<?= base_url('Admin/tambah_admin') ?>"><i class="fa fa-circle-o"></i> Data Admin</a></li>
+                
+                <?php elseif ($this->uri->segment(2) == "tambah_paket") : ?>
+                  <li><a href="<?= base_url('Admin/tambah_penginapan') ?>"><i class="fa fa-circle-o"></i> Data Penginapan</a></li>
+                  <li><a href="<?= base_url('Admin/tambah_transport') ?>"><i class="fa fa-circle-o"></i> Data Transport</a></li>
+                  <li><a href="<?= base_url('Admin/tambah_wisata') ?>"><i class="fa fa-circle-o"></i> Data Wisata</a></li>
+                  <li class="active"><a href="<?= base_url('Admin/tambah_paket') ?>"><i class="fa fa-circle-o"></i> Data Paket</a></li>
+                  <li><a href="<?= base_url('Admin/tambah_user') ?>"><i class="fa fa-circle-o"></i> Data User</a></li>
+                  <li><a href="<?= base_url('Admin/tambah_admin') ?>"><i class="fa fa-circle-o"></i> Data Admin</a></li>
+
+                <?php elseif ($this->uri->segment(2) == "tambah_user") : ?>
+                  <li><a href="<?= base_url('Admin/tambah_penginapan') ?>"><i class="fa fa-circle-o"></i> Data Penginapan</a></li>
+                  <li><a href="<?= base_url('Admin/tambah_transport') ?>"><i class="fa fa-circle-o"></i> Data Transport</a></li>
+                  <li><a href="<?= base_url('Admin/tambah_wisata') ?>"><i class="fa fa-circle-o"></i> Data Wisata</a></li>
+                  <li><a href="<?= base_url('Admin/tambah_paket') ?>"><i class="fa fa-circle-o"></i> Data Paket</a></li>
+                  <li class="active"><a href="<?= base_url('Admin/tambah_user') ?>"><i class="fa fa-circle-o"></i> Data User</a></li>
+                  <li><a href="<?= base_url('Admin/tambah_admin') ?>"><i class="fa fa-circle-o"></i> Data Admin</a></li>
+                
+                <?php elseif ($this->uri->segment(2) == "tambah_admin") : ?>
+                  <li><a href="<?= base_url('Admin/tambah_penginapan') ?>"><i class="fa fa-circle-o"></i> Data Penginapan</a></li>
+                  <li><a href="<?= base_url('Admin/tambah_transport') ?>"><i class="fa fa-circle-o"></i> Data Transport</a></li>
+                  <li><a href="<?= base_url('Admin/tambah_wisata') ?>"><i class="fa fa-circle-o"></i> Data Wisata</a></li>
+                  <li><a href="<?= base_url('Admin/tambah_paket') ?>"><i class="fa fa-circle-o"></i> Data Paket</a></li>
+                  <li><a href="<?= base_url('Admin/tambah_user') ?>"><i class="fa fa-circle-o"></i> Data User</a></li>
+                  <li class="active"><a href="<?= base_url('Admin/tambah_admin') ?>"><i class="fa fa-circle-o"></i> Data Admin</a></li>
+
                 <?php endif; ?>
               </ul>
             </li>
@@ -175,6 +209,9 @@
                 <li><a href="<?= base_url('Admin/tambah_penginapan') ?>"><i class="fa fa-circle-o"></i> Data Penginapan</a></li>
                 <li><a href="<?= base_url('Admin/tambah_transport') ?>"><i class="fa fa-circle-o"></i> Data Transport</a></li>
                 <li><a href="<?= base_url('Admin/tambah_wisata') ?>"><i class="fa fa-circle-o"></i> Data Wisata</a></li>
+                <li><a href="<?= base_url('Admin/tambah_paket') ?>"><i class="fa fa-circle-o"></i> Data Paket</a></li>
+                <li><a href="<?= base_url('Admin/tambah_user') ?>"><i class="fa fa-circle-o"></i> Data User</a></li>
+                <li><a href="<?= base_url('Admin/tambah_admin') ?>"><i class="fa fa-circle-o"></i> Data Admin</a></li>
               </ul>
             </li>
             </li>
@@ -220,6 +257,12 @@
             <li class="active">Tambah Transport</li>
           <?php elseif ($this->uri->segment(2) == "tambah_wisata") : ?>
             <li class="active">Tambah Wisata</li>
+          <?php elseif ($this->uri->segment(2) == "tambah_paket") : ?>
+            <li class="active">Tambah Paket</li>
+          <?php elseif ($this->uri->segment(2) == "tambah_user") : ?>
+            <li class="active">Tambah User</li>
+          <?php elseif ($this->uri->segment(2) == "tambah_admin") : ?>
+            <li class="active">Tambah Admin</li>
           <?php elseif ($this->uri->segment(2) == "transaksi") : ?>
             <li class="active">Transaksi</li>
           <?php elseif ($this->uri->segment(2) == "laporan") : ?>
