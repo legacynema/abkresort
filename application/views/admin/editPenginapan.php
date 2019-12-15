@@ -17,7 +17,6 @@
                             <label for="id_kota">Pilih Kota</label>
                             <select class="form-control" name="id_kota">
                                 <option value="" disabled selected>Pilih Kota</option>
-
                                 <?php foreach ($kota as $kot) : ?>
                                     <option value="<?= $kot->id_kota ?>" <?php if ($penginapan->id_kota == $kot->id_kota) {echo 'selected';} ?>> <?= $kot->nama_kota ?> </option>
                                 <?php endforeach; ?>

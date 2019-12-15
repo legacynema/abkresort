@@ -215,32 +215,20 @@
 
                                         <?php $nomor = 1; ?>
                                         <?php
-
-                                        //    $query = "SELECT
-                                        //    jt.nama_transport, t.nama_transp, tt.nama_tempat as berangkat, tb.nama_tempat as tiba
-                                        //    FROM transport as t
-                                        //    JOIN jenis_transport as jt
-                                        //    on jt.id_transport = t.jenis_transport
-                                        //    JOIN tempat_transport as tt
-                                        //    on tt.id_tempat = t.tempat_asal
-                                        //    JOIN tempat_transport as tb
-                                        //    on tb.id_tempat = t.tempat_tujuan";
-
-                                        //    $data=$this->db->query($query)->result_array();
-
+                                        
                                         $this->db->select(
                                             't.id_transport as id,
-                                 c.nama_class,
-                                 jt.nama_transport,
-                                 t.nama_transp,
-                                 t.tanggal,
-                                 tt.nama_tempat as berangkat,
-                                 tb.nama_tempat as tiba,
-                                 t.jam_berangkat,
-                                 t.jam_tiba,
-                                 t.kisaran,
-                                 t.harga
-                                 '
+                                            c.nama_class,
+                                            jt.nama_transport,
+                                            t.nama_transp,
+                                            t.tanggal,
+                                            tt.nama_tempat as berangkat,
+                                            tb.nama_tempat as tiba,
+                                            t.jam_berangkat,
+                                            t.jam_tiba,
+                                            t.kisaran,
+                                            t.harga
+                                            '
                                         );
 
                                         $this->db->join('class as c', 'c.id_class = t.class');

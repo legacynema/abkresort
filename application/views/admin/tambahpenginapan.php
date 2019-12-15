@@ -15,17 +15,17 @@
                     <div class="box-body">
 
 
-                        <div class="form-group">
-                            <label for="id_kota">Pilih Kota</label>
-                                <select class="form-control" name="id_kota">
-                                    <option value="" disabled selected>Pilih Kota</option>
+                            <div class="form-group">
+                                <label for="id_kota">Pilih Kota</label>
+                                    <select class="form-control" name="id_kota">
+                                        <option value="" disabled selected>Pilih Kota</option>
 
-                                    <?php foreach($kota as $kot):?>
-                                                <option value="<?= $kot->id_kota?>"><?= $kot->nama_kota?></option>
-                                            <?php  endforeach;?>
-                                      
-                                </select>
-                        </div>
+                                        <?php foreach($kota as $kot):?>
+                                                    <option value="<?= $kot->id_kota?>"><?= $kot->nama_kota?></option>
+                                                <?php  endforeach;?>
+                                        
+                                    </select>
+                            </div>
                         <div class="form-group">
                             <label for="nama_penginapan">Nama Hotel/Villa</label>
                             <input class="form-control" type="text"  name="nama_penginapan" placeholder="example : Hotel Batu Paradise">   
