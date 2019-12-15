@@ -75,9 +75,13 @@ class Admin extends CI_Controller
 	// START KHOSY
 	public function tambah_paket()
 	{
+		$data["kota"] = $this->Model_kota->getAll();
+		$data["penginapan"] = $this->Model_penginapan->getAll();
+		$data["wisata"] = $this->Model_wisata->getAll();
+		$data["transport"] = $this->Model_transport->getAll();
 		$this->load->view('template_admin/header');
 		$this->load->view('template_admin/sidebar');
-		$this->load->view('admin/tambahpaket');
+		$this->load->view('admin/tambahpaket', $data);
 		$this->load->view('template_admin/footer');
 	}
 	public function tambah_user()
@@ -263,21 +267,7 @@ class Admin extends CI_Controller
         }
 	}
 
-	//CRUD TRANSAKSI
-	public function dataTransaksi()
-    {
-		$data["user"] = $this->Model_user->getAll();
-		$data["paket"] = $this->Model_paket->getAll();
-		$data["penginapan"] = $this->Model_penginapan->getAll();
-		$data["transport"] = $this->Model_transport->getAll();
-		$data["wisata"] = $this->Model_wisata->getAll();
-		$this->load->view('template_admin/header');
-		$this->load->view('template_admin/sidebar');
-		$this->load->view('admin/transaksi');
-		$this->load->view('template_admin/footer');
-        
-	}
-	
+	//CRUD TRANSAKSI	
 	public function transaksiAdd()
     {
 		$tambah = $this->Model_transaksi;
@@ -298,5 +288,52 @@ class Admin extends CI_Controller
         }
 	}
 
+	//CRUD WISATA	
+	public function paketAdd()
+    {
+		$tambah = $this->Model_paket;
+		
+            $tambah->save();
+			$this->session->set_flashdata('success', 'Berhasil disimpan');
+			redirect('Admin/tambah_paket');
+        
+	}
+	
+	public function paketEdit($id = null)
+    {
+		var_dump($id);
+        if (!isset($id)) redirect('Admin/tambah_paket');
+
+		$var = $this->Model_paket;
+		$data["paket"] = $this->Model_paket->getById($id);
+		$data["kota"] = $this->Model_kota->getAll();
+		$data["penginapan"] = $this->Model_penginapan->getAll();
+		$data["wisata"] = $this->Model_wisata->getAll();
+		$data["transport"] = $this->Model_transport->getAll();
+		if (!$data["paket"]) show_404();
+		$this->load->view('template_admin/header');
+		$this->load->view('template_admin/sidebar');
+		$this->load->view('admin/editpaket', $data);
+		$this->load->view('template_admin/footer');
+		
+		$validation = $this->form_validation;
+        $validation->set_rules($var->rules());
+
+        if ($validation->run()) {
+            $var->update();
+			$this->session->set_flashdata('success', 'Berhasil di Edit');
+			redirect('Admin/tambah_paket');
+		}
+	}
+
+	public function paketDelete($id_paket = null)
+    {
+        if (!isset($id_paket)) show_404();
+
+		
+        if ($this->Model_paket->delete($id_paket)) {
+			redirect('Admin/tambah_paket');
+        }
+	}
 
 }
