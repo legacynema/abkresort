@@ -16,11 +16,20 @@
   <h5 class="my-0 mr-md-auto font-weight-normal" href="<?= base_url('Home/index') ?>">Company name</h5>
   <nav class="my-2 my-md-0 mr-md-3">
   <?php // JIKA SUDAH LOGIN
-  if($this->session->userdata("email")) : ?>
+  if($this->session->userdata("email_admin")) : ?>
+  <a class="p-2 text-dark" href="<?= base_url('Home/index') ?>">Home</a>
+    <a class="p-2 text-dark" href="<?= base_url('Input/package') ?>">All in One</a>
+    <a class="p-2 text-dark" href="#">Transaksi</a>
+    <a class="p-2 text-dark" href="<?= base_url('Admin') ?>">Dashboard</a>
+    <a class="p-2 text-dark" href="<?= base_url('Auth/logout') ?>">Logout</a>
+
+  <?php elseif($this->session->userdata("email_user")) : ?>  
   <a class="p-2 text-dark" href="<?= base_url('Home/index') ?>">Home</a>
     <a class="p-2 text-dark" href="<?= base_url('Input/package') ?>">All in One</a>
     <a class="p-2 text-dark" href="#">Transaksi</a>
     <a class="p-2 text-dark" href="<?= base_url('Home/myaccount') ?>">Lihat akun</a>
+    <a class="p-2 text-dark" href="<?= base_url('Auth/logout') ?>">Logout</a>
+    
   <?php else : ?>
     <a class="p-2 text-dark" href="<?= base_url('Home/index') ?>">Home</a>
     <a class="p-2 text-dark" href="<?= base_url('Input/package') ?>">All in One</a>

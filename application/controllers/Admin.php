@@ -26,7 +26,7 @@ class Admin extends CI_Controller
 		
 		$this->load->library('form_validation');
 
-		if (!($this->session->userdata('email'))) {
+		if (!($this->session->userdata('email_admin'))) {
             redirect(base_url('Auth/admin'));
             // redirect($this->index());
         }
