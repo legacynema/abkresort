@@ -30,19 +30,22 @@
                    <div class="form-check"> 
                     <div class="custom-control custom-checkbox">
                         <input type="checkbox" class="custom-control-input form-check-input" data-toggle='collapse' data-target='#collapsediv1' id="train">
-                        <label class="custom-control-label" for="train">Kereta Api</label>
+                        <label class="custom-control-label container" for="train">Kereta Api</label>
+                        <span class="checkmark"></span>
                     </div>
                    </div>
                    <div class="form-check"> 
                     <div class="custom-control custom-checkbox">
                         <input type="checkbox" class="custom-control-input form-check-input" data-toggle='collapse' data-target='#collapsediv2' id="plane">
-                        <label class="custom-control-label" for="plane">Pesawat</label>
+                        <label class="custom-control-label container" for="plane">Pesawat</label>
+                        <span class="checkmark"></span>
                     </div>
                    </div>
                    <div class="form-check"> 
                     <div class="custom-control custom-checkbox">
                         <input type="checkbox" class="custom-control-input" data-toggle='collapse' data-target='#collapsediv3' id="car">
-                        <label class="custom-control-label" for="car">Mobil</label>
+                        <label class="custom-control-label container" for="car">Mobil</label>
+                        <span class="checkmark"></span>
                     </div>
                    </div>
                 </div>
@@ -50,19 +53,24 @@
                    <div class="form-check"> 
                     <div class="custom-control custom-checkbox">
                         <input type="checkbox" class="custom-control-input" data-toggle='collapse' data-target='#collapsediv4' id="hotel">
-                        <label class="custom-control-label" for="hotel" >Hotel</label>
+                        <label class="custom-control-label container" for="hotel" >Hotel</label>
+                        <span class="checkmark"></span>
+
                     </div>
                    </div> 
                    <div class="form-check">    
                     <div class="custom-control custom-checkbox">
                         <input type="checkbox" class="custom-control-input" data-toggle='collapse' data-target='#collapsediv5' id="wisata">
-                        <label class="custom-control-label" for="wisata">Tujuan Wisata</label>
+                        <label class="custom-control-label container" for="wisata">Tujuan Wisata</label>
+                        <span class="checkmark"></span>
                     </div>
                    </div>
                    <div class="form-check"> 
                      <div class="custom-control custom-checkbox">
                         <input type="checkbox" class="custom-control-input" data-toggle='collapse' data-target='#collapsediv1' id="other">
-                        <label class="custom-control-label" for="other">Lain-Lain</label>
+                        <label class="custom-control-label container" for="other">Lain-Lain</label>
+                        <span class="checkmark"></span>
+
                     </div>
                    </div>                   
                 </div>
@@ -183,7 +191,7 @@
           </div>
         </div>
   </div>
-  
+  <br>
   <!-- All In One Mobil -->
   <div id='collapsediv3' class='collapse div3'>
         <div class="card">
@@ -212,7 +220,7 @@
        </div>
   </div>
 
-
+<br>
 <!-- All In One Hotel -->
   <div id='collapsediv4' class='collapse div4'>
         <div class="card"><br>
@@ -262,6 +270,7 @@
           </div>
         </div>
   </div> 
+  <br>
    <!-- All In One Wisata -->
    <div id='collapsediv5' class='collapse div5'>
         <div class="card">
