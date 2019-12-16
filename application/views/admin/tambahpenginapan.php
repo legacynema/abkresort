@@ -8,31 +8,24 @@
                     <h3 class="box-title">Tambah Penginapan</h3>
                 </div>
                 
-                <!-- FLASH DATA PEMBERITAHUAN -->
-                <?php if ($this->session->flashdata('success')): ?>
-                    <div class="alert alert-success alert-dismissible">
-                        <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
-                        <h4><i class="icon fa fa-check"></i> Alert!</h4>
-                    <?php echo $this->session->flashdata('success'); ?>
-                    </div>
-                <?php endif; ?> 
+                
                 <!-- /.box-header -->
                 <!-- form start -->
                 <form action="<?php echo base_url(). 'Admin/penginapanAdd'; ?>" name="form"  onsubmit="return validateForm()" method="post" enctype="multipart/form-data">
                     <div class="box-body">
 
 
-                        <div class="form-group">
-                            <label for="id_kota">Pilih Kota</label>
-                                <select class="form-control" name="id_kota">
-                                    <option value="" disabled selected>Pilih Kota</option>
+                            <div class="form-group">
+                                <label for="id_kota">Pilih Kota</label>
+                                    <select class="form-control" name="id_kota">
+                                        <option value="" disabled selected>Pilih Kota</option>
 
-                                    <?php foreach($kota as $kot):?>
-                                                <option value="<?= $kot->id_kota?>"><?= $kot->nama_kota?></option>
-                                            <?php  endforeach;?>
-                                      
-                                </select>
-                        </div>
+                                        <?php foreach($kota as $kot):?>
+                                                    <option value="<?= $kot->id_kota?>"><?= $kot->nama_kota?></option>
+                                                <?php  endforeach;?>
+                                        
+                                    </select>
+                            </div>
                         <div class="form-group">
                             <label for="nama_penginapan">Nama Hotel/Villa</label>
                             <input class="form-control" type="text"  name="nama_penginapan" placeholder="example : Hotel Batu Paradise">   
@@ -63,13 +56,8 @@
                                 var Harga = document.forms["form"]["harga"].value;
                                 var tamu = document.forms["form"]["jumlah_tamu"].value;
 
-<<<<<<< HEAD
-                                    if(kota == "" & namaPeng == "" && tamu == "" && Harga == ""){
-                                        alert("Semua Data Harus di Isi");
-=======
                                     if(kota == "" && namaPeng == "" && tamu == "" && Harga == ""){
                                         namaPeng.innerHTML = "data penginapan harus diisi";
->>>>>>> b009da20c06a134f81d2acee584a4edc826c2209
                                         return false;
                                     }
                                     else if (kota == "" ) {
@@ -104,6 +92,14 @@
                 <div class="box-header with-border">
                     <h3 class="box-title">List Penginapan</h3>
                 </div>
+                <!-- FLASH DATA PEMBERITAHUAN -->
+                <?php if ($this->session->flashdata('success')): ?>
+                    <div class="alert alert-success alert-dismissible">
+                        <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+                        <h4><i class="icon fa fa-check"></i> Alert!</h4>
+                    <?php echo $this->session->flashdata('success'); ?>
+                    </div>
+                <?php endif; ?> 
                 <!-- /.box-header -->
                 <!-- form start -->
                 <div class="box-body">
@@ -150,7 +146,10 @@
                                 <img src="<?php echo base_url('foto/admin/penginapan/'.$peng['foto']) ?>" width="64" />
 								</td>
                                 <td>
-                                    <?php  echo anchor('Admin/penginapanDelete/'.$peng['id_penginapan'], '<button class="btn btn-danger margin" type="button"><span class="fa fa-pencil"></span> </button>'); ?>
+                                    <?php  echo anchor('Admin/penginapanEdit/'.$peng['id_penginapan'],'<button class="btn btn-danger margin" type="button"><span class="fa fa-pencil"></span> </button>'); ?>
+                                </td>
+                                <td>
+                                    <?php echo anchor('Admin/penginapanDelete/'.$peng['id_penginapan'],'<button class="btn btn-danger margin" type="button"><span class="fa fa-trash"></span> </button>'); ?> 
                                 </td>
 							</tr>
 							<?php $nomor++; ?>

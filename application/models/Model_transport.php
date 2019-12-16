@@ -17,7 +17,16 @@ private $_table = "transport";
     public $kisaran;
     public $harga;
 
-
+    public function rules()
+    {
+        return [
+            [
+                'field' => 'id_transport',
+                'label' => 'id_transport',
+                'rules' => 'required'
+            ]
+        ];
+    }
     public function getAll()
     {
         return $this->db->get($this->_table)->result();

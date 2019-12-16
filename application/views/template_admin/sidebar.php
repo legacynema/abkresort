@@ -4,7 +4,7 @@
     <header class="main-header">
 
       <!-- Logo -->
-      <a href="<?= base_url('Admin') ?>" class="logo">
+      <a href="<?= base_url() ?>" class="logo">
         <!-- mini logo for sidebar mini 50x50 pixels -->
         <span class="logo-mini"><b>ABK</b></span>
         <!-- logo for regular state and mobile devices -->
@@ -96,7 +96,7 @@
                 <!-- Menu Footer-->
                 <li class="user-footer">
                   <div class="pull-left">
-                    <a href="#" class="btn btn-default btn-flat">Profile</a>
+                    <a href="<?= base_url('Admin/myprofile') ?>" class="btn btn-default btn-flat">Profile</a>
                   </div>
                   <div class="pull-right">
                     <a href="<?= base_url('auth/logout') ?>" class="btn btn-default btn-flat">Sign out</a>
@@ -106,7 +106,7 @@
             </li>
             <!-- Control Sidebar Toggle Button -->
             <li>
-              <a href="#" data-toggle="control-sidebar"><i class="fa fa-gears"></i></a>
+              <a href="#" data-toggle="control-sidebar"><i class="fa fa-info"></i></a>
             </li>
           </ul>
         </div>
@@ -123,7 +123,7 @@
             <img src="<?= base_url('assets_admin/') ?>dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
           </div>
           <div class="pull-left info">
-            <p><?= $this->session->userdata("email"); ?></p>
+            <p><?= $this->session->userdata("email_admin"); ?></p>
             <!-- // SETTING EMAIL ADMIN -->
             <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
           </div>
@@ -134,7 +134,7 @@
           <li><a href="<?= base_url('Admin') ?>"><i class="fa fa-dashboard"></i> <span>Dashboard</span></a></li>
 
           <!-- TAMBAH DATA -->
-          <?php if (($this->uri->segment(2) == "tambah_penginapan") || ($this->uri->segment(2) == "tambah_transport") || ($this->uri->segment(2) == "tambah_wisata")) : ?>
+          <?php if (($this->uri->segment(2) == "tambah_penginapan") || ($this->uri->segment(2) == "tambah_transport") || ($this->uri->segment(2) == "tambah_wisata") || ($this->uri->segment(2) == "tambah_paket") || ($this->uri->segment(2) == "tambah_user") || ($this->uri->segment(2) == "tambah_admin"))  : ?>
             <li class="active treeview menu-open">
               <a href="#">
                 <i class="fa fa-user-plus"></i>
@@ -183,6 +183,7 @@
                   <li><a href="<?= base_url('Admin/tambah_paket') ?>"><i class="fa fa-circle-o"></i> Data Paket</a></li>
                   <li class="active"><a href="<?= base_url('Admin/tambah_user') ?>"><i class="fa fa-circle-o"></i> Data User</a></li>
                   <li><a href="<?= base_url('Admin/tambah_admin') ?>"><i class="fa fa-circle-o"></i> Data Admin</a></li>
+                
                 <?php elseif ($this->uri->segment(2) == "tambah_admin") : ?>
                   <li><a href="<?= base_url('Admin/tambah_penginapan') ?>"><i class="fa fa-circle-o"></i> Data Penginapan</a></li>
                   <li><a href="<?= base_url('Admin/tambah_transport') ?>"><i class="fa fa-circle-o"></i> Data Transport</a></li>
@@ -230,7 +231,7 @@
           </li>
           <li><a href="<?= base_url('Admin/transaksi') ?>"><i class="fa fa-money"></i> <span>Transaksi</span></a></li>
           <li><a href="<?= base_url('Admin/laporan') ?>"><i class="fa fa-book"></i> <span>Laporan</span></a></li>
-          <li><a href="<?= base_url('Admin/loginadmin') ?>"><i class="fa fa-sign-out"></i> <span>Logout</span></a></li>
+          <li><a href="<?= base_url('logout') ?>"><i class="fa fa-sign-out"></i> <span>Logout</span></a></li>
         </ul>
       </section>
       <!-- /.sidebar -->
@@ -244,7 +245,7 @@
           Dashboard
         </h1>
         <ol class="breadcrumb">
-          <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
+          <li><a href="<?= base_url('Admin'); ?>"><i class="fa fa-dashboard"></i> Home</a></li>
           <?php
           // print_r($this->uri->segment(1));
           // die;
@@ -266,6 +267,12 @@
             <li class="active">Transaksi</li>
           <?php elseif ($this->uri->segment(2) == "laporan") : ?>
             <li class="active">Laporan</li>
+            <!-- PROFILE ADMIN -->
+          <?php elseif ($this->uri->segment(2) == "myprofile") : ?>
+            <li class="active">My Profile</li>
+          <?php elseif ($this->uri->segment(2) == "editprofile") : ?>
+            <li class="active">Edit Profile</li>
+            <!-- END PROFILE ADMIN -->
           <?php else : ?>
             <li class="active">Dashboard</li>
           <?php endif;
