@@ -54,7 +54,6 @@ private $_table = "wisata";
         $this->id_kota = $post["id_kota"];
         $this->nama_wisata = $post["nama_wisata"];
         $this->harga_tiket = $post["harga_tiket"];
-        $this->foto = $post["foto"];
         $this->post_date = date('Y-m-d');
         
 
@@ -76,7 +75,7 @@ private $_table = "wisata";
     private function _uploadImage()
     {
         $config['upload_path']          = './foto/admin/wisata';
-        $config['allowed_types']        = 'gif|jpg|png';
+        $config['allowed_types']        = 'gif|jpg|png|jpeg';
         $config['file_name']            = $this->nama_wisata;
         $config['overwrite']            = true;
         $config['max_size']             = 1024; // 1MB

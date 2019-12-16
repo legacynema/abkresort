@@ -64,7 +64,6 @@ private $_table = "user";
         $this->email = $post["email"];
         $this->nomor_hp = $post["nomor_hp"];
         $this->jenis_kelamin = $post["jenis_kelamin"];
-        $this->foto = $post["foto"];
         $this->post_date = date('Y-m-d');
 
         if (empty($post["password"])){

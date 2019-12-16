@@ -328,7 +328,7 @@ class Admin extends CI_Controller
         $validation->set_rules($var->rules());
 
         if ($validation->run()) {
-            $var->updatePass();
+            $var->update();
 			$this->session->set_flashdata('success', 'Berhasil di Edit');
 			redirect('Admin/tambah_paket');
 		}
