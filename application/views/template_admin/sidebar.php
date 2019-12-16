@@ -96,7 +96,7 @@
                 <!-- Menu Footer-->
                 <li class="user-footer">
                   <div class="pull-left">
-                    <a href="#" class="btn btn-default btn-flat">Profile</a>
+                    <a href="<?= base_url('Admin/myprofile') ?>" class="btn btn-default btn-flat">Profile</a>
                   </div>
                   <div class="pull-right">
                     <a href="<?= base_url('auth/logout') ?>" class="btn btn-default btn-flat">Sign out</a>
@@ -106,7 +106,7 @@
             </li>
             <!-- Control Sidebar Toggle Button -->
             <li>
-              <a href="#" data-toggle="control-sidebar"><i class="fa fa-gears"></i></a>
+              <a href="#" data-toggle="control-sidebar"><i class="fa fa-info"></i></a>
             </li>
           </ul>
         </div>
@@ -245,7 +245,7 @@
           Dashboard
         </h1>
         <ol class="breadcrumb">
-          <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
+          <li><a href="<?= base_url('Admin'); ?>"><i class="fa fa-dashboard"></i> Home</a></li>
           <?php
           // print_r($this->uri->segment(1));
           // die;
@@ -267,6 +267,12 @@
             <li class="active">Transaksi</li>
           <?php elseif ($this->uri->segment(2) == "laporan") : ?>
             <li class="active">Laporan</li>
+            <!-- PROFILE ADMIN -->
+          <?php elseif ($this->uri->segment(2) == "myprofile") : ?>
+            <li class="active">My Profile</li>
+          <?php elseif ($this->uri->segment(2) == "editprofile") : ?>
+            <li class="active">Edit Profile</li>
+            <!-- END PROFILE ADMIN -->
           <?php else : ?>
             <li class="active">Dashboard</li>
           <?php endif;

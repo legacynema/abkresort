@@ -39,6 +39,28 @@ class Admin extends CI_Controller
 		$this->load->view('template_admin/footer');
 	}
 	
+	public function myprofile(){
+		$this->load->view('template_admin/header');
+		$this->load->view('template_admin/sidebar');
+		$this->load->view('admin/profile');
+		$this->load->view('template_admin/footer');
+	}
+	public function editprofile(){
+		$this->load->view('template_admin/header');
+		$this->load->view('template_admin/sidebar');
+		$this->load->view('admin/editprofile');
+		$this->load->view('template_admin/footer');
+	}
+	public function prosesedit($id_admin = null){
+		
+        if (!isset($id_admin)) redirect('Admin');
+
+
+		$var = $this->Model_admin;
+		var_dump($var);die;
+		$var->update();
+	}
+
 	// MENU SIDEBAR ADMIN
 	public function tambah_penginapan()
 	{
