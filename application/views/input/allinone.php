@@ -21,6 +21,76 @@
     <!-- End of Slideshow -->
     </div>
 </div>
+<div class="container mt-5">
+    <form action="">
+        <div class="form-row">
+            <div class="col">
+                <div class="form-group">
+                    <div class="custom-control custom-checkbox">
+                    <input type="checkbox" class="custom-control-input" id="mobil">
+                    <label class="custom-control-label" for="mobil">Mobil</label>
+                    </div>
+                    <div class="custom-control custom-checkbox">
+                    <input type="checkbox" class="custom-control-input" id="pesawat">
+                    <label class="custom-control-label" for="pesawat">Pesawat</label>
+                    </div>
+                    <div class="custom-control custom-checkbox">
+                    <input type="checkbox" class="custom-control-input" id="bis">
+                    <label class="custom-control-label" for="bis">Bis</label>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="form-group">
+                    <div class="custom-control custom-checkbox">
+                    <input type="checkbox" class="custom-control-input" id="kereta">
+                    <label class="custom-control-label" for="kereta">Kereta</label>
+                    </div>
+                    <div class="custom-control custom-checkbox">
+                    <input type="checkbox" class="custom-control-input" id="hotel">
+                    <label class="custom-control-label" for="hotel" data-toggle="collapse" href="#hotel">hotel</label>
+                    </div>
+                    <div class="custom-control custom-checkbox">
+                    <input type="checkbox" class="custom-control-input" id="lain_lain">
+                    <label class="custom-control-label" for="lain_lain" data-toggle="collapse" href="#collapseExample">lain_lain</label>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+    <p>
+        <div class="collapse" id="collapseExample">
+            <div class="card card-body">
+                LAIN LAIN Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deleniti facilis ipsum quae vitae, tenetur ratione voluptates corporis? Facilis, vel nobis.
+            </div>
+        </div>
+        <div class="collapse" id="hotel">
+            <div class="card card-body">
+                HOTEL Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deleniti facilis ipsum quae vitae, tenetur ratione voluptates corporis? Facilis, vel nobis.
+            </div>
+        </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     <br>
     <div class="container ">
         <div class="jumbotron jumbotron-fluid bg-primary">
