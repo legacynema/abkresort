@@ -34,7 +34,7 @@ class Home extends CI_Controller {
 		$this->load->view('navbar');
 		$this->load->view('login_register/register');
 		$this->load->view('footer');
-		header('Refresh:5; url= '. base_url('Admin')); 
+		
 	}
 
 	public function profilUser()
@@ -76,13 +76,12 @@ class Home extends CI_Controller {
 	public function editprofile(){
 		if ($this->session->userdata('email_user')) {
 			if (!$this->session->flashdata('berhasil')) {
-				
 				$this->load->view('navbar');
 				$this->load->view('users/editprofile');
 			}else{
 				$this->load->view('navbar');
 				$this->load->view('users/editprofile');
-				redirect(base_url(),'refresh=5');
+				header('Refresh:3; url= '. base_url('Home/myaccount')); 
 			}
 
 
