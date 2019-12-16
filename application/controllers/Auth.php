@@ -27,29 +27,21 @@ class Auth extends CI_Controller
 	{
 		if (($this->session->userdata('email_admin'))) { // Jika ada session admin tidak boleh login lagi
 			redirect(base_url('admin'));
-		} elseif ($this->session->userdata('nig_guru')) {
-			redirect(base_url('guru'));
+		} elseif ($this->session->userdata('email_user')) {
+			redirect(base_url());
 		} else {
-			// $data['judul']	=	'Login Admin';
-			// $this->load->view('auth/header', $data);
 			$this->load->view('auth/login_admin');
-			// $this->load->view('auth/footer');
 		}
 	}
 
 	public function user() // VIEW LOGIN USER
 	{
-		if (($this->session->userdata('email_admin'))) { // Jika ada session admin tidak boleh login lagi
+		if ($this->session->userdata('email_admin')) { // Jika ada session admin tidak boleh login lagi
 			redirect(base_url('admin'));
-		} elseif ($this->session->userdata('nig_guru')) {
-			redirect(base_url('guru'));
-		} elseif ($this->session->userdata('nisn')) {
-			redirect(base_url('siswa'));
-		} else {
-			// $data['judul']	=	'Login Admin';
-			// $this->load->view('auth/header', $data);
-			$this->load->view('auth/login_admin');
-			// $this->load->view('auth/footer');
+		} elseif ($this->session->userdata('email_user')) {
+			redirect(base_url());
+		}  else {
+			$this->load->view('login_register/login');
 		}
 	}
 
@@ -76,7 +68,8 @@ class Auth extends CI_Controller
 					$this->session->set_userdata('password', $row->password);
 					$this->session->set_userdata('nama_lengkap', $row->nama_lengkap);
 					$this->session->set_userdata('jenis_kelamin', $row->jenis_kelamin);
-					$this->session->set_userdata('nomor_hpppp', $row->nomor_hp);
+					$this->session->set_userdata('nomor_hp', $row->nomor_hp);
+					$this->session->set_userdata('tgl_masuk', date_create($row->tgl_masuk));
 					// var_dump($cek);die; 
 					redirect(base_url("admin"));
 				}
@@ -98,31 +91,31 @@ class Auth extends CI_Controller
 			$this->form_validation->set_rules('email', 'Email User', 'required');
 			$this->form_validation->set_rules('password', 'Password', 'required');
 
-		if ($this->form_validation->run() == FALSE) {
-			$this->user();
-		} else {
-			$email		=	$this->input->post('email');
-			$password	=	$this->input->post('password');
-			$where 		=	"email";
-			$cek		= 	$this->Model_login->cek_login($this->_user, $where, $email, $password);
-
-			if ($cek) { // jika username ada
-				foreach ($cek as $row) {
-					$this->session->set_userdata('id_user', $row->id_user);
-					$this->session->set_userdata('email_user', $row->email); // PASSING EMAIL KE VIEWS
-					$this->session->set_userdata('password', $row->password);
-					$this->session->set_userdata('nama_lengkap', $row->nama_lengkap);
-					$this->session->set_userdata('jenis_kelamin', $row->jenis_kelamin);
-					$this->session->set_userdata('nomor_hpppp', $row->nomor_hp);
-					// var_dump($cek);die; 
-					redirect(base_url("Home"));
-				}
+			if ($this->form_validation->run() == FALSE) {
+				$this->user();
 			} else {
-				$this->session->set_flashdata('message', '<div class="alert alert-danger">
-				username Password salah</div>');
-				$this->admin();
+				$email		=	$this->input->post('email');
+				$password	=	$this->input->post('password');
+				$where 		=	"email";
+				$cek		= 	$this->Model_login->cek_login($this->_user, $where, $email, $password);
+
+				if ($cek) { // jika username ada
+					foreach ($cek as $row) {
+						$this->session->set_userdata('id_user', $row->id_user);
+						$this->session->set_userdata('email_user', $row->email); // PASSING EMAIL KE VIEWS
+						$this->session->set_userdata('password', $row->password);
+						$this->session->set_userdata('nama_lengkap', $row->nama_lengkap);
+						$this->session->set_userdata('jenis_kelamin', $row->jenis_kelamin);
+						$this->session->set_userdata('nomor_hpppp', $row->nomor_hp);
+						// var_dump($cek);die; 
+						redirect(base_url("Home"));
+					}
+				} else {
+					$this->session->set_flashdata('message', '<div class="alert alert-danger">
+					username Password salah</div>');
+					$this->user();
+				}
 			}
-		}
 		}
 		
 		

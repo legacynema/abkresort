@@ -7,6 +7,7 @@
             </div>
         </div>
         <div class="col-12 col-lg-4">
+            <?= $this->session->flashdata('berhasil'); ?>
             <h3 class="text-center mb-2">Edit Profile</h3><hr>
             <form method="POST" action="<?= base_url('Home/prosesedit') ?>">
                 <div class="form-group">
@@ -37,7 +38,7 @@
                         <label class="custom-file-label" for="foto">Choose file</label>
                     </div>
                 </div>
-                <a href="<?= base_url() ?>" class="btn btn-success btn-md"><i class="fas fa-arrow-left"></i> Back Home</a>
+                <a href="<?= base_url('Home/myaccount') ?>" class="btn btn-success btn-md"><i class="fas fa-arrow-left"></i> Back to Profile</a>
                 <button type="submit" name="Simpan" class="btn btn-primary btn-md">Simpan</button>
                 
             </form>

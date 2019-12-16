@@ -76,8 +76,10 @@
 
 <!-- Result -->
 
-<br><br><br><br><br><br><br>
+<br><br><br><br><br><br>
+
 <div class="container">
+<h1>Hasil Pencarian :</h1>
 <div class="card-deck mb-3 text-center">
     <div class="card mb-4 shadow-sm">
       <div class="card-header">

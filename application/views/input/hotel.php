@@ -95,6 +95,7 @@
 <!-- Result -->
 <br><br> <br><br><br><br><br>
 <div class="container">
+<h1>Hasil Pencarian</h1>
         <div class="row">
             <div class="col-md-4">
             <div class="card" style="width: 18rem;">
@@ -118,7 +119,7 @@
                     <button type="button" class="btn btn-primary">Pesan Kamar</button>
                 </div>
                 <div class="col-auto d-none d-lg-block">
-                <svg class="bd-placeholder-img" width="200" height="250" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: Thumbnail"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"></rect><text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text></svg>
+                <img src="<?= base_url('assets/') ?>img/hoteldummy.jpg" alt="" width="200" height="250">
                 </div>
             </div>
 
@@ -131,7 +132,7 @@
                     <button type="button" class="btn btn-primary">Pesan Kamar</button>
                 </div>
                 <div class="col-auto d-none d-lg-block">
-                <svg class="bd-placeholder-img" width="200" height="250" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: Thumbnail"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"></rect><text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text></svg>
+                <img src="<?= base_url('assets/') ?>img/hoteldummy2.jfif" alt="" width="200" height="250">
                 </div>
             </div>
 

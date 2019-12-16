@@ -34,6 +34,7 @@ class Home extends CI_Controller {
 		$this->load->view('navbar');
 		$this->load->view('login_register/register');
 		$this->load->view('footer');
+		
 	}
 
 	public function profilUser()
@@ -59,23 +60,48 @@ class Home extends CI_Controller {
 
 	public function myaccount()
 	{
-		if (!($this->session->userdata('email_user'))) {
-            redirect(base_url('Home/login'));
+		if ($this->session->userdata('email_user')) {
+            $data['user'] = $this->db->get_where('user',['id_user' => $this->session->userdata('id_user')])->result_object();
+			$this->load->view('navbar');
+			$this->load->view('users/myprofile', $data);
+		}elseif(($this->session->userdata('email_admin'))){
+			redirect(base_url('Admin'));
+		}else{
+			redirect(base_url('Home/login'));
 		}
-		$data['user'] = $this->db->get_where('user',['id_user' => $this->session->userdata('id_user')])->result_object();
-		$this->load->view('navbar');
-		$this->load->view('users/myprofile', $data);
+		
 		// $this->load->view('footer');
 	}
 
 	public function editprofile(){
-		$this->load->view('navbar');
-		$this->load->view('users/editprofile');
+		if ($this->session->userdata('email_user')) {
+			if (!$this->session->flashdata('berhasil')) {
+				$this->load->view('navbar');
+				$this->load->view('users/editprofile');
+			}else{
+				$this->load->view('navbar');
+				$this->load->view('users/editprofile');
+				header('Refresh:3; url= '. base_url('Home/myaccount')); 
+			}
+
+
+		}elseif(($this->session->userdata('email_admin'))){
+			redirect(base_url('Admin'));
+		}else{
+			redirect(base_url('Home/login'));
+		}
+		
 	}
 
 	public function prosesedit(){
+		if (!$this->input->post()) {
+			redirect(base_url());
+		}
 		$data = [
 			"nama_lengkap" 			=>	$this->input->post('nama_lengkap'),
+			// "password" 		=> 	if($this->input->post('password') != NULL) {
+			// 	md5($this->input->post('password'));
+			// },
 			"password" 		=> 	md5($this->input->post('password')),
 			"jenis_kelamin" => 	$this->input->post('jenis_kelamin'),
 			"email" 		=> 	$this->input->post('email'),
@@ -83,6 +109,12 @@ class Home extends CI_Controller {
 			"foto"			=> 	$this->input->post('foto'),
 		];
 		$query = $this->db->update('user',$data,['id_user' => $this->session->userdata('id_user')]);
+		
+		if ($query) {
+			$this->session->set_flashdata('berhasil','<div class="alert alert-success">
+				Data berhasil diubah</div>');
+			redirect(base_url('Home/editprofile'));
+		}
 		// var_dump($query);die;
 	}
 	

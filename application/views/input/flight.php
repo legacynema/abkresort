@@ -121,7 +121,7 @@
 						</div>
 					</form>
 				</div>
-			</div>
+
 
 		</div>
 		<div class="livefyre-carousel aem-GridColumn aem-GridColumn--default--12"></div>
