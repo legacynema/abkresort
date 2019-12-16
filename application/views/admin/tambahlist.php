@@ -69,6 +69,26 @@
                   <label for="tempat_transport_detail">Tempat Transport</label>
                   <input type="text" class="form-control" id="tempat_transport_detail" name="tempat_transport_detail" placeholder="ex: Bandara Juanda">
                 </div>
+                <div class="form-group">
+                  <label for="tempat_transport_detail">Jenis TIPE Tempat</label>
+                  <select class="form-control" id="tempat_transport_detail">
+                    <option>option 1</option>
+                    <option>option 2</option>
+                    <option>option 3</option>
+                    <option>option 4</option>
+                    <option>option 5</option>
+                  </select>
+                </div>
+                <div class="form-group">
+                  <label for="tempat_transport_detail">ID KOTA</label>
+                  <select class="form-control" id="tempat_transport_detail">
+                    <option>option 1</option>
+                    <option>option 2</option>
+                    <option>option 3</option>
+                    <option>option 4</option>
+                    <option>option 5</option>
+                  </select>
+                </div>
               </div>
               <!-- /.box-body -->
 
