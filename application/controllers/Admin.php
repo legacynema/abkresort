@@ -57,7 +57,7 @@ class Admin extends CI_Controller
 
 
 		$var = $this->Model_admin;
-		var_dump($var);die;
+		// var_dump($var);die;
 		$var->update();
 	}
 
@@ -150,7 +150,7 @@ class Admin extends CI_Controller
 
     public function penginapanEdit($id_penginapan = null)
     {
-		var_dump($id_penginapan);
+		// var_dump($id_penginapan);
         if (!isset($id_penginapan)) redirect('Admin/tambah_penginapan');
 
 		$var = $this->Model_penginapan;
@@ -196,7 +196,7 @@ class Admin extends CI_Controller
 
 	public function transportEdit($id = null)
     {
-		var_dump($id);
+		// var_dump($id);
         if (!isset($id)) redirect('Admin/tambah_penginapan');
 
 		$var = $this->Model_transport;
@@ -243,7 +243,7 @@ class Admin extends CI_Controller
 	
 	public function wisataEdit($id = null)
     {
-		var_dump($id);
+		// var_dump($id);
         if (!isset($id)) redirect('Admin/tambah_wisata');
 
 		$var = $this->Model_wisata;
@@ -309,7 +309,7 @@ class Admin extends CI_Controller
 	
 	public function paketEdit($id = null)
     {
-		var_dump($id);
+		// var_dump($id);
         if (!isset($id)) redirect('Admin/tambah_paket');
 
 		$var = $this->Model_paket;
@@ -356,7 +356,7 @@ class Admin extends CI_Controller
 	
 	public function userEdit($id = null)
     {
-		var_dump($id);
+		// var_dump($id);
         if (!isset($id)) redirect('Admin/tambah_user');
 
 		$var = $this->Model_user;
@@ -409,7 +409,7 @@ class Admin extends CI_Controller
 	
 	public function adminEdit($id = null)
     {
-		var_dump($id);
+		// var_dump($id);
         if (!isset($id)) redirect('Admin/tambah_admin');
 
 		$var = $this->Model_admin;
