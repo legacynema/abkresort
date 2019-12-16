@@ -23,7 +23,7 @@
 </div>
     <br>
     <div class="container ">
-        <div class="jumbotron jumbotron-fluid bg-success">
+        <div class="jumbotron jumbotron-fluid bg-primary">
         <h1 class="text-center" style="font-family:Helvetica Neue">Choose your Want</h1>
         <div class="row container">
                 <div class="col-md-5">
