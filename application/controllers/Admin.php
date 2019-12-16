@@ -13,6 +13,7 @@ class Admin extends CI_Controller
 			"Model_transport",
 			"Model_tempatTransport",
 			"Model_jenisTransport",
+			"Model_jenisTempat",
 			"Model_kota",
 			"Model_class",
 			"Model_wisata",
@@ -443,10 +444,41 @@ class Admin extends CI_Controller
 	// CRUD LIST
 	public function tambah_list()
 	{
+		$data["kota"] = $this->Model_kota->getAll();
+		$data["jenis_tempat"] = $this->Model_jenisTempat->getAll();
 		$this->load->view('template_admin/header');
 		$this->load->view('template_admin/sidebar');
-		$this->load->view('admin/tambahlist');
+		$this->load->view('admin/tambahlist', $data);
 		$this->load->view('template_admin/footer');
 	}
+
+	public function listTtAdd()
+    {
+			$tambah = $this->Model_jenisTempat;
+            $tambah->save();
+			$this->session->set_flashdata('success1', 'Berhasil disimpan');
+			redirect('Admin/tambah_list');
+        
+	}
+
+	public function listJtAdd()
+    {
+			$tambah = $this->Model_jenisTransport;
+            $tambah->save();
+			$this->session->set_flashdata('success2', 'Berhasil disimpan');
+			redirect('Admin/tambah_list');
+        
+	}
+
+	public function listTempTAdd()
+    {
+			$tambah = $this->Model_tempatTransport;
+            $tambah->save();
+			$this->session->set_flashdata('success3', 'Berhasil disimpan');
+			redirect('Admin/tambah_list');
+        
+	}
+
+
 
 }
