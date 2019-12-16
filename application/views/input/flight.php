@@ -150,11 +150,13 @@
 			t.harga
 			'
 		);
-
+		
 		$this->db->join('class as c', 'c.id_class = t.class');
 		$this->db->join('jenis_transport as jt', 'jt.id_transport = t.jenis_transport');
 		$this->db->join('tempat_transport as tb', 'tb.id_tempat = t.tempat_tujuan');
-		$query =  $this->db->join('tempat_transport as tt', 'tt.id_tempat = t.tempat_asal')->get('transport as t');
+		$this->db->join('tempat_transport as tt', 'tt.id_tempat = t.tempat_asal');
+		$query = $this->db->get_where('transport as t', array('jt.nama_transport' => 'Pesawat'));
+		// $query =  ->get('transport as t');
 		$nomor = 1;
 		foreach ($query->result_array() as $trans) :
 		?>
