@@ -56,6 +56,7 @@ private $_table = "paket";
         $post = $this->input->post();
         // var_dump($post);
         $this->id_paket = $post["id_paket"];
+        $this->nama_paket = $post["nama_paket"];
         $this->id_kota = $post["id_kota"];
         $this->id_penginapan = $post["id_penginapan"];
         $this->id_wisata = $post["id_wisata"];
