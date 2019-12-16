@@ -123,7 +123,7 @@
             <img src="<?= base_url('assets_admin/') ?>dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
           </div>
           <div class="pull-left info">
-            <p><?= $this->session->userdata("email"); ?></p>
+            <p><?= $this->session->userdata("email_admin"); ?></p>
             <!-- // SETTING EMAIL ADMIN -->
             <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
           </div>
@@ -231,7 +231,7 @@
           </li>
           <li><a href="<?= base_url('Admin/transaksi') ?>"><i class="fa fa-money"></i> <span>Transaksi</span></a></li>
           <li><a href="<?= base_url('Admin/laporan') ?>"><i class="fa fa-book"></i> <span>Laporan</span></a></li>
-          <li><a href="<?= base_url('Admin/loginadmin') ?>"><i class="fa fa-sign-out"></i> <span>Logout</span></a></li>
+          <li><a href="<?= base_url('logout') ?>"><i class="fa fa-sign-out"></i> <span>Logout</span></a></li>
         </ul>
       </section>
       <!-- /.sidebar -->

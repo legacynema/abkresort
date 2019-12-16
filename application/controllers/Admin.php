@@ -26,7 +26,7 @@ class Admin extends CI_Controller
 		
 		$this->load->library('form_validation');
 
-		if (!($this->session->userdata('email'))) {
+		if (!($this->session->userdata('email_admin'))) {
             redirect(base_url('Auth/admin'));
             // redirect($this->index());
         }
@@ -43,22 +43,13 @@ class Admin extends CI_Controller
 	public function tambah_penginapan()
 	{
 		$data["kota"] = $this->Model_kota->getAll();
-		// $data["jenis_penginapan"] = $this->Model_jenisPenginapan->getAll();
 		$data["penginapan"] = $this->Model_penginapan->getAll();
 		$this->load->view('template_admin/header');
 		$this->load->view('template_admin/sidebar');
 		$this->load->view('admin/tambahpenginapan', $data);
 		$this->load->view('template_admin/footer');
 	}
-	public function edit_penginapan()
-	{
-		$data["kota"] = $this->Model_kota->getAll();
-		$data["penginapan"] = $this->Model_penginapan->getAll();
-		$this->load->view('template_admin/header');
-		$this->load->view('template_admin/sidebar');
-		$this->load->view('admin/editPenginapan', $data);
-		$this->load->view('template_admin/footer');
-	}
+	
 	public function tambah_transport()
 	{
 		$data["transport"] = $this->Model_transport->getAll();
@@ -83,25 +74,16 @@ class Admin extends CI_Controller
 	// START KHOSY
 	public function tambah_paket()
 	{
+		$data["kota"] = $this->Model_kota->getAll();
+		$data["penginapan"] = $this->Model_penginapan->getAll();
+		$data["wisata"] = $this->Model_wisata->getAll();
+		$data["transport"] = $this->Model_transport->getAll();
 		$this->load->view('template_admin/header');
 		$this->load->view('template_admin/sidebar');
-		$this->load->view('admin/tambahpaket');
+		$this->load->view('admin/tambahpaket', $data);
 		$this->load->view('template_admin/footer');
 	}
-	public function tambah_user()
-	{
-		$this->load->view('template_admin/header');
-		$this->load->view('template_admin/sidebar');
-		$this->load->view('admin/tambahuser');
-		$this->load->view('template_admin/footer');
-	}
-	public function tambah_admin()
-	{
-		$this->load->view('template_admin/header');
-		$this->load->view('template_admin/sidebar');
-		$this->load->view('admin/tambahadmin');
-		$this->load->view('template_admin/footer');
-	} // END KHOSY
+	 // END KHOSY
 
 	// VIEWS LIST USER
 	public function user_aktif()
@@ -135,18 +117,6 @@ class Admin extends CI_Controller
 	// ============================= BACK END ==============================
 
 	// CRUD PENGINAPAN
-	public function dataPenginapan()
-    {
-		$data["kota"] = $this->Model_kota->getAll();
-		// $data["jenis_penginapan"] = $this->Model_jenisPenginapan->getAll();
-		$data["penginapan"] = $this->Model_penginapan->getAll();
-		$this->load->view('template_admin/header');
-		$this->load->view('template_admin/sidebar');
-		$this->load->view('admin/tambahpenginapan', $data);
-		$this->load->view('template_admin/footer');
-        
-    }
-
     public function penginapanAdd()
     {
 		$tambah = $this->Model_penginapan;
@@ -159,16 +129,27 @@ class Admin extends CI_Controller
     public function penginapanEdit($id_penginapan = null)
     {
 		var_dump($id_penginapan);
-        if (!isset($id_penginapan)) redirect('Admin');
+        if (!isset($id_penginapan)) redirect('Admin/tambah_penginapan');
 
+		$var = $this->Model_penginapan;
+		$data["kota"] = $this->Model_kota->getAll();
+		$data["penginapan"] = $this->Model_penginapan->getById($id_penginapan);
+		if (!$data["penginapan"]) show_404();
+		$this->load->view('template_admin/header');
+		$this->load->view('template_admin/sidebar');
+		$this->load->view('admin/editPenginapan', $data);
+		$this->load->view('template_admin/footer');
+		
+		$validation = $this->form_validation;
+        $validation->set_rules($var->rules());
 
-        $var = $this->Model_penginapan;
-		$var->update();
-            // $this->session->set_flashdata('success', 'Berhasil disimpan');
-			// redirect('Admin/editPenginapan');
-       
+        if ($validation->run()) {
+            $var->update();
+			$this->session->set_flashdata('success', 'Berhasil di Edit');
+			redirect('Admin/tambah_penginapan');
+		}
 	}
-	
+
 	public function penginapanDelete($id_penginapan = null)
     {
         if (!isset($id_penginapan)) show_404();
@@ -181,7 +162,6 @@ class Admin extends CI_Controller
 	
 
 	//CRUD TRANSPORT
-	
 	public function transportasiAdd()
     {
         $tambah = $this->Model_transport;
@@ -191,6 +171,32 @@ class Admin extends CI_Controller
 			redirect('Admin/tambah_transport');
         
     }
+
+	public function transportEdit($id = null)
+    {
+		var_dump($id);
+        if (!isset($id)) redirect('Admin/tambah_penginapan');
+
+		$var = $this->Model_transport;
+		$data["transport"] = $this->Model_transport->getById($id);
+		$data["jenis_transport"] = $this->Model_jenisTransport->getAll();
+		$data["class"] = $this->Model_class->getAll();
+		$data["tempat_transport"] = $this->Model_tempatTransport->getAll();
+		if (!$data["transport"]) show_404();
+		$this->load->view('template_admin/header');
+		$this->load->view('template_admin/sidebar');
+		$this->load->view('admin/editTransport', $data);
+		$this->load->view('template_admin/footer');
+		
+		$validation = $this->form_validation;
+        $validation->set_rules($var->rules());
+
+        if ($validation->run()) {
+            $var->update();
+			$this->session->set_flashdata('success', 'Berhasil di Edit');
+			redirect('Admin/tambah_transport');
+		}
+	}
 
 	public function transportasiDelete($id_transport = null)
     {
@@ -202,19 +208,7 @@ class Admin extends CI_Controller
         }
 	}
 
-	//CRUD WISATA
-	public function dataWisata()
-    {
-		$data["jenis_transport"] = $this->Model_jenisTransport->getAll();
-		$data["transport"] = $this->Model_transport->getAll();
-		$data["kota"] = $this->Model_kota->getAll();
-		$this->load->view('template_admin/header');
-		$this->load->view('template_admin/sidebar');
-		$this->load->view('admin/tambahtransport', $data);
-		$this->load->view('template_admin/footer');
-        
-	}
-	
+	//CRUD WISATA	
 	public function wisataAdd()
     {
 		$tambah = $this->Model_wisata;
@@ -223,7 +217,31 @@ class Admin extends CI_Controller
 			$this->session->set_flashdata('success', 'Berhasil disimpan');
 			redirect('Admin/tambah_wisata');
         
-    }
+	}
+	
+	public function wisataEdit($id = null)
+    {
+		var_dump($id);
+        if (!isset($id)) redirect('Admin/tambah_wisata');
+
+		$var = $this->Model_wisata;
+		$data["wisata"] = $this->Model_wisata->getById($id);
+		$data["kota"] = $this->Model_kota->getAll();
+		if (!$data["wisata"]) show_404();
+		$this->load->view('template_admin/header');
+		$this->load->view('template_admin/sidebar');
+		$this->load->view('admin/editWisata', $data);
+		$this->load->view('template_admin/footer');
+		
+		$validation = $this->form_validation;
+        $validation->set_rules($var->rules());
+
+        if ($validation->run()) {
+            $var->update();
+			$this->session->set_flashdata('success', 'Berhasil di Edit');
+			redirect('Admin/tambah_wisata');
+		}
+	}
 
 	public function wisataDelete($id_wisata = null)
     {
@@ -235,21 +253,7 @@ class Admin extends CI_Controller
         }
 	}
 
-	//CRUD TRANSAKSI
-	public function dataTransaksi()
-    {
-		$data["user"] = $this->Model_user->getAll();
-		$data["paket"] = $this->Model_paket->getAll();
-		$data["penginapan"] = $this->Model_penginapan->getAll();
-		$data["transport"] = $this->Model_transport->getAll();
-		$data["wisata"] = $this->Model_wisata->getAll();
-		$this->load->view('template_admin/header');
-		$this->load->view('template_admin/sidebar');
-		$this->load->view('admin/transaksi');
-		$this->load->view('template_admin/footer');
-        
-	}
-	
+	//CRUD TRANSAKSI	
 	public function transaksiAdd()
     {
 		$tambah = $this->Model_transaksi;
@@ -270,5 +274,138 @@ class Admin extends CI_Controller
         }
 	}
 
+	//CRUD PAKET	
+	public function paketAdd()
+    {
+		$tambah = $this->Model_paket;
+		
+            $tambah->save();
+			$this->session->set_flashdata('success', 'Berhasil disimpan');
+			redirect('Admin/tambah_paket');
+        
+	}
+	
+	public function paketEdit($id = null)
+    {
+		var_dump($id);
+        if (!isset($id)) redirect('Admin/tambah_paket');
+
+		$var = $this->Model_paket;
+		$data["paket"] = $this->Model_paket->getById($id);
+		$data["kota"] = $this->Model_kota->getAll();
+		$data["penginapan"] = $this->Model_penginapan->getAll();
+		$data["wisata"] = $this->Model_wisata->getAll();
+		$data["transport"] = $this->Model_transport->getAll();
+		if (!$data["paket"]) show_404();
+		$this->load->view('template_admin/header');
+		$this->load->view('template_admin/sidebar');
+		$this->load->view('admin/editpaket', $data);
+		$this->load->view('template_admin/footer');
+		
+		$validation = $this->form_validation;
+        $validation->set_rules($var->rules());
+
+        if ($validation->run()) {
+            $var->updatePass();
+			$this->session->set_flashdata('success', 'Berhasil di Edit');
+			redirect('Admin/tambah_paket');
+		}
+	}
+
+	public function paketDelete($id_paket = null)
+    {
+        if (!isset($id_paket)) show_404();
+
+		
+        if ($this->Model_paket->delete($id_paket)) {
+			redirect('Admin/tambah_paket');
+        }
+	}
+
+	//CRUD USER	
+	public function tambah_user()
+	{
+		$data["user"] = $this->Model_user->getAll();
+		$this->load->view('template_admin/header');
+		$this->load->view('template_admin/sidebar');
+		$this->load->view('admin/tambahuser', $data);
+		$this->load->view('template_admin/footer');
+	}
+	
+	public function userEdit($id = null)
+    {
+		var_dump($id);
+        if (!isset($id)) redirect('Admin/tambah_user');
+
+		$var = $this->Model_user;
+		$data["user"] = $this->Model_user->getById($id);
+		if (!$data["user"]) show_404();
+		$this->load->view('template_admin/header');
+		$this->load->view('template_admin/sidebar');
+		$this->load->view('admin/editPassUser', $data);
+		$this->load->view('template_admin/footer');
+		
+		$validation = $this->form_validation;
+		$validation->set_rules($var->rules());
+		
+        if ($validation->run()) {
+            $var->updatePass();
+			$this->session->set_flashdata('success', 'Berhasil Reset Password');
+			redirect('Admin/tambah_user');
+		}
+	}
+
+	public function userDelete($id_user = null)
+    {
+        if (!isset($id_user)) show_404();
+
+		
+        if ($this->Model_user->delete($id_user)) {
+			redirect('Admin/tambah_user');
+        }
+	}
+
+	//CRUD ADMIN	
+	public function tambah_admin()
+	{
+		$data["admin"] = $this->Model_admin->getAll();
+		$this->load->view('template_admin/header');
+		$this->load->view('template_admin/sidebar');
+		$this->load->view('admin/tambahadmin', $data);
+		$this->load->view('template_admin/footer');
+	}
+	
+	public function adminEdit($id = null)
+    {
+		var_dump($id);
+        if (!isset($id)) redirect('Admin/tambah_admin');
+
+		$var = $this->Model_admin;
+		$data["admin"] = $this->Model_admin->getById($id);
+		if (!$data["admin"]) show_404();
+		$this->load->view('template_admin/header');
+		$this->load->view('template_admin/sidebar');
+		$this->load->view('admin/editPassadmin', $data);
+		$this->load->view('template_admin/footer');
+		
+		$validation = $this->form_validation;
+		$validation->set_rules($var->rules());
+		
+        if ($validation->run()) {
+            $var->updatePass();
+			$this->session->set_flashdata('success', 'Berhasil Reset Password');
+			redirect('Admin/tambah_admin');
+		}
+	}
+
+	public function adminDelete($id_admin = null)
+    {
+        if (!isset($id_admin)) show_404();
+
+		
+        if ($this->Model_admin->delete($id_admin)) {
+			redirect('Admin/tambah_admin');
+        }
+	}
 
 }

@@ -5,47 +5,78 @@
             <!-- general form elements -->
             <div class="box box-primary">
                 <div class="box-header with-border">
-                    <h3 class="box-title">Tambah Penginapan</h3>
+                    <h3 class="box-title">Tambah Paket</h3>
                 </div>
+
 
                 <!-- /.box-header -->
                 <!-- form start -->
-                <form action="<?php echo base_url("Admin/penginapanEdit/$penginapan->id_penginapan") ?>" name="form" onsubmit="return validateForm()" method="post" enctype="multipart/form-data">
-                    <input type="hidden" name="id_penginapan" value="<?php echo $penginapan->id_penginapan ?>" />
+                <form action="<?php echo base_url("Admin/paketEdit/$paket->id_paket") ?>" name="form" onsubmit="return validateForm()" method="post" enctype="multipart/form-data">
                     <div class="box-body">
+
+                        <input type="hidden" name="id_paket" value="<?php echo $paket->id_paket ?>" />
+                    
+                        <div class="form-group">
+                            <label for="nama_paket">Nama Paket</label>
+                            <input class="form-control" type="text" name="nama_paket" value="<?= $paket->nama_paket?>">
+                        </div>
+
                         <div class="form-group">
                             <label for="id_kota">Pilih Kota</label>
                             <select class="form-control" name="id_kota">
                                 <option value="" disabled selected>Pilih Kota</option>
                                 <?php foreach ($kota as $kot) : ?>
-                                    <option value="<?= $kot->id_kota ?>" <?php if ($penginapan->id_kota == $kot->id_kota) {echo 'selected';} ?>> <?= $kot->nama_kota ?> </option>
+                                    <option value="<?= $kot->id_kota ?>" <?php if ($paket->id_kota == $kot->id_kota) {echo 'selected';} ?>> <?= $kot->nama_kota ?> </option>
                                 <?php endforeach; ?>
                             </select>
                         </div>
 
                         <div class="form-group">
-                            <label for="nama_penginapan">Nama Hotel/Villa</label>
-                            <input class="form-control" type="text" name="nama_penginapan" value="<?php echo $penginapan->nama_penginapan ?>">
+                            <label for="id_penginapan">Nama Penginapan / ID PENGINAPAN</label>
+                            <select class="form-control" name="id_penginapan">
+                                <option value="" disabled selected>Pilih Penginapan</option>
+                                <?php foreach ($penginapan as $peng) : ?>
+                                    <option value="<?= $peng->id_penginapan ?>" <?php if ($paket->id_penginapan== $peng->id_penginapan) {echo 'selected';} ?>> <?= $peng->nama_penginapan ?> </option>
+                                <?php endforeach; ?>
+
+                            </select>
                         </div>
 
                         <div class="form-group">
-                            <label for="jumlah_tamu">Jumlah Tamu</label>
-                            <input type="number" class="form-control" name="jumlah_tamu" value="<?php echo $penginapan->jumlah_tamu ?>">
+                            <label for="id_transport">Nama Transport / ID TRANSPORT</label>
+                            <select class="form-control" name="id_transport">
+                                <option value="" disabled selected>Pilih Transportasi</option>
+                                <?php foreach ($transport as $trns) : ?>
+                                    <option value="<?= $trns->id_transport ?>" <?php if ($paket->id_transport== $trns->id_transport) {echo 'selected';} ?>> <?= $trns->nama_transp ?> </option>
+                                <?php endforeach; ?>
+
+                            </select>
                         </div>
 
                         <div class="form-group">
-                            <label for="harga">Harga *per hari</label>
+                            <label for="id_wisata">Nama Wisata / ID WISATA</label>
+                            <select class="form-control" name="id_wisata">
+                                <option value="" disabled selected>Pilih Wisata</option>
+                                <?php foreach ($wisata as $wst) : ?>
+                                    <option value="<?= $wst->id_wisata ?>" <?php if ($paket->id_wisata== $wst->id_wisata) {echo 'selected';} ?>> <?= $wst->nama_wisata ?> </option>
+                                <?php endforeach; ?>
+
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="harga">Harga</label>
                             <div class="input-group">
                                 <span class="input-group-addon"><i class="fa fa-money"></i></span>
-                                <input type="text" name="harga" class="form-control" value="<?php echo $penginapan->harga ?>">
+                                <input type="text" name="harga" class="form-control" value="<?= $paket->harga?>">
                             </div>
                         </div>
 
                         <div class="form-group">
                             <label for="foto">Foto *max size 1MB</label>
                             <input type="file" class="form-control" name="foto">
-                            <input class="form-control-file" type="hidden" name="old_image" value="<?php echo $penginapan->foto ?>" />
-                            <img src="<?php echo base_url('foto/admin/penginapan/' . $penginapan->foto) ?>" width="64" />
+                            <input class="form-control-file" type="hidden" name="old_image" value="<?php echo $paket->foto ?>" />
+                            <img src="<?php echo base_url('foto/admin/paket/' . $paket->foto) ?>" width="64" />
                         </div>
 
                         <script>
@@ -83,7 +114,6 @@
                     </div>
                 </form>
             </div>
-
         </div>
 </section>
 

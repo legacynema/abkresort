@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 11, 2019 at 05:06 AM
+-- Generation Time: Dec 16, 2019 at 11:59 AM
 -- Server version: 10.1.38-MariaDB
 -- PHP Version: 7.3.2
 
@@ -29,7 +29,7 @@ SET time_zone = "+00:00";
 --
 
 CREATE TABLE `admin` (
-  `id_user` int(11) NOT NULL,
+  `id_admin` int(11) NOT NULL,
   `nama_lengkap` varchar(50) NOT NULL,
   `password` varchar(50) NOT NULL,
   `email` varchar(50) NOT NULL,
@@ -42,8 +42,8 @@ CREATE TABLE `admin` (
 -- Dumping data for table `admin`
 --
 
-INSERT INTO `admin` (`id_user`, `nama_lengkap`, `password`, `email`, `jenis_kelamin`, `nomor_hp`, `foto`) VALUES
-(1, 'khosyakmal', 'e10adc3949ba59abbe56e057f20f883e', 'akmal@gmail.com', 'Laki-laki', '085250036553', 'default.jpg');
+INSERT INTO `admin` (`id_admin`, `nama_lengkap`, `password`, `email`, `jenis_kelamin`, `nomor_hp`, `foto`) VALUES
+(2, 'khos yakmal', 'f16da2e2146b2c2376b2ab8a23592075', 'akmalkhosy@gmail.com', 'Laki-laki', '085287736229', 'default.jpg');
 
 -- --------------------------------------------------------
 
@@ -131,19 +131,21 @@ INSERT INTO `kota` (`id_kota`, `nama_kota`) VALUES
 
 CREATE TABLE `paket` (
   `id_paket` int(11) NOT NULL,
+  `id_kota` int(11) NOT NULL,
   `nama_paket` varchar(50) NOT NULL,
   `id_penginapan` int(11) DEFAULT NULL,
   `id_transport` int(11) DEFAULT NULL,
   `id_wisata` int(11) DEFAULT NULL,
-  `harga` int(11) NOT NULL
+  `harga` int(11) NOT NULL,
+  `foto` varchar(255) NOT NULL DEFAULT 'default.jpg'
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `paket`
 --
 
-INSERT INTO `paket` (`id_paket`, `nama_paket`, `id_penginapan`, `id_transport`, `id_wisata`, `harga`) VALUES
-(1, 'Liburan di Batu', 1, 5, 1, 80000);
+INSERT INTO `paket` (`id_paket`, `id_kota`, `nama_paket`, `id_penginapan`, `id_transport`, `id_wisata`, `harga`, `foto`) VALUES
+(8, 1, 'Liburan di Malang', 1, 5, 1, 1000000, 'Liburan_di_Malang.jpg');
 
 -- --------------------------------------------------------
 
@@ -165,8 +167,8 @@ CREATE TABLE `penginapan` (
 --
 
 INSERT INTO `penginapan` (`id_penginapan`, `id_kota`, `nama_penginapan`, `jumlah_tamu`, `harga`, `foto`) VALUES
-(1, 1, 'Swiss Bellin Hotel', 0, 1000000, 'default.jpg'),
-(4, 2, 'asdsadadsadsad', 12, 1000000, 'asdsadadsadsad.jpg');
+(1, 2, 'Swiss Bellin Hotel', 1, 1000000, 'Swiss_Bellin_Hotel.jpg'),
+(4, 2, 'Wind Hotel', 122, 1000000, 'Wind_Hotel.jpg');
 
 -- --------------------------------------------------------
 
@@ -230,7 +232,6 @@ CREATE TABLE `transaksi` (
 --
 
 INSERT INTO `transaksi` (`id_transaksi`, `id_user`, `id_paket`, `id_penginapan`, `id_transport`, `hari`, `id_wisata`, `tamu`, `total_harga`) VALUES
-(4, 3, NULL, 1, NULL, 5, 1, 1, 1500000),
 (5, 5, NULL, NULL, 5, NULL, 2, 5, 2500000),
 (7, 5, 1, NULL, NULL, NULL, NULL, 1, 2500000);
 
@@ -259,7 +260,8 @@ CREATE TABLE `transport` (
 --
 
 INSERT INTO `transport` (`id_transport`, `class`, `jenis_transport`, `nama_transp`, `tanggal`, `tempat_asal`, `tempat_tujuan`, `jam_berangkat`, `jam_tiba`, `kisaran`, `harga`) VALUES
-(5, 2, 2, 'Bagong', '2019-11-12', 1, 5, '17:00:00', '18:00:00', '5000-70000', 150000);
+(5, 1, 1, 'Garuda', '0000-00-00', 1, 5, '17:00:00', '18:00:00', '5000-70000', 150000),
+(6, 2, 1, 'Lion Air', '2019-12-16', 5, 1, '01:00:00', '02:00:00', '1000000', 100000);
 
 -- --------------------------------------------------------
 
@@ -282,9 +284,8 @@ CREATE TABLE `user` (
 --
 
 INSERT INTO `user` (`id_user`, `nama_lengkap`, `password`, `email`, `jenis_kelamin`, `nomor_hp`, `foto`) VALUES
-(3, 'Khosy Akmal Romadlan', 'khosy', 'khosy@gmail.com', 'Laki-laki', '085287736229', 'default.jpg'),
-(4, 'Khosy Akmal Romadlan', 'khosy', 'khosy@gmail.com', 'Laki-laki', '085287736229', 'default.jpg'),
-(5, 'Akmal', '272874d450b7f8381b1174133ac62b40', 'akmalkhosy@gmail.com', 'Laki-laki', '085250036553', 'default.jpg');
+(5, 'Khosy', 'ff34a70a2dc3e9b0a4f319c4c30d45a8', 'akmalkhosy@gmail.com', 'Laki-laki', '085287736229', 'default.jpg'),
+(6, 'Khosy Akmal R', 'd54d1702ad0f8326224b817c796763c9', 'khosy@gmail.com', 'Laki-laki', '08521283142', 'PASS.jpg');
 
 -- --------------------------------------------------------
 
@@ -306,7 +307,7 @@ CREATE TABLE `wisata` (
 
 INSERT INTO `wisata` (`id_wisata`, `id_kota`, `nama_wisata`, `harga_tiket`, `foto`) VALUES
 (1, 1, 'Kebun Teh Wonosari', 10000, 'default.jpg'),
-(2, 2, 'Kebun Binatang', 20000, 'Kebun_Binatang.jpg'),
+(2, 1, 'Kebun Binatang', 20000, 'Kebun_Binatang.jpg'),
 (6, 1, 'Paralayang111', 34242, 'Paralayang111.jpg');
 
 --
@@ -317,7 +318,7 @@ INSERT INTO `wisata` (`id_wisata`, `id_kota`, `nama_wisata`, `harga_tiket`, `fot
 -- Indexes for table `admin`
 --
 ALTER TABLE `admin`
-  ADD PRIMARY KEY (`id_user`);
+  ADD PRIMARY KEY (`id_admin`);
 
 --
 -- Indexes for table `class`
@@ -350,7 +351,8 @@ ALTER TABLE `paket`
   ADD PRIMARY KEY (`id_paket`),
   ADD KEY `FK_PAKET_PENGINAPAN` (`id_penginapan`),
   ADD KEY `FK_PAKET_WISATA` (`id_wisata`),
-  ADD KEY `FK_PAKT_TRANSP` (`id_transport`);
+  ADD KEY `FK_PAKT_TRANSP` (`id_transport`),
+  ADD KEY `FK_PAKT_KOTA` (`id_kota`);
 
 --
 -- Indexes for table `penginapan`
@@ -415,7 +417,7 @@ ALTER TABLE `wisata`
 -- AUTO_INCREMENT for table `admin`
 --
 ALTER TABLE `admin`
-  MODIFY `id_user` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id_admin` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `class`
@@ -445,7 +447,7 @@ ALTER TABLE `kota`
 -- AUTO_INCREMENT for table `paket`
 --
 ALTER TABLE `paket`
-  MODIFY `id_paket` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id_paket` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT for table `penginapan`
@@ -475,13 +477,13 @@ ALTER TABLE `transaksi`
 -- AUTO_INCREMENT for table `transport`
 --
 ALTER TABLE `transport`
-  MODIFY `id_transport` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id_transport` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT for table `user`
 --
 ALTER TABLE `user`
-  MODIFY `id_user` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id_user` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT for table `wisata`
@@ -499,6 +501,7 @@ ALTER TABLE `wisata`
 ALTER TABLE `paket`
   ADD CONSTRAINT `FK_PAKET_PENGINAPAN` FOREIGN KEY (`id_penginapan`) REFERENCES `penginapan` (`id_penginapan`) ON DELETE CASCADE ON UPDATE CASCADE,
   ADD CONSTRAINT `FK_PAKET_WISATA` FOREIGN KEY (`id_wisata`) REFERENCES `wisata` (`id_wisata`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `FK_PAKT_KOTA` FOREIGN KEY (`id_kota`) REFERENCES `kota` (`id_kota`) ON DELETE CASCADE ON UPDATE CASCADE,
   ADD CONSTRAINT `FK_PAKT_TRANSP` FOREIGN KEY (`id_transport`) REFERENCES `transport` (`id_transport`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
