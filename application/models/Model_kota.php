@@ -12,8 +12,8 @@ class Model_kota extends CI_Model
     {
         return [
             [
-                'field' => 'nama_kota',
-                'label' => 'nama_kota',
+                'field' => 'id_kota',
+                'label' => 'id_kota',
                 'rules' => 'required'
             ]
         ];

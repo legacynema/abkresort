@@ -9,8 +9,6 @@ private $_table = "penginapan";
     public $jumlah_tamu;
     public $harga;
     public $foto = "default.jpg";
-    // public $id_jenis_penginapan;
-
 
     public function rules()
     {
@@ -36,10 +34,8 @@ private $_table = "penginapan";
     public function save()
     {
         $post = $this->input->post();
-        // $this->id_penginapan = $post["id_penginapan"];
         $this->id_kota = $post["id_kota"];
         $this->nama_penginapan = $post["nama_penginapan"];
-        // $this->id_jenis_penginapan = $post["id_jenis_penginapan"];
         $this->jumlah_tamu = $post["jumlah_tamu"];
         $this->harga = $post["harga"];
         $this->foto = $this->_uploadImage();
@@ -51,17 +47,12 @@ private $_table = "penginapan";
     public function update()
     {
         $post = $this->input->post();
-        // var_dump($post);
+        
         $this->id_penginapan = $post["id_penginapan"];
         $this->id_kota = $post["id_kota"];
         $this->nama_penginapan = $post["nama_penginapan"];
-        // $this->id_jenis_penginapan = $post["id_jenis_penginapan"];
         $this->jumlah_tamu = $post["jumlah_tamu"];
         $this->harga = $post["harga"];
-        $this->foto = $post["foto"];
-        
-
-        
 
         if (!empty($_FILES["foto"]["name"])) {
             $this->foto = $this->_uploadImage();
@@ -69,7 +60,8 @@ private $_table = "penginapan";
             $this->foto = $post["old_image"];
         }
 
-        $this->db->update($this->_table, $this, array("id_penginapan" => $post["id_penginapan"]));
+        $this->db->update($this->_table, $this, array("id_penginapan"=>$post["id_penginapan"]));
+        var_dump($post);
     }
 
     public function delete($id_penginapan)
@@ -80,10 +72,9 @@ private $_table = "penginapan";
 
     private function _uploadImage()
     {
-        
         $config['upload_path']          = './foto/admin/penginapan';
-        $config['allowed_types']        = 'jpg|png';
-        $config['file_name']            = $this->nama_penginapan.date("_Y_m_d");
+        $config['allowed_types']        = 'gif|jpg|png';
+        $config['file_name']            = $this->nama_penginapan;
         $config['overwrite']            = true;
         $config['max_size']             = 1024; // 1MB
         // $config['max_width']            = 1024;
@@ -92,7 +83,7 @@ private $_table = "penginapan";
         $this->load->library('upload', $config);
 
         if ($this->upload->do_upload('foto')) {
-            return $this->upload->data("file_name".date());
+            return $this->upload->data("file_name");
         }
 
         return "default.jpg";
