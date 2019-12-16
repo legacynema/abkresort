@@ -93,6 +93,14 @@
                 <div class="box-header with-border">
                     <h3 class="box-title">List Admin</h3>
                 </div>
+                <!-- FLASH DATA PEMBERITAHUAN -->
+                <?php if ($this->session->flashdata('success')) : ?>
+                    <div class="alert alert-success alert-dismissible">
+                        <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+                        <h4><i class="icon fa fa-check"></i> Alert!</h4>
+                        <?php echo $this->session->flashdata('success'); ?>
+                    </div>
+                <?php endif; ?>
                 <!-- /.box-header -->
                 <!-- form start -->
                 <div class="box-body">
