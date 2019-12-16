@@ -166,7 +166,7 @@
 					<h4 class="my-0 font-weight-normal"><?= $trans['nama_transp'] ?></h4>
 				</div>
 				<div class="card-body">
-					<h1 class="card-title pricing-card-title"> <p><?= $trans['jam_berangkat'] ?> - <?= $trans['jam_tiba'] ?></p></h1>
+					<h1 class="card-title pricing-card-title"><?= $trans['jam_berangkat'] ?> - <?= $trans['jam_tiba'] ?></h1>
 					<h4><?= $trans['berangkat'] ?> - <?= $trans['tiba'] ?></h4>
 					<h5><?= $trans['nama_class'] ?></h5>
 					<h5>Rp. <?= number_format($trans['harga'])?></h5>
