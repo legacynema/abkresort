@@ -7,6 +7,7 @@ private $_table = "wisata";
     public $id_kota;
     public $nama_wisata;
     public $harga_tiket;
+    public $post_date;
     public $foto = "default.jpg";
 
 
@@ -37,6 +38,7 @@ private $_table = "wisata";
         $this->id_kota = $post["id_kota"];
         $this->nama_wisata = $post["nama_wisata"];
         $this->harga_tiket = $post["harga_tiket"];
+        $this->post_date = date('Y-m-d');
          $this->foto = $this->_uploadImage();
 
 
@@ -53,6 +55,7 @@ private $_table = "wisata";
         $this->nama_wisata = $post["nama_wisata"];
         $this->harga_tiket = $post["harga_tiket"];
         $this->foto = $post["foto"];
+        $this->post_date = date('Y-m-d');
         
 
         if (!empty($_FILES["foto"]["name"])) {

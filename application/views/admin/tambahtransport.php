@@ -112,6 +112,8 @@
                             <input type="text" name="harga" class="form-control" placeholder="Rp.">
                         </div>
                     </div>
+                    
+                    <input type="hidden" name="post_date" />
 
                     <script>
                         function validateForm() {

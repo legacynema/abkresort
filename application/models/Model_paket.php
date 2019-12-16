@@ -10,6 +10,8 @@ private $_table = "paket";
     public $id_transport;
     public $id_wisata;
     public $harga;
+    public $post_date
+    ;
     public $foto = "default.jpg";
 
     public function rules()
@@ -42,6 +44,7 @@ private $_table = "paket";
         $this->id_wisata = $post["id_wisata"];
         $this->id_transport = $post["id_transport"];
         $this->harga = $post["harga"];
+        $this->post_date = date('Y-m-d');
         $this->foto = $this->_uploadImage();
 
 
@@ -58,6 +61,7 @@ private $_table = "paket";
         $this->id_wisata = $post["id_wisata"];
         $this->id_transport = $post["id_transport"];
         $this->harga = $post["harga"];
+        $this->post_date = date('Y-m-d');
 
         if (!empty($_FILES["foto"]["name"])) {
             $this->foto = $this->_uploadImage();

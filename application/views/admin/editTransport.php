@@ -19,7 +19,7 @@
 
 
                 <input type="hidden" name="id_transport" value="<?php echo $transport->id_transport ?>" />
-
+                <input type="hidden" name="post_date" />
                     <div class="box-body">
                         <div class="form-group">
                             <label for="id_kota">Jenis Transportasi</label>

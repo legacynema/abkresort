@@ -48,6 +48,8 @@
                             <label for="foto">Foto *max size 1MB</label>
                             <input type="file" class="form-control" name="foto">
                         </div>
+                        
+                        <input type="hidden" name="post_date" />
 
                         <script>
                                 function validateForm() {

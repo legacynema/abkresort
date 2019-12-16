@@ -16,6 +16,7 @@ private $_table = "transport";
     public $jam_tiba;
     public $kisaran;
     public $harga;
+    public $post_date;
 
     public function rules()
     {
@@ -52,6 +53,7 @@ private $_table = "transport";
         $this->jam_tiba = $post["jam_tiba"];
         $this->kisaran = $post["kisaran"];
         $this->harga = $post["harga"];
+        $this->post_date = date('Y-m-d');
 
         $this->db->insert($this->_table, $this);
         // var_dump($post);
@@ -71,6 +73,7 @@ private $_table = "transport";
          $this->jam_tiba = $post["jam_tiba"];
          $this->kisaran = $post["kisaran"];
          $this->harga = $post["harga"];
+         $this->post_date = date('Y-m-d');
 
         $this->db->update($this->_table, $this, array("id_transport" => $post["id_transport"]));
     }
