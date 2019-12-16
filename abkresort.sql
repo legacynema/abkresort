@@ -28,7 +28,7 @@ USE `abkresort`;
 
 --
 -- Table structure for table `admin`
---
+--\
 
 CREATE TABLE `admin` (
   `id_user` int(11) NOT NULL,
