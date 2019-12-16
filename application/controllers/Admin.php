@@ -440,4 +440,13 @@ class Admin extends CI_Controller
         }
 	}
 
+	// CRUD LIST
+	public function tambah_list()
+	{
+		$this->load->view('template_admin/header');
+		$this->load->view('template_admin/sidebar');
+		$this->load->view('admin/tambahlist');
+		$this->load->view('template_admin/footer');
+	}
+
 }
