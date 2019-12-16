@@ -396,6 +396,16 @@ class Admin extends CI_Controller
 		$this->load->view('admin/tambahadmin', $data);
 		$this->load->view('template_admin/footer');
 	}
+
+	public function adminAdd()
+    {
+		$tambah = $this->Model_admin;
+		
+            $tambah->save();
+			$this->session->set_flashdata('success', 'Berhasil disimpan');
+			redirect('Admin/tambah_admin');
+        
+	}
 	
 	public function adminEdit($id = null)
     {
