@@ -18,7 +18,7 @@
                 <form action="<?php echo base_url("Admin/wisataEdit/$wisata->id_wisata") ?>" name="form" onsubmit="return validateForm()" method="post" enctype="multipart/form-data">
                     
                     <input type="hidden" name="id_wisata" value="<?php echo $wisata->id_wisata ?>" />
-                
+                    <input type="hidden" name="post_date" />
                     <div class="form-group">
                         <label for="id_kota">Pilih Kota</label>
                         <select class="form-control" name="id_kota">

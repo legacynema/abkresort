@@ -173,11 +173,9 @@
 					<h5>Rp. <?= number_format($trans['harga'])?></h5>
 				</div>
 				<button type="button" class="btn btn-lg btn-block btn-primary">Pesan</button>
-			</div>	
+			</div>
 		</div>
-		</div>
-		<br>
-		<?php endforeach; ?>	
+		<?php endforeach; ?>
 	</div>
 </body>
 </html>
