@@ -100,57 +100,46 @@
     <div class="container">
     <h1>Hasil Pencarian</h1>
       <div class="row">
+        <?php 
+        $this->db->select(
+          't.id_transport as id,
+          c.nama_class,
+          jt.nama_transport,
+          t.nama_transp,
+          t.tanggal,
+          tt.nama_tempat as berangkat,
+          tb.nama_tempat as tiba,
+          t.jam_berangkat,
+          t.jam_tiba,
+          t.kisaran,
+          t.harga
+          '
+        );
+        
+        $this->db->join('class as c', 'c.id_class = t.class');
+        $this->db->join('jenis_transport as jt', 'jt.id_transport = t.jenis_transport');
+        $this->db->join('tempat_transport as tb', 'tb.id_tempat = t.tempat_tujuan');
+        $this->db->join('tempat_transport as tt', 'tt.id_tempat = t.tempat_asal');
+        $query = $this->db->get_where('transport as t', array('jt.nama_transport' => 'Mobil'));
+        // $query =  ->get('transport as t');
+        $nomor = 1;
+        foreach ($query->result_array() as $trans) :
+        ?>
         <div class="col-md-4">
         <div class="card" style="width: 18rem;">
         <br>
           <img class="card-img-top" src="<?= base_url('assets/') ?>img/Terios.png" alt="Card image cap">
           <div class="card-body">
-            <h5 class="card-title">Terios</h5>
-            <p class="card-text">Mulai Rp.450.000</p>
+            <h5 class="card-title"><?= $trans['nama_transp'] ?></h5>
+            <p class="card-text">Mulai dari : Rp. <?= number_format($trans['kisaran'])?></p>
           </div>
           <ul class="list-group list-group-flush">
-            <li class="list-group-item">4 Pintu 7 Kursi</li>
-            <li class="list-group-item">Transisi Manual</li>
-            <li class="list-group-item">Seluruh mobil rental kami selalu dalam keadaan bersih.</li>
+            <li class="list-group-item">Kelas : <?= $trans['nama_class'] ?></li>
           </ul>
           <button type="button" class="btn btn-primary">Pesan</button>
         </div>
         </div>
-
-        <div class="col-md-4">
-        <div class="card" style="width: 18rem;">
-        <br>
-          <img class="card-img-top" src="<?= base_url('assets/') ?>img/Avanza.png" alt="Card image cap">
-          <div class="card-body">
-            <h5 class="card-title">Avanza</h5>
-            <p class="card-text">Mulai Rp.450.000</p>
-          </div>
-          <ul class="list-group list-group-flush">
-            <li class="list-group-item">4 Pintu 7 Kursi</li>
-            <li class="list-group-item">Transisi Manual</li>
-            <li class="list-group-item">Seluruh mobil rental kami selalu dalam keadaan bersih.</li>
-          </ul>
-          <button type="button" class="btn btn-primary">Pesan</button>
-        </div>
-        </div>
-
-        <div class="col-md-4">
-        <div class="card" style="width: 18rem;">
-        <br>
-          <img class="card-img-top" src="<?= base_url('assets/') ?>img/Brio.png" alt="Card image cap">
-          <div class="card-body">
-            <h5 class="card-title">Brio</h5>
-            <p class="card-text">Mulai Rp.450.000</p>
-          </div>
-          <ul class="list-group list-group-flush">
-            <li class="list-group-item">4 Pintu 4 Kursi</li>
-            <li class="list-group-item">Transisi Otomatis</li>
-            <li class="list-group-item">Seluruh mobil rental kami selalu dalam keadaan bersih.</li>
-          </ul>
-          <button type="button" class="btn btn-primary">Pesan</button>
-        </div>
-        </div>
-        
+        <?php endforeach; ?>
       </div>
     </div>
 

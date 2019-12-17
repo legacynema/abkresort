@@ -38,6 +38,8 @@
                             <input type="file" class="form-control" name="foto">
                         </div>
 
+                        <input type="hidden" name="post_date" />
+
                         <script>
                                 function validateForm() {
                                 var kota = document.forms["form"]["id_kota"].value;

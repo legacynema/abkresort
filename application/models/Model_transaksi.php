@@ -14,6 +14,7 @@ private $_table = "transaksi";
     // public $tamu;
     public $harga;
     // public $foto = "default.jpg";
+    public $post_date;
 
 
    
@@ -39,6 +40,7 @@ private $_table = "transaksi";
         $this->harga = $post["harga"];
         $this->id_admin = $post["id_admin"];
         $this->id_rute = $post["id_rute"];
+        $this->post_date = date('Y-m-d');
         // $this->id_transaksi = $post["id_transaksi"];
         
         

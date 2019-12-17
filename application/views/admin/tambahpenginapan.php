@@ -48,6 +48,8 @@
                             <label for="foto">Foto *max size 1MB</label>
                             <input type="file" class="form-control" name="foto">
                         </div>
+                        
+                        <input type="hidden" name="post_date" />
 
                         <script>
                                 function validateForm() {
@@ -57,7 +59,7 @@
                                 var tamu = document.forms["form"]["jumlah_tamu"].value;
 
                                     if(kota == "" && namaPeng == "" && tamu == "" && Harga == ""){
-                                        namaPeng.innerHTML = "data penginapan harus diisi";
+                                        alert("Data penginapan harus diisi");
                                         return false;
                                     }
                                     else if (kota == "" ) {
