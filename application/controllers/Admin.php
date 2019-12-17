@@ -446,6 +446,8 @@ class Admin extends CI_Controller
 	{
 		$data["kota"] = $this->Model_kota->getAll();
 		$data["jenis_tempat"] = $this->Model_jenisTempat->getAll();
+		$data["tempat_transport"] = $this->Model_tempatTransport->getAll();
+		$data["jenis_transport"] = $this->Model_jenisTransport->getAll();
 		$this->load->view('template_admin/header');
 		$this->load->view('template_admin/sidebar');
 		$this->load->view('admin/tambahlist', $data);
@@ -461,6 +463,16 @@ class Admin extends CI_Controller
         
 	}
 
+	public function listTtDelete($id = null)
+    {
+        if (!isset($id)) show_404();
+
+		
+        if ($this->Model_jenisTempat->delete($id)) {
+			redirect('Admin/tambah_list');
+        }
+	}
+
 	public function listJtAdd()
     {
 			$tambah = $this->Model_jenisTransport;
@@ -470,6 +482,16 @@ class Admin extends CI_Controller
         
 	}
 
+	public function listJtDelete($id = null)
+    {
+        if (!isset($id)) show_404();
+
+		
+        if ($this->Model_jenisTransport->delete($id)) {
+			redirect('Admin/tambah_list');
+        }
+	}
+
 	public function listTempTAdd()
     {
 			$tambah = $this->Model_tempatTransport;
@@ -477,6 +499,16 @@ class Admin extends CI_Controller
 			$this->session->set_flashdata('success3', 'Berhasil disimpan');
 			redirect('Admin/tambah_list');
         
+	}
+
+	public function listTempDelete($id = null)
+    {
+        if (!isset($id)) show_404();
+
+		
+        if ($this->Model_tempatTransport->delete($id)) {
+			redirect('Admin/tambah_list');
+        }
 	}
 
 
