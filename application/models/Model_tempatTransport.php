@@ -22,13 +22,11 @@ private $_table = "tempat_transport";
     public function save()
     {
         $post = $this->input->post();
-        // $this->id_tempat = $post["id_tempat"];
-        $this->nama_transport = $post["nama_transport"];
+        $this->nama_tempat = $post["nama_tempat"];
         $this->jenis_tempat = $post["jenis_tempat"];
         $this->id_kota = $post["id_kota"];
 
         $this->db->insert($this->_table, $this);
-        // var_dump($post);
     }
 
     public function update()

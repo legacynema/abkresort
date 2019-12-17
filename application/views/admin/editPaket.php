@@ -81,25 +81,27 @@
 
                         <script>
                             function validateForm() {
-                                var namaPeng = document.forms["form"]["nama_penginapan"].value;
+                                var namaPak = document.forms["form"]["nama_paket"].value;
                                 var kota = document.forms["form"]["id_kota"].value;
+                                var peng = document.forms["form"]["id_penginapan"].value;
+                                var trans = document.forms["form"]["id_transport"].value;
+                                var wst = document.forms["form"]["id_wisata"].value;
                                 var Harga = document.forms["form"]["harga"].value;
-                                var tamu = document.forms["form"]["jumlah_tamu"].value;
 
-                                if (kota == "" && namaPeng == "" && tamu == "" && Harga == "") {
-                                    namaPeng.innerHTML = "data penginapan harus diisi";
+                                if (kota == "" && namaPak == "" && peng == "" && Harga == "" && trans == "" && wst == "") {
+                                    alert("Data Paket harus di isi");
                                     return false;
                                 } else if (kota == "") {
                                     alert("Kota Harus di Isi");
                                     return false;
-                                } else if (namaPeng == "") {
-                                    alert("Nama Harus di Isi");
-                                    return false;
-                                } else if (tamu == "") {
-                                    alert("Jumlah Tamu Harus di Isi");
+                                } else if (namaPak == "") {
+                                    alert("Nama Paket Harus di Isi");
                                     return false;
                                 } else if (Harga == "") {
                                     alert("Harga Harus di Isi");
+                                    return false;
+                                }else if (peng == "" || trans == "" || wst == "") {
+                                    alert("Penginapan, Transport, dan Wisata jangan di Kosongkan");
                                     return false;
                                 }
                             }
