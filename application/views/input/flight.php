@@ -159,8 +159,7 @@
 		$nomor = 1;
 		foreach ($query->result_array() as $trans) :
 		?>
-		<div class="col-md-12">
-		
+		<br>
 		<div class="card-deck text-center">
 			<div class="card shadow-sm">
 				<div class="card-header">
@@ -176,6 +175,5 @@
 			</div>
 		</div>
 		<?php endforeach; ?>
-	</div>
 </body>
 </html>
