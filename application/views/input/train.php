@@ -88,52 +88,58 @@
                     </select>
                   </div>
                 </div>
-
-  <!-- Result -->
-
-  <br><br><br><br><br><br><br>
-  <div class="container">
-  <?php
-		$this->db->select(
-			't.id_transport as id,
-			c.nama_class,
-			jt.nama_transport,
-			t.nama_transp,
-			t.tanggal,
-			tt.nama_tempat as berangkat,
-			tb.nama_tempat as tiba,
-			t.jam_berangkat,
-			t.jam_tiba,
-			t.kisaran,
-			t.harga
-			'
-		);
-		
-		$this->db->join('class as c', 'c.id_class = t.class');
-		$this->db->join('jenis_transport as jt', 'jt.id_transport = t.jenis_transport');
-		$this->db->join('tempat_transport as tb', 'tb.id_tempat = t.tempat_tujuan');
-		$this->db->join('tempat_transport as tt', 'tt.id_tempat = t.tempat_asal');
-		$query = $this->db->get_where('transport as t', array('jt.nama_transport' => 'Kereta'));
-		// $query =  ->get('transport as t');
-		$nomor = 1;
-		foreach ($query->result_array() as $trans) :
-		?>
-    <div class="card-deck mb-3 text-center">
-      <div class="card mb-4 shadow-sm">
-        <div class="card-header">
-          <h4 class="my-0 font-weight-normal"><?= $trans['nama_transp'] ?></h4>
+              </div>
+            </div>
         </div>
-        <div class="card-body">
-          <h1 class="card-title pricing-card-title"><?= $trans['jam_berangkat'] ?> - <?= $trans['jam_tiba'] ?></h1>
-          <h4><?= $trans['berangkat'] ?> - <?= $trans['tiba'] ?></h4>
-          <h5><?= $trans['nama_class'] ?></h5>
-          <h5>Rp. <?= number_format($trans['harga'])?></h5>
-        </div>
-        <button type="button" class="btn btn-lg btn-block btn-primary">Pesan</button>
       </div>
     </div>
-    <?php endforeach; ?>
-  </div>
+
+
+    <!-- Result -->
+
+    <br><br><br><br><br><br><br>
+    <div class="container">
+      <?php
+                                $this->db->select(
+                                  ' t.id_transport as id,
+                                    c.nama_class,
+                                    jt.nama_transport,
+                                    t.nama_transp,
+                                    t.tanggal,
+                                    tt.nama_tempat as berangkat,
+                                    tb.nama_tempat as tiba,
+                                    t.jam_berangkat,
+                                    t.jam_tiba,
+                                    t.kisaran,
+                                    t.harga
+                                    '
+                                );
+
+                                $this->db->join('class as c', 'c.id_class = t.class');
+                                $this->db->join('jenis_transport as jt', 'jt.id_transport = t.jenis_transport');
+                                $this->db->join('tempat_transport as tb', 'tb.id_tempat = t.tempat_tujuan');
+                                $this->db->join('tempat_transport as tt', 'tt.id_tempat = t.tempat_asal');
+                                $query = $this->db->get_where('transport as t', array('jt.nama_transport' => 'Kereta'));
+                                // $query =  ->get('transport as t');
+                                $nomor = 1;
+                                foreach ($query->result_array() as $trans) :
+      ?>
+        <div class="card-deck mb-3 text-center">
+          <div class="card mb-4 shadow-sm">
+            <div class="card-header">
+              <h4 class="my-0 font-weight-normal"><?= $trans['nama_transp'] ?></h4>
+            </div>
+            <div class="card-body">
+              <h1 class="card-title pricing-card-title"><?= $trans['jam_berangkat'] ?> - <?= $trans['jam_tiba'] ?></h1>
+              <h4><?= $trans['berangkat'] ?> - <?= $trans['tiba'] ?></h4>
+              <h5><?= $trans['nama_class'] ?></h5>
+              <h5>Rp. <?= number_format($trans['harga']) ?></h5>
+            </div>
+            <button type="button" class="btn btn-lg btn-block btn-primary">Pesan</button>
+          </div>
+        </div>
+      <?php endforeach; ?>
+    </div>
 
 
 </body>
