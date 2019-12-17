@@ -173,8 +173,8 @@
 				</div>
 				<button type="button" class="btn btn-lg btn-block btn-primary">Pesan</button>
 			</div>
-			<?php endforeach; ?>	
 		</div>
+		<?php endforeach; ?>
 	</div>
 </body>
 </html>

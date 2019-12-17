@@ -9,6 +9,7 @@ private $_table = "user";
     public $password;
     public $nomor_hp;
     public $jenis_kelamin;
+    public $post_date;
     public $foto = "default.jpg";
 
     public function rules()
@@ -39,6 +40,7 @@ private $_table = "user";
         $this->email = $post["email"];
         $this->nomor_hp = $post["nomor_hp"];
         $this->jenis_kelamin = $post["jenis_kelamin"];
+        $this->post_date = date('Y-m-d');
         
         if (empty($post["password"])){
             $this->password =md5($post["nama_lengkap"]);
@@ -62,7 +64,7 @@ private $_table = "user";
         $this->email = $post["email"];
         $this->nomor_hp = $post["nomor_hp"];
         $this->jenis_kelamin = $post["jenis_kelamin"];
-        $this->foto = $post["foto"];
+        $this->post_date = date('Y-m-d');
 
         if (empty($post["password"])){
             $this->password=md5($post["nama_lengkap"]);
@@ -89,6 +91,7 @@ private $_table = "user";
         $this->nomor_hp = $post["nomor_hp"];
         $this->jenis_kelamin = $post["jenis_kelamin"];
         $this->foto = $post["foto"];
+        $this->post_date = date('Y-m-d');
         $this->password = md5($post["nama_lengkap"]);
 
         if (!empty($_FILES["foto"]["name"])) {

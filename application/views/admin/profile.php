@@ -11,7 +11,7 @@
 
               <h3 class="profile-username text-center"><?= $this->session->userdata('nama_lengkap'); ?></h3>
 
-              <p class="text-muted text-center">Created on : <?= date_format(($this->session->userdata('tgl_masuk')),"d - m - Y"); ?></p>
+              <p class="text-muted text-center">Created on : <?= date_format(($this->session->userdata('post_date')),"d - m - Y"); ?></p>
 
               
             </div>

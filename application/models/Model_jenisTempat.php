@@ -1,18 +1,18 @@
 <?php defined('BASEPATH') or exit('No direct script access allowed');
-class Model_jenisTransport extends CI_Model{
+class Model_jenisTempat extends CI_Model{
 
 
-private $_table = "jenis_transport";
-    public $id_transport;
-    public $nama_transport;
+private $_table = "jenis_tempat";
+    public $id_jenis;
+    public $nama;
 
 
     public function rules()
     {
         return [
             [
-                'field' => 'nama_transport',
-                'label' => 'nama_transport',
+                'field' => 'nama',
+                'label' => 'nama',
                 'rules' => 'required'
             ]
         ];
@@ -23,40 +23,41 @@ private $_table = "jenis_transport";
         return $this->db->get($this->_table)->result();
     }
 
-    public function getById($id_transport)
+    public function getById($id_jenis)
     {
-        return $this->db->get_where($this->_table, ["id_transport" => $id_transport])->row();
+        return $this->db->get_where($this->_table, ["id_jenis" => $id_jenis])->row();
     }
 
     public function save()
     {
         $post = $this->input->post();
-        $this->nama_transport = $post["nama_transport"];
+        $this->nama = $post["nama"];
 
         $this->db->insert($this->_table, $this);
+        var_dump($post);
     }
 
     public function update()
     {
         $post = $this->input->post();
         // var_dump($post);
-        $this->id_transport = $post["id_transport"];
-        $this->nama_transport = $post["nama_transport"];
+        $this->id_jenis = $post["id_jenis"];
+        $this->nama = $post["nama"];
 
-        $this->db->update($this->_table, $this, array("id_transport" => $post["id_transport"]));
+        $this->db->update($this->_table, $this, array("id_jenis" => $post["id_jenis"]));
     }
 
-    public function delete($id_transport)
+    public function delete($id_jenis)
     {
-        // $this->_deleteImage($id_transport);
-        return $this->db->delete($this->_table, array("id_transport" => $id_transport));
+        // $this->_deleteImage($id_jenis);
+        return $this->db->delete($this->_table, array("id_jenis" => $id_jenis));
     }
 
     // private function _uploadImage()
     // {
     //     $config['upload_path']          = './foto/user';
     //     $config['allowed_types']        = 'gif|jpg|png';
-    //     $config['file_name']            = $this->nama_transport;
+    //     $config['file_name']            = $this->nama;
     //     $config['overwrite']            = true;
     //     $config['max_size']             = 1024; // 1MB
     //     // $config['max_width']            = 1024;
@@ -71,9 +72,9 @@ private $_table = "jenis_transport";
     //     return "default.jpg";
     // }
 
-    // private function _deleteImage($id_transport)
+    // private function _deleteImage($id_jenis)
     // {
-    //     $img = $this->getById($id_transport);
+    //     $img = $this->getById($id_jenis);
     //     if ($img->foto != "default.jpg") {
     //         $filename = explode(".", $img->foto)[0];
     //         return array_map('unlink', glob(FCPATH . "foto/user/$filename.*"));

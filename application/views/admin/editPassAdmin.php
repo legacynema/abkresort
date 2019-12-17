@@ -20,6 +20,7 @@
                         <input type="hidden" name="password" value="<?php echo $admin->password ?>" />
                         <input type="hidden" name="jenis_kelamin" value="<?php echo $admin->jenis_kelamin ?>" />
                         <input type="hidden" name="nomor_hp" value="<?php echo $admin->nomor_hp?>" />
+                        <input type="hidden" name="post_date" value="<?php echo $admin->post_date?>" />
                         <input class="form-control-file" type="hidden" name="foto" value="<?php echo $admin->foto?>" />
                         <input class="form-control-file" type="hidden" name="old_image" value="<?php echo $admin->foto ?>" />
 
