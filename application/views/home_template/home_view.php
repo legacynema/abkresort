@@ -59,7 +59,7 @@
 						<p class="tm-date">Rp.1.500.000</p>
 						<div class="tm-home-box-2-container">
 							<a href="#" class="tm-home-box-2-link"><i class="fa fa-heart tm-home-box-2-icon border-right"></i></a>
-							<a href="#" class="tm-home-box-2-link"><span class="tm-home-box-2-description">Travel</span></a>
+							<a href="<?= base_url('Input/detail') ?>" class="tm-home-box-2-link"><span class="tm-home-box-2-description">Travel</span></a>
 							<a href="#" class="tm-home-box-2-link"><i class="fa fa-edit tm-home-box-2-icon border-left"></i></a>
 						</div>
 					</div>

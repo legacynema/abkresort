@@ -68,6 +68,13 @@ class Input extends CI_Controller {
 		$this->load->view('input/bus');
 		$this->load->view('footer');
 	}	
+
+	public function detail()
+	{	
+		$this->load->view('navbar');
+		$this->load->view('detail/detailpaket');
+		$this->load->view('footer');
+	}	
 	
 
 }
