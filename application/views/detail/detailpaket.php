@@ -8,26 +8,45 @@
 </head>
 <body>
         <div class="container">
+        <div class="slideshow aem-GridColumn aem-GridColumn--default--12">
+<!-- Slideshow -->
+
+    <div class="slideshow-image full-width">
+        
+            
+            
+                <div style="position:relative">
+                    <img src="<?= base_url('assets/') ?>img/bannermobil.jpg" class="d-block w-100" height="100%" alt="Slideshow">
+                </div>
+            
+        
+    </div>
+
+    <!-- End of Slideshow -->
+
+</div>            
+
             <div class="col-md-8">
+                <br><br>
             <h1>Detail Paket</h1>
             <hr>
-                <img class="img-fluid" height="100%" src="<?= base_url('assets/') ?>img/Surabaya.jpg" >
 
-            <br><br>
+            <br>
                 <div class="card bg-dark">
                 <div class="card-body">
                     <div class="row">
                         
-                            <div class="col-md-9">
+                            <div class="col-md-12">
                                 <a class="font-weight-bold text-light">Duration : <a class="text-light">3 Hari 2 Malam</a></a>
                             </div>
-                            <div class="col-md-3">
-                                <button type="button" class="btn btn-light">Pesan Sekarang</button>
-                            </div>
+                            <br>
                         
-                        <div class="col-md-12">
+                        <div class="col-md-9">
                             <a class="font-weight-bold text-light">Harga : <a class="text-light">Rp.1.500.000</a></a> 
                         </div>
+                        <div class="col-md-3">
+                                <button type="button" class="btn btn-light">Pesan Sekarang</button>
+                            </div>
                     </div>
                     
                     
