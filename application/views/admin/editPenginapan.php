@@ -12,6 +12,8 @@
                 <!-- form start -->
                 <form action="<?php echo base_url("Admin/penginapanEdit/$penginapan->id_penginapan") ?>" name="form" onsubmit="return validateForm()" method="post" enctype="multipart/form-data">
                     <input type="hidden" name="id_penginapan" value="<?php echo $penginapan->id_penginapan ?>" />
+                    <input type="hidden" name="post_date" />
+                    
                     <div class="box-body">
                         <div class="form-group">
                             <label for="id_kota">Pilih Kota</label>

@@ -8,6 +8,7 @@ private $_table = "penginapan";
     public $nama_penginapan;
     public $jumlah_tamu;
     public $harga;
+    public $post_date;
     public $foto = "default.jpg";
 
     public function rules()
@@ -38,6 +39,7 @@ private $_table = "penginapan";
         $this->nama_penginapan = $post["nama_penginapan"];
         $this->jumlah_tamu = $post["jumlah_tamu"];
         $this->harga = $post["harga"];
+        $this->post_date = date('Y-m-d');
         $this->foto = $this->_uploadImage();
 
         $this->db->insert($this->_table, $this);
@@ -53,6 +55,7 @@ private $_table = "penginapan";
         $this->nama_penginapan = $post["nama_penginapan"];
         $this->jumlah_tamu = $post["jumlah_tamu"];
         $this->harga = $post["harga"];
+        $this->post_date = date('Y-m-d');
 
         if (!empty($_FILES["foto"]["name"])) {
             $this->foto = $this->_uploadImage();

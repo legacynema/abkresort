@@ -13,6 +13,7 @@ class Admin extends CI_Controller
 			"Model_transport",
 			"Model_tempatTransport",
 			"Model_jenisTransport",
+			"Model_jenisTempat",
 			"Model_kota",
 			"Model_class",
 			"Model_wisata",
@@ -57,7 +58,7 @@ class Admin extends CI_Controller
 
 
 		$var = $this->Model_admin;
-		var_dump($var);die;
+		// var_dump($var);die;
 		$var->update();
 	}
 
@@ -150,7 +151,7 @@ class Admin extends CI_Controller
 
     public function penginapanEdit($id_penginapan = null)
     {
-		var_dump($id_penginapan);
+		// var_dump($id_penginapan);
         if (!isset($id_penginapan)) redirect('Admin/tambah_penginapan');
 
 		$var = $this->Model_penginapan;
@@ -196,7 +197,7 @@ class Admin extends CI_Controller
 
 	public function transportEdit($id = null)
     {
-		var_dump($id);
+		// var_dump($id);
         if (!isset($id)) redirect('Admin/tambah_penginapan');
 
 		$var = $this->Model_transport;
@@ -243,7 +244,7 @@ class Admin extends CI_Controller
 	
 	public function wisataEdit($id = null)
     {
-		var_dump($id);
+		// var_dump($id);
         if (!isset($id)) redirect('Admin/tambah_wisata');
 
 		$var = $this->Model_wisata;
@@ -309,7 +310,7 @@ class Admin extends CI_Controller
 	
 	public function paketEdit($id = null)
     {
-		var_dump($id);
+		// var_dump($id);
         if (!isset($id)) redirect('Admin/tambah_paket');
 
 		$var = $this->Model_paket;
@@ -328,7 +329,7 @@ class Admin extends CI_Controller
         $validation->set_rules($var->rules());
 
         if ($validation->run()) {
-            $var->updatePass();
+            $var->update();
 			$this->session->set_flashdata('success', 'Berhasil di Edit');
 			redirect('Admin/tambah_paket');
 		}
@@ -356,7 +357,7 @@ class Admin extends CI_Controller
 	
 	public function userEdit($id = null)
     {
-		var_dump($id);
+		// var_dump($id);
         if (!isset($id)) redirect('Admin/tambah_user');
 
 		$var = $this->Model_user;
@@ -396,10 +397,20 @@ class Admin extends CI_Controller
 		$this->load->view('admin/tambahadmin', $data);
 		$this->load->view('template_admin/footer');
 	}
+
+	public function adminAdd()
+    {
+		$tambah = $this->Model_admin;
+		
+            $tambah->save();
+			$this->session->set_flashdata('success', 'Berhasil disimpan');
+			redirect('Admin/tambah_admin');
+        
+	}
 	
 	public function adminEdit($id = null)
     {
-		var_dump($id);
+		// var_dump($id);
         if (!isset($id)) redirect('Admin/tambah_admin');
 
 		$var = $this->Model_admin;
@@ -433,10 +444,73 @@ class Admin extends CI_Controller
 	// CRUD LIST
 	public function tambah_list()
 	{
+		$data["kota"] = $this->Model_kota->getAll();
+		$data["jenis_tempat"] = $this->Model_jenisTempat->getAll();
+		$data["tempat_transport"] = $this->Model_tempatTransport->getAll();
+		$data["jenis_transport"] = $this->Model_jenisTransport->getAll();
 		$this->load->view('template_admin/header');
 		$this->load->view('template_admin/sidebar');
-		$this->load->view('admin/tambahlist');
+		$this->load->view('admin/tambahlist', $data);
 		$this->load->view('template_admin/footer');
 	}
+
+	public function listTtAdd()
+    {
+			$tambah = $this->Model_jenisTempat;
+            $tambah->save();
+			$this->session->set_flashdata('success1', 'Berhasil disimpan');
+			redirect('Admin/tambah_list');
+        
+	}
+
+	public function listTtDelete($id = null)
+    {
+        if (!isset($id)) show_404();
+
+		
+        if ($this->Model_jenisTempat->delete($id)) {
+			redirect('Admin/tambah_list');
+        }
+	}
+
+	public function listJtAdd()
+    {
+			$tambah = $this->Model_jenisTransport;
+            $tambah->save();
+			$this->session->set_flashdata('success2', 'Berhasil disimpan');
+			redirect('Admin/tambah_list');
+        
+	}
+
+	public function listJtDelete($id = null)
+    {
+        if (!isset($id)) show_404();
+
+		
+        if ($this->Model_jenisTransport->delete($id)) {
+			redirect('Admin/tambah_list');
+        }
+	}
+
+	public function listTempTAdd()
+    {
+			$tambah = $this->Model_tempatTransport;
+            $tambah->save();
+			$this->session->set_flashdata('success3', 'Berhasil disimpan');
+			redirect('Admin/tambah_list');
+        
+	}
+
+	public function listTempDelete($id = null)
+    {
+        if (!isset($id)) show_404();
+
+		
+        if ($this->Model_tempatTransport->delete($id)) {
+			redirect('Admin/tambah_list');
+        }
+	}
+
+
 
 }
