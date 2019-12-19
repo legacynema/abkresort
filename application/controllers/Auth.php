@@ -63,14 +63,14 @@ class Auth extends CI_Controller
 
 			if ($cek) { // jika username ada
 				foreach ($cek as $row) {
-					$this->session->set_userdata('id_user', $row->id_user);
+					$this->session->set_userdata('id_admin', $row->id_admin);
 					$this->session->set_userdata('email_admin', $row->email); // PASSING EMAIL KE VIEWS
 					$this->session->set_userdata('password', $row->password);
 					$this->session->set_userdata('nama_lengkap', $row->nama_lengkap);
 					$this->session->set_userdata('jenis_kelamin', $row->jenis_kelamin);
 					$this->session->set_userdata('nomor_hp', $row->nomor_hp);
-					$this->session->set_userdata('tgl_masuk', date_create($row->tgl_masuk));
-					// var_dump($cek);die; 
+					$this->session->set_userdata('post_date', $row->post_date);
+					//  var_dump($cek);die; 
 					redirect(base_url("admin"));
 				}
 			} else {

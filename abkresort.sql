@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.8.5
+-- version 4.8.3
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 16, 2019 at 03:21 PM
--- Server version: 10.1.38-MariaDB
--- PHP Version: 7.3.2
+-- Generation Time: Dec 19, 2019 at 08:54 AM
+-- Server version: 10.1.36-MariaDB
+-- PHP Version: 7.2.11
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -44,7 +44,10 @@ CREATE TABLE `admin` (
 --
 
 INSERT INTO `admin` (`id_admin`, `nama_lengkap`, `password`, `email`, `jenis_kelamin`, `nomor_hp`, `foto`, `post_date`) VALUES
-(2, 'khos yakmal', 'f16da2e2146b2c2376b2ab8a23592075', 'akmalkhosy@gmail.com', 'Laki-laki', '085287736229', 'default.jpg', '0000-00-00');
+(4, 'khosy Akmal', 'a63397b3d5d384990c5acde995d776b7', 'khosy@gmail.com', 'Laki-laki', '085250036553', 'khosy_Akmal.jpg', '2019-12-18'),
+(5, 'DZIKRI ALIF', '81822f60a1919f15b0beda20d8d8b6a0', 'dzikri@resort.com', 'Laki-laki', '081928391823', 'DZIKRI_ALIF.png', '2019-12-19'),
+(6, 'ALFAZA', '5f999587b6efb3275353f41387fcf26f', 'faza@resort.com', 'Laki-laki', '09019231', 'default.jpg', '2019-12-19'),
+(7, 'FIRMAN', '64e1aeecb102e977420a71f8fd8618a3', 'firman@resort.com', 'Laki-laki', '0891829312', 'default.jpg', '2019-12-18');
 
 -- --------------------------------------------------------
 
@@ -82,7 +85,8 @@ CREATE TABLE `jenis_tempat` (
 
 INSERT INTO `jenis_tempat` (`id_jenis`, `nama`) VALUES
 (1, 'Bandara'),
-(2, 'Terminal');
+(2, 'Terminal'),
+(6, 'Stasiun');
 
 -- --------------------------------------------------------
 
@@ -101,10 +105,10 @@ CREATE TABLE `jenis_transport` (
 
 INSERT INTO `jenis_transport` (`id_transport`, `nama_transport`) VALUES
 (1, 'Pesawat'),
-(2, 'Bis'),
 (3, 'Mobil'),
 (4, 'Kapal'),
-(5, 'Kereta');
+(5, 'Kereta'),
+(11, 'Bus');
 
 -- --------------------------------------------------------
 
@@ -138,16 +142,20 @@ CREATE TABLE `paket` (
   `id_penginapan` int(11) DEFAULT NULL,
   `id_transport` int(11) DEFAULT NULL,
   `id_wisata` int(11) DEFAULT NULL,
+  `deskripsi` text,
   `harga` int(11) NOT NULL,
-  `foto` varchar(255) NOT NULL DEFAULT 'default.jpg'
+  `foto` varchar(255) NOT NULL DEFAULT 'default.jpg',
+  `post_date` date NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `paket`
 --
 
-INSERT INTO `paket` (`id_paket`, `id_kota`, `nama_paket`, `id_penginapan`, `id_transport`, `id_wisata`, `harga`, `foto`) VALUES
-(8, 1, 'Liburan di Malang', 1, 5, 1, 1000000, 'Liburan_di_Malang.jpg');
+INSERT INTO `paket` (`id_paket`, `id_kota`, `nama_paket`, `id_penginapan`, `id_transport`, `id_wisata`, `deskripsi`, `harga`, `foto`, `post_date`) VALUES
+(8, 1, 'Liburan di Malang', 1, 5, 1, '', 1000000, '.jpg', '2019-12-16'),
+(9, 1, 'Liburan di Malang', NULL, NULL, NULL, '', 100000, 'default.jpg', '2019-12-16'),
+(10, 2, 'Liburan di Surabaya', NULL, NULL, NULL, '', 10000009, 'default.jpg', '2019-12-16');
 
 -- --------------------------------------------------------
 
@@ -170,8 +178,9 @@ CREATE TABLE `penginapan` (
 --
 
 INSERT INTO `penginapan` (`id_penginapan`, `id_kota`, `nama_penginapan`, `jumlah_tamu`, `harga`, `foto`, `post_date`) VALUES
-(1, 2, 'Swiss Bellin Hotel', 1, 1000000, 'Swiss_Bellin_Hotel.jpg', '0000-00-00'),
-(4, 2, 'Wind Hotel', 122, 1000000, 'Wind_Hotel.jpg', '0000-00-00');
+(1, 2, 'Swiss Bellin Hotel', 1, 1000000, 'Swiss_Bellin_Hotel.jpg', '2019-12-16'),
+(4, 2, 'Wind Hotel', 122, 1000000, 'Wind_Hotel.jpg', '0000-00-00'),
+(5, 1, 'qqqqqqqq', 1, 1000000, 'default.jpg', '2019-12-17');
 
 -- --------------------------------------------------------
 
@@ -210,7 +219,8 @@ INSERT INTO `tempat_transport` (`id_tempat`, `nama_tempat`, `jenis_tempat`, `id_
 (1, 'Bandara Abdurahman Saleh', 1, 1),
 (2, 'Terminal Arjosari', 2, 1),
 (5, 'Bandara Juanda', 1, 2),
-(6, 'Terminal Bungur Asih', 2, 2);
+(6, 'Terminal Bungur Asih', 2, 2),
+(12, 'Terminal Landungsari', 1, 1);
 
 -- --------------------------------------------------------
 
@@ -228,11 +238,21 @@ CREATE TABLE `transaksi` (
   `id_wisata` int(11) DEFAULT NULL,
   `tamu` int(11) NOT NULL DEFAULT '1',
   `total_harga` int(11) NOT NULL,
-  `status` enum('Peding','Sukses') NOT NULL,
-  `bukti_transaksi` varchar(255) NOT NULL,
-  `e_tiket` varchar(255) NOT NULL,
+  `status` enum('Pending','Sukses') NOT NULL DEFAULT 'Pending',
+  `bukti_transaksi` varchar(255) DEFAULT 'default.jpg',
+  `e_tiket` varchar(255) DEFAULT NULL,
   `post_date` date NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `transaksi`
+--
+
+INSERT INTO `transaksi` (`id_transaksi`, `id_user`, `id_paket`, `id_penginapan`, `id_transport`, `hari`, `id_wisata`, `tamu`, `total_harga`, `status`, `bukti_transaksi`, `e_tiket`, `post_date`) VALUES
+(1, 5, 8, NULL, NULL, 1, NULL, 1, 2500000, 'Pending', 'default.jpg', NULL, '0000-00-00'),
+(2, 5, NULL, 1, NULL, 1, NULL, 1, 2530000, 'Pending', 'default.jpg', NULL, '2019-12-03'),
+(3, 5, NULL, NULL, 5, 1, NULL, 1, 1500000, 'Pending', 'default.jpg', NULL, '2019-12-18'),
+(4, 5, NULL, NULL, NULL, 1, 7, 1, 100000, 'Pending', 'default.jpg', NULL, '2019-12-17');
 
 -- --------------------------------------------------------
 
@@ -242,15 +262,16 @@ CREATE TABLE `transaksi` (
 
 CREATE TABLE `transport` (
   `id_transport` int(11) NOT NULL,
-  `class` int(11) NOT NULL,
+  `class` int(11) DEFAULT NULL,
   `jenis_transport` int(11) NOT NULL,
   `nama_transp` varchar(50) NOT NULL,
   `tanggal` date NOT NULL,
-  `tempat_asal` int(11) NOT NULL,
-  `tempat_tujuan` int(11) NOT NULL,
+  `tempat_asal` int(11) DEFAULT NULL,
+  `tempat_tujuan` int(11) DEFAULT NULL,
   `jam_berangkat` time NOT NULL,
   `jam_tiba` time NOT NULL,
-  `kisaran` varchar(50) NOT NULL,
+  `foto` varchar(255) NOT NULL DEFAULT 'default.jpg',
+  `kisaran` varchar(50) DEFAULT NULL,
   `harga` int(11) NOT NULL,
   `post_date` date NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
@@ -259,10 +280,15 @@ CREATE TABLE `transport` (
 -- Dumping data for table `transport`
 --
 
-INSERT INTO `transport` (`id_transport`, `class`, `jenis_transport`, `nama_transp`, `tanggal`, `tempat_asal`, `tempat_tujuan`, `jam_berangkat`, `jam_tiba`, `kisaran`, `harga`, `post_date`) VALUES
-(5, 1, 1, 'Garuda', '0000-00-00', 1, 5, '17:00:00', '18:00:00', '5000-70000', 150000, '0000-00-00'),
-(6, 2, 1, 'Lion Air', '0000-00-00', 5, 1, '01:00:00', '02:00:00', '1000000', 100000, '0000-00-00'),
-(9, 1, 5, 'KA Singosari', '2019-12-19', 2, 6, '01:02:00', '01:07:00', '1000000', 10000000, '0000-00-00');
+INSERT INTO `transport` (`id_transport`, `class`, `jenis_transport`, `nama_transp`, `tanggal`, `tempat_asal`, `tempat_tujuan`, `jam_berangkat`, `jam_tiba`, `foto`, `kisaran`, `harga`, `post_date`) VALUES
+(5, 1, 1, 'Garuda', '0000-00-00', 1, 5, '17:00:00', '18:00:00', 'default.jpg', '5000-70000', 150000, '0000-00-00'),
+(6, 1, 1, 'Lion Air', '0000-00-00', 5, 1, '01:00:00', '02:00:00', 'default.jpg', '1000000', 100000, '2019-12-16'),
+(9, 1, 5, 'KA Singosari', '2019-12-19', 2, 6, '01:02:00', '01:07:00', 'default.jpg', '1000000', 10000000, '0000-00-00'),
+(10, 1, 5, 'Lion Air', '2019-01-01', 1, 1, '23:59:00', '23:59:00', 'default.jpg', '1000000', 1111, '2019-12-17'),
+(11, 1, 3, 'Avanza', '0000-00-00', 1, 1, '23:59:00', '23:59:00', 'Avanza.jpg', '1000000', 2147483647, '2019-12-18'),
+(12, 2, 11, 'Garuda', '0000-00-00', 1, 1, '23:59:00', '23:59:00', 'default.jpg', '10000003', 1113, '2019-12-17'),
+(13, 1, 11, 'Asasasasasasasa', '2019-01-01', 2, 6, '22:59:00', '22:59:00', 'default.jpg', '1000000', 100000, '2019-12-17'),
+(14, 2, 11, 'Lion Air', '2019-01-01', 5, 2, '23:58:00', '22:58:00', 'default.jpg', '1000000', 1113, '2019-12-17');
 
 -- --------------------------------------------------------
 
@@ -287,7 +313,7 @@ CREATE TABLE `user` (
 
 INSERT INTO `user` (`id_user`, `nama_lengkap`, `password`, `email`, `jenis_kelamin`, `nomor_hp`, `foto`, `post_date`) VALUES
 (5, 'Khosy', 'ff34a70a2dc3e9b0a4f319c4c30d45a8', 'akmalkhosy@gmail.com', 'Laki-laki', '085287736229', 'default.jpg', '0000-00-00'),
-(6, 'Khosy Akmal R', 'd54d1702ad0f8326224b817c796763c9', 'khosy@gmail.com', 'Laki-laki', '08521283142', 'PASS.jpg', '0000-00-00');
+(6, 'kjosaaa', '97663bec796f96fdd3d845f923163a32', 'kjos@gmail.com', 'Laki-laki', '08521283142', '', '2019-12-18');
 
 -- --------------------------------------------------------
 
@@ -309,9 +335,10 @@ CREATE TABLE `wisata` (
 --
 
 INSERT INTO `wisata` (`id_wisata`, `id_kota`, `nama_wisata`, `harga_tiket`, `foto`, `post_date`) VALUES
-(1, 1, 'Kebun Teh Wonosari', 10000, 'default.jpg', '0000-00-00'),
-(2, 1, 'Kebun Binatang', 20000, 'Kebun_Binatang.jpg', '0000-00-00'),
-(6, 1, 'Paralayang111', 34242, 'Paralayang111.jpg', '0000-00-00');
+(1, 1, 'Kebun Teh Wonosari', 10000, 'Kebun_Teh_Wonosari.jpg', '2019-12-16'),
+(2, 2, 'Kebun Binatang', 20000, 'Kebun_Binatang.jpeg', '2019-12-17'),
+(6, 1, 'Paralayang111', 34242, 'Paralayang111.jpg', '0000-00-00'),
+(7, 1, 'Coban talun', 4, 'Coban_talun.jpg', '2019-12-16');
 
 --
 -- Indexes for dumped tables
@@ -420,7 +447,7 @@ ALTER TABLE `wisata`
 -- AUTO_INCREMENT for table `admin`
 --
 ALTER TABLE `admin`
-  MODIFY `id_admin` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id_admin` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT for table `class`
@@ -432,13 +459,13 @@ ALTER TABLE `class`
 -- AUTO_INCREMENT for table `jenis_tempat`
 --
 ALTER TABLE `jenis_tempat`
-  MODIFY `id_jenis` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id_jenis` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT for table `jenis_transport`
 --
 ALTER TABLE `jenis_transport`
-  MODIFY `id_transport` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id_transport` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
 -- AUTO_INCREMENT for table `kota`
@@ -450,13 +477,13 @@ ALTER TABLE `kota`
 -- AUTO_INCREMENT for table `paket`
 --
 ALTER TABLE `paket`
-  MODIFY `id_paket` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `id_paket` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- AUTO_INCREMENT for table `penginapan`
 --
 ALTER TABLE `penginapan`
-  MODIFY `id_penginapan` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id_penginapan` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `super_admin`
@@ -468,19 +495,19 @@ ALTER TABLE `super_admin`
 -- AUTO_INCREMENT for table `tempat_transport`
 --
 ALTER TABLE `tempat_transport`
-  MODIFY `id_tempat` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id_tempat` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
 -- AUTO_INCREMENT for table `transaksi`
 --
 ALTER TABLE `transaksi`
-  MODIFY `id_transaksi` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_transaksi` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `transport`
 --
 ALTER TABLE `transport`
-  MODIFY `id_transport` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `id_transport` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 
 --
 -- AUTO_INCREMENT for table `user`
@@ -492,7 +519,7 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT for table `wisata`
 --
 ALTER TABLE `wisata`
-  MODIFY `id_wisata` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id_wisata` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- Constraints for dumped tables

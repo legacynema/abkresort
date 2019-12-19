@@ -1,8 +1,9 @@
 <?php defined('BASEPATH') or exit('No direct script access allowed');
-class Model_admin extends CI_Model{
+class Model_admin extends CI_Model
+{
 
 
-private $_table = "admin";
+    private $_table = "admin";
     public $id_admin;
     public $nama_lengkap;
     public $email;
@@ -10,6 +11,7 @@ private $_table = "admin";
     public $nomor_hp;
     public $jenis_kelamin;
     public $foto = "default.jpg";
+    public $post_date;
 
 
     public function rules()
@@ -40,11 +42,12 @@ private $_table = "admin";
         $this->email = $post["email"];
         $this->nomor_hp = $post["nomor_hp"];
         $this->jenis_kelamin = $post["jenis_kelamin"];
-        
-        if (empty($post["password"])){
-            $this->password =md5($post["nama_lengkap"]);
+        $this->post_date = date('Y-m-d');
+
+        if (empty($post["password"])) {
+            $this->password = md5($post["nama_lengkap"]);
         } else {
-            $this->password=md5($post["password"]) ;
+            $this->password = md5($post["password"]);
         }
 
         $this->foto = $this->_uploadImage();
@@ -57,20 +60,14 @@ private $_table = "admin";
     public function update()
     {
         $post = $this->input->post();
-        // var_dump($post);
+        var_dump($post);
         $this->id_admin = $post["id_admin"];
         $this->nama_lengkap = $post["nama_lengkap"];
         $this->email = $post["email"];
         $this->nomor_hp = $post["nomor_hp"];
         $this->jenis_kelamin = $post["jenis_kelamin"];
-        $this->foto = $post["foto"];
-        
-
-        if (empty($post["password"])){
-            $this->password =md5($post["nama_lengkap"]);
-        } else {
-            $this->password=md5($post["password"]) ;
-        }
+        $this->post_date = date('Y-m-d');
+        $this->password=md5($post["password"]) ;
 
         if (!empty($_FILES["foto"]["name"])) {
             $this->foto = $this->_uploadImage();
@@ -84,14 +81,14 @@ private $_table = "admin";
     public function updatePass()
     {
         $post = $this->input->post();
-        // var_dump($post);
+
         $this->id_admin = $post["id_admin"];
         $this->nama_lengkap = $post["nama_lengkap"];
         $this->email = $post["email"];
         $this->nomor_hp = $post["nomor_hp"];
         $this->jenis_kelamin = $post["jenis_kelamin"];
-        $this->foto = $post["foto"];
         $this->password = md5($post["email"]);
+        $this->post_date = date('Y-m-d');
 
         if (!empty($_FILES["foto"]["name"])) {
             $this->foto = $this->_uploadImage();
@@ -100,6 +97,7 @@ private $_table = "admin";
         }
 
         $this->db->update($this->_table, $this, array("id_admin" => $post["id_admin"]));
+        var_dump($post);
     }
 
     public function delete($id_admin)
@@ -110,7 +108,7 @@ private $_table = "admin";
 
     private function _uploadImage()
     {
-        $config['upload_path']          = './foto/user';
+        $config['upload_path']          = './foto/adminFoto';
         $config['allowed_types']        = 'gif|jpg|png';
         $config['file_name']            = $this->nama_lengkap;
         $config['overwrite']            = true;

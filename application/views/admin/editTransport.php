@@ -18,8 +18,8 @@
                 <form action="<?php echo base_url("Admin/transportEdit/$transport->id_transport") ?>" name="form" onsubmit="return validateForm()" method="post" enctype="multipart/form-data">
 
 
-                <input type="hidden" name="id_transport" value="<?php echo $transport->id_transport ?>" />
-
+                    <input type="hidden" name="id_transport" value="<?php echo $transport->id_transport ?>" />
+                    <input type="hidden" name="post_date" />
                     <div class="box-body">
                         <div class="form-group">
                             <label for="id_kota">Jenis Transportasi</label>
@@ -27,7 +27,9 @@
                                 <option value="" disabled selected>Pilih Transportasi</option>
 
                                 <?php foreach ($jenis_transport as $trans) : ?>
-                                    <option value="<?= $trans->id_transport ?>" <?php if ($transport->jenis_transport == $trans->id_transport){echo 'selected';} ?>> <?= $trans->nama_transport ?> </option>
+                                    <option value="<?= $trans->id_transport ?>" <?php if ($transport->jenis_transport == $trans->id_transport) {
+                                                                                    echo 'selected';
+                                                                                } ?>> <?= $trans->nama_transport ?> </option>
                                 <?php endforeach; ?>
 
                             </select>
@@ -41,7 +43,9 @@
                                 <option value="" disabled selected>Pilih Class</option>
 
                                 <?php foreach ($class as $cls) : ?>
-                                    <option value="<?= $cls->id_class ?>" <?php if ($transport->class == $cls->id_class){echo 'selected';} ?>> <?= $cls->nama_class ?> </option>
+                                    <option value="<?= $cls->id_class ?>" <?php if ($transport->class == $cls->id_class) {
+                                                                                                                                                                            echo 'selected';
+                                                                                                                                                                        } ?>> <?= $cls->nama_class ?> </option>
                                 <?php endforeach; ?>
 
                             </select>
@@ -71,7 +75,9 @@
                                 <option value="" disabled selected>Pilih Keberangkatan</option>
 
                                 <?php foreach ($tempat_transport as $tt) : ?>
-                                    <option value="<?= $tt->id_tempat ?>" <?php if ($transport->tempat_asal == $tt->id_tempat){echo 'selected';} ?>> <?= $tt->nama_tempat ?> </option>
+                                    <option value="<?= $tt->id_tempat ?>" <?php if ($transport->tempat_asal == $tt->id_tempat) {
+                                                                                                                                                                            echo 'selected';
+                                                                                                                                                                        } ?>> <?= $tt->nama_tempat ?> </option>
                                 <?php endforeach; ?>
 
                             </select>
@@ -85,7 +91,9 @@
                                 <option value="" disabled selected>Pilih Tujuan</option>
 
                                 <?php foreach ($tempat_transport as $tt) : ?>
-                                    <option value="<?= $tt->id_tempat ?>" <?php if ($transport->tempat_tujuan == $tt->id_tempat){echo 'selected';} ?>> <?= $tt->nama_tempat ?> </option>
+                                    <option value="<?= $tt->id_tempat ?>" <?php if ($transport->tempat_tujuan == $tt->id_tempat) {
+                                                                                                                                                                            echo 'selected';
+                                                                                                                                                                        } ?>> <?= $tt->nama_tempat ?> </option>
                                 <?php endforeach; ?>
 
                             </select>
@@ -95,14 +103,14 @@
                     <div class="box-body">
                         <label for="jam_berangkat">Jam Keberangkatan</label>
                         <div class="input-group">
-                            <input type="time" name="jam_berangkat" class="form-control" value="<?php echo $transport->jam_berangkat?>">
+                            <input type="time" name="jam_berangkat" class="form-control" value="<?php echo $transport->jam_berangkat ?>">
                         </div>
                     </div>
 
                     <div class="box-body">
                         <label for="jam_tiba">Jam Kedatangan</label>
                         <div class="input-group">
-                            <input type="time" name="jam_tiba" class="form-control" value="<?php echo $transport->jam_tiba?>">
+                            <input type="time" name="jam_tiba" class="form-control" value="<?php echo $transport->jam_tiba ?>">
                         </div>
                     </div>
 
@@ -110,7 +118,7 @@
                         <label for="kisaran">Kisaran Harga </label>
                         <div class="input-group">
                             <span class="input-group-addon"><i class="fa fa-money"></i></span>
-                            <input type="text" name="kisaran" class="form-control" value="<?php echo $transport->kisaran?>">
+                            <input type="text" name="kisaran" class="form-control" value="<?php echo $transport->kisaran ?>">
                         </div>
                     </div>
 
@@ -120,6 +128,13 @@
                             <span class="input-group-addon"><i class="fa fa-money"></i></span>
                             <input type="text" name="harga" class="form-control" value="<?php echo $transport->harga ?>">
                         </div>
+                    </div>
+
+                    <div class="box-body">
+                        <label for="foto">Foto *max size 1MB</label>
+                        <input type="file" class="form-control" name="foto">
+                        <input class="form-control-file" type="hidden" name="old_image" value="<?php echo $transport->foto ?>" />
+                        <img src="<?php echo base_url('foto/admin/transport/' . $transport->foto) ?>" width="64" />
                     </div>
 
                     <script>
