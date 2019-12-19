@@ -112,7 +112,8 @@
           t.jam_berangkat,
           t.jam_tiba,
           t.kisaran,
-          t.harga
+          t.harga,
+          t.foto
           '
         );
         
@@ -128,13 +129,12 @@
         <div class="col-md-4">
         <div class="card" style="width: 18rem;">
         <br>
-          <img class="card-img-top" src="<?= base_url('assets/') ?>img/Terios.png" alt="Card image cap">
+          <img class="card-img-top" src="<?php echo base_url('foto/admin/transport/'.$trans['foto'])?>" alt="Card image cap">
           <div class="card-body">
             <h5 class="card-title"><?= $trans['nama_transp'] ?></h5>
-            <p class="card-text">Mulai dari : Rp. <?= number_format($trans['kisaran'])?></p>
           </div>
           <ul class="list-group list-group-flush">
-            <li class="list-group-item">Kelas : <?= $trans['nama_class'] ?></li>
+            <li class="list-group-item">Mulai dari : Rp. <?= number_format($trans['kisaran'])?></li>
           </ul>
           <button type="button" class="btn btn-primary">Pesan</button>
         </div>
