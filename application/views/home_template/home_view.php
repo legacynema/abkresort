@@ -48,6 +48,63 @@
   </a>
 </div>
 
+<br>
+
+<div class="container">
+<div class="row">
+				<div class="col-lg-3 col-md-3 col-sm-6 col-xs-6 col-xxs-12">
+					<div class="tm-home-box-2">						
+						<img src="<?= base_url('assets/') ?>img/paket1.jpg" alt="image" class="img-responsive">
+						<h3>Paket 3 hari 2 Malam</h3>
+						<p class="tm-date">Rp.1.500.000</p>
+						<div class="tm-home-box-2-container">
+							<a href="#" class="tm-home-box-2-link"><i class="fa fa-heart tm-home-box-2-icon border-right"></i></a>
+							<a href="<?= base_url('Input/detail') ?>" class="tm-home-box-2-link"><span class="tm-home-box-2-description">Travel</span></a>
+							<a href="#" class="tm-home-box-2-link"><i class="fa fa-edit tm-home-box-2-icon border-left"></i></a>
+						</div>
+					</div>
+				</div>
+				<div class="col-lg-3 col-md-3 col-sm-6 col-xs-6 col-xxs-12">
+					<div class="tm-home-box-2">						
+					    <img src="<?= base_url('assets/') ?>img/paket1.jpg" alt="image" class="img-responsive">
+              <h3>Paket 3 hari 2 Malam</h3>
+						<p class="tm-date">Rp.1.500.000</p>
+						<div class="tm-home-box-2-container">
+							<a href="#" class="tm-home-box-2-link"><i class="fa fa-heart tm-home-box-2-icon border-right"></i></a>
+							<a href="#" class="tm-home-box-2-link"><span class="tm-home-box-2-description">Travel</span></a>
+							<a href="#" class="tm-home-box-2-link"><i class="fa fa-edit tm-home-box-2-icon border-left"></i></a>
+						</div>
+					</div>
+				</div>
+				<div class="col-lg-3 col-md-3 col-sm-6 col-xs-6 col-xxs-12">
+					<div class="tm-home-box-2">						
+					    <img src="<?= base_url('assets/') ?>img/paket1.jpg" alt="image" class="img-responsive">
+              <h3>Paket 3 hari 2 Malam</h3>
+						<p class="tm-date">Rp.1.500.000</p>
+						<div class="tm-home-box-2-container">
+							<a href="#" class="tm-home-box-2-link"><i class="fa fa-heart tm-home-box-2-icon border-right"></i></a>
+							<a href="#" class="tm-home-box-2-link"><span class="tm-home-box-2-description">Travel</span></a>
+							<a href="#" class="tm-home-box-2-link"><i class="fa fa-edit tm-home-box-2-icon border-left"></i></a>
+						</div>
+					</div>
+				</div>
+				<div class="col-lg-3 col-md-3 col-sm-6 col-xs-6 col-xxs-12">
+					<div class="tm-home-box-2 tm-home-box-2-right">						
+					    <img src="<?= base_url('assets/') ?>img/paket1.jpg" alt="image" class="img-responsive">
+              <h3>Paket 3 hari 2 Malam</h3>
+						<p class="tm-date">Rp.1.500.000</p>
+						<div class="tm-home-box-2-container">
+							<a href="#" class="tm-home-box-2-link"><i class="fa fa-heart tm-home-box-2-icon border-right"></i></a>
+							<a href="#" class="tm-home-box-2-link"><span class="tm-home-box-2-description">Travel</span></a>
+							<a href="#" class="tm-home-box-2-link"><i class="fa fa-edit tm-home-box-2-icon border-left"></i></a>
+						</div>
+					</div>
+				</div>
+			</div>
+</div>
+
+
+<br>
 <div class="container">
 <div class="templatemo-content-wrapper">
                     <div class="templatemo-content">  
