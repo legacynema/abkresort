@@ -69,7 +69,7 @@ class Auth extends CI_Controller
 					$this->session->set_userdata('nama_lengkap', $row->nama_lengkap);
 					$this->session->set_userdata('jenis_kelamin', $row->jenis_kelamin);
 					$this->session->set_userdata('nomor_hp', $row->nomor_hp);
-					$this->session->set_userdata('post_date', date_create($row->post_date));
+					$this->session->set_userdata('post_date', $row->post_date);
 					//  var_dump($cek);die; 
 					redirect(base_url("admin"));
 				}

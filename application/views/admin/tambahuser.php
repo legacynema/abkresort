@@ -20,7 +20,7 @@
                     <table id="example1" class="table table-hover table-bordered table-striped">
                         <thead>
                             <tr>
-                                <th>ID</th>
+                                <th>#</th>
                                 <th>NAMA LENGKAP</th>
                                 <th>EMAIL</th>
                                 <th>NOMOR HP</th>
@@ -31,12 +31,12 @@
                         </thead>
 
                         <tbody>
-                            <?php
+                            <?php $no=1;
                             foreach ($user as $usr) :
                                 ?>
                                 <tr>
                                     <td>
-                                        <p><?= $usr->id_user ?></p>
+                                        <p><?= $no++; ?></p>
                                     </td>
                                     <td>
                                         <p><?= $usr->nama_lengkap ?></p>
@@ -63,17 +63,6 @@
 
                         </tbody>
 
-                        <tfoot>
-                            <tr>
-                                <th>ID</th>
-                                <th>NAMA LENGKAP</th>
-                                <th>EMAIL</th>
-                                <th>NOMOR HP</th>
-                                <th>JENIS KELAMIN</th>
-                                <th>FOTO</th>
-                                <th>MENU</th>
-                            </tr>
-                        </tfoot>
                     </table>
                 </div>
                 <!-- /.box-body -->
