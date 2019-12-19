@@ -52,53 +52,35 @@
                                 <input type="text" onfocus="(this.type='date')" class="form-control" id="datetimepicker1" name="first-flight-date" placeholder="Keberangkatan" aria-describedby="basic-addon1">
                             </div>
                             <div class="form-group">
-                                <label for="exampleFormControlSelect1">Kelas Pesawat</label>
-                                <select class="form-control" id="exampleFormControlSelect1">
-                                    <option>Kelas Ekonomi</option>
-                                    <option>Kelas Bisnis</option>
-                                    <option>Kelas Pertama</option>
-                                </select>
+                                <div class="row">
+                                    <div class="col-md-4">
+                                        <label for="exampleFormControlSelect1">Kelas Pesawat</label>
+                                        <select class="form-control" id="exampleFormControlSelect1">
+                                            <option>Kelas Ekonomi</option>
+                                            <option>Kelas Bisnis</option>
+                                            <option>Kelas Pertama</option>
+                                        </select>
+                                    </div>
+                                </div>
                             </div>
                             <div class="row">
                                 <div class="col-md-4">
                                     <div class="input-group">
                                         <select id="paxAdult" class="form-control valid" aria-invalid="false">
-                                            <option value="0">0 Dewasa</option>
-                                            <option value="1" selected="selected">1 Dewasa</option>
-                                            <option value="2">2 Dewasa</option>
-                                            <option value="3">3 Dewasa</option>
-                                            <option value="4">4 Dewasa</option>
-                                            <option value="5">5 Dewasa</option>
-                                            <option value="6">6 Dewasa</option>
-                                            <option value="7">7 Dewasa</option>
-                                            <option value="8">8 Dewasa</option>
-                                            <option value="9">9 Dewasa</option>
+                                            <option value="0">0 Penumpang</option>
+                                            <option value="1" selected="selected">1 Penumpang</option>
+                                            <option value="2">2 Penumpang</option>
+                                            <option value="3">3 Penumpang</option>
+                                            <option value="4">4 Penumpang</option>
+                                            <option value="5">5 Penumpang</option>
+                                            <option value="6">6 Penumpang</option>
+                                            <option value="7">7 Penumpang</option>
+                                            <option value="8">8 Penumpang</option>
+                                            <option value="9">9 Penumpang</option>
                                         </select>
                                     </div>
                                 </div>
-                                <div class="col-md-4">
-                                    <div class="input-group">
-                                        <select id="paxChild" class="form-control">
-                                            <option value="0" selected="selected">0 Anak-Anak</option>
-                                            <option value="1">1 Anak-Anak</option>
-                                            <option value="2">2 Anak-Anak</option>
-                                            <option value="3">3 Anak-Anak</option>
-                                            <option value="4">4 Anak-Anak</option>
-                                            <option value="5">5 Anak-Anak</option>
-                                            <option value="6">6 Anak-Anak</option>
-                                            <option value="7">7 Anak-Anak</option>
-                                            <option value="8">8 Anak-Anak</option>
-                                        </select>
-                                    </div>
-                                </div>
-                                <div class="col-md-4">
-                                    <div class="input-group">
-                                        <select id="paxInfant" class="form-control">
-                                            <option value="0" selected="selected">0 Bayi</option>
-                                            <option value="1">1 Bayi</option>
-                                        </select>
-                                    </div>
-                                </div>
+
                             </div>
 
                         </form>
@@ -109,13 +91,25 @@
                 <div class="card-header" id="headingTwo">
                     <h2 class="mb-0">
                         <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                            Collapsible Group Item #2
+                            Penginapan
                         </button>
                     </h2>
                 </div>
                 <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
                     <div class="card-body">
-                        Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+                        <form>
+                            <div class="form-group">
+                                <label for="exampleFormControlInput1">Kota/Nama Hotel</label>
+                                <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="Malang/Hotel Indonesia">
+                            </div>
+                            <div class="form-group">
+                                <input type="text" onfocus="(this.type='date')" class="form-control" id="datetimepicker1" name="first-flight-date" placeholder="Check-In" aria-describedby="basic-addon1">
+                            </div>
+                            <div class="form-group">
+                                <input type="text" onfocus="(this.type='date')" class="form-control" id="datetimepicker1" name="first-flight-date" placeholder="Check-Out" aria-describedby="basic-addon1">
+                            </div>
+
+                        </form>
                     </div>
                 </div>
             </div>
@@ -123,13 +117,42 @@
                 <div class="card-header" id="headingThree">
                     <h2 class="mb-0">
                         <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-                            Collapsible Group Item #3
+                            Kereta Api
                         </button>
                     </h2>
                 </div>
                 <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
                     <div class="card-body">
-                        Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+                        <div class="form-group">
+                            <label for="exampleFormControlInput1">Stasiun Keberangkatan</label>
+                            <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="Stasiun Pasar Turi">
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleFormControlInput1">Stasiun Tujuan</label>
+                            <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="Stasiun Pasar Senen">
+                        </div>
+                        <div class="form-group">
+                            <input type="text" onfocus="(this.type='date')" class="form-control" id="datetimepicker1" name="first-flight-date" placeholder="Tanggal Keberangkatan" aria-describedby="basic-addon1">
+                        </div>
+                        <div class="row">
+                            <div class="col-md-4">
+                                <div class="input-group">
+                                    <select id="paxAdult" class="form-control valid" aria-invalid="false">
+                                        <option value="0">0 Penumpang</option>
+                                        <option value="1" selected="selected">1 Penumpang</option>
+                                        <option value="2">2 Penumpang</option>
+                                        <option value="3">3 Penumpang</option>
+                                        <option value="4">4 Penumpang</option>
+                                        <option value="5">5 Penumpang</option>
+                                        <option value="6">6 Penumpang</option>
+                                        <option value="7">7 Penumpang</option>
+                                        <option value="8">8 Penumpang</option>
+                                        <option value="9">9 Penumpang</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                        </div>
                     </div>
                 </div>
             </div>
