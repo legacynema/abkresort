@@ -11,7 +11,8 @@
                 <!-- /.box-header -->
                 <!-- form start -->
                 <form action="<?php echo base_url(). 'Admin/wisataAdd'; ?>" name="form"  onsubmit="return validateForm()" method="post" enctype="multipart/form-data">
-                <div class="form-group">
+                    <div class="box-body">
+                        <div class="form-group">
                             <label for="id_kota">Pilih Kota</label>
                                 <select class="form-control" name="id_kota">
                                     <option value="" disabled selected>Pilih Kota</option>
@@ -22,10 +23,14 @@
                                       
                                 </select>
                         </div>
+                    </div>      
+                    <div class="box-body">  
                         <div class="form-group">
                             <label for="exampleInputEmail1">Nama Tempat Wisata</label>
                             <input type="text" class="form-control" name="nama_wisata" placeholder="Green Park">
                         </div>
+                    </div>    
+                    <div class="box-body">
                         <div class="form-group">
                             <label for="exampleInputEmail1">Harga Tiket/orang</label>
                             <div class="input-group">
@@ -33,13 +38,14 @@
                                 <input type="number" name="harga_tiket" class="form-control" placeholder="Rp.">
                             </div>
                         </div>
+                    </div>
+                    <div class="box-body">
                         <div class="form-group">
                             <label for="foto">Foto</label>
                             <input type="file" class="form-control" name="foto">
                         </div>
-
+                    </div>                        
                         <input type="hidden" name="post_date" />
-
                         <script>
                                 function validateForm() {
                                 var kota = document.forms["form"]["id_kota"].value;
@@ -88,15 +94,18 @@
                 <!-- /.box-header -->
                 <!-- form start -->
                 <div class="box-body">
-                    <table class="table table-hover">
+                <table id="example1" class="table table-hover table-bordered table-striped">
+                    <thead>
                         <tr>
                             <th style="width: 10px">#</th>
                             <th>ID</th>
                             <th>Kota</th>
+                            <th>Nama Wisata</th>
                             <th>Harga Tiket</th>
                             <th>Foto</th>
                             <th>Action</th>
                         </tr>
+                    </thead>    
                         <?php  $nomor =1; ?>
 						<?php
 
@@ -128,9 +137,7 @@
 								</td>
                                 <td>
                                     <?php  echo anchor('Admin/wisataDelete/'.$wis['id_wisata'], '<button class="btn btn-danger margin" type="button"><span class="fa fa-trash"></span> </button>'); ?>
-                                </td>
-                                <td>
-                                    <?php  echo anchor('Admin/wisataEdit/'.$wis['id_wisata'],'<button class="btn btn-danger margin" type="button"><span class="fa fa-pencil"></span> </button>'); ?>
+                                    <?php  echo anchor('Admin/wisataEdit/'.$wis['id_wisata'],'<button class="btn btn-success margin" type="button"><span class="fa fa-pencil"></span> </button>'); ?>
                                 </td>
 							</tr>
 							<?php $nomor++; ?>

@@ -37,7 +37,7 @@
 
     <div class="col-md-3 col-sm-6 col-xs-12">
       <div class="info-box">
-        <span class="info-box-icon bg-red"><i class="fa fa-user-times"></i></span>
+        <span class="info-box-icon bg-red"><i class="fa fa-safari"></i></span>
 
         <div class="info-box-content">
         <?php $data = $this->db->count_all('paket');?>
@@ -51,7 +51,7 @@
     <!-- /.col -->
     <div class="col-md-3 col-sm-6 col-xs-12">
       <div class="info-box">
-        <span class="info-box-icon bg-yellow"><i class="ion ion-ios-people-outline"></i></span>
+        <span class="info-box-icon bg-yellow"><i class="fa fa-dollar"></i></span>
 
         <div class="info-box-content">
         <?php $data = $this->db->count_all('transaksi');?>

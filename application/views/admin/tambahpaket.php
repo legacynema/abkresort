@@ -1,7 +1,7 @@
 <section class="content">
     <div class="row">
         <!-- left column -->
-        <div class="col-md-6">
+        <div class="col-md-5">
             <!-- general form elements -->
             <div class="box box-primary">
                 <div class="box-header with-border">
@@ -113,7 +113,7 @@
                 </form>
             </div>
         </div>
-        <div class="col-md-6">
+        <div class="col-md-7">
             <!-- general form elements -->
             <div class="box box-primary">
                 <div class="box-header with-border">
@@ -130,7 +130,8 @@
                 <!-- /.box-header -->
                 <!-- form start -->
                 <div class="box-body">
-                    <table class="table table-hover">
+                <table id="example1" class="table table-hover table-bordered table-striped">
+                    <thead>
                         <tr>
                             <th style="width: 10px">#</th>
                             <th>ID </th>
@@ -143,6 +144,7 @@
                             <th>Foto</th>
                             <th>Menu</th>
                         </tr>
+                        </thead>    
                         <?php $nomor = 1; ?>
                         <?php
 
@@ -193,9 +195,7 @@
                                     <img src="<?php echo base_url('foto/admin/paket/' . $paket['foto']) ?>" width="64" />
                                 </td>
                                 <td>
-                                    <?php echo anchor('Admin/paketEdit/' . $paket['id'], '<button class="btn btn-danger margin" type="button"><span class="fa fa-pencil"></span> </button>'); ?>
-                                </td>
-                                <td>
+                                    <?php echo anchor('Admin/paketEdit/' . $paket['id'], '<button class="btn btn-success margin" type="button"><span class="fa fa-pencil"></span> </button>'); ?>
                                     <?php echo anchor('Admin/paketDelete/' . $paket['id'], '<button class="btn btn-danger margin" type="button"><span class="fa fa-trash"></span> </button>'); ?>
                                 </td>
                             </tr>

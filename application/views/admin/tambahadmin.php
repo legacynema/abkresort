@@ -1,7 +1,7 @@
 <section class="content">
     <div class="row">
         <!-- left column -->
-        <div class="col-md-6">
+        <div class="col-md-5">
             <!-- general form elements -->
             <div class="box box-primary">
                 <div class="box-header with-border">
@@ -86,7 +86,7 @@
                 </form>
             </div>
         </div>
-        <div class="col-md-6">
+        <div class="col-md-7">
             <!-- general form elements -->
             <div class="box box-primary">
                 <div class="box-header with-border">
@@ -140,7 +140,7 @@
                                         <img src="<?php echo base_url('foto/adminFoto/' . $adm->foto) ?>" width="64" />
                                     </td>
                                     <td>
-                                        <?php echo anchor('Admin/adminEdit/' . $adm->id_admin, '<button class="btn btn-primary margin" type="button"><span class="fa fa-pencil"></span> </button>'); ?>
+                                        <?php echo anchor('Admin/adminEdit/' . $adm->id_admin, '<button class="btn btn-success margin" type="button"><span class="fa fa-pencil"></span> </button>'); ?>
                                         <?php echo anchor('Admin/adminDelete/' . $adm->id_admin, '<button class="btn btn-danger margin" type="button"><span class="fa fa-trash"></span> </button>'); ?>
                                     </td>
                                 </tr>
