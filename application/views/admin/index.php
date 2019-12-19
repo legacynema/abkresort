@@ -7,8 +7,10 @@
         <span class="info-box-icon bg-aqua"><i class="fa fa-users"></i></span>
 
         <div class="info-box-content">
+        <?php $data = $this->db->count_all('user');?>
           <span class="info-box-text">Jumlah User</span>
-          <span class="info-box-number">90<small>%</small></span>
+          <span class="info-box-number"><?=$data?><small></small></span>
+          
         </div>
         <!-- /.info-box-content -->
       </div>
@@ -20,8 +22,9 @@
         <span class="info-box-icon bg-green"><i class="fa fa-user-plus"></i></span>
 
         <div class="info-box-content">
-          <span class="info-box-text">User Aktif</span>
-          <span class="info-box-number">41,410</span>
+        <?php $data = $this->db->count_all('admin');?>
+          <span class="info-box-text">Admin</span>
+          <span class="info-box-number"><?=$data?></span>
         </div>
         <!-- /.info-box-content -->
       </div>
@@ -37,8 +40,9 @@
         <span class="info-box-icon bg-red"><i class="fa fa-user-times"></i></span>
 
         <div class="info-box-content">
-          <span class="info-box-text">User Nonaktif</span>
-          <span class="info-box-number">760</span>
+        <?php $data = $this->db->count_all('paket');?>
+          <span class="info-box-text">Paket</span>
+          <span class="info-box-number"><?=$data?></span>
         </div>
         <!-- /.info-box-content -->
       </div>
@@ -50,8 +54,9 @@
         <span class="info-box-icon bg-yellow"><i class="ion ion-ios-people-outline"></i></span>
 
         <div class="info-box-content">
-          <span class="info-box-text">New Members</span>
-          <span class="info-box-number">2,000</span>
+        <?php $data = $this->db->count_all('transaksi');?>
+          <span class="info-box-text">Transaksi</span>
+          <span class="info-box-number"><?=$data?></span>
         </div>
         <!-- /.info-box-content -->
       </div>

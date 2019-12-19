@@ -76,7 +76,6 @@
                                 }
                             }
                         </script>
-
                     </div>
                     <!-- /.box-body -->
 
@@ -138,7 +137,7 @@
                                         <p><?= $adm->jenis_kelamin ?></p>
                                     </td>
                                     <td>
-                                        <img src="<?php echo base_url('foto/user/' . $adm->foto) ?>" width="64" />
+                                        <img src="<?php echo base_url('foto/adminFoto/' . $adm->foto) ?>" width="64" />
                                     </td>
                                     <td>
                                         <?php echo anchor('Admin/adminEdit/' . $adm->id_admin, '<button class="btn btn-primary margin" type="button"><span class="fa fa-pencil"></span> </button>'); ?>
