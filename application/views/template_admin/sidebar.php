@@ -106,7 +106,9 @@
         <!-- Sidebar user panel -->
         <div class="user-panel">
           <div class="pull-left image">
-            <img src="<?= base_url('assets_admin/') ?>dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
+          <?php foreach($admin as $list) : ?>
+            <img src="<?= base_url('foto/adminFoto/')?><?= $list->foto ?>" class="img-circle" alt="User Image">
+          <?php endforeach;?>
           </div>
           <div class="pull-left info">
             <p><?= $this->session->userdata("email_admin"); ?></p>
