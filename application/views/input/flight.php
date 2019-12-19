@@ -122,7 +122,6 @@
 					</form>
 				</div>
 
-
 		</div>
 		<div class="livefyre-carousel aem-GridColumn aem-GridColumn--default--12"></div>
 
@@ -160,8 +159,9 @@
 		$nomor = 1;
 		foreach ($query->result_array() as $trans) :
 		?>
-		<div class="card-deck mb-3 text-center">
-			<div class="card mb-4 shadow-sm">
+		<br>
+		<div class="card-deck text-center">
+			<div class="card shadow-sm">
 				<div class="card-header">
 					<h4 class="my-0 font-weight-normal"><?= $trans['nama_transp'] ?></h4>
 				</div>
@@ -175,6 +175,5 @@
 			</div>
 		</div>
 		<?php endforeach; ?>
-	</div>
 </body>
 </html>

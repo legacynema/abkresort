@@ -14,6 +14,7 @@ private $_table = "transport";
     public $tempat_tujuan;
     public $jam_berangkat;
     public $jam_tiba;
+    public $foto;
     public $kisaran;
     public $harga;
     public $post_date;
@@ -72,6 +73,13 @@ private $_table = "transport";
          $this->jam_berangkat = $post["jam_berangkat"];
          $this->jam_tiba = $post["jam_tiba"];
          $this->kisaran = $post["kisaran"];
+
+         if (!empty($_FILES["foto"]["name"])) {
+            $this->foto = $this->_uploadImage();
+        } else {
+            $this->foto = $post["old_image"];
+        }
+        
          $this->harga = $post["harga"];
          $this->post_date = date('Y-m-d');
 
@@ -80,6 +88,35 @@ private $_table = "transport";
 
     public function delete($id_transport)
     {
+        $this->_deleteImage($id_transport);
         return $this->db->delete($this->_table, array("id_transport" => $id_transport));
+    }
+
+    private function _uploadImage()
+    {
+        $config['upload_path']          = './foto/admin/transport';
+        $config['allowed_types']        = 'gif|jpg|png';
+        $config['file_name']            = $this->nama_transp;
+        $config['overwrite']            = false;
+        $config['max_size']             = 1024; // 1MB
+        // $config['max_width']            = 1024;
+        // $config['max_height']           = 768;
+
+        $this->load->library('upload', $config);
+
+        if ($this->upload->do_upload('foto')) {
+            return $this->upload->data("file_name");
+        }
+
+        return "default.jpg";
+    }
+
+    private function _deleteImage($id_transport)
+    {
+        $img = $this->getById($id_transport);
+        if ($img->foto != "default.jpg") {
+            $filename = explode(".", $img->foto)[0];
+            return array_map('unlink', glob(FCPATH . "foto/admin/transport/$filename.*"));
+        }
     }
 }
