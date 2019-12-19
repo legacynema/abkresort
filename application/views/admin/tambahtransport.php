@@ -18,12 +18,10 @@
                         <!-- /.box-header -->
                         <!-- form start -->
                         <div class="box-body">
-                            <div class="table-responsive">
-                                <table class="table table-hover">
-                                    <table class="table table-hover">
+                        <table id="example1" class="table table-hover table-bordered table-striped table-responsive">
+                                    <thead>
                                         <tr>
                                             <th style="width: 10px">#</th>
-                                            <!-- <th>ID </th> -->
                                             <th>ID</th>
                                             <th>Class</th>
                                             <th>Jenis Transport</th>
@@ -33,12 +31,12 @@
                                             <th>Tujuan</th>
                                             <th>Jam Keberangkatan</th>
                                             <th>Jam Tiba</th>
-                                            <th>Foto</th>
                                             <th>Kisaran</th>
+                                            <th>Foto</th>
                                             <th>Harga</th>
                                             <th>Menu</th>
                                         </tr>
-
+                                    </thead>
                                         <?php $nomor = 1; ?>
                                         <?php
 
@@ -111,18 +109,18 @@
                                                     <?php echo anchor('Admin/transportasiDelete/' . $trans['id'], '<button class="btn btn-danger margin" type="button"><span class="fa fa-trash"></span> </button>'); ?>
                                                 </td>
                                                 <td>
-                                                    <?php echo anchor('Admin/transportEdit/' . $trans['id'], '<button class="btn btn-danger margin" type="button"><span class="fa fa-trash"></span> </button>'); ?>
+                                                    <?php echo anchor('Admin/transportEdit/' . $trans['id'], '<button class="btn btn-success margin" type="button"><span class="fa fa-pencil"></span> </button>'); ?>
                                                 </td>
                                             </tr>
                                             <?php $nomor++; ?>
                                         <?php endforeach; ?>
                                     </table>
-                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
+    <div class="container-fluid">
         <div class="row">
             <!-- left column -->
             <div class="col-md-6">
@@ -285,10 +283,7 @@
                                 }
                             }
                         </script>
-
-
                         <!-- /.box-body -->
-
                         <div class="box-footer">
                             <button type="submit" class="btn btn-primary"><i class="fa fa-send"></i> Simpan</button>
                             <button type="reset" class="btn btn-danger"><i class="fa fa-refresh"></i> Reset</button>
@@ -296,9 +291,7 @@
                     </form>
                 </div>
             </div>
-
         </div>
-
-
+        </div>
 </section>
 </div>
