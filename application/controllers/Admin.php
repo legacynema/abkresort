@@ -27,7 +27,7 @@ class Admin extends CI_Controller
 		));
 
 
-		$data['admin'] = $this->db->get_where('admin', ['id_admin' => $this->session->userdata('id_admin')])->result_object();
+		$this->data['admin'] = $this->db->get_where('admin', ['id_admin' => $this->session->userdata('id_admin')])->result_object();
 
 		$this->load->library('form_validation');
 
@@ -39,7 +39,7 @@ class Admin extends CI_Controller
 	public function index()
 	{
 		$this->load->view('template_admin/header');
-		$this->load->view('template_admin/sidebar');
+		$this->load->view('template_admin/sidebar',$this->data);
 		$this->load->view('admin/index');
 		$this->load->view('template_admin/footer');
 	}
@@ -50,7 +50,7 @@ class Admin extends CI_Controller
 		if ($this->session->userdata('email_admin')) {
 			$data['admin'] = $this->db->get_where('admin', ['id_admin' => $this->session->userdata('id_admin')])->result_object();
 			$this->load->view('template_admin/header');
-			$this->load->view('template_admin/sidebar');
+			$this->load->view('template_admin/sidebar',$this->data);
 			$this->load->view('admin/profile', $data);
 			$this->load->view('template_admin/footer');
 		} elseif (($this->session->userdata('email_admin'))) {
@@ -63,7 +63,7 @@ class Admin extends CI_Controller
 	{
 
 		$this->load->view('template_admin/header');
-		$this->load->view('template_admin/sidebar');
+		$this->load->view('template_admin/sidebar',$this->data);
 		$this->load->view('admin/editprofile');
 		$this->load->view('template_admin/footer');
 	}
@@ -76,7 +76,7 @@ class Admin extends CI_Controller
 		$data["admin"] = $this->Model_admin->getById($id_admin);
 		if (!$data["admin"]) show_404();
 		$this->load->view('template_admin/header');
-		$this->load->view('template_admin/sidebar');
+		$this->load->view('template_admin/sidebar',$this->data);
 		$this->load->view('admin/editprofile', $data);
 		$this->load->view('template_admin/footer');
 		$validation = $this->form_validation;
@@ -95,7 +95,7 @@ class Admin extends CI_Controller
 		$data["kota"] = $this->Model_kota->getAll();
 		$data["penginapan"] = $this->Model_penginapan->getAll();
 		$this->load->view('template_admin/header');
-		$this->load->view('template_admin/sidebar');
+		$this->load->view('template_admin/sidebar',$this->data);
 		$this->load->view('admin/tambahpenginapan', $data);
 		$this->load->view('template_admin/footer');
 	}
@@ -107,7 +107,7 @@ class Admin extends CI_Controller
 		$data["class"] = $this->Model_class->getAll();
 		$data["tempat_transport"] = $this->Model_tempatTransport->getAll();
 		$this->load->view('template_admin/header');
-		$this->load->view('template_admin/sidebar');
+		$this->load->view('template_admin/sidebar',$this->data);
 		$this->load->view('admin/tambahtransport', $data);
 		$this->load->view('template_admin/footer');
 	}
@@ -116,7 +116,7 @@ class Admin extends CI_Controller
 		$data["wisata"] = $this->Model_wisata->getAll();
 		$data["kota"] = $this->Model_kota->getAll();
 		$this->load->view('template_admin/header');
-		$this->load->view('template_admin/sidebar');
+		$this->load->view('template_admin/sidebar',$this->data);
 		$this->load->view('admin/tambahwisata', $data);
 		$this->load->view('template_admin/footer');
 	}
@@ -129,7 +129,7 @@ class Admin extends CI_Controller
 		$data["wisata"] = $this->Model_wisata->getAll();
 		$data["transport"] = $this->Model_transport->getAll();
 		$this->load->view('template_admin/header');
-		$this->load->view('template_admin/sidebar');
+		$this->load->view('template_admin/sidebar',$this->data);
 		$this->load->view('admin/tambahpaket', $data);
 		$this->load->view('template_admin/footer');
 	}
@@ -147,7 +147,7 @@ class Admin extends CI_Controller
 	public function transaksi()
 	{
 		$this->load->view('template_admin/header');
-		$this->load->view('template_admin/sidebar');
+		$this->load->view('template_admin/sidebar',$this->data);
 		$this->load->view('admin/transaksi');
 		$this->load->view('template_admin/footer');
 	}
@@ -155,7 +155,7 @@ class Admin extends CI_Controller
 	public function laporan()
 	{
 		$this->load->view('template_admin/header');
-		$this->load->view('template_admin/sidebar');
+		$this->load->view('template_admin/sidebar',$this->data);
 		$this->load->view('admin/laporan');
 		$this->load->view('template_admin/footer');
 	}
@@ -188,7 +188,7 @@ class Admin extends CI_Controller
 		$data["penginapan"] = $this->Model_penginapan->getById($id_penginapan);
 		if (!$data["penginapan"]) show_404();
 		$this->load->view('template_admin/header');
-		$this->load->view('template_admin/sidebar');
+		$this->load->view('template_admin/sidebar',$this->data);
 		$this->load->view('admin/editPenginapan', $data);
 		$this->load->view('template_admin/footer');
 
@@ -235,7 +235,7 @@ class Admin extends CI_Controller
 		$data["tempat_transport"] = $this->Model_tempatTransport->getAll();
 		if (!$data["transport"]) show_404();
 		$this->load->view('template_admin/header');
-		$this->load->view('template_admin/sidebar');
+		$this->load->view('template_admin/sidebar',$this->data);
 		$this->load->view('admin/editTransport', $data);
 		$this->load->view('template_admin/footer');
 
@@ -279,7 +279,7 @@ class Admin extends CI_Controller
 		$data["kota"] = $this->Model_kota->getAll();
 		if (!$data["wisata"]) show_404();
 		$this->load->view('template_admin/header');
-		$this->load->view('template_admin/sidebar');
+		$this->load->view('template_admin/sidebar',$this->data);
 		$this->load->view('admin/editWisata', $data);
 		$this->load->view('template_admin/footer');
 
@@ -346,7 +346,7 @@ class Admin extends CI_Controller
 		$data["transport"] = $this->Model_transport->getAll();
 		if (!$data["paket"]) show_404();
 		$this->load->view('template_admin/header');
-		$this->load->view('template_admin/sidebar');
+		$this->load->view('template_admin/sidebar',$this->data);
 		$this->load->view('admin/editpaket', $data);
 		$this->load->view('template_admin/footer');
 
@@ -375,7 +375,7 @@ class Admin extends CI_Controller
 	{
 		$data["user"] = $this->Model_user->getAll();
 		$this->load->view('template_admin/header');
-		$this->load->view('template_admin/sidebar');
+		$this->load->view('template_admin/sidebar',$this->data);
 		$this->load->view('admin/tambahuser', $data);
 		$this->load->view('template_admin/footer');
 	}
@@ -389,7 +389,7 @@ class Admin extends CI_Controller
 		$data["user"] = $this->Model_user->getById($id);
 		if (!$data["user"]) show_404();
 		$this->load->view('template_admin/header');
-		$this->load->view('template_admin/sidebar');
+		$this->load->view('template_admin/sidebar',$this->data);
 		$this->load->view('admin/editPassUser', $data);
 		$this->load->view('template_admin/footer');
 
@@ -418,7 +418,7 @@ class Admin extends CI_Controller
 	{
 		$data["admin"] = $this->Model_admin->getAll();
 		$this->load->view('template_admin/header');
-		$this->load->view('template_admin/sidebar');
+		$this->load->view('template_admin/sidebar',$this->data);
 		$this->load->view('admin/tambahadmin', $data);
 		$this->load->view('template_admin/footer');
 	}
@@ -441,7 +441,7 @@ class Admin extends CI_Controller
 		$data["admin"] = $this->Model_admin->getById($id);
 		if (!$data["admin"]) show_404();
 		$this->load->view('template_admin/header');
-		$this->load->view('template_admin/sidebar');
+		$this->load->view('template_admin/sidebar',$this->data);
 		$this->load->view('admin/editPassadmin', $data);
 		$this->load->view('template_admin/footer');
 
@@ -473,7 +473,7 @@ class Admin extends CI_Controller
 		$data["tempat_transport"] = $this->Model_tempatTransport->getAll();
 		$data["jenis_transport"] = $this->Model_jenisTransport->getAll();
 		$this->load->view('template_admin/header');
-		$this->load->view('template_admin/sidebar');
+		$this->load->view('template_admin/sidebar',$this->data);
 		$this->load->view('admin/tambahlist', $data);
 		$this->load->view('template_admin/footer');
 	}

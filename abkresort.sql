@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.8.5
+-- version 4.8.3
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 19, 2019 at 10:26 AM
--- Server version: 10.1.38-MariaDB
--- PHP Version: 7.3.2
+-- Generation Time: Dec 19, 2019 at 08:54 AM
+-- Server version: 10.1.36-MariaDB
+-- PHP Version: 7.2.11
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -44,7 +44,10 @@ CREATE TABLE `admin` (
 --
 
 INSERT INTO `admin` (`id_admin`, `nama_lengkap`, `password`, `email`, `jenis_kelamin`, `nomor_hp`, `foto`, `post_date`) VALUES
-(4, 'khosy Akmal', 'a63397b3d5d384990c5acde995d776b7', 'khosy@gmail.com', 'Laki-laki', '085250036553', 'khosy_Akmal.jpg', '2019-12-18');
+(4, 'khosy Akmal', 'a63397b3d5d384990c5acde995d776b7', 'khosy@gmail.com', 'Laki-laki', '085250036553', 'khosy_Akmal.jpg', '2019-12-18'),
+(5, 'DZIKRI ALIF', '81822f60a1919f15b0beda20d8d8b6a0', 'dzikri@resort.com', 'Laki-laki', '081928391823', 'DZIKRI_ALIF.png', '2019-12-19'),
+(6, 'ALFAZA', '5f999587b6efb3275353f41387fcf26f', 'faza@resort.com', 'Laki-laki', '09019231', 'default.jpg', '2019-12-19'),
+(7, 'FIRMAN', '64e1aeecb102e977420a71f8fd8618a3', 'firman@resort.com', 'Laki-laki', '0891829312', 'default.jpg', '2019-12-18');
 
 -- --------------------------------------------------------
 
@@ -444,7 +447,7 @@ ALTER TABLE `wisata`
 -- AUTO_INCREMENT for table `admin`
 --
 ALTER TABLE `admin`
-  MODIFY `id_admin` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id_admin` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT for table `class`
