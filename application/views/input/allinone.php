@@ -19,139 +19,197 @@
                 <div style="position:relative">
                     <img src="<?= base_url('assets/') ?>img/allinone.jpg" class="d-block w-100" height="100%" alt="Slideshow">
                 </div>
+    </div>
+    <!-- End of Slideshow -->
+    </div>
+</div>
+<div class="container mt-5">
+   <div class="jumbotron jumbotron-fluid bg-primary">
+   <h1 class="text-center" style="font-family:Helvetica Neue">Choose your Want</h1>
+    <form action="">
+        <div class="form-row row container">
+            <div class="col-md-5">
+                <div class="form-group form-check">
+                    <div class="custom-control custom-checkbox">
+                    <input type="checkbox" class="custom-control-input styled-checkbox" id="mobil">
+                    <label class="custom-control-label" for="mobil"  data-toggle="collapse" href="#mobil">Mobil</label>
+                    </div>
+                    <div class="custom-control custom-checkbox">
+                    <input type="checkbox" class="custom-control-input" id="pesawat">
+                    <label class="custom-control-label" for="pesawat" data-toggle="collapse" href="#pesawat">Pesawat</label>
+                    </div>
+                    <div class="custom-control custom-checkbox">
+                    <input type="checkbox" class="custom-control-input" id="bis">
+                    <label class="custom-control-label" for="bis" data-toggle="collapse" href="#bis">Bis</label>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="form-group">
+                    <div class="custom-control custom-checkbox">
+                    <input type="checkbox" class="custom-control-input" id="kereta">
+                    <label class="custom-control-label" for="kereta" data-toggle="collapse" href="#kereta" >Kereta</label>
+                    </div>
+                    <div class="custom-control custom-checkbox">
+                    <input type="checkbox" class="custom-control-input" id="hotel">
+                    <label class="custom-control-label" for="hotel" data-toggle="collapse" href="#hotel">hotel</label>
+                    </div>
+                    <div class="custom-control custom-checkbox">
+                    <input type="checkbox" class="custom-control-input" id="wisata">
+                    <label class="custom-control-label" for="wisata" data-toggle="collapse" href="#wisata">Wisata</label>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                 <div class="form-group">
+                 <div class="custom-control custom-checkbox">
+                    <input type="checkbox" class="custom-control-input" id="lain_lain">
+                    <label class="custom-control-label" for="lain_lain" data-toggle="collapse" href="#lainlain" >Lain-Lain</label>
+                    </div>
+                 </div>   
+            </div>
             </div>
             <!-- End of Slideshow -->
         </div>
-    </div>
-
-    <br><br>
-
-    <div class="container">
-        <div class="accordion" id="accordionExample">
-            <div class="card">
-                <div class="card-header" id="headingOne">
-                    <h2 class="mb-0">
-                        <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                            Penerbangan
-                        </button>
-                    </h2>
-                </div>
-
-                <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
-                    <div class="card-body">
-                        <form>
-                            <div class="form-group">
-                                <label for="exampleFormControlInput1">Keberangkatan</label>
-                                <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="Bandara Soekarno Hatta">
-                            </div>
-                            <div class="form-group">
-                                <label for="exampleFormControlInput1">Tujuan</label>
-                                <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="Bandara Abddurrahman Saleh">
-                            </div>
-                            <div class="form-group">
-                                <input type="text" onfocus="(this.type='date')" class="form-control" id="datetimepicker1" name="first-flight-date" placeholder="Keberangkatan" aria-describedby="basic-addon1">
-                            </div>
-                            <div class="form-group">
-                                <div class="row">
-                                    <div class="col-md-4">
-                                        <label for="exampleFormControlSelect1">Kelas Pesawat</label>
-                                        <select class="form-control" id="exampleFormControlSelect1">
-                                            <option>Kelas Ekonomi</option>
-                                            <option>Kelas Bisnis</option>
-                                            <option>Kelas Pertama</option>
-                                        </select>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-md-4">
-                                    <div class="input-group">
-                                        <select id="paxAdult" class="form-control valid" aria-invalid="false">
-                                            <option value="0">0 Penumpang</option>
-                                            <option value="1" selected="selected">1 Penumpang</option>
-                                            <option value="2">2 Penumpang</option>
-                                            <option value="3">3 Penumpang</option>
-                                            <option value="4">4 Penumpang</option>
-                                            <option value="5">5 Penumpang</option>
-                                            <option value="6">6 Penumpang</option>
-                                            <option value="7">7 Penumpang</option>
-                                            <option value="8">8 Penumpang</option>
-                                            <option value="9">9 Penumpang</option>
-                                        </select>
-                                    </div>
-                                </div>
-
-                            </div>
-
-                        </form>
-                    </div>
-                </div>
-            </div>
-            <div class="card">
-                <div class="card-header" id="headingTwo">
-                    <h2 class="mb-0">
-                        <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                            Penginapan
-                        </button>
-                    </h2>
-                </div>
-                <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
-                    <div class="card-body">
-                        <form>
-                            <div class="form-group">
-                                <label for="exampleFormControlInput1">Kota/Nama Hotel</label>
-                                <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="Malang/Hotel Indonesia">
-                            </div>
-                            <div class="form-group">
-                                <input type="text" onfocus="(this.type='date')" class="form-control" id="datetimepicker1" name="first-flight-date" placeholder="Check-In" aria-describedby="basic-addon1">
-                            </div>
-                            <div class="form-group">
-                                <input type="text" onfocus="(this.type='date')" class="form-control" id="datetimepicker1" name="first-flight-date" placeholder="Check-Out" aria-describedby="basic-addon1">
-                            </div>
-
-                        </form>
-                    </div>
-                </div>
-            </div>
-            <div class="card">
-                <div class="card-header" id="headingThree">
-                    <h2 class="mb-0">
-                        <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-                            Kereta Api
-                        </button>
-                    </h2>
-                </div>
-                <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
-                    <div class="card-body">
+    </form>
+    <!-- Collapse bis -->
+    <div class="collapse" id="bis">
+        <div class="card card-body">    
+            <div class="container">
+            <form>
+                <div class="form-row">
+                    <div class="col-md-4">
                         <div class="form-group">
-                            <label for="exampleFormControlInput1">Stasiun Keberangkatan</label>
-                            <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="Stasiun Pasar Turi">
+                            <label for="#">Kota Keberangkatan</label>
+                            <input type="text" class="form-control" id="inputAddress" placeholder="1234 Main St">
                         </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <label for="#">Kota Tujuan</label>
+                            <input type="text" class="form-control" id="inputAddress" placeholder="1234 Main St">
+                        </div>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group col-md-8">
+                        <label for="#">Pilih Tanggal</label>
+                        <input type="date" onfocus="(this.type='date')" class="form-control" id="datetimepicker1" name="first-flight-date" placeholder="Check-in" aria-describedby="basic-addon1">
+                    </div>
+                </div>
+            </form>
+            </div>
+        </div>
+    </div>
+    <!-- End Collapse bis -->
+        <!-- Collapse Wisata -->
+        <div class="collapse" id="wisata">
+          <div class="card card-body">
+          <div class="container">
+                <form>
+                <div class="form-row">
+                    <div class="col-md-9">
+                        <div class="form-group">
+                            <label for="#">Tujuan</label>
+                            <input type="text" class="form-control" id="inputAddress" placeholder="1234 Main St">
+                        </div>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group col-md-4">
+                        <label for="#">Dari</label>
+                        <input type="date" onfocus="(this.type='date')" class="form-control" id="datetimepicker1" name="first-flight-date" placeholder="Check-in" aria-describedby="basic-addon1">
+                    </div>
+                    <div class="form-group col-md-5">
+                        <label for="#">Hingga</label>
+                        <input type="date" onfocus="(this.type='date')" class="form-control" id="datetimepicker1" name="first-flight-date" placeholder="Check-in" aria-describedby="basic-addon1">
+                    </div>
+                </div>
+                </form>
+            </div>  
+          </div> 
+        </div>  
+        <!-- End Collapse Wisata -->
+
+        <!-- Collapse pesawat -->
+        <div class="collapse" id="pesawat">
+          <div class="card card-body">
+            <div class="container">
+            <form>
+                <div class="form-row">
+                    <div class="form-group col-md-5">
+                    <label for="#">Form</label>
+                    <input type="text" class="form-control" id="" placeholder="#">
+                    </div>
+                    <div class="form-group col-md-4">
+                    <label for="#">To</label>
+                    <input type="text" class="form-control" id="" placeholder="#">
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="col-md-9">
                         <div class="form-group">
                             <label for="exampleFormControlInput1">Stasiun Tujuan</label>
                             <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="Stasiun Pasar Senen">
                         </div>
-                        <div class="form-group">
-                            <input type="text" onfocus="(this.type='date')" class="form-control" id="datetimepicker1" name="first-flight-date" placeholder="Tanggal Keberangkatan" aria-describedby="basic-addon1">
-                        </div>
-                        <div class="row">
-                            <div class="col-md-4">
-                                <div class="input-group">
-                                    <select id="paxAdult" class="form-control valid" aria-invalid="false">
-                                        <option value="0">0 Penumpang</option>
-                                        <option value="1" selected="selected">1 Penumpang</option>
-                                        <option value="2">2 Penumpang</option>
-                                        <option value="3">3 Penumpang</option>
-                                        <option value="4">4 Penumpang</option>
-                                        <option value="5">5 Penumpang</option>
-                                        <option value="6">6 Penumpang</option>
-                                        <option value="7">7 Penumpang</option>
-                                        <option value="8">8 Penumpang</option>
-                                        <option value="9">9 Penumpang</option>
-                                    </select>
-                                </div>
-                            </div>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group col-md-3">
+                    <label for="inputState">Dewasa</label>
+                    <select id="inputState" class="form-control">
+                        <option selected>0 Anak-Anak</option>
+                        <option>1 Anak-Anak</option>
+                        <option>2 Anak-Anak</option>
+                        <option>3 Anak-Anak</option>
+                        <option>4 Anak-Anak</option>
+                    </select>
+                </div>
+                <div class="form-group col-md-3"> 
+                    <label for="inputState">Anak-Anak</label>
+                    <select id="inputState" class="form-control">
+                        <option selected>0 Anak-Anak</option>
+                        <option>1 Anak-Anak</option>
+                        <option>2 Anak-Anak</option>
+                        <option>3 Anak-Anak</option>
+                        <option>4 Anak-Anak</option>
+                    </select>
+                </div>
+                <div class="form-group col-md-3">
+                    <label for="inputState">Bayi</label>
+                    <select id="inputState" class="form-control">
+                        <option selected>0 Bayi</option>
+                        <option>1 Bayi</option>
+                        <option>2 Bayi</option>
+                        <option>3 Bayi</option>
+                        <option>4 Bayi</option>
+                    </select>
+                </div>
+                <div class="form-group col-md-9">
+                    <label for="#">Class</label>
+                    <select id="inputState" class="form-control">
+                        <option selected>Economy class</option>
+                        <option>Bussines class</option>
+                        <option>First class</option>
+                    </select>                
+                </div>
+             </div>
+            </form>    
+          </div>
+        </div>
+    </div>
+        <!-- End Collapse Pesawat -->
 
+        <!-- Collapse All in one Hotel -->
+        <div class="collapse" id="hotel">
+          <div class="card card-body">
+            <div class="container">
+             <form>
+                <div class="form-row">
+                    <div class="col-md-9">
+                        <div class="form-group">
+                            <label for="#">Nama Hotel</label>
+                            <input type="text" class="form-control" id="inputAddress" placeholder="1234 Main St">
                         </div>
                     </div>
                 </div>
@@ -170,24 +228,88 @@
                         Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
                     </div>
                 </div>
+            </form>
             </div>
-            <div class="card">
-                <div class="card-header" id="headingFive">
-                    <h2 class="mb-0">
-                        <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseFive" aria-expanded="true" aria-controls="collapseFive">
-                            Mobil
-                        </button>
-                    </h2>
+          </div>
+        </div>
+        <!-- End Collapse Hotel -->
+        
+        <!-- collapse mobil -->
+        <div class="collapse" id="mobil">
+          <div class="card card-body">
+          <div class="container">
+                <form>
+                <div class="form-row">
+                    <div class="col-md-9">
+                        <div class="form-group">
+                            <label for="#">Pengambilan</label>
+                            <input type="text" class="form-control" id="inputAddress" placeholder="1234 Main St">
+                        </div>
+                    </div>
                 </div>
-
-                <div id="collapseFive" class="collapse" aria-labelledby="headingFive" data-parent="#accordionExample">
-                    <div class="card-body">
-                        Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+                <div class="form-row">
+                    <div class="form-group col-md-4">
+                        <label for="#">Tanggal Pengambilan</label>
+                        <input type="date" onfocus="(this.type='date')" class="form-control" id="datetimepicker1" name="first-flight-date" placeholder="Check-in" aria-describedby="basic-addon1">
+                    </div>
+                    <div class="form-group col-md-5">
+                        <label for="#">Check Pengembalian</label>
+                        <input type="date" onfocus="(this.type='date')" class="form-control" id="datetimepicker1" name="first-flight-date" placeholder="Check-in" aria-describedby="basic-addon1">
                     </div>
                 </div>
             </div>
+          </div>
         </div>
-    </div>
+        <!-- End Collapse Mobil -->
+
+        <!-- Collapse Kereta Api -->
+        <div class="collapse" id="kereta">
+          <div class="card card-body">
+          <div class="container">
+                <form action="">
+                <div class="form-row">
+                    <div class="form-group col-md-5">
+                        <label for="#">Form</label>
+                        <input type="text" class="form-control" id="" placeholder="#">
+                    </div>
+                    <div class="form-group col-md-4">
+                        <label for="#">To</label>
+                        <input type="text" class="form-control" id="" placeholder="#">
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group col-md-4">
+                    <label for="inputState">Dewasa</label>
+                    <select id="inputState" class="form-control">
+                        <option selected>0 Anak-Anak</option>
+                        <option>1 Anak-Anak</option>
+                        <option>2 Anak-Anak</option>
+                        <option>3 Anak-Anak</option>
+                        <option>4 Anak-Anak</option>
+                    </select>
+                </div>
+                <div class="form-group col-md-5"> 
+                    <label for="inputState">Anak-Anak</label>
+                    <select id="inputState" class="form-control">
+                        <option selected>0 Anak-Anak</option>
+                        <option>1 Anak-Anak</option>
+                        <option>2 Anak-Anak</option>
+                        <option>3 Anak-Anak</option>
+                        <option>4 Anak-Anak</option>
+                    </select>
+                </div>
+                    <div class="form-group col-md-9">
+                        <div class="form-group">
+                            <label for="#">Depart</label>
+                            <input type="text" class="form-control" id="inputAddress" placeholder="1234 Main St">
+                        </div>
+                    </div>
+            </form>
+            </div>        
+          </div>
+        </div>
+        <!-- End Collapse Train -->
+    </div> 
 </body>
 
 </html>
