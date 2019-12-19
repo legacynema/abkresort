@@ -65,14 +65,17 @@
             <!-- User Account: style can be found in dropdown.less -->
             <li class="dropdown user user-menu">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                <img src="<?= base_url('assets_admin/') ?>dist/img/user2-160x160.jpg" class="user-image" alt="User Image">
+              <?php foreach($admin as $list) : ?>
+                <img src="<?= base_url('foto/adminFoto/')?><?= $list->foto ?>" class="user-image" alt="User Image">
                 <span class="hidden-xs"><?= $this->session->userdata("nama_lengkap"); ?></span>
+                <?php endforeach;?>
               </a>
               <ul class="dropdown-menu">
                 <!-- User image -->
                 <li class="user-header">
-                  <img src="<?= base_url('assets_admin/') ?>dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
-
+                <?php foreach($admin as $list) : ?>
+                  <img src="<?= base_url('foto/adminFoto/')?><?= $list->foto ?>" class="img-circle" alt="User Image">
+                <?php endforeach;?>
                   <p>
                     <?= $this->session->userdata("nama_lengkap"); ?>
                     <small>Member since <?= date_format(($this->session->userdata('post_date')),"d - m - Y"); ?></small>
