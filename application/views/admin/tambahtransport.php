@@ -107,8 +107,6 @@
                                                 </td>
                                                 <td>
                                                     <?php echo anchor('Admin/transportasiDelete/' . $trans['id'], '<button class="btn btn-danger margin" type="button"><span class="fa fa-trash"></span> </button>'); ?>
-                                                </td>
-                                                <td>
                                                     <?php echo anchor('Admin/transportEdit/' . $trans['id'], '<button class="btn btn-success margin" type="button"><span class="fa fa-pencil"></span> </button>'); ?>
                                                 </td>
                                             </tr>
