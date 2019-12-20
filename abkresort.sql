@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.8.3
+-- version 4.8.5
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 19, 2019 at 08:54 AM
--- Server version: 10.1.36-MariaDB
--- PHP Version: 7.2.11
+-- Generation Time: Dec 20, 2019 at 09:37 AM
+-- Server version: 10.1.38-MariaDB
+-- PHP Version: 7.3.2
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -44,10 +44,7 @@ CREATE TABLE `admin` (
 --
 
 INSERT INTO `admin` (`id_admin`, `nama_lengkap`, `password`, `email`, `jenis_kelamin`, `nomor_hp`, `foto`, `post_date`) VALUES
-(4, 'khosy Akmal', 'a63397b3d5d384990c5acde995d776b7', 'khosy@gmail.com', 'Laki-laki', '085250036553', 'khosy_Akmal.jpg', '2019-12-18'),
-(5, 'DZIKRI ALIF', '81822f60a1919f15b0beda20d8d8b6a0', 'dzikri@resort.com', 'Laki-laki', '081928391823', 'DZIKRI_ALIF.png', '2019-12-19'),
-(6, 'ALFAZA', '5f999587b6efb3275353f41387fcf26f', 'faza@resort.com', 'Laki-laki', '09019231', 'default.jpg', '2019-12-19'),
-(7, 'FIRMAN', '64e1aeecb102e977420a71f8fd8618a3', 'firman@resort.com', 'Laki-laki', '0891829312', 'default.jpg', '2019-12-18');
+(4, 'khosy Akmal', 'a63397b3d5d384990c5acde995d776b7', 'khosy@gmail.com', 'Laki-laki', '085250036553', 'khosy_Akmal.jpg', '2019-12-18');
 
 -- --------------------------------------------------------
 
@@ -142,6 +139,7 @@ CREATE TABLE `paket` (
   `id_penginapan` int(11) DEFAULT NULL,
   `id_transport` int(11) DEFAULT NULL,
   `id_wisata` int(11) DEFAULT NULL,
+  `hari` int(11) NOT NULL,
   `deskripsi` text,
   `harga` int(11) NOT NULL,
   `foto` varchar(255) NOT NULL DEFAULT 'default.jpg',
@@ -152,10 +150,32 @@ CREATE TABLE `paket` (
 -- Dumping data for table `paket`
 --
 
-INSERT INTO `paket` (`id_paket`, `id_kota`, `nama_paket`, `id_penginapan`, `id_transport`, `id_wisata`, `deskripsi`, `harga`, `foto`, `post_date`) VALUES
-(8, 1, 'Liburan di Malang', 1, 5, 1, '', 1000000, '.jpg', '2019-12-16'),
-(9, 1, 'Liburan di Malang', NULL, NULL, NULL, '', 100000, 'default.jpg', '2019-12-16'),
-(10, 2, 'Liburan di Surabaya', NULL, NULL, NULL, '', 10000009, 'default.jpg', '2019-12-16');
+INSERT INTO `paket` (`id_paket`, `id_kota`, `nama_paket`, `id_penginapan`, `id_transport`, `id_wisata`, `hari`, `deskripsi`, `harga`, `foto`, `post_date`) VALUES
+(8, 1, 'Liburan di Malang', 1, 5, 1, 0, '', 1000000, '.jpg', '2019-12-16'),
+(9, 1, 'Liburan di Malang', NULL, NULL, NULL, 0, '', 100000, 'default.jpg', '2019-12-16'),
+(10, 2, 'Liburan di Surabaya', NULL, NULL, NULL, 0, '', 10000009, 'default.jpg', '2019-12-16');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `paket_wisata`
+--
+
+CREATE TABLE `paket_wisata` (
+  `id` int(11) NOT NULL,
+  `nama_paket` varchar(255) NOT NULL,
+  `deskripsi` text NOT NULL,
+  `foto` varchar(255) NOT NULL DEFAULT 'default.jpg',
+  `harga` int(11) NOT NULL,
+  `post_date` date NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `paket_wisata`
+--
+
+INSERT INTO `paket_wisata` (`id`, `nama_paket`, `deskripsi`, `foto`, `harga`, `post_date`) VALUES
+(1, 'Liburan di Malang', 'taeeeeeeeeeeeeeeeeeeeeeeeeeekkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk', 'default.jpg', 100000, '0000-00-00');
 
 -- --------------------------------------------------------
 
@@ -385,6 +405,12 @@ ALTER TABLE `paket`
   ADD KEY `FK_PAKT_KOTA` (`id_kota`);
 
 --
+-- Indexes for table `paket_wisata`
+--
+ALTER TABLE `paket_wisata`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `penginapan`
 --
 ALTER TABLE `penginapan`
@@ -447,7 +473,7 @@ ALTER TABLE `wisata`
 -- AUTO_INCREMENT for table `admin`
 --
 ALTER TABLE `admin`
-  MODIFY `id_admin` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id_admin` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `class`
@@ -478,6 +504,12 @@ ALTER TABLE `kota`
 --
 ALTER TABLE `paket`
   MODIFY `id_paket` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+
+--
+-- AUTO_INCREMENT for table `paket_wisata`
+--
+ALTER TABLE `paket_wisata`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `penginapan`
