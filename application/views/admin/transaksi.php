@@ -70,7 +70,7 @@
                     <p><?= $trans['nama_lengkap'] ?></p>
                   </td>
                   <td>
-                    <p><?= $trans['nama_paket'] ?></p>
+                    <p><b><?= $trans['nama_paket'] ?></p>
                   </td>
                   <td>
                     <p><?= $trans['nama_penginapan'] ?></p>
@@ -82,16 +82,22 @@
                     <p><?= $trans['nama_wisata'] ?></p>
                   </td>
                   <td>
-                    <p><?= $trans['hari'] ?></p>
+                    <p><?= $trans['hari'] ?> Hari</p>
                   </td>
                   <td>
-                    <p><?= $trans['tamu'] ?></p>
+                    <p><?= $trans['tamu'] ?> Orang</p>
                   </td>
                   <td>
                     <p>Rp. <?= number_format($trans['total_harga']) ?></p>
                   </td>
                   <td>
-                    <p><?= $trans['status'] ?></p>
+                    <p><?php
+                    if ($trans['status'] == "Pending") {
+                      echo '<span class="label label-warning">Pending</span>';
+                    }else{
+                      echo '<span class="label label-success">Success</span>';
+                    }
+                    ?></p>
                   </td>
                   <td>
                     <img src="<?php echo base_url('foto/admin/transaksi/bukti/' . $trans['bukti_transaksi']) ?>" width="64" />
@@ -109,24 +115,6 @@
 
             </tbody>
 
-            <tfoot>
-              <tr>
-                <th>ID</th>
-                <th>TANGGAL</th>
-                <th>USER</th>
-                <th>PAKET</th>
-                <th>PENGINAPAN</th>
-                <th>TRANSPORTASI</th>
-                <th>WISATA</th>
-                <th>HARI</th>
-                <th>TAMU</th>
-                <th>HARGA</th>
-                <th>STATUS</th>
-                <th>BUKTI</th>
-                <th>E-TIKET</th>
-                <th>MENU</th>
-              </tr>
-            </tfoot>
           </table>
         </div>
         <!-- /.box-body -->
