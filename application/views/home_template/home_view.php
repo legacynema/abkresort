@@ -56,33 +56,15 @@
 		<div class="row">
 			<div class="col-lg-3 col-md-3 col-sm-6 col-xs-6 col-xxs-12">
 			<?php
-
-				$this->db->select('
-								p.id_paket as id,
-								k.nama_kota,
-								p.nama_paket,
-								pg.nama_penginapan,
-								t.nama_transp,
-								w.nama_wisata,
-								p.harga,
-								p.foto
-								');
-				// SELECT 
-				$this->db->join('penginapan as pg', 'pg.id_penginapan = p.id_penginapan');
-				$this->db->join('transport as t', 't.id_transport = p.id_transport');
-				$this->db->join('kota as k', 'k.id_kota = p.id_kota');
-				$query =    $this->db->join('wisata as w', 'w.id_wisata = p.id_wisata')->get('paket as p');
-				$nomor = 1;
-
-				foreach ($query->result_array() as $paket) :
+				foreach ($paketW as $paketW) :
 				?>
 				<div class="tm-home-box-2">
-					<img src="<?php echo base_url('foto/admin/paket/' . $paket['foto']) ?>" alt="image" class="img-responsive">
-					<h3><?= $paket['nama_paket'] ?></h3>
-					<p class="tm-date">Rp. <?= number_format($paket['harga']) ?></p>
+					<img src="<?php echo base_url('foto/admin/paketWisata/' . $paketW->foto) ?>" alt="image" class="img-responsive">
+					<h3><?= $paketW->nama_paket ?></h3>
+					<p class="tm-date">Rp. <?= number_format( $paketW->harga) ?></p>
 					<div class="tm-home-box-2-container">
 						<a href="#" class="tm-home-box-2-link"><i class="fa fa-heart tm-home-box-2-icon border-right"></i></a>
-						<a href="<?= anchor('input/detail/' . $paket['id']); ?>" class="tm-home-box-2-link"><span class="tm-home-box-2-description">LIHAT</span></a>
+						<a href="<?php echo base_url('Input/detail/' . $paketW->id);?>" class="tm-home-box-2-link"><span class="tm-home-box-2-description">LIHAT</span></a>
 						<a href="#" class="tm-home-box-2-link"><i class="fa fa-edit tm-home-box-2-icon border-left"></i></a>
 					</div>
 				</div>

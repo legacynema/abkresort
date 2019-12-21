@@ -11,14 +11,15 @@ class Home extends CI_Controller {
         $this->load->model("Model_user");
         $this->load->model("Model_admin");
 		$this->load->model("Model_login");
+		$this->load->model("Model_paketWisata");
 		
 	}
 	
 	
 	public function index()
-	{	
+	{	$data["paketW"] = $this->Model_paketWisata->getAll();
 		$this->load->view('navbar');
-        $this->load->view('home_template/home_view');
+        $this->load->view('home_template/home_view', $data);
 		$this->load->view('footer');
 	}
 
