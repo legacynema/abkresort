@@ -35,7 +35,7 @@
 
       <div class="col-lg-3 col-md-5 col-sm-6 col-xs-12 parent-book-partner no-gutters p-0" style="top: 114px;">
         <div class="card" style="border: 0;border-radius: 0 !important;border-top: 3px solid #6553a2;box-shadow: 0px 0px 2px #6553a2;">
-          <form id="book-flight-form" novalidate="novalidate">
+          <form id="book-flight-form" novalidate="novalidate" method="POST">
             <div class="card-header indt-book-header">
               PESAN TIKET BIS
             </div>
