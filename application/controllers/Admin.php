@@ -531,4 +531,10 @@ class Admin extends CI_Controller
 			redirect('Admin/tambah_list');
 		}
 	}
+
+	public function allinone(){
+		$this->load->view('template_admin/header');
+		$this->load->view('admin/allinone');
+		$this->load->view('template_admin/footer');
+	}
 }
